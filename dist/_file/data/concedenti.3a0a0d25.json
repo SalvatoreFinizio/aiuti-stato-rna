@@ -1,0 +1,302 @@
+[
+  {
+    "conc": "Agenzia delle Entrate",
+    "esl_mld": 41.4475,
+    "green_mld": 2.5525,
+    "pct_green": 6.2
+  },
+  {
+    "conc": "SACE SpA",
+    "esl_mld": 27.0011,
+    "green_mld": 1.8233,
+    "pct_green": 6.8
+  },
+  {
+    "conc": "MedioCredito Centrale SpA",
+    "esl_mld": 21.3139,
+    "green_mld": 1.9145,
+    "pct_green": 9.0
+  },
+  {
+    "conc": "INPS",
+    "esl_mld": 15.7754,
+    "green_mld": 1.3171,
+    "pct_green": 8.3
+  },
+  {
+    "conc": "Invitalia - Agenzia nazionale per l'attrazione degli investimenti e lo sviluppo d'impresa S.p.A.",
+    "esl_mld": 8.7483,
+    "green_mld": 0.7698,
+    "pct_green": 8.8
+  },
+  {
+    "conc": "GSE — Gestore Servizi Energetici SpA",
+    "esl_mld": 8.0395,
+    "green_mld": 8.0395,
+    "pct_green": 100.0
+  },
+  {
+    "conc": "CSEA — Cassa Servizi Energetici e Ambientali",
+    "esl_mld": 5.2609,
+    "green_mld": 0.3826,
+    "pct_green": 7.3
+  },
+  {
+    "conc": "Ministero delle Imprese e del Made in Italy - Dipartimento per le politiche per le imprese - Direzione generale per gli incentivi alle imprese",
+    "esl_mld": 3.9908,
+    "green_mld": 0.2786,
+    "pct_green": 7.0
+  },
+  {
+    "conc": "Agenzie delle Entrate",
+    "esl_mld": 2.6804,
+    "green_mld": 0.2493,
+    "pct_green": 9.3
+  },
+  {
+    "conc": "Ministero della Cultura",
+    "esl_mld": 2.4171,
+    "green_mld": 0.0001,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "COMUNE DI SAN MICHELE AL TAGLIAMENTO",
+    "esl_mld": 2.4135,
+    "green_mld": 0.0,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "Terna SpA",
+    "esl_mld": 1.9702,
+    "green_mld": 1.9702,
+    "pct_green": 100.0
+  },
+  {
+    "conc": "SIMEST",
+    "esl_mld": 1.0836,
+    "green_mld": 0.0448,
+    "pct_green": 4.1
+  },
+  {
+    "conc": "Acquirente Unico SpA",
+    "esl_mld": 1.0757,
+    "green_mld": 0.1521,
+    "pct_green": 14.1
+  },
+  {
+    "conc": "INFRATEL ITALIA S.P.A.",
+    "esl_mld": 0.959,
+    "green_mld": 0.0196,
+    "pct_green": 2.0
+  },
+  {
+    "conc": "Regione Puglia - Dipartimento Sviluppo Economico",
+    "esl_mld": 0.8821,
+    "green_mld": 0.0297,
+    "pct_green": 3.4
+  },
+  {
+    "conc": "Ministero dell'Ambiente e della Sicurezza Energetica - Direzione Generale Programmi e  Incentivi Finanziari (DG PIF)",
+    "esl_mld": 0.6428,
+    "green_mld": 0.3289,
+    "pct_green": 51.2
+  },
+  {
+    "conc": "FONDIMPRESA",
+    "esl_mld": 0.6013,
+    "green_mld": 0.0558,
+    "pct_green": 9.3
+  },
+  {
+    "conc": "INAIL - Direzione Centrale Prevenzione",
+    "esl_mld": 0.5783,
+    "green_mld": 0.0615,
+    "pct_green": 10.6
+  },
+  {
+    "conc": "Autorità di gestione FESR Campania",
+    "esl_mld": 0.5692,
+    "green_mld": 0.0389,
+    "pct_green": 6.8
+  },
+  {
+    "conc": "Regione autonoma Friuli Venezia Giulia - Direzione centrale attività produttive",
+    "esl_mld": 0.5255,
+    "green_mld": 0.057,
+    "pct_green": 10.8
+  },
+  {
+    "conc": "Provincia Autonoma di Trento",
+    "esl_mld": 0.471,
+    "green_mld": 0.0331,
+    "pct_green": 7.0
+  },
+  {
+    "conc": "Ministero della transizione ecologica – Dipartimento Sviluppo Sostenibile",
+    "esl_mld": 0.4503,
+    "green_mld": 0.2342,
+    "pct_green": 52.0
+  },
+  {
+    "conc": "Ministero delle Infrastrutture e della Mobilità Sostenibili -  Direzione Generale per la Sicurezza Stradale e  l'Autotrasporto",
+    "esl_mld": 0.4487,
+    "green_mld": 0.0,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "Regione Marche",
+    "esl_mld": 0.4231,
+    "green_mld": 0.0466,
+    "pct_green": 11.0
+  },
+  {
+    "conc": "Agenzia nazionale per l'attrazione degli investimenti e lo sviluppo d'impresa SpA- Invitalia SpA",
+    "esl_mld": 0.4156,
+    "green_mld": 0.0,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "Presidenza del Consiglio dei Ministri - Dipartimento per l'informazione e l'editoria",
+    "esl_mld": 0.3988,
+    "green_mld": 0.0,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "Agenzia nazionale per l'attrazione degli investimenti e lo sviluppo d'impresa SpA - Invitalia (05678721001)",
+    "esl_mld": 0.3842,
+    "green_mld": 0.0,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "MINISTERO DELL'UNIVERSITA' E DELLA RICERCA - DIREZIONE GENERALE DELLA RICERCA",
+    "esl_mld": 0.3838,
+    "green_mld": 0.0009,
+    "pct_green": 0.2
+  },
+  {
+    "conc": "Ministero delle Imprese e del Made in Italy - Dipartimento per il digitale, la connettività e le nuove tecnologie - Direzione generale per il digitale e le telecomunicazioni – Istituto superiore delle comunicazioni e delle tecnologie dell’informazione",
+    "esl_mld": 0.3499,
+    "green_mld": 0.0,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "Ministero del turismo",
+    "esl_mld": 0.3346,
+    "green_mld": 0.0103,
+    "pct_green": 3.1
+  },
+  {
+    "conc": "Regione Emilia-Romagna - Giunta Regionale - Direzione Generale Economia della Conoscenza, del Lavoro e dell'Impresa",
+    "esl_mld": 0.3246,
+    "green_mld": 0.0392,
+    "pct_green": 12.1
+  },
+  {
+    "conc": "Ministero della Cultura - Segretariato Generale",
+    "esl_mld": 0.3235,
+    "green_mld": 0.0,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "Regione Calabria - Dipartimento Sviluppo Economico e Attrattori Culturali",
+    "esl_mld": 0.3126,
+    "green_mld": 0.1216,
+    "pct_green": 38.9
+  },
+  {
+    "conc": "Ministero dell'Economia e delle Finanze - Dipartimento del tesoro",
+    "esl_mld": 0.2962,
+    "green_mld": 0.0,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "Sviluppo Toscana S.p.A.",
+    "esl_mld": 0.2761,
+    "green_mld": 0.0144,
+    "pct_green": 5.2
+  },
+  {
+    "conc": "REGIONE SICILIANA - DIPARTIMENTO ATTIVITA' PRODUTTIVE",
+    "esl_mld": 0.2736,
+    "green_mld": 0.0221,
+    "pct_green": 8.1
+  },
+  {
+    "conc": "Invitalia SpA",
+    "esl_mld": 0.2711,
+    "green_mld": 0.0327,
+    "pct_green": 12.1
+  },
+  {
+    "conc": "USR Regione Marche",
+    "esl_mld": 0.2616,
+    "green_mld": 0.0021,
+    "pct_green": 0.8
+  },
+  {
+    "conc": "Finpiemonte S.P.A.",
+    "esl_mld": 0.2515,
+    "green_mld": 0.0132,
+    "pct_green": 5.2
+  },
+  {
+    "conc": "Regione Lombardia - DG Casa e Housing sociale",
+    "esl_mld": 0.2503,
+    "green_mld": 0.0,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "Gestore dei Servizi Energetici GSE S.p.A.",
+    "esl_mld": 0.2338,
+    "green_mld": 0.0,
+    "pct_green": 0.0
+  },
+  {
+    "conc": "FONDO FOR.TE",
+    "esl_mld": 0.2254,
+    "green_mld": 0.0039,
+    "pct_green": 1.7
+  },
+  {
+    "conc": "Ministero della Cultura - Direzione Generale Spettacolo",
+    "esl_mld": 0.2168,
+    "green_mld": 0.1943,
+    "pct_green": 89.6
+  },
+  {
+    "conc": "Regione Autonoma Friuli-Venezia Giulia - Direzione centrale risorse agroalimentari, forestali e ittiche - Servizio sviluppo rurale",
+    "esl_mld": 0.2115,
+    "green_mld": 0.0025,
+    "pct_green": 1.2
+  },
+  {
+    "conc": "Regione Lombardia - DG Istruzione, Università, Ricerca, Innovazione e Semplificazione",
+    "esl_mld": 0.207,
+    "green_mld": 0.0092,
+    "pct_green": 4.4
+  },
+  {
+    "conc": "Fi.l.s.e. S.p.a.",
+    "esl_mld": 0.1926,
+    "green_mld": 0.0311,
+    "pct_green": 16.1
+  },
+  {
+    "conc": "Regione Autonoma Friuli-Venezia Giulia - Direzione centrale infrastrutture e territorio",
+    "esl_mld": 0.191,
+    "green_mld": 0.0015,
+    "pct_green": 0.8
+  },
+  {
+    "conc": "Unioncamere Lombardia",
+    "esl_mld": 0.1715,
+    "green_mld": 0.0164,
+    "pct_green": 9.6
+  },
+  {
+    "conc": "Lazio Innova S.p.a.",
+    "esl_mld": 0.1712,
+    "green_mld": 0.0446,
+    "pct_green": 26.0
+  }
+]

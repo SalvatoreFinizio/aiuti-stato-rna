@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>Metodologia | RNA Aiuti di Stato</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,wide.67f4c7af.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,wide.67f4c7af.css">
+<link rel="modulepreload" href="./_observablehq/client.00f37301.js">
+<link rel="modulepreload" href="./_observablehq/runtime.607a8173.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.277aeab8.js">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;family=DM+Mono:wght@400&amp;display=swap" rel="stylesheet">
+<style>
+  :root { --sans-serif: 'DM Sans', system-ui, sans-serif; --mono: 'DM Mono', monospace; }
+  body  { font-family: var(--sans-serif); }
+  h1,h2,h3,h4 { font-weight: 400; letter-spacing: -.03em; }
+  #observablehq-header { border-bottom: 1px solid var(--theme-foreground-faintest); }
+  #observablehq-sidebar { border-right: 1px solid var(--theme-foreground-faintest); }
+</style>
+<script type="module">
+
+import "./_observablehq/client.00f37301.js";
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">RNA Aiuti di Stato</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./">Home</a></li>
+    <li class="observablehq-link"><a href="./regioni">Regioni</a></li>
+    <li class="observablehq-link"><a href="./settori">Settori ATECO</a></li>
+    <li class="observablehq-link"><a href="./beneficiari">Beneficiari</a></li>
+    <li class="observablehq-link"><a href="./tempo">Serie temporale</a></li>
+    <li class="observablehq-link"><a href="./green">Focus Green/Energia</a></li>
+    <li class="observablehq-link"><a href="./digital">Focus Digitale</a></li>
+    <li class="observablehq-link"><a href="./concedenti">Concedenti</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./metodologia">Metodologia</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#glossario">Glossario</a></li>
+<li class="observablehq-secondary-link"><a href="#perimetro-green-energia">Perimetro Green/Energia</a></li>
+<li class="observablehq-secondary-link"><a href="#perimetro-digitale">Perimetro Digitale</a></li>
+<li class="observablehq-secondary-link"><a href="#normalizzazione-concedenti">Normalizzazione concedenti</a></li>
+<li class="observablehq-secondary-link"><a href="#granularita-provinciale">Granularità provinciale</a></li>
+<li class="observablehq-secondary-link"><a href="#anomalie-note">Anomalie note</a></li>
+<li class="observablehq-secondary-link"><a href="#licenza">Licenza</a></li>
+</ol>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="nota-metodologica" tabindex="-1"><a class="observablehq-header-anchor" href="#nota-metodologica">Nota Metodologica</a></h1>
+<h2 id="fonte-dei-dati" tabindex="-1"><a class="observablehq-header-anchor" href="#fonte-dei-dati">Fonte dei dati</a></h2>
+<p>I dati provengono dal <strong>Registro Nazionale Aiuti di Stato (RNA)</strong> — <a href="https://www.rna.gov.it" target="_blank" rel="noopener noreferrer">rna.gov.it</a> — formato Open Data XML, aggiornato mensilmente dall'Autorità Garante della Concorrenza e del Mercato (AGCM).</p>
+<p><strong>Copertura</strong>: 53 file mensili, aprile 2023 – marzo 2026.</p>
+<table>
+<thead>
+<tr>
+<th>Metrica</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concessioni totali</td>
+<td>14.347.964</td>
+</tr>
+<tr>
+<td>ESL totale</td>
+<td>€ 166,23 mld</td>
+</tr>
+<tr>
+<td>Periodo</td>
+<td>Apr 2023 – Mar 2026 (36 mesi)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="glossario" tabindex="-1"><a class="observablehq-header-anchor" href="#glossario">Glossario</a></h2>
+<table>
+<thead>
+<tr>
+<th>Termine</th>
+<th>Definizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ESL</strong></td>
+<td>Equivalente Sovvenzione Lorda — misura standardizzata UE del vantaggio economico netto</td>
+</tr>
+<tr>
+<td><strong>CAR</strong></td>
+<td>Codice Aiuto Registro — identificativo univoco della misura</td>
+</tr>
+<tr>
+<td><strong>COR</strong></td>
+<td>Codice Oggetto Registro — identificativo della singola concessione</td>
+</tr>
+<tr>
+<td><strong>Concessione</strong></td>
+<td>Singolo atto di erogazione dell'aiuto a un beneficiario</td>
+</tr>
+<tr>
+<td><strong>Misura</strong></td>
+<td>Regime di aiuto approvato dalla Commissione UE (es. GBER, TCTF)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="perimetro-green-energia" tabindex="-1"><a class="observablehq-header-anchor" href="#perimetro-green-energia">Perimetro Green/Energia</a></h2>
+<p>Il tagging green usa <strong>due definizioni</strong>:</p>
+<p><strong>Larga</strong> (default nella dashboard): unione di tre canali</p>
+<ol>
+<li>ATECO D.35 (produzione/distribuzione energia elettrica, gas, vapore)</li>
+<li><code>DES_OBIETTIVO</code> con keyword: <em>green, ambiente, rinnovab, energia, clima, emissioni, decarbonizzaz</em></li>
+<li>Regolamenti TCTF (Temporary Crisis and Transition Framework) energivori</li>
+</ol>
+<p>→ <strong>€ 21,7 mld</strong> (13,1 % del totale)</p>
+<p><strong>Stretta</strong>: solo <code>DES_OBIETTIVO</code> con keyword green/ambiente esplicita
+→ valore inferiore (sovrapposizione limitata con ATECO D.35)</p>
+<p>La forte sovrapposizione tra i tre canali implica che la somma sarebbe &gt; 100 % — si usa l'unione.</p>
+<h2 id="perimetro-digitale" tabindex="-1"><a class="observablehq-header-anchor" href="#perimetro-digitale">Perimetro Digitale</a></h2>
+<p>Il tagging digital include:</p>
+<ul>
+<li>ATECO J.58 (editoria), J.59 (audiovisivo/cinema), J.60 (broadcasting), J.61 (telecomunicazioni), J.62 (software/IT consulting), J.63 (data center/cloud)</li>
+<li>ATECO M.72 (ricerca e sviluppo)</li>
+<li><code>DES_OBIETTIVO</code> con keyword: <em>digitale, industria 4.0, transizione 5.0, IA, intelligenza artificiale, banda ultra, cloud, ICT</em></li>
+</ul>
+<p>→ <strong>€ 9,3 mld</strong> (5,6 % del totale)</p>
+<p><strong>Nota</strong>: il credito d'imposta cinema (DL 220/2016, ATECO J.59) è il principale contributore in termini di ESL. Va distinto dagli incentivi "Industria 4.0" (beni strumentali), che beneficiano imprese manifatturiere (ATECO C) classificate per il loro settore, non per il tipo di bene acquistato.</p>
+<h2 id="normalizzazione-concedenti" tabindex="-1"><a class="observablehq-header-anchor" href="#normalizzazione-concedenti">Normalizzazione concedenti</a></h2>
+<p>I top 50 concedenti sono normalizzati tramite <code>etl/cleanup/concedenti_map.csv</code> per deduplicare varianti grafiche (es. "GSE – Gestore Servizi Energetici S.p.A." vs "GSE - Gestore servizi Energetici S.p.A."). Questo copre ~95 % dell'ESL totale.</p>
+<h2 id="granularita-provinciale" tabindex="-1"><a class="observablehq-header-anchor" href="#granularita-provinciale">Granularità provinciale</a></h2>
+<p>Il tracciato RNA non espone il dato provinciale del beneficiario. La granularità disponibile è <strong>regionale</strong> (<code>REGIONE_BENEFICIARIO</code>).</p>
+<p>Per codici fiscali a 16 caratteri (persone fisiche, ditte individuali, ~40 % dei record), si potrebbe estrarre il codice catastale del comune di nascita (char 12–15) — non implementato in questa versione, con copertura attesa ~70 % e caveat (luogo di nascita ≠ sede d'impresa).</p>
+<h2 id="anomalie-note" tabindex="-1"><a class="observablehq-header-anchor" href="#anomalie-note">Anomalie note</a></h2>
+<ul>
+<li><strong>BAR.MA SNC</strong> (CF 02408030274): € 2,41 mld, improbabile per una società in nome collettivo. Probabile errore di inserimento del concedente. Incluso nei totali ma segnalato nelle tabelle.</li>
+<li>Alcune denominazioni contengono caratteri speciali da encoding XML non UTF-8: normalizzati con <code>lxml recover=True</code>.</li>
+</ul>
+<h2 id="licenza" tabindex="-1"><a class="observablehq-header-anchor" href="#licenza">Licenza</a></h2>
+<p>Dati RNA: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> — Autorità Garante della Concorrenza e del Mercato.
+Elaborazione e visualizzazioni: libero uso con attribuzione.</p>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./concedenti"><span>Concedenti</span></a></nav>
+<div>RNA Aiuti di Stato · Apr 2023 – Mar 2026 · Elaborazione propria</div>
+</footer>
+</div>
+</body>
+</html>
