@@ -214,8 +214,25 @@
       .g2, .g3l, .map-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
-      .wrap { padding: 0 18px; }
+      .wrap { padding: 0 16px; }
+      html { font-size: 14px; }
       .hdr-tags { display: none; }
+      /* Section headers stack vertically */
+      .sec-hd { flex-direction: column; gap: 4px; align-items: flex-start; }
+      /* Misura list: hide bar column, keep rank / name / value */
+      .misura-item { grid-template-columns: 18px 1fr 68px; }
+      .m-bar-wrap { display: none; }
+      /* Charts: reduce fixed heights for tall charts */
+      .chart-h { overflow: hidden; }
+      /* Footer: stack */
+      .foot { flex-direction: column; gap: 8px; }
+    }
+    @media (max-width: 380px) {
+      /* KPI: single column on very small screens */
+      .kpi-row { grid-template-columns: 1fr; }
+      .kpi { border-right: none !important; padding-left: 0 !important; }
+      .kpi + .kpi { border-top: 1px solid var(--border); }
+      .kpi-val { font-size: 26px; }
     }
   </style>
 </head>
@@ -674,22 +691,41 @@ function eslColor(esl) {
     poly.setAttribute('stroke', '#111110');
     poly.setAttribute('stroke-width', '1');
     poly.style.cursor = 'pointer';
-    poly.addEventListener('mouseenter', () => {
-      poly.setAttribute('stroke', '#e0b84a');
-      poly.setAttribute('stroke-width', '1.5');
+    const showTip = (x, y) => {
       tip.style.display = 'block';
       tip.innerHTML = `<strong>${reg.name}</strong>
         <div class="tt-esl">€ ${reg.esl.toFixed(2)} mld</div>
         <div class="tt-sub">${reg.pct.toFixed(2)} % del totale ESL · Rank #${reg.rank}</div>`;
+      tip.style.left = Math.min(x + 14, window.innerWidth - 190) + 'px';
+      tip.style.top  = Math.max(y - 8, 10) + 'px';
+    };
+    poly.addEventListener('mouseenter', e => {
+      poly.setAttribute('stroke', '#e0b84a');
+      poly.setAttribute('stroke-width', '1.5');
+      showTip(e.clientX, e.clientY);
     });
-    poly.addEventListener('mousemove', e => {
-      tip.style.left = (e.clientX + 14) + 'px';
-      tip.style.top  = (e.clientY - 8)  + 'px';
-    });
+    poly.addEventListener('mousemove', e => showTip(e.clientX, e.clientY));
     poly.addEventListener('mouseleave', () => {
       poly.setAttribute('stroke', '#111110');
       poly.setAttribute('stroke-width', '1');
       tip.style.display = 'none';
+    });
+    poly.addEventListener('touchstart', e => {
+      e.preventDefault();
+      svg.querySelectorAll('polygon').forEach(p => {
+        p.setAttribute('stroke', '#111110'); p.setAttribute('stroke-width', '1');
+      });
+      poly.setAttribute('stroke', '#e0b84a');
+      poly.setAttribute('stroke-width', '1.5');
+      const t = e.touches[0];
+      showTip(t.clientX, t.clientY - 60);
+    }, { passive: false });
+    poly.addEventListener('touchend', () => {
+      setTimeout(() => {
+        poly.setAttribute('stroke', '#111110');
+        poly.setAttribute('stroke-width', '1');
+        tip.style.display = 'none';
+      }, 2000);
     });
     svg.appendChild(poly);
     if (reg.esl > 1.0) {
