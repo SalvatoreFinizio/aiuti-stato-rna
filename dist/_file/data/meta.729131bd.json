@@ -1,0 +1,13 @@
+{
+  "totale_concessioni": 14347964,
+  "totale_esl": 166230621943.18,
+  "totale_esl_mld": 166.231,
+  "esl_green_mld": 21.744,
+  "pct_green": 13.08,
+  "esl_digital_mld": 9.3,
+  "pct_digital": 5.59,
+  "data_min": "2023-04",
+  "data_max": "2026-03",
+  "n_mesi": 36,
+  "generato": "2026-05-28T11:58:30"
+}
