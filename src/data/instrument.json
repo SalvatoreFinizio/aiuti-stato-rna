@@ -1,0 +1,272 @@
+{
+  "totals": [
+    {
+      "bucket": "TAX_CREDIT",
+      "esl_mld": 75.686,
+      "n": 8477730
+    },
+    {
+      "bucket": "GUARANTEE",
+      "esl_mld": 293.99,
+      "n": 4561681
+    },
+    {
+      "bucket": "GRANT",
+      "esl_mld": 128.207,
+      "n": 9711777
+    },
+    {
+      "bucket": "RISK_FINANCE",
+      "esl_mld": 7.609,
+      "n": 2260586
+    },
+    {
+      "bucket": "LOAN",
+      "esl_mld": 4.235,
+      "n": 181643
+    }
+  ],
+  "by_year": {
+    "2022": {
+      "LOAN": 0.619,
+      "GRANT": 20.107,
+      "TAX_CREDIT": 12.494,
+      "GUARANTEE": 46.663,
+      "RISK_FINANCE": 0.151
+    },
+    "2023": {
+      "GRANT": 15.802,
+      "TAX_CREDIT": 13.368,
+      "LOAN": 0.513,
+      "RISK_FINANCE": 6.48,
+      "GUARANTEE": 47.002
+    },
+    "2021": {
+      "GRANT": 20.95,
+      "LOAN": 0.647,
+      "GUARANTEE": 95.688,
+      "RISK_FINANCE": 0.027,
+      "TAX_CREDIT": 6.059
+    },
+    "2020": {
+      "GRANT": 7.174,
+      "LOAN": 0.647,
+      "GUARANTEE": 94.145,
+      "RISK_FINANCE": 0.153,
+      "TAX_CREDIT": 4.291
+    },
+    "2019": {
+      "LOAN": 0.081,
+      "GRANT": 5.315,
+      "GUARANTEE": 0.982,
+      "TAX_CREDIT": 1.011,
+      "RISK_FINANCE": 0.113
+    },
+    "2018": {
+      "LOAN": 0.1,
+      "GRANT": 6.413,
+      "GUARANTEE": 1.005,
+      "RISK_FINANCE": 0.09,
+      "TAX_CREDIT": 1.118
+    },
+    "2017": {
+      "GRANT": 3.532,
+      "RISK_FINANCE": 0.094,
+      "LOAN": 0.045,
+      "GUARANTEE": 0.294,
+      "TAX_CREDIT": 0.622
+    },
+    "2016": {
+      "TAX_CREDIT": 0.005,
+      "GRANT": 0.203,
+      "LOAN": 0.016,
+      "RISK_FINANCE": 0.002,
+      "GUARANTEE": 0.0
+    },
+    "2024": {
+      "GRANT": 26.237,
+      "RISK_FINANCE": 0.237,
+      "GUARANTEE": 5.591,
+      "LOAN": 0.675,
+      "TAX_CREDIT": 12.364
+    },
+    "2025": {
+      "LOAN": 0.721,
+      "GRANT": 17.849,
+      "GUARANTEE": 2.104,
+      "TAX_CREDIT": 22.109,
+      "RISK_FINANCE": 0.253
+    },
+    "2026": {
+      "GRANT": 4.627,
+      "LOAN": 0.171,
+      "GUARANTEE": 0.517,
+      "TAX_CREDIT": 2.246,
+      "RISK_FINANCE": 0.008
+    }
+  },
+  "cross": [
+    {
+      "legal": "DE_MINIMIS",
+      "instr": "LOAN",
+      "esl_mld": 1.395,
+      "n": 130877
+    },
+    {
+      "legal": "GBER",
+      "instr": "GRANT",
+      "esl_mld": 34.329,
+      "n": 719491
+    },
+    {
+      "legal": "DE_MINIMIS",
+      "instr": "GRANT",
+      "esl_mld": 16.468,
+      "n": 2257502
+    },
+    {
+      "legal": "COVID_TF",
+      "instr": "TAX_CREDIT",
+      "esl_mld": 22.062,
+      "n": 5329182
+    },
+    {
+      "legal": "DE_MINIMIS",
+      "instr": "GUARANTEE",
+      "esl_mld": 10.239,
+      "n": 1431084
+    },
+    {
+      "legal": "OTHER_NOTIFIED",
+      "instr": "GRANT",
+      "esl_mld": 47.032,
+      "n": 386204
+    },
+    {
+      "legal": "COVID_TF",
+      "instr": "GRANT",
+      "esl_mld": 25.782,
+      "n": 6331252
+    },
+    {
+      "legal": "GBER",
+      "instr": "LOAN",
+      "esl_mld": 1.22,
+      "n": 15766
+    },
+    {
+      "legal": "SIEG",
+      "instr": "GRANT",
+      "esl_mld": 2.894,
+      "n": 2992
+    },
+    {
+      "legal": "DE_MINIMIS",
+      "instr": "TAX_CREDIT",
+      "esl_mld": 4.752,
+      "n": 880910
+    },
+    {
+      "legal": "COVID_TF",
+      "instr": "GUARANTEE",
+      "esl_mld": 221.709,
+      "n": 2920044
+    },
+    {
+      "legal": "DE_MINIMIS",
+      "instr": "RISK_FINANCE",
+      "esl_mld": 0.985,
+      "n": 18388
+    },
+    {
+      "legal": "GBER",
+      "instr": "GUARANTEE",
+      "esl_mld": 1.416,
+      "n": 62226
+    },
+    {
+      "legal": "GBER",
+      "instr": "RISK_FINANCE",
+      "esl_mld": 0.135,
+      "n": 689
+    },
+    {
+      "legal": "UKRAINE_TF",
+      "instr": "GUARANTEE",
+      "esl_mld": 60.527,
+      "n": 146756
+    },
+    {
+      "legal": "GBER",
+      "instr": "TAX_CREDIT",
+      "esl_mld": 17.642,
+      "n": 798508
+    },
+    {
+      "legal": "OTHER_NOTIFIED",
+      "instr": "TAX_CREDIT",
+      "esl_mld": 20.164,
+      "n": 77650
+    },
+    {
+      "legal": "COVID_TF",
+      "instr": "RISK_FINANCE",
+      "esl_mld": 6.436,
+      "n": 2241497
+    },
+    {
+      "legal": "COVID_TF",
+      "instr": "LOAN",
+      "esl_mld": 1.386,
+      "n": 34825
+    },
+    {
+      "legal": "UKRAINE_TF",
+      "instr": "TAX_CREDIT",
+      "esl_mld": 11.05,
+      "n": 1391457
+    },
+    {
+      "legal": "UKRAINE_TF",
+      "instr": "GRANT",
+      "esl_mld": 1.702,
+      "n": 14336
+    },
+    {
+      "legal": "UKRAINE_TF",
+      "instr": "LOAN",
+      "esl_mld": 0.075,
+      "n": 99
+    },
+    {
+      "legal": "OTHER_NOTIFIED",
+      "instr": "LOAN",
+      "esl_mld": 0.16,
+      "n": 76
+    },
+    {
+      "legal": "OTHER_NOTIFIED",
+      "instr": "GUARANTEE",
+      "esl_mld": 0.099,
+      "n": 1571
+    },
+    {
+      "legal": "SIEG",
+      "instr": "RISK_FINANCE",
+      "esl_mld": 0.009,
+      "n": 7
+    },
+    {
+      "legal": "SIEG",
+      "instr": "TAX_CREDIT",
+      "esl_mld": 0.016,
+      "n": 23
+    },
+    {
+      "legal": "OTHER_NOTIFIED",
+      "instr": "RISK_FINANCE",
+      "esl_mld": 0.044,
+      "n": 5
+    }
+  ]
+}
