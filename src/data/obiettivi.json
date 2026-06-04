@@ -1,0 +1,792 @@
+{
+  "totals": [
+    {
+      "bucket": "CRISIS_RESPONSE",
+      "esl_mld": 351.997,
+      "n": 18647434
+    },
+    {
+      "bucket": "ENVIRONMENT",
+      "esl_mld": 34.587,
+      "n": 93408
+    },
+    {
+      "bucket": "REGIONAL",
+      "esl_mld": 23.171,
+      "n": 644898
+    },
+    {
+      "bucket": "SME",
+      "esl_mld": 21.64,
+      "n": 2483607
+    },
+    {
+      "bucket": "OTHER",
+      "esl_mld": 19.074,
+      "n": 647837
+    },
+    {
+      "bucket": "R_D",
+      "esl_mld": 12.846,
+      "n": 118121
+    },
+    {
+      "bucket": "TRAINING",
+      "esl_mld": 9.285,
+      "n": 994764
+    },
+    {
+      "bucket": "BROADBAND",
+      "esl_mld": 7.199,
+      "n": 229
+    },
+    {
+      "bucket": "EMPLOYMENT",
+      "esl_mld": 7.174,
+      "n": 1067312
+    },
+    {
+      "bucket": "SECTORAL",
+      "esl_mld": 7.12,
+      "n": 114106
+    },
+    {
+      "bucket": "CULTURE",
+      "esl_mld": 6.023,
+      "n": 53951
+    },
+    {
+      "bucket": "DISASTER",
+      "esl_mld": 3.561,
+      "n": 68761
+    },
+    {
+      "bucket": "SIEG",
+      "esl_mld": 2.958,
+      "n": 6572
+    },
+    {
+      "bucket": "SPORT_LEISURE",
+      "esl_mld": 2.58,
+      "n": 105227
+    },
+    {
+      "bucket": "RISK_FINANCE",
+      "esl_mld": 0.325,
+      "n": 28231
+    },
+    {
+      "bucket": "RESCUE",
+      "esl_mld": 0.189,
+      "n": 13315
+    }
+  ],
+  "by_year": {
+    "2016": {
+      "REGIONAL": 0.045,
+      "SPORT_LEISURE": 0.004,
+      "R_D": 0.091,
+      "SME": 0.015,
+      "RISK_FINANCE": 0.0,
+      "CULTURE": 0.01,
+      "TRAINING": 0.017,
+      "EMPLOYMENT": 0.0,
+      "OTHER": 0.015,
+      "ENVIRONMENT": 0.0,
+      "SIEG": 0.02,
+      "SECTORAL": 0.0,
+      "BROADBAND": 0.007,
+      "DISASTER": 0.0
+    },
+    "2017": {
+      "R_D": 0.56,
+      "SECTORAL": 0.011,
+      "SME": 0.579,
+      "OTHER": 0.147,
+      "TRAINING": 0.159,
+      "EMPLOYMENT": 0.407,
+      "REGIONAL": 0.427,
+      "SPORT_LEISURE": 0.032,
+      "CULTURE": 0.031,
+      "SIEG": 0.141,
+      "DISASTER": 0.035,
+      "ENVIRONMENT": 0.554,
+      "RISK_FINANCE": 0.008,
+      "BROADBAND": 1.489,
+      "CRISIS_RESPONSE": 0.001,
+      "RESCUE": 0.007
+    },
+    "2018": {
+      "SME": 1.811,
+      "REGIONAL": 0.795,
+      "OTHER": 0.252,
+      "R_D": 1.322,
+      "ENVIRONMENT": 2.38,
+      "TRAINING": 0.528,
+      "EMPLOYMENT": 1.077,
+      "SPORT_LEISURE": 0.156,
+      "SECTORAL": 0.022,
+      "RISK_FINANCE": 0.005,
+      "CULTURE": 0.096,
+      "DISASTER": 0.134,
+      "SIEG": 0.147,
+      "RESCUE": 0.0,
+      "CRISIS_RESPONSE": 0.0,
+      "BROADBAND": 0.0
+    },
+    "2019": {
+      "SME": 1.758,
+      "REGIONAL": 0.816,
+      "EMPLOYMENT": 0.715,
+      "R_D": 0.795,
+      "SPORT_LEISURE": 0.114,
+      "DISASTER": 0.237,
+      "OTHER": 0.227,
+      "TRAINING": 0.505,
+      "SECTORAL": 0.085,
+      "RISK_FINANCE": 0.006,
+      "CULTURE": 0.068,
+      "ENVIRONMENT": 1.872,
+      "SIEG": 0.168,
+      "RESCUE": 0.025,
+      "BROADBAND": 0.109
+    },
+    "2020": {
+      "SME": 2.936,
+      "R_D": 0.809,
+      "SPORT_LEISURE": 0.252,
+      "REGIONAL": 3.007,
+      "OTHER": 0.358,
+      "DISASTER": 0.518,
+      "TRAINING": 0.418,
+      "EMPLOYMENT": 0.494,
+      "ENVIRONMENT": 2.046,
+      "SIEG": 0.341,
+      "SECTORAL": 0.437,
+      "CULTURE": 0.076,
+      "CRISIS_RESPONSE": 94.667,
+      "RESCUE": 0.002,
+      "RISK_FINANCE": 0.041,
+      "BROADBAND": 0.008
+    },
+    "2021": {
+      "REGIONAL": 1.93,
+      "CRISIS_RESPONSE": 101.111,
+      "SME": 2.338,
+      "R_D": 0.831,
+      "TRAINING": 0.598,
+      "OTHER": 8.125,
+      "CULTURE": 0.111,
+      "EMPLOYMENT": 0.698,
+      "SPORT_LEISURE": 0.284,
+      "DISASTER": 0.778,
+      "SECTORAL": 0.424,
+      "ENVIRONMENT": 5.595,
+      "RESCUE": 0.006,
+      "RISK_FINANCE": 0.056,
+      "SIEG": 0.212,
+      "BROADBAND": 0.274
+    },
+    "2022": {
+      "SME": 2.1,
+      "REGIONAL": 2.615,
+      "R_D": 1.753,
+      "DISASTER": 0.927,
+      "TRAINING": 1.158,
+      "CRISIS_RESPONSE": 53.385,
+      "SPORT_LEISURE": 0.248,
+      "BROADBAND": 4.741,
+      "OTHER": 5.096,
+      "SIEG": 0.9,
+      "EMPLOYMENT": 0.904,
+      "CULTURE": 1.854,
+      "RESCUE": 0.022,
+      "ENVIRONMENT": 3.715,
+      "SECTORAL": 0.58,
+      "RISK_FINANCE": 0.038
+    },
+    "2023": {
+      "CULTURE": 1.802,
+      "SME": 2.519,
+      "R_D": 1.97,
+      "REGIONAL": 3.194,
+      "CRISIS_RESPONSE": 64.353,
+      "OTHER": 1.212,
+      "DISASTER": 0.228,
+      "SECTORAL": 0.904,
+      "EMPLOYMENT": 0.657,
+      "ENVIRONMENT": 3.812,
+      "SPORT_LEISURE": 0.307,
+      "RISK_FINANCE": 0.063,
+      "TRAINING": 1.837,
+      "RESCUE": 0.004,
+      "SIEG": 0.302
+    },
+    "2024": {
+      "DISASTER": 0.271,
+      "SME": 3.338,
+      "CRISIS_RESPONSE": 24.354,
+      "TRAINING": 2.412,
+      "ENVIRONMENT": 3.961,
+      "EMPLOYMENT": 0.673,
+      "R_D": 2.079,
+      "OTHER": 0.888,
+      "SPORT_LEISURE": 0.524,
+      "REGIONAL": 4.623,
+      "CULTURE": 0.95,
+      "SECTORAL": 0.772,
+      "RESCUE": 0.004,
+      "RISK_FINANCE": 0.051,
+      "SIEG": 0.203
+    },
+    "2025": {
+      "SME": 3.488,
+      "ENVIRONMENT": 10.399,
+      "SECTORAL": 3.647,
+      "REGIONAL": 5.181,
+      "TRAINING": 1.374,
+      "R_D": 2.067,
+      "CRISIS_RESPONSE": 12.263,
+      "SPORT_LEISURE": 0.511,
+      "OTHER": 0.786,
+      "EMPLOYMENT": 1.337,
+      "SIEG": 0.163,
+      "DISASTER": 0.366,
+      "CULTURE": 0.71,
+      "BROADBAND": 0.571,
+      "RISK_FINANCE": 0.055,
+      "RESCUE": 0.117
+    },
+    "2026": {
+      "SME": 0.757,
+      "REGIONAL": 0.537,
+      "R_D": 0.57,
+      "SPORT_LEISURE": 0.148,
+      "SECTORAL": 0.239,
+      "ENVIRONMENT": 0.252,
+      "TRAINING": 0.279,
+      "EMPLOYMENT": 0.211,
+      "CRISIS_RESPONSE": 1.864,
+      "OTHER": 1.969,
+      "SIEG": 0.361,
+      "CULTURE": 0.315,
+      "RESCUE": 0.0,
+      "DISASTER": 0.066,
+      "RISK_FINANCE": 0.001
+    }
+  },
+  "top_misure": {
+    "CRISIS_RESPONSE": [
+      {
+        "car": "12627",
+        "titolo": "COVID-19:  Fondo di garanzia PMI Aiuto di stato SA. 56966 (2020/N)",
+        "esl_mld": 92.327,
+        "n": 1388100
+      },
+      {
+        "car": "16978",
+        "titolo": "Garanzia Italia",
+        "esl_mld": 42.069,
+        "n": 8579
+      },
+      {
+        "car": "18730",
+        "titolo": "COVID-19: Fondo di garanzia PMI - Modifica SA.56966, SA.57625, SA.59655",
+        "esl_mld": 37.176,
+        "n": 394861
+      },
+      {
+        "car": "24682",
+        "titolo": "Garanzia SupportItalia",
+        "esl_mld": 29.407,
+        "n": 4256
+      },
+      {
+        "car": "16615",
+        "titolo": "COVID-19:  Fondo di garanzia PMI Aiuto di stato SA.59655 - Proroga SA.56966",
+        "esl_mld": 28.85,
+        "n": 372715
+      }
+    ],
+    "ENVIRONMENT": [
+      {
+        "car": "2172",
+        "titolo": "Agevolazioni a favore delle imprese a forte consumo di energia elettrica",
+        "esl_mld": 10.383,
+        "n": 24874
+      },
+      {
+        "car": "5711",
+        "titolo": "Decreto 2 marzo 2018: Promozione dell’uso del biometano e degli altri biocarburanti avanza",
+        "esl_mld": 4.948,
+        "n": 160
+      },
+      {
+        "car": "9587",
+        "titolo": "Incentivazione dell'energia elettrica prodotta dagli impianti eolici on shore, solari foto",
+        "esl_mld": 4.739,
+        "n": 2393
+      },
+      {
+        "car": "24991",
+        "titolo": "Sviluppo del biometano, secondo criteri per promuovere l’economia circolare (PNNR M2C2 Inv",
+        "esl_mld": 3.075,
+        "n": 98
+      },
+      {
+        "car": "2123",
+        "titolo": "DM 23 GIUGNO 2016 - REGIME DI INCENTIVAZIONE DELL'ENERGIA ELETTRICA PRODOTTA DA FONTI RINN",
+        "esl_mld": 3.05,
+        "n": 2800
+      }
+    ],
+    "REGIONAL": [
+      {
+        "car": "29698",
+        "titolo": "Credito d'imposta per investimenti nel Mezzogiorno e nelle ZES- art.1,c.98, legge 208/2015",
+        "esl_mld": 5.627,
+        "n": 139596
+      },
+      {
+        "car": "19795",
+        "titolo": "Credito d'imposta per investimenti nel Mezzogiorno e nelle ZES- art.1,c.98, legge 208/2015",
+        "esl_mld": 3.201,
+        "n": 90010
+      },
+      {
+        "car": "8152",
+        "titolo": "Credito d'imposta per acquisizione beni strumentali nuovi per strutture produttive zone as",
+        "esl_mld": 2.661,
+        "n": 66016
+      },
+      {
+        "car": "16100",
+        "titolo": "Deduzione forfettaria per lavoro dipendente nelle regioini Abruzzo, Basilicata, Calabria, ",
+        "esl_mld": 1.686,
+        "n": 158847
+      },
+      {
+        "car": "32040",
+        "titolo": "Contratti di sviluppo di cui all'articolo 43 del decreto-legge 25 giugno 2008, n.112, conv",
+        "esl_mld": 1.006,
+        "n": 138
+      }
+    ],
+    "SME": [
+      {
+        "car": "28040",
+        "titolo": "Fondo di garanzia per le piccole e medie imprese",
+        "esl_mld": 4.056,
+        "n": 496934
+      },
+      {
+        "car": "526",
+        "titolo": "Fondo di garanzia per le piccole e medie imprese",
+        "esl_mld": 3.624,
+        "n": 398378
+      },
+      {
+        "car": "16617",
+        "titolo": "Fondo di garanzia per le piccole e medie imprese",
+        "esl_mld": 3.195,
+        "n": 394288
+      },
+      {
+        "car": "4131",
+        "titolo": "Resto al Sud",
+        "esl_mld": 0.832,
+        "n": 18344
+      },
+      {
+        "car": "22941",
+        "titolo": "SA.57496 (2021/N) – Italy – Broadband vouchers for SMEs",
+        "esl_mld": 0.39,
+        "n": 367088
+      }
+    ],
+    "OTHER": [
+      {
+        "car": "12527",
+        "titolo": "Mercato della capacità",
+        "esl_mld": 14.19,
+        "n": 157
+      },
+      {
+        "car": "10373",
+        "titolo": "Credito d'imposta sugli investimenti pubblicitari incrementali su quotidiani, periodici e ",
+        "esl_mld": 0.252,
+        "n": 57126
+      },
+      {
+        "car": "16079",
+        "titolo": "regime speciale per i lavoratori impatriati",
+        "esl_mld": 0.246,
+        "n": 11639
+      },
+      {
+        "car": "16916",
+        "titolo": "Incentivi fiscali per investimenti in start up e PMI innovative",
+        "esl_mld": 0.227,
+        "n": 25703
+      },
+      {
+        "car": "24603",
+        "titolo": "Sviluppo della Logistica agroalimentare dei mercati agroalimentari all'ingrosso-Investimen",
+        "esl_mld": 0.162,
+        "n": 20
+      }
+    ],
+    "R_D": [
+      {
+        "car": "22766",
+        "titolo": "Intervento del fondo per la crescita sostenibile a favore di progetti di ricerca e svilupp",
+        "esl_mld": 1.258,
+        "n": 1728
+      },
+      {
+        "car": "4452",
+        "titolo": "Disposizioni per la concessione delle agevolazioni finanziarie, a norma degli articoli 60,",
+        "esl_mld": 0.622,
+        "n": 3317
+      },
+      {
+        "car": "16781",
+        "titolo": "FCS - Accordi SNSI e Calcolo ad alte prestazioni",
+        "esl_mld": 0.46,
+        "n": 742
+      },
+      {
+        "car": "16554",
+        "titolo": "[Titolo V] Regolamento regionale della Puglia per gli aiuti in esenzione (Reg. regionale n",
+        "esl_mld": 0.458,
+        "n": 1184
+      },
+      {
+        "car": "529",
+        "titolo": "FCS HORIZON 2020 - Intervento del Fondo per la crescita sostenibile a favore dei progetti ",
+        "esl_mld": 0.452,
+        "n": 1699
+      }
+    ],
+    "TRAINING": [
+      {
+        "car": "884",
+        "titolo": "Regolamento per i fondi interprofessionali per la formazione continua per la concessioni d",
+        "esl_mld": 3.516,
+        "n": 706442
+      },
+      {
+        "car": "16348",
+        "titolo": "Credito d'imposta formazione 4.0",
+        "esl_mld": 3.195,
+        "n": 112063
+      },
+      {
+        "car": "27402",
+        "titolo": "Contratti di sviluppo agroindustriali - 2023",
+        "esl_mld": 1.102,
+        "n": 200
+      },
+      {
+        "car": "1584",
+        "titolo": "Contratti di Sviluppo Agroindustriali",
+        "esl_mld": 0.606,
+        "n": 132
+      },
+      {
+        "car": "30832",
+        "titolo": "Criteri e modalita' di attuazione del Fondo per l'innovazione in agricoltura.",
+        "esl_mld": 0.1,
+        "n": 693
+      }
+    ],
+    "BROADBAND": [
+      {
+        "car": "22938",
+        "titolo": "Piano “Italia a 1 Giga”",
+        "esl_mld": 3.455,
+        "n": 22
+      },
+      {
+        "car": "2324",
+        "titolo": "Strategia italiana per la Banda Ultra Larga",
+        "esl_mld": 2.154,
+        "n": 26
+      },
+      {
+        "car": "23224",
+        "titolo": "Piano “Italia 5G”",
+        "esl_mld": 1.071,
+        "n": 24
+      },
+      {
+        "car": "17348",
+        "titolo": "FORNITURA DI SERVIZI DI CONNETTIVITÀ INTERNET A BANDA ULTRALARGA PRESSO SEDI SCOLASTICHE S",
+        "esl_mld": 0.437,
+        "n": 15
+      },
+      {
+        "car": "22736",
+        "titolo": "Banda Larga - Piano Isole Minori",
+        "esl_mld": 0.048,
+        "n": 2
+      }
+    ],
+    "EMPLOYMENT": [
+      {
+        "car": "203",
+        "titolo": "Nuova Sabatini - Finanziamenti per l'acquisto di nuovi macchinari, impianti e attrezzature",
+        "esl_mld": 4.472,
+        "n": 266791
+      },
+      {
+        "car": "6047",
+        "titolo": "Incentivo Occupazione Mezzogiorno",
+        "esl_mld": 0.477,
+        "n": 118663
+      },
+      {
+        "car": "10106",
+        "titolo": "Incentivo Occupazione Sviluppo Sud",
+        "esl_mld": 0.262,
+        "n": 58391
+      },
+      {
+        "car": "807",
+        "titolo": "Incentivo per l'assunzione di lavoratori con almeno cinquant'anni d'età disoccupati da olt",
+        "esl_mld": 0.245,
+        "n": 320477
+      },
+      {
+        "car": "1563",
+        "titolo": "Incentivo Occupazione SUD",
+        "esl_mld": 0.194,
+        "n": 43703
+      }
+    ],
+    "SECTORAL": [
+      {
+        "car": "3168",
+        "titolo": "Aiuto alle imprese di trasporti marittimi - registro internazionale italiano",
+        "esl_mld": 2.301,
+        "n": 3070
+      },
+      {
+        "car": "32379",
+        "titolo": "STMicroelectronics – New Silicon Carbide (SiC) Campus with Vertically Integrated Power Mod",
+        "esl_mld": 2.063,
+        "n": 1
+      },
+      {
+        "car": "16293",
+        "titolo": "modifiche al regime d'imposta sul tonnellaggio",
+        "esl_mld": 0.742,
+        "n": 165
+      },
+      {
+        "car": "31957",
+        "titolo": "Regime italiano d'imposta sul tonnellaggio",
+        "esl_mld": 0.498,
+        "n": 31
+      },
+      {
+        "car": "25699",
+        "titolo": "STMicroelectronics – New Silicon Carbide Substrates Plant in Catania",
+        "esl_mld": 0.292,
+        "n": 1
+      }
+    ],
+    "CULTURE": [
+      {
+        "car": "21778",
+        "titolo": "Tax credit per la produzione di opere audiovisive",
+        "esl_mld": 0.984,
+        "n": 884
+      },
+      {
+        "car": "21799",
+        "titolo": "Tax credit per la produzione di opere cinematografiche",
+        "esl_mld": 0.755,
+        "n": 1757
+      },
+      {
+        "car": "21984",
+        "titolo": "Tax Credit per l'attrazione in Italia di investimenti cinematografici e audiovisivi",
+        "esl_mld": 0.55,
+        "n": 163
+      },
+      {
+        "car": "30671",
+        "titolo": "TAX CREDIT PER LA PRODUZIONE DI OPERE AUDIOVISIVE",
+        "esl_mld": 0.322,
+        "n": 174
+      },
+      {
+        "car": "21310",
+        "titolo": "Credito di imposta a favore della produzione cinematografica_DIM_04.08.2017",
+        "esl_mld": 0.273,
+        "n": 742
+      }
+    ],
+    "DISASTER": [
+      {
+        "car": "6371",
+        "titolo": "Commissario ricostruzione sisma 2016 - Interventi a favore delle zone colpite dal sisma 20",
+        "esl_mld": 0.845,
+        "n": 4658
+      },
+      {
+        "car": "22328",
+        "titolo": "Decreto di attuazione delle misure di ristoro previste per i gestori aeroportuali e per i ",
+        "esl_mld": 0.625,
+        "n": 99
+      },
+      {
+        "car": "20522",
+        "titolo": "RISTORI IMPIANTI DI RISALITA A FUNE NEI COMUNI IN COMPRENSORI SCIISTICI",
+        "esl_mld": 0.38,
+        "n": 305
+      },
+      {
+        "car": "14687",
+        "titolo": "Compensazione dei danni patiti come conseguenza diretta dell'evento eccezionale conseguent",
+        "esl_mld": 0.199,
+        "n": 1
+      },
+      {
+        "car": "20655",
+        "titolo": "Ristoro settore fiere, congressi, logistica - trasporto - allestimento",
+        "esl_mld": 0.174,
+        "n": 143
+      }
+    ],
+    "SIEG": [
+      {
+        "car": "32644",
+        "titolo": "Compensazione dell’Onere del servizio postale universale 01/01/2024-30/04/2026- SA.114526",
+        "esl_mld": 0.35,
+        "n": 1
+      },
+      {
+        "car": "19825",
+        "titolo": "Programma \"Sicuro, verde e sociale\"",
+        "esl_mld": 0.257,
+        "n": 99
+      },
+      {
+        "car": "2352",
+        "titolo": "FVG - D.P.REG. 0208/2016",
+        "esl_mld": 0.157,
+        "n": 184
+      },
+      {
+        "car": "15915",
+        "titolo": "Piani di manutenzione programmata delle Aler",
+        "esl_mld": 0.149,
+        "n": 15
+      },
+      {
+        "car": "20301",
+        "titolo": "PAT - SIEG - Edilizia abitativa pubblica - Convenzione con ITEA",
+        "esl_mld": 0.14,
+        "n": 31
+      }
+    ],
+    "SPORT_LEISURE": [
+      {
+        "car": "28250",
+        "titolo": "Finanziamento agevolato per la realizzazione di investimenti per l’innovazione digitale e/",
+        "esl_mld": 0.363,
+        "n": 2702
+      },
+      {
+        "car": "1836",
+        "titolo": "Finanziamenti agevolati per la patrimonializzazione delle PMI esportatrici",
+        "esl_mld": 0.174,
+        "n": 3646
+      },
+      {
+        "car": "10331",
+        "titolo": "6 \"Sviluppo delle aziende agricole e delle imprese\"",
+        "esl_mld": 0.105,
+        "n": 774
+      },
+      {
+        "car": "18216",
+        "titolo": "INTERVENTI REGIONALI A SOSTEGNO DELLE INFRASTRUTTURE SPORTIVE NEI COMPLESSI FUNIVIARI DI I",
+        "esl_mld": 0.105,
+        "n": 107
+      },
+      {
+        "car": "29617",
+        "titolo": "Fondo Impianti Risalita a fune e innevamento artificiale",
+        "esl_mld": 0.088,
+        "n": 30
+      }
+    ],
+    "RISK_FINANCE": [
+      {
+        "car": "16372",
+        "titolo": "Incentivi fiscali all'investimento in start up innovative",
+        "esl_mld": 0.218,
+        "n": 21727
+      },
+      {
+        "car": "1834",
+        "titolo": "misure concernenti la partecipazione di imprese italiane a società miste all'estero - cont",
+        "esl_mld": 0.067,
+        "n": 122
+      },
+      {
+        "car": "19015",
+        "titolo": "Fondo di rotazione \"Anticrisi attività produttive\" per la concessione di finanziamenti age",
+        "esl_mld": 0.017,
+        "n": 997
+      },
+      {
+        "car": "922",
+        "titolo": "Fondo Nazionale Innovazione",
+        "esl_mld": 0.008,
+        "n": 38
+      },
+      {
+        "car": "16539",
+        "titolo": "Liguria L.R. n. 34/2016 - Fondo Strategico Regionale. Misura interventi volti al rafforzam",
+        "esl_mld": 0.003,
+        "n": 106
+      }
+    ],
+    "RESCUE": [
+      {
+        "car": "32985",
+        "titolo": "Fondo FOSIEG 2025",
+        "esl_mld": 0.11,
+        "n": 1
+      },
+      {
+        "car": "7368",
+        "titolo": "Regione Marche - LR 13/2017 - Interventi urgenti per assicurare la continuità del servizio",
+        "esl_mld": 0.025,
+        "n": 1
+      },
+      {
+        "car": "17205",
+        "titolo": "Fondo per la salvaguardia dei livelli occupazionali e la prosecuzione dell'attività d'impr",
+        "esl_mld": 0.013,
+        "n": 3
+      },
+      {
+        "car": "21137",
+        "titolo": "Decreto Sindaco Metropolitano n. 276/2021",
+        "esl_mld": 0.008,
+        "n": 1
+      },
+      {
+        "car": "9292",
+        "titolo": "Aiuto al salvataggio Aerdorica spa",
+        "esl_mld": 0.007,
+        "n": 1
+      }
+    ]
+  }
+}

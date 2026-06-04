@@ -1,0 +1,660 @@
+{
+  "totals": {
+    "esl_mld": 14.195,
+    "n_grants": 475,
+    "n_bene": 354
+  },
+  "top_bene": [
+    {
+      "cf": "05617841001",
+      "denom": "ENEL PRODUZIONE S.P.A.",
+      "esl_mld": 4.526,
+      "n": 7,
+      "regione": "Lazio",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "11957540153",
+      "denom": "A2A S.P.A.",
+      "esl_mld": 2.093,
+      "n": 10,
+      "regione": "Lombardia",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "06722600019",
+      "denom": "EDISON S.P.A.",
+      "esl_mld": 2.048,
+      "n": 4,
+      "regione": "Lombardia",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "16234051007",
+      "denom": "EP CENTRALE OSTIGLIA S.P.A.",
+      "esl_mld": 1.035,
+      "n": 2,
+      "regione": "Lazio",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "16160691008",
+      "denom": "EP CENTRALE TAVAZZANO MONTANASO S.P.A.",
+      "esl_mld": 0.999,
+      "n": 3,
+      "regione": "Lazio",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "00484960588",
+      "denom": "ENI S.P.A.",
+      "esl_mld": 0.643,
+      "n": 4,
+      "regione": "Lazio",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "07756640012",
+      "denom": "SORGENIA S.P.A.",
+      "esl_mld": 0.542,
+      "n": 7,
+      "regione": "Lombardia",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "13049541009",
+      "denom": "METAENERGIAPRODUZIONE S.R.L.",
+      "esl_mld": 0.512,
+      "n": 3,
+      "regione": "Lazio",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "09357630012",
+      "denom": "IREN ENERGIA S.P.A.",
+      "esl_mld": 0.399,
+      "n": 4,
+      "regione": "Piemonte",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "01141160992",
+      "denom": "AXPO ITALIA S.P.A.",
+      "esl_mld": 0.179,
+      "n": 4,
+      "regione": "Lazio",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "03008510210",
+      "denom": "ALPERIA TRADING SRL",
+      "esl_mld": 0.159,
+      "n": 4,
+      "regione": "Provincia Autonoma di Bolzano/Bozen",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "06289781004",
+      "denom": "ENGIE ITALIA SPA",
+      "esl_mld": 0.142,
+      "n": 3,
+      "regione": "Lombardia",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "03027910235",
+      "denom": "DOLOMITI ENERGIA TRADING S.P.A.",
+      "esl_mld": 0.121,
+      "n": 4,
+      "regione": "Provincia Autonoma di Trento",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "01714830195",
+      "denom": "GREEN ENERGY FOR STEEL S.R.L.",
+      "esl_mld": 0.116,
+      "n": 1,
+      "regione": "Lombardia",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "07242841000",
+      "denom": "TIRRENO POWER S.P.A.",
+      "esl_mld": 0.113,
+      "n": 2,
+      "regione": "Lazio",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "12930940155",
+      "denom": "ALPIQ ENERGIA ITALIA S.P.A.",
+      "esl_mld": 0.102,
+      "n": 6,
+      "regione": "Lombardia",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "03544070174",
+      "denom": "DUFERCO ENERGIA S.P.A.",
+      "esl_mld": 0.062,
+      "n": 3,
+      "regione": "Liguria",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "01032450072",
+      "denom": "CVA ENERGIE S.R.L.",
+      "esl_mld": 0.054,
+      "n": 4,
+      "regione": "Valle d'Aosta/Vallée d'Aoste",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "01669090894",
+      "denom": "B2G SICILY S.R.L.",
+      "esl_mld": 0.045,
+      "n": 4,
+      "regione": "Liguria",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "17583221001",
+      "denom": "EP BESS S.R.L.",
+      "esl_mld": 0.045,
+      "n": 1,
+      "regione": "Lazio",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "07305361003",
+      "denom": "ACEA ENERGIA S.P.A.",
+      "esl_mld": 0.027,
+      "n": 4,
+      "regione": "Lazio",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "02924550920",
+      "denom": "FREE ENERGIA S.P.A.",
+      "esl_mld": 0.024,
+      "n": 1,
+      "regione": "Lazio",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "01872010762",
+      "denom": "VEOS S.P.A.",
+      "esl_mld": 0.021,
+      "n": 3,
+      "regione": "Lombardia",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "CZ03437680",
+      "denom": "EP COMMODITIES, A.S.",
+      "esl_mld": 0.019,
+      "n": 2,
+      "regione": "Praha",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "00104340492",
+      "denom": "SOLVAY CHIMICA ITALIA SPA",
+      "esl_mld": 0.018,
+      "n": 4,
+      "regione": "Toscana",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "08737780018",
+      "denom": "BURGO ENERGIA SRL",
+      "esl_mld": 0.014,
+      "n": 4,
+      "regione": "Veneto",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "01629050897",
+      "denom": "ISAB S.R.L.",
+      "esl_mld": 0.014,
+      "n": 2,
+      "regione": "Sicilia",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "12522590962",
+      "denom": "MYT APULIA STORAGE 3 S.R.L.",
+      "esl_mld": 0.014,
+      "n": 1,
+      "regione": "Lombardia",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "13212400157",
+      "denom": "SET S.P.A.",
+      "esl_mld": 0.014,
+      "n": 1,
+      "regione": "Lombardia",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "02057770998",
+      "denom": "EGO ENERGY SOCIETA' A RESPONSABILITA' LIMITATA",
+      "esl_mld": 0.013,
+      "n": 4,
+      "regione": "Liguria",
+      "ateco": "D.35"
+    }
+  ],
+  "by_year": {
+    "2021": {
+      "esl_mld": 7.758,
+      "n": 84
+    },
+    "2022": {
+      "esl_mld": 4.462,
+      "n": 37
+    },
+    "2023": {
+      "esl_mld": 0.075,
+      "n": 106
+    },
+    "2024": {
+      "esl_mld": 0.0,
+      "n": 47
+    },
+    "2025": {
+      "esl_mld": 0.014,
+      "n": 100
+    },
+    "2026": {
+      "esl_mld": 1.887,
+      "n": 101
+    }
+  },
+  "by_misura": [
+    {
+      "car": "12527",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "esl_mld": 14.19,
+      "n": 157
+    },
+    {
+      "car": "24076",
+      "titolo": "Avviso Pubblico n. 05/2022 recante “Avviso Pubblico a sportello a sportello per la concess",
+      "concedente": "Agenzia per la Cybersicurezza Nazionale",
+      "esl_mld": 0.003,
+      "n": 19
+    },
+    {
+      "car": "24515",
+      "titolo": "PON INCLUSIONE FSE 2014/2020  Asse 3 - obiettivo specifico 9.5 - Azione 9.5.5 ACCEDER-E",
+      "concedente": "Invitalia - Agenzia nazionale per l'attrazione degli investimenti e lo sviluppo d'impresa S.p.A.",
+      "esl_mld": 0.001,
+      "n": 83
+    },
+    {
+      "car": "30547",
+      "titolo": "IMPRESA ROSA REGIONE LAZIO",
+      "concedente": "Lazio Innova S.p.a.",
+      "esl_mld": 0.001,
+      "n": 181
+    },
+    {
+      "car": "33034",
+      "titolo": "Rafforzamento infrastruttura tecnologica del Fascicolo Sanitario Elettronico",
+      "concedente": "Azienda Zero",
+      "esl_mld": 0.0,
+      "n": 35
+    }
+  ],
+  "by_concedente": [
+    {
+      "conc": "Terna S.p.A.",
+      "esl_mld": 14.19,
+      "n": 157
+    },
+    {
+      "conc": "Agenzia per la Cybersicurezza Nazionale",
+      "esl_mld": 0.003,
+      "n": 19
+    },
+    {
+      "conc": "Invitalia - Agenzia nazionale per l'attrazione degli investimenti e lo sviluppo d'impresa S.p.A.",
+      "esl_mld": 0.001,
+      "n": 83
+    },
+    {
+      "conc": "Lazio Innova S.p.a.",
+      "esl_mld": 0.001,
+      "n": 181
+    },
+    {
+      "conc": "Azienda Zero",
+      "esl_mld": 0.0,
+      "n": 35
+    }
+  ],
+  "by_regione": [
+    {
+      "regione": "Lazio",
+      "esl_mld": 8.247,
+      "n": 239
+    },
+    {
+      "regione": "Lombardia",
+      "esl_mld": 4.988,
+      "n": 63
+    },
+    {
+      "regione": "Piemonte",
+      "esl_mld": 0.4,
+      "n": 18
+    },
+    {
+      "regione": "Provincia Autonoma di Bolzano/Bozen",
+      "esl_mld": 0.159,
+      "n": 4
+    },
+    {
+      "regione": "Liguria",
+      "esl_mld": 0.127,
+      "n": 19
+    },
+    {
+      "regione": "Provincia Autonoma di Trento",
+      "esl_mld": 0.121,
+      "n": 4
+    },
+    {
+      "regione": "Valle d'Aosta/Vallée d'Aoste",
+      "esl_mld": 0.054,
+      "n": 4
+    },
+    {
+      "regione": "Veneto",
+      "esl_mld": 0.022,
+      "n": 48
+    },
+    {
+      "regione": "Toscana",
+      "esl_mld": 0.02,
+      "n": 10
+    },
+    {
+      "regione": "Praha",
+      "esl_mld": 0.019,
+      "n": 2
+    },
+    {
+      "regione": "Sicilia",
+      "esl_mld": 0.014,
+      "n": 6
+    },
+    {
+      "regione": "Emilia-Romagna",
+      "esl_mld": 0.006,
+      "n": 7
+    },
+    {
+      "regione": "Zürich",
+      "esl_mld": 0.006,
+      "n": 3
+    },
+    {
+      "regione": "Abruzzo",
+      "esl_mld": 0.005,
+      "n": 4
+    },
+    {
+      "regione": "Friuli-Venezia Giulia",
+      "esl_mld": 0.005,
+      "n": 3
+    },
+    {
+      "regione": "Ticino",
+      "esl_mld": 0.001,
+      "n": 3
+    },
+    {
+      "regione": "Campania",
+      "esl_mld": 0.0,
+      "n": 10
+    },
+    {
+      "regione": "Marche",
+      "esl_mld": 0.0,
+      "n": 2
+    },
+    {
+      "regione": "Sardegna",
+      "esl_mld": 0.0,
+      "n": 7
+    },
+    {
+      "regione": "Calabria",
+      "esl_mld": 0.0,
+      "n": 19
+    }
+  ],
+  "by_regolamento": [
+    {
+      "regola": "Reg.(UE) 2015/1589 procedurale aiuti notificati ai sensi dell'art.  108 TFUE",
+      "esl_mld": 14.19,
+      "n": 157
+    },
+    {
+      "regola": "Reg. UE 1407/2013  de minimis generale e ss.mm.ii",
+      "esl_mld": 0.004,
+      "n": 102
+    },
+    {
+      "regola": "Reg. UE 2831/2023  de minimis generale",
+      "esl_mld": 0.001,
+      "n": 216
+    }
+  ],
+  "top_grants": [
+    {
+      "denom": "ENEL PRODUZIONE S.P.A.",
+      "cf": "05617841001",
+      "esl_mld": 1.887,
+      "data": "2021-03-29",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "ENEL PRODUZIONE S.P.A.",
+      "cf": "05617841001",
+      "esl_mld": 1.635,
+      "data": "2022-04-13",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "EDISON S.P.A.",
+      "cf": "06722600019",
+      "esl_mld": 1.151,
+      "data": "2021-03-24",
+      "regione": "Lombardia",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "A2A S.P.A.",
+      "cf": "11957540153",
+      "esl_mld": 1.102,
+      "data": "2022-04-13",
+      "regione": "Lombardia",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "EP CENTRALE TAVAZZANO MONTANASO S.P.A.",
+      "cf": "16160691008",
+      "esl_mld": 0.85,
+      "data": "2021-03-25",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "EPP 2 S.R.L.",
+      "cf": "16234051007",
+      "esl_mld": 0.814,
+      "data": "2022-04-13",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "EDISON S.P.A.",
+      "cf": "06722600019",
+      "esl_mld": 0.645,
+      "data": "2021-03-24",
+      "regione": "Lombardia",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "ENEL PRODUZIONE S.P.A.",
+      "cf": "05617841001",
+      "esl_mld": 0.477,
+      "data": "2026-03-20",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "ENEL PRODUZIONE S.P.A.",
+      "cf": "05617841001",
+      "esl_mld": 0.463,
+      "data": "2021-03-29",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "A2A S.P.A.",
+      "cf": "11957540153",
+      "esl_mld": 0.426,
+      "data": "2021-03-25",
+      "regione": "Lombardia",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "METAENERGIAPRODUZIONE S.R.L.",
+      "cf": "13049541009",
+      "esl_mld": 0.421,
+      "data": "2021-03-25",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "A2A S.P.A.",
+      "cf": "11957540153",
+      "esl_mld": 0.286,
+      "data": "2021-03-23",
+      "regione": "Lombardia",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "ENI S.P.A.",
+      "cf": "00484960588",
+      "esl_mld": 0.236,
+      "data": "2021-03-26",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "A2A S.P.A.",
+      "cf": "11957540153",
+      "esl_mld": 0.221,
+      "data": "2026-03-19",
+      "regione": "Lombardia",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "EP CENTRALE OSTIGLIA S.P.A.",
+      "cf": "16234051007",
+      "esl_mld": 0.221,
+      "data": "2026-03-20",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "EDISON S.P.A.",
+      "cf": "06722600019",
+      "esl_mld": 0.174,
+      "data": "2026-03-20",
+      "regione": "Lombardia",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "ENI S.P.A.",
+      "cf": "00484960588",
+      "esl_mld": 0.166,
+      "data": "2026-03-20",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "IREN ENERGIA S.P.A.",
+      "cf": "09357630012",
+      "esl_mld": 0.165,
+      "data": "2021-03-25",
+      "regione": "Piemonte",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "SORGENIA S.P.A.",
+      "cf": "07756640012",
+      "esl_mld": 0.123,
+      "data": "2026-03-20",
+      "regione": "Lombardia",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    },
+    {
+      "denom": "ENI S.P.A.",
+      "cf": "00484960588",
+      "esl_mld": 0.121,
+      "data": "2021-03-25",
+      "regione": "Lazio",
+      "titolo": "Mercato della capacità",
+      "concedente": "Terna S.p.A.",
+      "obiettivo": "Realizzazione di un importante progetto di comune interesse europeo"
+    }
+  ]
+}
