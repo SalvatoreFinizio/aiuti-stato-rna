@@ -419,6 +419,67 @@
     </div>
   </section>
 
+  <!-- IPCEI — Realizzazione di un importante progetto di comune interesse europeo -->
+  <section>
+    <div class="sec-hd">
+      <h2>Aiuti di comune interesse europeo (<abbr title="Important Projects of Common European Interest — grandi progetti strategici UE finanziati da più Stati membri">IPCEI</abbr>)</h2>
+      <span class="sec-note">Concessioni con obiettivo <em>«Realizzazione di un importante progetto di comune interesse europeo»</em></span>
+    </div>
+
+    <p class="note" style="margin:0 0 18px 0; max-width:820px;">
+      Definizione operativa: solo le concessioni che riportano nel campo <code>DES_OBIETTIVO</code> la dicitura ufficiale
+      <em>«Realizzazione di un importante progetto di comune interesse europeo»</em>.
+      Il dato risultante (€&nbsp;14,2 mld su 475 concessioni e 354 beneficiari) è <strong>quasi interamente costituito dal Mercato della Capacità</strong>
+      (<abbr title="Codice Aiuto Registro — identificativo univoco della misura">CAR</abbr> 12527, Terna SpA), ossia il meccanismo di
+      capacità elettrica che la Commissione UE ha classificato come misura di interesse comune europeo.
+      I grandi progetti strategici associati al termine IPCEI nel discorso pubblico (Microelettronica STMicroelectronics,
+      batterie, idrogeno Hy2Tech/Hy2Use, Cloud, Health Med4Cure) <strong>non appaiono sotto questa etichetta</strong> nel registro
+      e risultano classificati come aiuti a <strong>R&amp;S</strong> o all'<strong>ambiente</strong>.
+    </p>
+
+    <div class="kpi-row" style="margin-bottom:24px;">
+      <div class="kpi">
+        <div class="kpi-label"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> IPCEI (RNA)</div>
+        <div class="kpi-val">€ 14,2</div>
+        <div class="kpi-sub">miliardi · 2,8 % del totale</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Concessioni</div>
+        <div class="kpi-val">475</div>
+        <div class="kpi-sub">atti di erogazione</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Beneficiari distinti</div>
+        <div class="kpi-val">354</div>
+        <div class="kpi-sub">prevalentemente produttori elettrici</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Concedente dominante</div>
+        <div class="kpi-val" style="font-size:1.4rem;">Terna SpA</div>
+        <div class="kpi-sub">99,96 % dell'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> · Mercato della Capacità</div>
+      </div>
+    </div>
+
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Top 15 beneficiari</div>
+        <div class="card-sub">Produttori elettrici · <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld €</div>
+        <div class="chart-h" style="height:380px;"><canvas id="ipceiBeneChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Distribuzione per anno</div>
+        <div class="card-sub">Concentrazione 2021–2022 + ripresa 2026 · mld €</div>
+        <div class="chart-h" style="height:380px;"><canvas id="ipceiYearChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px;">
+      <div class="card-title">Misure (<abbr title="Codice Aiuto Registro">CAR</abbr>) tracciate sotto l'obiettivo IPCEI</div>
+      <div class="card-sub">5 misure totali · una sola concentra il 99,96 %</div>
+      <ul class="misura-list" id="ipcei-misura-list" style="margin-top:8px;"></ul>
+    </div>
+  </section>
+
   <!-- BENEFICIARI + ATECO -->
   <section>
     <div class="sec-hd">
@@ -1255,6 +1316,62 @@ new Chart(document.getElementById('instrEvolChart'), {
     }
   }
 });
+
+/* ── 15. IPCEI — top beneficiari ─────────────── */
+const D_IPCEI_BENE = {
+  labels: ['ENEL PRODUZIONE','A2A','EDISON','EP CENTRALE OSTIGLIA','EP CENT. TAVAZZANO','ENI','SORGENIA','METAENERGIA','IREN ENERGIA','AXPO ITALIA','ALPERIA TRADING','ENGIE ITALIA','DOLOMITI ENERGIA','GREEN ENERGY 4 STEEL','TIRRENO POWER'],
+  vals:   [4.526, 2.093, 2.048, 1.035, 0.999, 0.643, 0.542, 0.512, 0.399, 0.179, 0.159, 0.142, 0.121, 0.116, 0.113]
+};
+horizBar('ipceiBeneChart', D_IPCEI_BENE.labels, D_IPCEI_BENE.vals, CA,
+  c => `€ ${c.parsed.x.toFixed(3)} mld`);
+
+/* ── 16. IPCEI — distribuzione per anno ──────── */
+new Chart(document.getElementById('ipceiYearChart'), {
+  type: 'bar',
+  data: {
+    labels: ['2021','2022','2023','2024','2025',"'26 Q1"],
+    datasets: [{
+      data: [7.758, 4.462, 0.075, 0.0001, 0.014, 1.887],
+      backgroundColor: ['rgba(200,150,46,.85)','rgba(200,150,46,.78)','rgba(200,150,46,.55)','rgba(200,150,46,.35)','rgba(200,150,46,.55)','rgba(200,150,46,.78)'],
+      borderRadius: 3
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    animation: { duration: 600 },
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => `€ ${c.parsed.y.toFixed(3)} mld` } }
+    },
+    scales: {
+      x: { grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
+      y: { grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#56524e', font: { size: 10 } } }
+    }
+  }
+});
+
+/* ── 17. IPCEI — lista misure CAR ────────────── */
+const D_IPCEI_MISURE = [
+  {car:'12527', name:'Mercato della Capacità (Terna SpA)',                                       esl:14.190},
+  {car:'24076', name:'Avviso Pubblico n. 05/2022 — Agenzia per la Cybersicurezza Nazionale',     esl:0.003},
+  {car:'24515', name:"PON Inclusione FSE 2014-2020 — Asse 3 obiettivo specifico 9 (Invitalia)",  esl:0.001},
+  {car:'30547', name:'Impresa Rosa Regione Lazio (Lazio Innova)',                                esl:0.001},
+  {car:'33034', name:'Rafforzamento infrastruttura tecnologica Fascicolo Sanitario (Azienda Zero)', esl:0.0004},
+];
+const ipMisMax = D_IPCEI_MISURE[0].esl;
+const ipMisEl = document.getElementById('ipcei-misura-list');
+D_IPCEI_MISURE.forEach((m, i) => {
+  const pct = (m.esl / ipMisMax * 100).toFixed(1);
+  const li = document.createElement('li');
+  li.className = 'misura-item';
+  li.innerHTML = `<span class="m-rank">${i+1}</span>
+    <span class="m-name">${m.name} <span style="font-family:var(--mono);font-size:10px;color:var(--dim);">CAR ${m.car}</span></span>
+    <div class="m-bar-wrap"><div class="m-bar" style="width:0%;" data-w="${pct}"></div></div>
+    <span class="m-val">€ ${m.esl.toFixed(3)}</span>`;
+  ipMisEl.appendChild(li);
+});
+requestAnimationFrame(() => setTimeout(() =>
+  ipMisEl.querySelectorAll('.m-bar').forEach(b => b.style.width = b.dataset.w + '%'), 250));
 </script>
 </body>
 </html>
