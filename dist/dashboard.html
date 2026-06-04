@@ -1163,12 +1163,12 @@ new Chart(document.getElementById('yoyChart'), {
 
 /* ── 12. Legal base donut ───────────────────────── */
 const D_LEGAL = [
-  {bucket:'COVID_TF',       label:'Temporary Framework COVID-19',          esl:277.4, n:16856800, color:'rgba(200,150,46,.85)'},
-  {bucket:'UKRAINE_TF',     label:'Temporary Crisis Framework (Ucraina)',  esl:73.4,  n:1552648,  color:'rgba(167,121,38,.82)'},
-  {bucket:'OTHER_NOTIFIED', label:'Aiuti notificati (altri)',              esl:67.5,  n:465506,   color:'rgba(134,97,30,.80)'},
-  {bucket:'GBER',           label:'GBER 651/2014 (esenzione generale)',    esl:54.7,  n:1596680,  color:'rgba(90,143,130,.78)'},
-  {bucket:'DE_MINIMIS',     label:'De minimis (1407/2013 e ss.)',          esl:33.8,  n:4718761,  color:'rgba(110,144,170,.78)'},
-  {bucket:'SIEG',           label:'SIEG (servizi interesse economico)',    esl:2.9,   n:3022,     color:'rgba(86,82,78,.72)'},
+  {bucket:'COVID_TF',       label:'Quadro Temporaneo COVID-19',                       esl:277.4, n:16856800, color:'rgba(200,150,46,.85)'},
+  {bucket:'UKRAINE_TF',     label:'Quadro Temporaneo di Crisi (Ucraina)',             esl:73.4,  n:1552648,  color:'rgba(167,121,38,.82)'},
+  {bucket:'OTHER_NOTIFIED', label:'Aiuti notificati (altri)',                         esl:67.5,  n:465506,   color:'rgba(134,97,30,.80)'},
+  {bucket:'GBER',           label:'Reg. 651/2014 — Esenzione per categoria (GBER)',   esl:54.7,  n:1596680,  color:'rgba(90,143,130,.78)'},
+  {bucket:'DE_MINIMIS',     label:'De minimis (Reg. 1407/2013, 2831/2023 e ss.)',     esl:33.8,  n:4718761,  color:'rgba(110,144,170,.78)'},
+  {bucket:'SIEG',           label:'Servizi d\'Interesse Economico Generale (SIEG)',   esl:2.9,   n:3022,     color:'rgba(86,82,78,.72)'},
 ];
 const totLegal = D_LEGAL.reduce((s,x)=>s+x.esl, 0);
 new Chart(document.getElementById('legalChart'), {
