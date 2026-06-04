@@ -1,0 +1,115 @@
+{
+  "totals": [
+    {
+      "bucket": "COVID_TF",
+      "esl_mld": 277.374,
+      "n": 16856800
+    },
+    {
+      "bucket": "UKRAINE_TF",
+      "esl_mld": 73.353,
+      "n": 1552648
+    },
+    {
+      "bucket": "GBER",
+      "esl_mld": 54.744,
+      "n": 1596680
+    },
+    {
+      "bucket": "DE_MINIMIS",
+      "esl_mld": 33.839,
+      "n": 4718761
+    },
+    {
+      "bucket": "SIEG",
+      "esl_mld": 2.919,
+      "n": 3022
+    },
+    {
+      "bucket": "OTHER_NOTIFIED",
+      "esl_mld": 67.499,
+      "n": 465506
+    }
+  ],
+  "by_year": {
+    "2022": {
+      "DE_MINIMIS": 2.985,
+      "GBER": 6.806,
+      "COVID_TF": 42.174,
+      "OTHER_NOTIFIED": 16.109,
+      "SIEG": 0.895,
+      "UKRAINE_TF": 11.065
+    },
+    "2023": {
+      "GBER": 9.523,
+      "DE_MINIMIS": 3.904,
+      "COVID_TF": 16.979,
+      "OTHER_NOTIFIED": 5.309,
+      "UKRAINE_TF": 47.152,
+      "SIEG": 0.298
+    },
+    "2021": {
+      "DE_MINIMIS": 3.593,
+      "COVID_TF": 100.573,
+      "GBER": 4.331,
+      "OTHER_NOTIFIED": 14.665,
+      "SIEG": 0.209
+    },
+    "2020": {
+      "DE_MINIMIS": 5.501,
+      "GBER": 3.3,
+      "OTHER_NOTIFIED": 2.729,
+      "SIEG": 0.339,
+      "COVID_TF": 94.541
+    },
+    "2019": {
+      "DE_MINIMIS": 2.832,
+      "GBER": 2.571,
+      "OTHER_NOTIFIED": 1.931,
+      "SIEG": 0.167
+    },
+    "2018": {
+      "DE_MINIMIS": 2.926,
+      "GBER": 3.268,
+      "OTHER_NOTIFIED": 2.386,
+      "SIEG": 0.147
+    },
+    "2017": {
+      "GBER": 1.167,
+      "DE_MINIMIS": 1.249,
+      "SIEG": 0.141,
+      "OTHER_NOTIFIED": 2.03,
+      "COVID_TF": 0.001
+    },
+    "2016": {
+      "DE_MINIMIS": 0.031,
+      "GBER": 0.17,
+      "OTHER_NOTIFIED": 0.005,
+      "SIEG": 0.02
+    },
+    "2024": {
+      "DE_MINIMIS": 4.571,
+      "UKRAINE_TF": 6.093,
+      "GBER": 11.162,
+      "OTHER_NOTIFIED": 4.981,
+      "COVID_TF": 18.099,
+      "SIEG": 0.197
+    },
+    "2025": {
+      "DE_MINIMIS": 5.206,
+      "GBER": 10.718,
+      "OTHER_NOTIFIED": 14.776,
+      "COVID_TF": 4.409,
+      "SIEG": 0.147,
+      "UKRAINE_TF": 7.78
+    },
+    "2026": {
+      "DE_MINIMIS": 1.042,
+      "GBER": 1.728,
+      "OTHER_NOTIFIED": 2.577,
+      "COVID_TF": 0.599,
+      "UKRAINE_TF": 1.264,
+      "SIEG": 0.359
+    }
+  }
+}

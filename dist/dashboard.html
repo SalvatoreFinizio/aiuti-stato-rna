@@ -386,6 +386,39 @@
     </div>
   </section>
 
+  <!-- TIPOLOGIA AIUTI: BASE GIURIDICA + STRUMENTO -->
+  <section>
+    <div class="sec-hd">
+      <h2>Tipologia degli aiuti</h2>
+      <span class="sec-note">Base giuridica UE · forma finanziaria · 2016–2026 · mld €</span>
+    </div>
+    <p class="note" style="margin:0 0 18px 0; max-width:780px;">
+      L'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> aggregato di <strong>€ 510 mld</strong> mescola strumenti molto diversi:
+      <strong>€ 294 mld (58 %)</strong> sono <strong>garanzie</strong> pubbliche (<abbr title="SACE — Servizi Assicurativi del Commercio Estero">SACE</abbr>, MCC, CDP) il cui costo effettivo per lo Stato è solo la frazione che va in default;
+      <strong>€ 128 mld (25 %)</strong> sono <strong>sovvenzioni in conto capitale o interessi</strong> (cassa reale);
+      <strong>€ 76 mld (15 %)</strong> sono <strong>crediti d'imposta</strong> (mancato gettito);
+      il resto è strumentazione minore.
+      Sul piano giuridico, oltre il 60 % poggia su <strong>regimi temporanei UE</strong> (COVID + Ucraina) e solo l'11 % è <abbr title="General Block Exemption Regulation 651/2014">GBER</abbr> ordinario.
+    </p>
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Base giuridica UE</div>
+        <div class="card-sub">Quale regolamento UE giustifica l'aiuto · % <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr></div>
+        <div class="chart-h" style="height:280px;"><canvas id="legalChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Forma finanziaria (strumento)</div>
+        <div class="card-sub">Come l'aiuto viene erogato · % <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr></div>
+        <div class="chart-h" style="height:280px;"><canvas id="instrChart"></canvas></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:12px;">
+      <div class="card-title">Evoluzione temporale per strumento</div>
+      <div class="card-sub">Composizione annuale dell'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> · stack area</div>
+      <div class="chart-h" style="height:260px;"><canvas id="instrEvolChart"></canvas></div>
+    </div>
+  </section>
+
   <!-- BENEFICIARI + ATECO -->
   <section>
     <div class="sec-hd">
@@ -1124,6 +1157,101 @@ new Chart(document.getElementById('yoyChart'), {
     scales: {
       x: { grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
       y: { grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#56524e', font: { size: 10 } } }
+    }
+  }
+});
+
+/* ── 12. Legal base donut ───────────────────────── */
+const D_LEGAL = [
+  {bucket:'COVID_TF',       label:'Temporary Framework COVID-19',          esl:277.4, n:16856800, color:'rgba(200,150,46,.85)'},
+  {bucket:'UKRAINE_TF',     label:'Temporary Crisis Framework (Ucraina)',  esl:73.4,  n:1552648,  color:'rgba(167,121,38,.82)'},
+  {bucket:'OTHER_NOTIFIED', label:'Aiuti notificati (altri)',              esl:67.5,  n:465506,   color:'rgba(134,97,30,.80)'},
+  {bucket:'GBER',           label:'GBER 651/2014 (esenzione generale)',    esl:54.7,  n:1596680,  color:'rgba(90,143,130,.78)'},
+  {bucket:'DE_MINIMIS',     label:'De minimis (1407/2013 e ss.)',          esl:33.8,  n:4718761,  color:'rgba(110,144,170,.78)'},
+  {bucket:'SIEG',           label:'SIEG (servizi interesse economico)',    esl:2.9,   n:3022,     color:'rgba(86,82,78,.72)'},
+];
+const totLegal = D_LEGAL.reduce((s,x)=>s+x.esl, 0);
+new Chart(document.getElementById('legalChart'), {
+  type: 'doughnut',
+  data: { labels: D_LEGAL.map(d=>d.label), datasets: [{
+    data: D_LEGAL.map(d=>d.esl),
+    backgroundColor: D_LEGAL.map(d=>d.color),
+    borderColor: '#201f1e', borderWidth: 2, hoverOffset: 8
+  }] },
+  options: {
+    responsive: true, maintainAspectRatio: false, cutout: '58%',
+    animation: { duration: 700 },
+    plugins: {
+      legend: { position: 'right', labels: { color: '#8a8580', font: { size: 10 }, padding: 8, boxWidth: 8, boxHeight: 8 } },
+      tooltip: { callbacks: { label: c => {
+        const d = D_LEGAL[c.dataIndex];
+        return `€ ${d.esl.toFixed(1)} mld (${(d.esl/totLegal*100).toFixed(1)} %) · ${d.n.toLocaleString('it-IT')} concessioni`;
+      }}}
+    }
+  }
+});
+
+/* ── 13. Instrument donut ──────────────────────── */
+const D_INSTR = [
+  {bucket:'GUARANTEE',    label:'Garanzia pubblica',                 esl:294.0, n:4561681, color:'rgba(200,150,46,.85)'},
+  {bucket:'GRANT',        label:'Sovvenzione / contributo a fondo',  esl:128.2, n:9711777, color:'rgba(90,143,130,.78)'},
+  {bucket:'TAX_CREDIT',   label:"Agevolazione fiscale / credito d'imposta", esl:75.7, n:8477730, color:'rgba(110,144,170,.78)'},
+  {bucket:'RISK_FINANCE', label:'Finanziamento del rischio (equity)',esl:7.6,   n:2260586, color:'rgba(140,110,80,.72)'},
+  {bucket:'LOAN',         label:'Prestito / anticipo rimborsabile',  esl:4.2,   n:181643,  color:'rgba(86,82,78,.72)'},
+];
+const totInstr = D_INSTR.reduce((s,x)=>s+x.esl, 0);
+new Chart(document.getElementById('instrChart'), {
+  type: 'doughnut',
+  data: { labels: D_INSTR.map(d=>d.label), datasets: [{
+    data: D_INSTR.map(d=>d.esl),
+    backgroundColor: D_INSTR.map(d=>d.color),
+    borderColor: '#201f1e', borderWidth: 2, hoverOffset: 8
+  }] },
+  options: {
+    responsive: true, maintainAspectRatio: false, cutout: '58%',
+    animation: { duration: 700 },
+    plugins: {
+      legend: { position: 'right', labels: { color: '#8a8580', font: { size: 10 }, padding: 8, boxWidth: 8, boxHeight: 8 } },
+      tooltip: { callbacks: { label: c => {
+        const d = D_INSTR[c.dataIndex];
+        return `€ ${d.esl.toFixed(1)} mld (${(d.esl/totInstr*100).toFixed(1)} %) · ${d.n.toLocaleString('it-IT')} concessioni`;
+      }}}
+    }
+  }
+});
+
+/* ── 14. Instrument by year — stacked area ─────── */
+const INSTR_YEAR = {"2017":{"GRANT":3.532,"RISK_FINANCE":0.094,"LOAN":0.045,"GUARANTEE":0.294,"TAX_CREDIT":0.622},"2018":{"LOAN":0.1,"GRANT":6.413,"GUARANTEE":1.005,"RISK_FINANCE":0.09,"TAX_CREDIT":1.118},"2019":{"LOAN":0.081,"GRANT":5.315,"GUARANTEE":0.982,"TAX_CREDIT":1.011,"RISK_FINANCE":0.113},"2020":{"GRANT":7.174,"LOAN":0.647,"GUARANTEE":94.145,"RISK_FINANCE":0.153,"TAX_CREDIT":4.291},"2021":{"GRANT":20.95,"LOAN":0.647,"GUARANTEE":95.688,"RISK_FINANCE":0.027,"TAX_CREDIT":6.059},"2022":{"LOAN":0.619,"GRANT":20.107,"TAX_CREDIT":12.494,"GUARANTEE":46.663,"RISK_FINANCE":0.151},"2023":{"GRANT":15.802,"TAX_CREDIT":13.368,"LOAN":0.513,"RISK_FINANCE":6.48,"GUARANTEE":47.002},"2024":{"GRANT":26.237,"RISK_FINANCE":0.237,"GUARANTEE":5.591,"LOAN":0.675,"TAX_CREDIT":12.364},"2025":{"LOAN":0.721,"GRANT":17.849,"GUARANTEE":2.104,"TAX_CREDIT":22.109,"RISK_FINANCE":0.253},"2026":{"GRANT":4.627,"LOAN":0.171,"GUARANTEE":0.517,"TAX_CREDIT":2.246,"RISK_FINANCE":0.008}};
+const INSTR_YEARS = Object.keys(INSTR_YEAR).sort();
+const INSTR_KEYS = [
+  {k:'GUARANTEE',    label:'Garanzia',           color:'rgba(200,150,46,.7)'},
+  {k:'GRANT',        label:'Sovvenzione',        color:'rgba(90,143,130,.7)'},
+  {k:'TAX_CREDIT',   label:'Credito d\'imposta', color:'rgba(110,144,170,.7)'},
+  {k:'RISK_FINANCE', label:'Finanz. rischio',    color:'rgba(140,110,80,.7)'},
+  {k:'LOAN',         label:'Prestito',           color:'rgba(86,82,78,.7)'},
+];
+new Chart(document.getElementById('instrEvolChart'), {
+  type: 'bar',
+  data: {
+    labels: INSTR_YEARS.map(y => y === '2026' ? "'26 Q1" : y),
+    datasets: INSTR_KEYS.map(spec => ({
+      label: spec.label,
+      data: INSTR_YEARS.map(y => INSTR_YEAR[y][spec.k] || 0),
+      backgroundColor: spec.color,
+      borderRadius: 2,
+      stack: 'instr'
+    }))
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    animation: { duration: 600 },
+    plugins: {
+      legend: { labels: { color: '#8a8580', font: { size: 10 }, padding: 12, boxWidth: 10, boxHeight: 10 } },
+      tooltip: { callbacks: { label: c => `${c.dataset.label}: € ${c.parsed.y.toFixed(1)} mld` } }
+    },
+    scales: {
+      x: { stacked: true, grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
+      y: { stacked: true, grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#56524e', font: { size: 10 } } }
     }
   }
 });
