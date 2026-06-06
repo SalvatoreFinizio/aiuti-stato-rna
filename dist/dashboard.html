@@ -419,64 +419,69 @@
     </div>
   </section>
 
-  <!-- IPCEI — Realizzazione di un importante progetto di comune interesse europeo -->
+  <!-- SACE — Servizi Assicurativi del Commercio Estero -->
   <section>
     <div class="sec-hd">
-      <h2>Aiuti di comune interesse europeo (<abbr title="Important Projects of Common European Interest — grandi progetti strategici UE finanziati da più Stati membri">IPCEI</abbr>)</h2>
-      <span class="sec-note">Concessioni con obiettivo <em>«Realizzazione di un importante progetto di comune interesse europeo»</em></span>
+      <h2>Focus: <abbr title="Servizi Assicurativi del Commercio Estero — agenzia statale di garanzia, 100 % Ministero dell'Economia e delle Finanze">SACE</abbr> SpA</h2>
+      <span class="sec-note">Concessioni dove SOGGETTO_CONCEDENTE contiene «SACE» · garanzie pubbliche su prestiti</span>
     </div>
 
     <p class="note" style="margin:0 0 18px 0; max-width:820px;">
-      Definizione operativa: solo le concessioni che riportano nel campo <code>DES_OBIETTIVO</code> la dicitura ufficiale
-      <em>«Realizzazione di un importante progetto di comune interesse europeo»</em>.
-      Il dato risultante (€&nbsp;14,2 mld su 475 concessioni e 354 beneficiari) è <strong>quasi interamente costituito dal Mercato della Capacità</strong>
-      (<abbr title="Codice Aiuto Registro — identificativo univoco della misura">CAR</abbr> 12527, Terna SpA), ossia il meccanismo di
-      capacità elettrica che la Commissione UE ha classificato come misura di interesse comune europeo.
-      I grandi progetti strategici associati al termine IPCEI nel discorso pubblico (Microelettronica STMicroelectronics,
-      batterie, idrogeno Hy2Tech/Hy2Use, Cloud, Health Med4Cure) <strong>non appaiono sotto questa etichetta</strong> nel registro
-      e risultano classificati come aiuti a <strong>R&amp;S</strong> o all'<strong>ambiente</strong>.
+      <abbr title="Servizi Assicurativi del Commercio Estero">SACE</abbr> SpA è l'agenzia statale di garanzia (100 % MEF dal 2022).
+      Eroga <strong>garanzie</strong>, non sovvenzioni dirette: lo Stato si impegna a coprire il prestito bancario in caso
+      di default del beneficiario. L'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> qui riportato è dunque il
+      <strong>valore teorico</strong> del vantaggio, non un trasferimento di cassa effettivo.
+      Tre programmi dominano: <strong>Garanzia Italia</strong> (COVID-19, 2020), <strong>SupportItalia</strong> (crisi Ucraina, 2022)
+      e i prodotti standard di credito all'export.
     </p>
 
     <div class="kpi-row" style="margin-bottom:24px;">
       <div class="kpi">
-        <div class="kpi-label"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> IPCEI (RNA)</div>
-        <div class="kpi-val">€ 14,2</div>
-        <div class="kpi-sub">miliardi · 2,8 % del totale</div>
+        <div class="kpi-label"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> totale SACE</div>
+        <div class="kpi-val" id="sace-esl">— mld</div>
+        <div class="kpi-sub" id="sace-pct"></div>
       </div>
       <div class="kpi">
         <div class="kpi-label">Concessioni</div>
-        <div class="kpi-val">475</div>
-        <div class="kpi-sub">atti di erogazione</div>
+        <div class="kpi-val" id="sace-n">—</div>
+        <div class="kpi-sub">atti di garanzia</div>
       </div>
       <div class="kpi">
         <div class="kpi-label">Beneficiari distinti</div>
-        <div class="kpi-val">354</div>
-        <div class="kpi-sub">prevalentemente produttori elettrici</div>
+        <div class="kpi-val" id="sace-nbene">—</div>
+        <div class="kpi-sub">top 10 = grandi corporates, lunga coda <abbr title="Piccole e Medie Imprese">PMI</abbr></div>
       </div>
       <div class="kpi">
-        <div class="kpi-label">Concedente dominante</div>
-        <div class="kpi-val" style="font-size:1.4rem;">Terna SpA</div>
-        <div class="kpi-sub">99,96 % dell'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> · Mercato della Capacità</div>
+        <div class="kpi-label">Quota green</div>
+        <div class="kpi-val" id="sace-green">—</div>
+        <div class="kpi-sub" id="sace-green-sub"></div>
       </div>
     </div>
 
     <div class="g2">
       <div class="card">
-        <div class="card-title">Top 15 beneficiari</div>
-        <div class="card-sub">Produttori elettrici · <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld €</div>
-        <div class="chart-h" style="height:380px;"><canvas id="ipceiBeneChart"></canvas></div>
+        <div class="card-title">Top 15 beneficiari di garanzie SACE</div>
+        <div class="card-sub"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld €</div>
+        <div class="chart-h" style="height:380px;"><canvas id="saceBeneChart"></canvas></div>
       </div>
       <div class="card">
         <div class="card-title">Distribuzione per anno</div>
-        <div class="card-sub">Concentrazione 2021–2022 + ripresa 2026 · mld €</div>
-        <div class="chart-h" style="height:380px;"><canvas id="ipceiYearChart"></canvas></div>
+        <div class="card-sub">Picco 2020–2021 (COVID) · 2022–2023 (Ucraina) · mld €</div>
+        <div class="chart-h" style="height:380px;"><canvas id="saceYearChart"></canvas></div>
       </div>
     </div>
 
-    <div class="card" style="margin-top:12px;">
-      <div class="card-title">Misure (<abbr title="Codice Aiuto Registro">CAR</abbr>) tracciate sotto l'obiettivo IPCEI</div>
-      <div class="card-sub">5 misure totali · una sola concentra il 99,96 %</div>
-      <ul class="misura-list" id="ipcei-misura-list" style="margin-top:8px;"></ul>
+    <div class="g2" style="margin-top:12px;">
+      <div class="card">
+        <div class="card-title">Programmi SACE (<abbr title="Codice Aiuto Registro">CAR</abbr>) per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr></div>
+        <div class="card-sub">Top 10 misure · prevalenza COVID-19 + crisi Ucraina</div>
+        <ul class="misura-list" id="sace-misura-list" style="margin-top:8px;"></ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Settori beneficiari (<abbr title="Classificazione delle Attività Economiche">ATECO</abbr>)</div>
+        <div class="card-sub">Top 10 divisioni · <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld €</div>
+        <div class="chart-h" style="height:340px;"><canvas id="saceAtecoChart"></canvas></div>
+      </div>
     </div>
   </section>
 
@@ -1319,31 +1324,47 @@ new Chart(document.getElementById('instrEvolChart'), {
   }
 });
 
-/* ── 15. IPCEI — top beneficiari ─────────────── */
-const D_IPCEI_BENE = {
-  labels: ['ENEL PRODUZIONE','A2A','EDISON','EP CENTRALE OSTIGLIA','EP CENT. TAVAZZANO','ENI','SORGENIA','METAENERGIA','IREN ENERGIA','AXPO ITALIA','ALPERIA TRADING','ENGIE ITALIA','DOLOMITI ENERGIA','GREEN ENERGY 4 STEEL','TIRRENO POWER'],
-  vals:   [4.526, 2.093, 2.048, 1.035, 0.999, 0.643, 0.542, 0.512, 0.399, 0.179, 0.159, 0.142, 0.121, 0.116, 0.113]
-};
-horizBar('ipceiBeneChart', D_IPCEI_BENE.labels, D_IPCEI_BENE.vals, CA,
-  c => `€ ${c.parsed.x.toFixed(3)} mld`);
+/* ── 15-18. SACE — Servizi Assicurativi del Commercio Estero ───── */
+const D_SACE = {"totals":{"esl_mld":76.619,"n_grants":11735,"n_bene":5525,"esl_green_mld":7.425,"pct_green":9.69},"top_bene":[{"cf":"00811720580","denom":"ENEL - SPA","esl_mld":12.0,"n":1,"regione":"Lazio","ateco":"M.70"},{"cf":"07973780013","denom":"FCA ITALY S.P.A., IN FORMA ESTESA FIAT CHRYSLER AUTOMOBILES ITALY S.P.A., E IN FORMA ABBREVIATA FIAT GROUP AUTOMOBILES S.P.A. E FIAT AUTO S.P.A.","esl_mld":6.3,"n":1,"regione":"Piemonte","ateco":"C.29"},{"cf":"00488410010","denom":"TELECOM ITALIA SPA O TIM S.P.A.","esl_mld":2.0,"n":1,"regione":"Lombardia","ateco":"J.61"},{"cf":"00397130584","denom":"FINCANTIERI S.P.A.","esl_mld":1.95,"n":2,"regione":"Friuli-Venezia Giulia","ateco":"C.30"},{"cf":"13271390158","denom":"SNAM  S.P.A.","esl_mld":1.8,"n":1,"regione":"Lombardia","ateco":"M.70"},{"cf":"00825790157","denom":"SAIPEM S.P.A.","esl_mld":1.239,"n":2,"regione":"Lombardia","ateco":"C.33"},{"cf":"06722600019","denom":"EDISON S.P.A.","esl_mld":1.0,"n":1,"regione":"Lombardia","ateco":"M.70"},{"cf":"00051570893","denom":"ITALIANA PETROLI S.P.A.","esl_mld":0.68,"n":2,"regione":"Lazio","ateco":"C.19"},{"cf":"00136440922","denom":"SARAS S.P.A. O IN FORMA ESTESA SARAS S.P.A. - RAFFINERIE SARDE","esl_mld":0.662,"n":2,"regione":"Sardegna","ateco":"C.19"},{"cf":"07673571001","denom":"\"MAIRE TECNIMONT S.P.A.\", IN FORMA ABBREVIATA \"MAIRE S.P.A.\"","esl_mld":0.555,"n":3,"regione":"Lazio","ateco":"K.64"},{"cf":"10354890963","denom":"ACCIAIERIE D'ITALIA S.P.A.","esl_mld":0.55,"n":2,"regione":"Lombardia","ateco":"C.24"},{"cf":"02545900108","denom":"\"COSTA CROCIERE S.P.A.\"","esl_mld":0.5,"n":1,"regione":"Liguria","ateco":"H.50"},{"cf":"02467550204","denom":"MARCEGAGLIA STEEL S.P.A.","esl_mld":0.474,"n":3,"regione":"Lombardia","ateco":"M.70"},{"cf":"04245520376","denom":"HERA S.P.A.","esl_mld":0.45,"n":1,"regione":"Emilia-Romagna","ateco":"E.36"},{"cf":"02858310218","denom":"ALPERIA SPA","esl_mld":0.44,"n":1,"regione":"Provincia Autonoma di Bolzano/Bozen","ateco":"M.70"}],"by_misura":[{"car":"16978","titolo":"Garanzia Italia","esl_mld":42.069,"n":6433},{"car":"24682","titolo":"Garanzia SupportItalia","esl_mld":29.407,"n":4256},{"car":"23404","titolo":"Garanzia SupportItalia","esl_mld":5.064,"n":982},{"car":"24677","titolo":"Riassicurazione Crediti Commerciali ex art. 35 DL 34 2020","esl_mld":0.071,"n":45},{"car":"24680","titolo":"Garanzia SupportItalia","esl_mld":0.008,"n":5},{"car":"24678","titolo":"Riassicurazione Caro Energia ex art. 8 DL 21 2022","esl_mld":0.0,"n":14}],"by_year":{"2021":{"esl_mld":31.024,"n":4215,"green_mld":2.135},"2022":{"esl_mld":16.281,"n":3219,"green_mld":3.159},"2023":{"esl_mld":26.88,"n":4239,"green_mld":1.756},"2024":{"esl_mld":2.433,"n":37,"green_mld":0.375},"2025":{"esl_mld":0.002,"n":21,"green_mld":0.0},"2026":{"esl_mld":0.0,"n":4,"green_mld":0.0}},"by_ateco":[{"ateco":"M.70","esl_mld":18.694,"n":212},{"ateco":"C.29","esl_mld":6.949,"n":150},{"ateco":"G.46","esl_mld":4.3,"n":1393},{"ateco":"C.10","esl_mld":3.231,"n":949},{"ateco":"D.35","esl_mld":3.133,"n":415},{"ateco":"G.47","esl_mld":2.633,"n":635},{"ateco":"C.30","esl_mld":2.536,"n":105},{"ateco":"C.28","esl_mld":2.349,"n":603},{"ateco":"C.24","esl_mld":2.305,"n":349},{"ateco":"C.19","esl_mld":2.141,"n":41}]};
 
-/* ── 16. IPCEI — distribuzione per anno ──────── */
-new Chart(document.getElementById('ipceiYearChart'), {
+// KPI
+document.getElementById('sace-esl').textContent  = `€ ${D_SACE.totals.esl_mld.toFixed(1)}`;
+document.getElementById('sace-pct').textContent  = `miliardi · ${(D_SACE.totals.esl_mld/509.7*100).toFixed(1)} % del totale RNA`;
+document.getElementById('sace-n').textContent    = D_SACE.totals.n_grants.toLocaleString('it-IT');
+document.getElementById('sace-nbene').textContent= D_SACE.totals.n_bene.toLocaleString('it-IT');
+document.getElementById('sace-green').textContent= `${D_SACE.totals.pct_green.toFixed(1)} %`;
+document.getElementById('sace-green-sub').textContent = `€ ${D_SACE.totals.esl_green_mld.toFixed(2)} mld nel perimetro green`;
+
+// 15. Top beneficiari
+const sBene = D_SACE.top_bene.slice(0, 15);
+const shortDenom = s => {
+  s = s.replace(/^"|"$/g, '').replace(/, IN FORMA.*/i, '').replace(/ O IN FORMA.*/i, '');
+  return s.length > 32 ? s.slice(0, 30) + '…' : s;
+};
+horizBar('saceBeneChart',
+  sBene.map(b => shortDenom(b.denom)),
+  sBene.map(b => b.esl_mld),
+  CA,
+  c => `€ ${c.parsed.x.toFixed(3)} mld · ${sBene[c.dataIndex].ateco}`);
+
+// 16. By year
+const sYrs = Object.keys(D_SACE.by_year).sort();
+new Chart(document.getElementById('saceYearChart'), {
   type: 'bar',
-  data: {
-    labels: ['2021','2022','2023','2024','2025',"'26 Q1"],
-    datasets: [{
-      data: [7.758, 4.462, 0.075, 0.0001, 0.014, 1.887],
-      backgroundColor: ['rgba(200,150,46,.85)','rgba(200,150,46,.78)','rgba(200,150,46,.55)','rgba(200,150,46,.35)','rgba(200,150,46,.55)','rgba(200,150,46,.78)'],
-      borderRadius: 3
-    }]
-  },
+  data: { labels: sYrs, datasets: [{
+    data: sYrs.map(y => D_SACE.by_year[y].esl_mld),
+    backgroundColor: sYrs.map(y => {
+      const v = D_SACE.by_year[y].esl_mld;
+      const t = Math.min(v / 31, 1);
+      return `rgba(200,150,46,${0.35 + 0.55 * t})`;
+    }),
+    borderRadius: 3
+  }] },
   options: {
-    responsive: true, maintainAspectRatio: false,
-    animation: { duration: 600 },
+    responsive: true, maintainAspectRatio: false, animation: { duration: 600 },
     plugins: {
       legend: { display: false },
-      tooltip: { callbacks: { label: c => `€ ${c.parsed.y.toFixed(3)} mld` } }
+      tooltip: { callbacks: { label: c => `€ ${c.parsed.y.toFixed(2)} mld · ${D_SACE.by_year[c.label].n.toLocaleString('it-IT')} concessioni` } }
     },
     scales: {
       x: { grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
@@ -1352,28 +1373,40 @@ new Chart(document.getElementById('ipceiYearChart'), {
   }
 });
 
-/* ── 17. IPCEI — lista misure CAR ────────────── */
-const D_IPCEI_MISURE = [
-  {car:'12527', name:'Mercato della Capacità (Terna SpA)',                                       esl:14.190},
-  {car:'24076', name:'Avviso Pubblico n. 05/2022 — Agenzia per la Cybersicurezza Nazionale',     esl:0.003},
-  {car:'24515', name:"PON Inclusione FSE 2014-2020 — Asse 3 obiettivo specifico 9 (Invitalia)",  esl:0.001},
-  {car:'30547', name:'Impresa Rosa Regione Lazio (Lazio Innova)',                                esl:0.001},
-  {car:'33034', name:'Rafforzamento infrastruttura tecnologica Fascicolo Sanitario (Azienda Zero)', esl:0.0004},
-];
-const ipMisMax = D_IPCEI_MISURE[0].esl;
-const ipMisEl = document.getElementById('ipcei-misura-list');
-D_IPCEI_MISURE.forEach((m, i) => {
-  const pct = (m.esl / ipMisMax * 100).toFixed(1);
+// 17. Misure CAR
+const sMs = D_SACE.by_misura.slice(0, 10);
+const sMsMax = sMs[0].esl_mld;
+const sMsEl = document.getElementById('sace-misura-list');
+sMs.forEach((m, i) => {
+  const pct = (m.esl_mld / sMsMax * 100).toFixed(1);
   const li = document.createElement('li');
   li.className = 'misura-item';
   li.innerHTML = `<span class="m-rank">${i+1}</span>
-    <span class="m-name">${m.name} <span style="font-family:var(--mono);font-size:10px;color:var(--dim);">CAR ${m.car}</span></span>
+    <span class="m-name">${m.titolo || '(senza titolo)'} <span style="font-family:var(--mono);font-size:10px;color:var(--dim);">CAR ${m.car}</span></span>
     <div class="m-bar-wrap"><div class="m-bar" style="width:0%;" data-w="${pct}"></div></div>
-    <span class="m-val">€ ${m.esl.toFixed(3)}</span>`;
-  ipMisEl.appendChild(li);
+    <span class="m-val">€ ${m.esl_mld.toFixed(2)}</span>`;
+  sMsEl.appendChild(li);
 });
 requestAnimationFrame(() => setTimeout(() =>
-  ipMisEl.querySelectorAll('.m-bar').forEach(b => b.style.width = b.dataset.w + '%'), 250));
+  sMsEl.querySelectorAll('.m-bar').forEach(b => b.style.width = b.dataset.w + '%'), 250));
+
+// 18. ATECO sectors
+const ATECO_FULL = {
+  A:"Agricoltura", B:"Estrazione", C:"Manifatturiero", D:"Energia",
+  E:"Acqua/rifiuti", F:"Costruzioni", G:"Commercio", H:"Trasporti",
+  I:"Alloggio/ristorazione", J:"ICT", K:"Finanziario",
+  L:"Immobiliare", M:"Professionale", N:"Noleggio/supporto",
+  O:"PA", P:"Istruzione", Q:"Sanità", R:"Arte/sport", S:"Altri servizi"
+};
+const sAt = D_SACE.by_ateco.slice(0, 10).map(a => ({
+  ...a,
+  label: `${a.ateco} ${ATECO_FULL[a.ateco.split('.')[0]] || ''}`
+}));
+horizBar('saceAtecoChart',
+  sAt.map(a => a.label),
+  sAt.map(a => a.esl_mld),
+  CA,
+  c => `€ ${c.parsed.x.toFixed(2)} mld · ${sAt[c.dataIndex].n.toLocaleString('it-IT')} concessioni`);
 </script>
 </body>
 </html>
