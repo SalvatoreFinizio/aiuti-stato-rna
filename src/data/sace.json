@@ -1,0 +1,435 @@
+{
+  "totals": {
+    "esl_mld": 76.619,
+    "n_grants": 11735,
+    "n_bene": 5525,
+    "esl_green_mld": 7.425,
+    "pct_green": 9.69
+  },
+  "top_bene": [
+    {
+      "cf": "00811720580",
+      "denom": "ENEL - SPA",
+      "esl_mld": 12.0,
+      "n": 1,
+      "regione": "Lazio",
+      "ateco": "M.70"
+    },
+    {
+      "cf": "07973780013",
+      "denom": "FCA ITALY S.P.A., IN FORMA ESTESA FIAT CHRYSLER AUTOMOBILES ITALY S.P.A., E IN FORMA ABBREVIATA FIAT GROUP AUTOMOBILES S.P.A. E FIAT AUTO S.P.A.",
+      "esl_mld": 6.3,
+      "n": 1,
+      "regione": "Piemonte",
+      "ateco": "C.29"
+    },
+    {
+      "cf": "00488410010",
+      "denom": "TELECOM ITALIA SPA O TIM S.P.A.",
+      "esl_mld": 2.0,
+      "n": 1,
+      "regione": "Lombardia",
+      "ateco": "J.61"
+    },
+    {
+      "cf": "00397130584",
+      "denom": "FINCANTIERI S.P.A.",
+      "esl_mld": 1.95,
+      "n": 2,
+      "regione": "Friuli-Venezia Giulia",
+      "ateco": "C.30"
+    },
+    {
+      "cf": "13271390158",
+      "denom": "SNAM  S.P.A.",
+      "esl_mld": 1.8,
+      "n": 1,
+      "regione": "Lombardia",
+      "ateco": "M.70"
+    },
+    {
+      "cf": "00825790157",
+      "denom": "SAIPEM S.P.A.",
+      "esl_mld": 1.239,
+      "n": 2,
+      "regione": "Lombardia",
+      "ateco": "C.33"
+    },
+    {
+      "cf": "06722600019",
+      "denom": "EDISON S.P.A.",
+      "esl_mld": 1.0,
+      "n": 1,
+      "regione": "Lombardia",
+      "ateco": "M.70"
+    },
+    {
+      "cf": "00051570893",
+      "denom": "ITALIANA PETROLI S.P.A.",
+      "esl_mld": 0.68,
+      "n": 2,
+      "regione": "Lazio",
+      "ateco": "C.19"
+    },
+    {
+      "cf": "00136440922",
+      "denom": "SARAS S.P.A. O IN FORMA ESTESA SARAS S.P.A. - RAFFINERIE SARDE",
+      "esl_mld": 0.662,
+      "n": 2,
+      "regione": "Sardegna",
+      "ateco": "C.19"
+    },
+    {
+      "cf": "07673571001",
+      "denom": "\"MAIRE TECNIMONT S.P.A.\", IN FORMA ABBREVIATA \"MAIRE S.P.A.\"",
+      "esl_mld": 0.555,
+      "n": 3,
+      "regione": "Lazio",
+      "ateco": "K.64"
+    },
+    {
+      "cf": "10354890963",
+      "denom": "ACCIAIERIE D'ITALIA S.P.A.",
+      "esl_mld": 0.55,
+      "n": 2,
+      "regione": "Lombardia",
+      "ateco": "C.24"
+    },
+    {
+      "cf": "02545900108",
+      "denom": "\"COSTA CROCIERE S.P.A.\"",
+      "esl_mld": 0.5,
+      "n": 1,
+      "regione": "Liguria",
+      "ateco": "H.50"
+    },
+    {
+      "cf": "02467550204",
+      "denom": "MARCEGAGLIA STEEL S.P.A.",
+      "esl_mld": 0.474,
+      "n": 3,
+      "regione": "Lombardia",
+      "ateco": "M.70"
+    },
+    {
+      "cf": "04245520376",
+      "denom": "HERA S.P.A.",
+      "esl_mld": 0.45,
+      "n": 1,
+      "regione": "Emilia-Romagna",
+      "ateco": "E.36"
+    },
+    {
+      "cf": "02858310218",
+      "denom": "ALPERIA SPA",
+      "esl_mld": 0.44,
+      "n": 1,
+      "regione": "Provincia Autonoma di Bolzano/Bozen",
+      "ateco": "M.70"
+    },
+    {
+      "cf": "02933920015",
+      "denom": "ALPITOUR S.P.A.",
+      "esl_mld": 0.374,
+      "n": 2,
+      "regione": "Piemonte",
+      "ateco": "N.79"
+    },
+    {
+      "cf": "04587230154",
+      "denom": "FINARVEDI S.P.A.",
+      "esl_mld": 0.374,
+      "n": 1,
+      "regione": "Lombardia",
+      "ateco": "M.70"
+    },
+    {
+      "cf": "01614640223",
+      "denom": "DOLOMITI ENERGIA HOLDING S.P.A.",
+      "esl_mld": 0.35,
+      "n": 1,
+      "regione": "Provincia Autonoma di Trento",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "00215120239",
+      "denom": "AGSM AIM S.P.A.",
+      "esl_mld": 0.35,
+      "n": 2,
+      "regione": "Veneto",
+      "ateco": "M.70"
+    },
+    {
+      "cf": "01629050897",
+      "denom": "ISAB S.R.L.",
+      "esl_mld": 0.35,
+      "n": 1,
+      "regione": "Sicilia",
+      "ateco": "C.19"
+    },
+    {
+      "cf": "03091940266",
+      "denom": "AUTOGRILL S.P.A.",
+      "esl_mld": 0.3,
+      "n": 1,
+      "regione": "Piemonte",
+      "ateco": "I.56"
+    },
+    {
+      "cf": "02356770988",
+      "denom": "ILLUMIA S.P.A.",
+      "esl_mld": 0.282,
+      "n": 24,
+      "regione": "Emilia-Romagna",
+      "ateco": "D.35"
+    },
+    {
+      "cf": "00152970935",
+      "denom": "PRIMA SOLE COMPONENTS S.P.A.",
+      "esl_mld": 0.278,
+      "n": 9,
+      "regione": "Lazio",
+      "ateco": "C.22"
+    },
+    {
+      "cf": "03503411203",
+      "denom": "COOP ALLEANZA 3.0 SOCIETA' COOPERATIVA",
+      "esl_mld": 0.275,
+      "n": 2,
+      "regione": "Emilia-Romagna",
+      "ateco": "G.47"
+    },
+    {
+      "cf": "03544070174",
+      "denom": "DUFERCO ENERGIA S.P.A.",
+      "esl_mld": 0.235,
+      "n": 8,
+      "regione": "Liguria",
+      "ateco": "D.35"
+    }
+  ],
+  "by_misura": [
+    {
+      "car": "16978",
+      "titolo": "Garanzia Italia",
+      "esl_mld": 42.069,
+      "n": 6433
+    },
+    {
+      "car": "24682",
+      "titolo": "Garanzia SupportItalia",
+      "esl_mld": 29.407,
+      "n": 4256
+    },
+    {
+      "car": "23404",
+      "titolo": "Garanzia SupportItalia",
+      "esl_mld": 5.064,
+      "n": 982
+    },
+    {
+      "car": "24677",
+      "titolo": "Riassicurazione Crediti Commerciali ex art. 35 DL 34 2020",
+      "esl_mld": 0.071,
+      "n": 45
+    },
+    {
+      "car": "24680",
+      "titolo": "Garanzia SupportItalia",
+      "esl_mld": 0.008,
+      "n": 5
+    },
+    {
+      "car": "24678",
+      "titolo": "Riassicurazione Caro Energia ex art. 8 DL 21 2022",
+      "esl_mld": 0.0,
+      "n": 14
+    }
+  ],
+  "by_year": {
+    "2021": {
+      "esl_mld": 31.024,
+      "n": 4215,
+      "green_mld": 2.135
+    },
+    "2022": {
+      "esl_mld": 16.281,
+      "n": 3219,
+      "green_mld": 3.159
+    },
+    "2023": {
+      "esl_mld": 26.88,
+      "n": 4239,
+      "green_mld": 1.756
+    },
+    "2024": {
+      "esl_mld": 2.433,
+      "n": 37,
+      "green_mld": 0.375
+    },
+    "2025": {
+      "esl_mld": 0.002,
+      "n": 21,
+      "green_mld": 0.0
+    },
+    "2026": {
+      "esl_mld": 0.0,
+      "n": 4,
+      "green_mld": 0.0
+    }
+  },
+  "by_regione": [
+    {
+      "regione": "Lombardia",
+      "esl_mld": 18.231,
+      "n": 2774
+    },
+    {
+      "regione": "Lazio",
+      "esl_mld": 16.993,
+      "n": 985
+    },
+    {
+      "regione": "Piemonte",
+      "esl_mld": 10.209,
+      "n": 898
+    },
+    {
+      "regione": "Emilia-Romagna",
+      "esl_mld": 7.036,
+      "n": 1597
+    },
+    {
+      "regione": "Veneto",
+      "esl_mld": 5.831,
+      "n": 1519
+    },
+    {
+      "regione": "Friuli-Venezia Giulia",
+      "esl_mld": 3.116,
+      "n": 338
+    },
+    {
+      "regione": "Toscana",
+      "esl_mld": 2.947,
+      "n": 747
+    },
+    {
+      "regione": "Campania",
+      "esl_mld": 2.651,
+      "n": 708
+    },
+    {
+      "regione": "Liguria",
+      "esl_mld": 1.767,
+      "n": 267
+    },
+    {
+      "regione": "Sicilia",
+      "esl_mld": 1.323,
+      "n": 269
+    },
+    {
+      "regione": "Umbria",
+      "esl_mld": 1.038,
+      "n": 338
+    },
+    {
+      "regione": "Marche",
+      "esl_mld": 0.877,
+      "n": 323
+    },
+    {
+      "regione": "Sardegna",
+      "esl_mld": 0.866,
+      "n": 102
+    },
+    {
+      "regione": "Puglia",
+      "esl_mld": 0.852,
+      "n": 342
+    },
+    {
+      "regione": "Provincia Autonoma di Trento",
+      "esl_mld": 0.85,
+      "n": 105
+    }
+  ],
+  "by_ateco": [
+    {
+      "ateco": "M.70",
+      "esl_mld": 18.694,
+      "n": 212
+    },
+    {
+      "ateco": "C.29",
+      "esl_mld": 6.949,
+      "n": 150
+    },
+    {
+      "ateco": "G.46",
+      "esl_mld": 4.3,
+      "n": 1393
+    },
+    {
+      "ateco": "C.10",
+      "esl_mld": 3.231,
+      "n": 949
+    },
+    {
+      "ateco": "D.35",
+      "esl_mld": 3.133,
+      "n": 415
+    },
+    {
+      "ateco": "G.47",
+      "esl_mld": 2.633,
+      "n": 635
+    },
+    {
+      "ateco": "C.30",
+      "esl_mld": 2.536,
+      "n": 105
+    },
+    {
+      "ateco": "C.28",
+      "esl_mld": 2.349,
+      "n": 603
+    },
+    {
+      "ateco": "C.24",
+      "esl_mld": 2.305,
+      "n": 349
+    },
+    {
+      "ateco": "C.19",
+      "esl_mld": 2.141,
+      "n": 41
+    },
+    {
+      "ateco": "J.61",
+      "esl_mld": 2.106,
+      "n": 18
+    },
+    {
+      "ateco": "F.41",
+      "esl_mld": 1.993,
+      "n": 307
+    },
+    {
+      "ateco": "C.25",
+      "esl_mld": 1.962,
+      "n": 658
+    },
+    {
+      "ateco": "C.22",
+      "esl_mld": 1.383,
+      "n": 365
+    },
+    {
+      "ateco": "I.56",
+      "esl_mld": 1.044,
+      "n": 147
+    }
+  ]
+}
