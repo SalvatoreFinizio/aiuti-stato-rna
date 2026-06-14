@@ -13,260 +13,168 @@
   "2026"
  ],
  "buckets": [
-  "Diretta MEF/Tesoro",
-  "CDP Equity",
-  "CDP Reti",
+  "Diretta MEF",
+  "Gruppo CDP",
   "Mista (MEF + CDP)",
-  "ENI",
-  "Ferrovie dello Stato",
-  "RAI",
-  "Fincantieri",
-  "CDP Venture"
+  "Grandi gruppi (capofila)",
+  "Altri Ministeri"
  ],
  "by_year": {
   "2016": {
-   "Diretta MEF/Tesoro": 0.001,
-   "CDP Equity": 0.004,
-   "CDP Reti": 0.0,
+   "Diretta MEF": 0.0001,
+   "Gruppo CDP": 0.004,
    "Mista (MEF + CDP)": 0.0,
-   "ENI": 0.0,
-   "Ferrovie dello Stato": 0.0,
-   "RAI": 0.0,
-   "Fincantieri": 0.0,
-   "CDP Venture": 0.0
+   "Grandi gruppi (capofila)": 0.0,
+   "Altri Ministeri": 0.0
   },
   "2017": {
-   "Diretta MEF/Tesoro": 0.0109,
-   "CDP Equity": 1.4972,
-   "CDP Reti": 0.0001,
+   "Diretta MEF": 0.012,
+   "Gruppo CDP": 1.485,
    "Mista (MEF + CDP)": 0.0,
-   "ENI": 0.0,
-   "Ferrovie dello Stato": 0.0,
-   "RAI": 0.0,
-   "Fincantieri": 0.0,
-   "CDP Venture": 0.0
+   "Grandi gruppi (capofila)": 0.0037,
+   "Altri Ministeri": 0.0
   },
   "2018": {
-   "Diretta MEF/Tesoro": 0.052,
-   "CDP Equity": 0.0604,
-   "CDP Reti": 0.0,
+   "Diretta MEF": 0.0651,
+   "Gruppo CDP": 0.0078,
    "Mista (MEF + CDP)": 0.0128,
-   "ENI": 0.0,
-   "Ferrovie dello Stato": 0.0026,
-   "RAI": 0.0,
-   "Fincantieri": 0.0011,
-   "CDP Venture": 0.0
+   "Grandi gruppi (capofila)": 0.0204,
+   "Altri Ministeri": 0.0
   },
   "2019": {
-   "Diretta MEF/Tesoro": 0.0219,
-   "CDP Equity": 0.1244,
-   "CDP Reti": 0.0001,
+   "Diretta MEF": 0.0165,
+   "Gruppo CDP": 0.1107,
    "Mista (MEF + CDP)": 0.0009,
-   "ENI": 0.0,
-   "Ferrovie dello Stato": 0.0065,
-   "RAI": 0.0,
-   "Fincantieri": 0.0,
-   "CDP Venture": 0.0
+   "Grandi gruppi (capofila)": 0.0151,
+   "Altri Ministeri": 0.0
   },
   "2020": {
-   "Diretta MEF/Tesoro": 0.0637,
-   "CDP Equity": 0.0129,
-   "CDP Reti": 0.0,
+   "Diretta MEF": 0.0451,
+   "Gruppo CDP": 0.0012,
    "Mista (MEF + CDP)": 0.0529,
-   "ENI": 0.0,
-   "Ferrovie dello Stato": 0.0021,
-   "RAI": 0.0,
-   "Fincantieri": 0.0,
-   "CDP Venture": 0.0
+   "Grandi gruppi (capofila)": 0.0393,
+   "Altri Ministeri": 0.0
   },
   "2021": {
-   "Diretta MEF/Tesoro": 0.0783,
-   "CDP Equity": 1.3299,
-   "CDP Reti": 0.0,
+   "Diretta MEF": 0.0405,
+   "Gruppo CDP": 1.2183,
    "Mista (MEF + CDP)": 0.381,
-   "ENI": 0.0,
-   "Ferrovie dello Stato": 0.0091,
-   "RAI": 0.0,
-   "Fincantieri": 0.0168,
-   "CDP Venture": 0.0
+   "Grandi gruppi (capofila)": 0.3336,
+   "Altri Ministeri": 0.0001
   },
   "2022": {
-   "Diretta MEF/Tesoro": 0.24,
-   "CDP Equity": 1.8781,
-   "CDP Reti": 0.05,
+   "Diretta MEF": 0.1368,
+   "Gruppo CDP": 1.8361,
    "Mista (MEF + CDP)": 0.6881,
-   "ENI": 0.8516,
-   "Ferrovie dello Stato": 0.0127,
-   "RAI": 0.0089,
-   "Fincantieri": 0.0,
-   "CDP Venture": 0.0
+   "Grandi gruppi (capofila)": 1.2092,
+   "Altri Ministeri": 0.0003
   },
   "2023": {
-   "Diretta MEF/Tesoro": 12.1222,
-   "CDP Equity": 1.2717,
-   "CDP Reti": 0.0,
+   "Diretta MEF": 12.3048,
+   "Gruppo CDP": 0.9553,
    "Mista (MEF + CDP)": 0.013,
-   "ENI": 0.3874,
-   "Ferrovie dello Stato": 0.0056,
-   "RAI": 0.0195,
-   "Fincantieri": 0.0,
-   "CDP Venture": 0.0
+   "Grandi gruppi (capofila)": 0.568,
+   "Altri Ministeri": 0.0005
   },
   "2024": {
-   "Diretta MEF/Tesoro": 0.1555,
-   "CDP Equity": 0.0363,
-   "CDP Reti": 1.8398,
+   "Diretta MEF": 0.1571,
+   "Gruppo CDP": 1.8182,
    "Mista (MEF + CDP)": 0.0343,
-   "ENI": 0.0002,
-   "Ferrovie dello Stato": 0.0065,
-   "RAI": 0.0026,
-   "Fincantieri": 0.0007,
-   "CDP Venture": 0.0001
+   "Grandi gruppi (capofila)": 0.0307,
+   "Altri Ministeri": 0.0001
   },
   "2025": {
-   "Diretta MEF/Tesoro": 0.0386,
-   "CDP Equity": 2.7026,
-   "CDP Reti": 0.0906,
+   "Diretta MEF": 2.1359,
+   "Gruppo CDP": 0.5722,
    "Mista (MEF + CDP)": 0.0184,
-   "ENI": 0.001,
-   "Ferrovie dello Stato": 0.0135,
-   "RAI": 0.0033,
-   "Fincantieri": 0.0,
-   "CDP Venture": 0.0002
+   "Grandi gruppi (capofila)": 0.1803,
+   "Altri Ministeri": 0.0
   },
   "2026": {
-   "Diretta MEF/Tesoro": 0.0199,
-   "CDP Equity": 0.0036,
-   "CDP Reti": 0.0056,
+   "Diretta MEF": 0.0142,
+   "Gruppo CDP": 0.0059,
    "Mista (MEF + CDP)": 0.5266,
-   "ENI": 0.0006,
-   "Ferrovie dello Stato": 0.0,
-   "RAI": 0.0077,
-   "Fincantieri": 0.0,
-   "CDP Venture": 0.018
+   "Grandi gruppi (capofila)": 0.0113,
+   "Altri Ministeri": 0.0
   }
  },
  "n_by_year": {
   "2016": {
-   "Diretta MEF/Tesoro": 6,
-   "CDP Equity": 5,
-   "CDP Reti": 0,
+   "Diretta MEF": 3,
+   "Gruppo CDP": 2,
    "Mista (MEF + CDP)": 0,
-   "ENI": 0,
-   "Ferrovie dello Stato": 0,
-   "RAI": 0,
-   "Fincantieri": 0,
-   "CDP Venture": 0
+   "Grandi gruppi (capofila)": 0,
+   "Altri Ministeri": 0
   },
   "2017": {
-   "Diretta MEF/Tesoro": 51,
-   "CDP Equity": 31,
-   "CDP Reti": 1,
+   "Diretta MEF": 7,
+   "Gruppo CDP": 21,
    "Mista (MEF + CDP)": 0,
-   "ENI": 0,
-   "Ferrovie dello Stato": 0,
-   "RAI": 0,
-   "Fincantieri": 0,
-   "CDP Venture": 0
+   "Grandi gruppi (capofila)": 7,
+   "Altri Ministeri": 0
   },
   "2018": {
-   "Diretta MEF/Tesoro": 189,
-   "CDP Equity": 30,
-   "CDP Reti": 0,
+   "Diretta MEF": 84,
+   "Gruppo CDP": 12,
    "Mista (MEF + CDP)": 4,
-   "ENI": 0,
-   "Ferrovie dello Stato": 4,
-   "RAI": 0,
-   "Fincantieri": 1,
-   "CDP Venture": 0
+   "Grandi gruppi (capofila)": 47,
+   "Altri Ministeri": 0
   },
   "2019": {
-   "Diretta MEF/Tesoro": 109,
-   "CDP Equity": 46,
-   "CDP Reti": 1,
+   "Diretta MEF": 83,
+   "Gruppo CDP": 19,
    "Mista (MEF + CDP)": 4,
-   "ENI": 0,
-   "Ferrovie dello Stato": 10,
-   "RAI": 0,
-   "Fincantieri": 0,
-   "CDP Venture": 0
+   "Grandi gruppi (capofila)": 56,
+   "Altri Ministeri": 1
   },
   "2020": {
-   "Diretta MEF/Tesoro": 94,
-   "CDP Equity": 13,
-   "CDP Reti": 0,
+   "Diretta MEF": 49,
+   "Gruppo CDP": 11,
    "Mista (MEF + CDP)": 6,
-   "ENI": 0,
-   "Ferrovie dello Stato": 15,
-   "RAI": 0,
-   "Fincantieri": 0,
-   "CDP Venture": 0
+   "Grandi gruppi (capofila)": 41,
+   "Altri Ministeri": 1
   },
   "2021": {
-   "Diretta MEF/Tesoro": 92,
-   "CDP Equity": 30,
-   "CDP Reti": 0,
+   "Diretta MEF": 70,
+   "Gruppo CDP": 17,
    "Mista (MEF + CDP)": 40,
-   "ENI": 0,
-   "Ferrovie dello Stato": 16,
-   "RAI": 0,
-   "Fincantieri": 3,
-   "CDP Venture": 0
+   "Grandi gruppi (capofila)": 71,
+   "Altri Ministeri": 3
   },
   "2022": {
-   "Diretta MEF/Tesoro": 109,
-   "CDP Equity": 54,
-   "CDP Reti": 4,
+   "Diretta MEF": 79,
+   "Gruppo CDP": 37,
    "Mista (MEF + CDP)": 77,
-   "ENI": 2,
-   "Ferrovie dello Stato": 20,
-   "RAI": 37,
-   "Fincantieri": 1,
-   "CDP Venture": 0
+   "Grandi gruppi (capofila)": 151,
+   "Altri Ministeri": 3
   },
   "2023": {
-   "Diretta MEF/Tesoro": 125,
-   "CDP Equity": 26,
-   "CDP Reti": 0,
+   "Diretta MEF": 82,
+   "Gruppo CDP": 18,
    "Mista (MEF + CDP)": 57,
-   "ENI": 1,
-   "Ferrovie dello Stato": 11,
-   "RAI": 74,
-   "Fincantieri": 2,
-   "CDP Venture": 2
+   "Grandi gruppi (capofila)": 204,
+   "Altri Ministeri": 7
   },
   "2024": {
-   "Diretta MEF/Tesoro": 141,
-   "CDP Equity": 33,
-   "CDP Reti": 6,
+   "Diretta MEF": 96,
+   "Gruppo CDP": 32,
    "Mista (MEF + CDP)": 82,
-   "ENI": 1,
-   "Ferrovie dello Stato": 10,
-   "RAI": 6,
-   "Fincantieri": 1,
-   "CDP Venture": 5
+   "Grandi gruppi (capofila)": 111,
+   "Altri Ministeri": 8
   },
   "2025": {
-   "Diretta MEF/Tesoro": 143,
-   "CDP Equity": 53,
-   "CDP Reti": 10,
+   "Diretta MEF": 104,
+   "Gruppo CDP": 35,
    "Mista (MEF + CDP)": 85,
-   "ENI": 2,
-   "Ferrovie dello Stato": 22,
-   "RAI": 16,
-   "Fincantieri": 0,
-   "CDP Venture": 3
+   "Grandi gruppi (capofila)": 168,
+   "Altri Ministeri": 6
   },
   "2026": {
-   "Diretta MEF/Tesoro": 44,
-   "CDP Equity": 16,
-   "CDP Reti": 7,
+   "Diretta MEF": 29,
+   "Gruppo CDP": 14,
    "Mista (MEF + CDP)": 85,
-   "ENI": 6,
-   "Ferrovie dello Stato": 0,
-   "RAI": 20,
-   "Fincantieri": 0,
-   "CDP Venture": 1
+   "Grandi gruppi (capofila)": 81,
+   "Altri Ministeri": 2
   }
  }
 }
