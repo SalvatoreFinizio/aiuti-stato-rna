@@ -1,0 +1,361 @@
+{
+ "firm": {
+  "years": [
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025",
+   "2026"
+  ],
+  "firms": [
+   "Enel (C)",
+   "OPEN FIBER HOLDINGS S.p.a.",
+   "Stm Holding NV (B)",
+   "FINCANTIERI S.p.a.",
+   "SNAM S.p.a.",
+   "SAIPEM S.p.a.",
+   "Poste italiane (C D)",
+   "ACCIAIERIE D'ITALIA HOLDING S.p.a."
+  ],
+  "by_year": {
+   "2016": {
+    "Enel (C)": 0.0,
+    "OPEN FIBER HOLDINGS S.p.a.": 0.0,
+    "Stm Holding NV (B)": 0.0001,
+    "FINCANTIERI S.p.a.": 0.0019,
+    "SNAM S.p.a.": 0.0,
+    "SAIPEM S.p.a.": 0.0,
+    "Poste italiane (C D)": 0.0,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.0
+   },
+   "2017": {
+    "Enel (C)": 0.0,
+    "OPEN FIBER HOLDINGS S.p.a.": 1.4819,
+    "Stm Holding NV (B)": 0.0119,
+    "FINCANTIERI S.p.a.": 0.0004,
+    "SNAM S.p.a.": 0.0001,
+    "SAIPEM S.p.a.": 0.0,
+    "Poste italiane (C D)": 0.0,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.0
+   },
+   "2018": {
+    "Enel (C)": 0.0,
+    "OPEN FIBER HOLDINGS S.p.a.": 0.0,
+    "Stm Holding NV (B)": 0.0514,
+    "FINCANTIERI S.p.a.": 0.0041,
+    "SNAM S.p.a.": 0.0,
+    "SAIPEM S.p.a.": 0.0,
+    "Poste italiane (C D)": 0.0115,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.0
+   },
+   "2019": {
+    "Enel (C)": 0.0,
+    "OPEN FIBER HOLDINGS S.p.a.": 0.1032,
+    "Stm Holding NV (B)": 0.0126,
+    "FINCANTIERI S.p.a.": 0.0046,
+    "SNAM S.p.a.": 0.0,
+    "SAIPEM S.p.a.": 0.0,
+    "Poste italiane (C D)": 0.0007,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.0
+   },
+   "2020": {
+    "Enel (C)": 0.0,
+    "OPEN FIBER HOLDINGS S.p.a.": 0.0,
+    "Stm Holding NV (B)": 0.0094,
+    "FINCANTIERI S.p.a.": 0.0,
+    "SNAM S.p.a.": 0.0,
+    "SAIPEM S.p.a.": 0.0,
+    "Poste italiane (C D)": 0.0107,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.0
+   },
+   "2021": {
+    "Enel (C)": 0.0,
+    "OPEN FIBER HOLDINGS S.p.a.": 0.0,
+    "Stm Holding NV (B)": 0.0217,
+    "FINCANTIERI S.p.a.": 1.1531,
+    "SNAM S.p.a.": 0.0,
+    "SAIPEM S.p.a.": 0.0,
+    "Poste italiane (C D)": 0.024,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.3
+   },
+   "2022": {
+    "Enel (C)": 0.0,
+    "OPEN FIBER HOLDINGS S.p.a.": 1.8287,
+    "Stm Holding NV (B)": 0.0384,
+    "FINCANTIERI S.p.a.": 0.006,
+    "SNAM S.p.a.": 0.0013,
+    "SAIPEM S.p.a.": 0.8516,
+    "Poste italiane (C D)": 0.5607,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.3201
+   },
+   "2023": {
+    "Enel (C)": 12.0,
+    "OPEN FIBER HOLDINGS S.p.a.": 0.0,
+    "Stm Holding NV (B)": 0.296,
+    "FINCANTIERI S.p.a.": 0.8001,
+    "SNAM S.p.a.": 0.0,
+    "SAIPEM S.p.a.": 0.3874,
+    "Poste italiane (C D)": 0.0038,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.109
+   },
+   "2024": {
+    "Enel (C)": 0.0,
+    "OPEN FIBER HOLDINGS S.p.a.": 0.0001,
+    "Stm Holding NV (B)": 0.0269,
+    "FINCANTIERI S.p.a.": 0.0074,
+    "SNAM S.p.a.": 1.81,
+    "SAIPEM S.p.a.": 0.0002,
+    "Poste italiane (C D)": 0.0294,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.001
+   },
+   "2025": {
+    "Enel (C)": 0.0004,
+    "OPEN FIBER HOLDINGS S.p.a.": 0.5697,
+    "Stm Holding NV (B)": 2.1279,
+    "FINCANTIERI S.p.a.": 0.0024,
+    "SNAM S.p.a.": 0.0,
+    "SAIPEM S.p.a.": 0.001,
+    "Poste italiane (C D)": 0.0024,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.101
+   },
+   "2026": {
+    "Enel (C)": 0.0002,
+    "OPEN FIBER HOLDINGS S.p.a.": 0.0006,
+    "Stm Holding NV (B)": 0.0022,
+    "FINCANTIERI S.p.a.": 0.0003,
+    "SNAM S.p.a.": 0.0,
+    "SAIPEM S.p.a.": 0.0006,
+    "Poste italiane (C D)": 0.3534,
+    "ACCIAIERIE D'ITALIA HOLDING S.p.a.": 0.0
+   }
+  },
+  "other_by_year": {
+   "2016": 0.0021,
+   "2017": 0.0063,
+   "2018": 0.039,
+   "2019": 0.0222,
+   "2020": 0.1185,
+   "2021": 0.4748,
+   "2022": 0.2639,
+   "2023": 0.2454,
+   "2024": 0.1656,
+   "2025": 0.1021,
+   "2026": 0.2007
+  },
+  "firms_clean": [
+   "ENEL",
+   "Open Fiber",
+   "STMicroelectronics",
+   "Fincantieri",
+   "Snam",
+   "Saipem",
+   "Poste Italiane",
+   "Acciaierie d'Italia"
+  ]
+ },
+ "legal": {
+  "years": [
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025",
+   "2026"
+  ],
+  "by_year": {
+   "2016": {
+    "COVID_TF": 0.0,
+    "UKRAINE_TF": 0.0,
+    "GBER": 0.004,
+    "DE_MINIMIS": 0.0,
+    "SIEG": 0.0,
+    "OTHER_NOTIFIED": 0.0
+   },
+   "2017": {
+    "COVID_TF": 0.0,
+    "UKRAINE_TF": 0.0,
+    "GBER": 0.0108,
+    "DE_MINIMIS": 0.0001,
+    "SIEG": 0.0,
+    "OTHER_NOTIFIED": 1.4897
+   },
+   "2018": {
+    "COVID_TF": 0.0,
+    "UKRAINE_TF": 0.0,
+    "GBER": 0.0808,
+    "DE_MINIMIS": 0.0002,
+    "SIEG": 0.0106,
+    "OTHER_NOTIFIED": 0.0144
+   },
+   "2019": {
+    "COVID_TF": 0.0,
+    "UKRAINE_TF": 0.0,
+    "GBER": 0.0291,
+    "DE_MINIMIS": 0.0005,
+    "SIEG": 0.0,
+    "OTHER_NOTIFIED": 0.1137
+   },
+   "2020": {
+    "COVID_TF": 0.0248,
+    "UKRAINE_TF": 0.0,
+    "GBER": 0.0456,
+    "DE_MINIMIS": 0.0003,
+    "SIEG": 0.0103,
+    "OTHER_NOTIFIED": 0.0575
+   },
+   "2021": {
+    "COVID_TF": 1.5455,
+    "UKRAINE_TF": 0.0,
+    "GBER": 0.0312,
+    "DE_MINIMIS": 0.0004,
+    "SIEG": 0.0239,
+    "OTHER_NOTIFIED": 0.3725
+   },
+   "2022": {
+    "COVID_TF": 1.1424,
+    "UKRAINE_TF": 0.0064,
+    "GBER": 0.1139,
+    "DE_MINIMIS": 0.0006,
+    "SIEG": 0.0,
+    "OTHER_NOTIFIED": 2.6073
+   },
+   "2023": {
+    "COVID_TF": 0.0051,
+    "UKRAINE_TF": 13.3763,
+    "GBER": 0.115,
+    "DE_MINIMIS": 0.0004,
+    "SIEG": 0.0,
+    "OTHER_NOTIFIED": 0.3449
+   },
+   "2024": {
+    "COVID_TF": 0.002,
+    "UKRAINE_TF": 1.9019,
+    "GBER": 0.0909,
+    "DE_MINIMIS": 0.0009,
+    "SIEG": 0.0236,
+    "OTHER_NOTIFIED": 0.0211
+   },
+   "2025": {
+    "COVID_TF": 0.0059,
+    "UKRAINE_TF": 0.0118,
+    "GBER": 0.0267,
+    "DE_MINIMIS": 0.0007,
+    "SIEG": 0.0,
+    "OTHER_NOTIFIED": 2.8618
+   },
+   "2026": {
+    "COVID_TF": 0.0037,
+    "UKRAINE_TF": 0.0035,
+    "GBER": 0.0325,
+    "DE_MINIMIS": 0.0004,
+    "SIEG": 0.3499,
+    "OTHER_NOTIFIED": 0.168
+   }
+  }
+ },
+ "instr": {
+  "years": [
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025",
+   "2026"
+  ],
+  "by_year": {
+   "2016": {
+    "GUARANTEE": 0.0,
+    "GRANT": 0.0031,
+    "TAX_CREDIT": 0.0,
+    "RISK_FINANCE": 0.0,
+    "LOAN": 0.001
+   },
+   "2017": {
+    "GUARANTEE": 0.0001,
+    "GRANT": 1.497,
+    "TAX_CREDIT": 0.0034,
+    "RISK_FINANCE": 0.0,
+    "LOAN": 0.0002
+   },
+   "2018": {
+    "GUARANTEE": 0.0003,
+    "GRANT": 0.0973,
+    "TAX_CREDIT": 0.0079,
+    "RISK_FINANCE": 0.0,
+    "LOAN": 0.0006
+   },
+   "2019": {
+    "GUARANTEE": 0.0002,
+    "GRANT": 0.1379,
+    "TAX_CREDIT": 0.0052,
+    "RISK_FINANCE": 0.0,
+    "LOAN": 0.0001
+   },
+   "2020": {
+    "GUARANTEE": 0.0242,
+    "GRANT": 0.0965,
+    "TAX_CREDIT": 0.0179,
+    "RISK_FINANCE": 0.0,
+    "LOAN": 0.0
+   },
+   "2021": {
+    "GUARANTEE": 1.5422,
+    "GRANT": 0.4097,
+    "TAX_CREDIT": 0.0216,
+    "RISK_FINANCE": 0.0001,
+    "LOAN": 0.0
+   },
+   "2022": {
+    "GUARANTEE": 1.1158,
+    "GRANT": 2.6719,
+    "TAX_CREDIT": 0.0529,
+    "RISK_FINANCE": 0.0,
+    "LOAN": 0.03
+   },
+   "2023": {
+    "GUARANTEE": 13.3768,
+    "GRANT": 0.4272,
+    "TAX_CREDIT": 0.0376,
+    "RISK_FINANCE": 0.0002,
+    "LOAN": 0.0
+   },
+   "2024": {
+    "GUARANTEE": 1.8903,
+    "GRANT": 0.1166,
+    "TAX_CREDIT": 0.033,
+    "RISK_FINANCE": 0.0,
+    "LOAN": 0.0005
+   },
+   "2025": {
+    "GUARANTEE": 0.0004,
+    "GRANT": 2.7204,
+    "TAX_CREDIT": 0.186,
+    "RISK_FINANCE": 0.0,
+    "LOAN": 0.0
+   },
+   "2026": {
+    "GUARANTEE": 0.0001,
+    "GRANT": 0.5428,
+    "TAX_CREDIT": 0.0149,
+    "RISK_FINANCE": 0.0,
+    "LOAN": 0.0002
+   }
+  }
+ }
+}
