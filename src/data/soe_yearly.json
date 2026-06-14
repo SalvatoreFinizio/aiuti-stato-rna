@@ -1,0 +1,272 @@
+{
+ "years": [
+  "2016",
+  "2017",
+  "2018",
+  "2019",
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "buckets": [
+  "Diretta MEF/Tesoro",
+  "CDP Equity",
+  "CDP Reti",
+  "Mista (MEF + CDP)",
+  "ENI",
+  "Ferrovie dello Stato",
+  "RAI",
+  "Fincantieri",
+  "CDP Venture"
+ ],
+ "by_year": {
+  "2016": {
+   "Diretta MEF/Tesoro": 0.001,
+   "CDP Equity": 0.004,
+   "CDP Reti": 0.0,
+   "Mista (MEF + CDP)": 0.0,
+   "ENI": 0.0,
+   "Ferrovie dello Stato": 0.0,
+   "RAI": 0.0,
+   "Fincantieri": 0.0,
+   "CDP Venture": 0.0
+  },
+  "2017": {
+   "Diretta MEF/Tesoro": 0.0109,
+   "CDP Equity": 1.4972,
+   "CDP Reti": 0.0001,
+   "Mista (MEF + CDP)": 0.0,
+   "ENI": 0.0,
+   "Ferrovie dello Stato": 0.0,
+   "RAI": 0.0,
+   "Fincantieri": 0.0,
+   "CDP Venture": 0.0
+  },
+  "2018": {
+   "Diretta MEF/Tesoro": 0.052,
+   "CDP Equity": 0.0604,
+   "CDP Reti": 0.0,
+   "Mista (MEF + CDP)": 0.0128,
+   "ENI": 0.0,
+   "Ferrovie dello Stato": 0.0026,
+   "RAI": 0.0,
+   "Fincantieri": 0.0011,
+   "CDP Venture": 0.0
+  },
+  "2019": {
+   "Diretta MEF/Tesoro": 0.0219,
+   "CDP Equity": 0.1244,
+   "CDP Reti": 0.0001,
+   "Mista (MEF + CDP)": 0.0009,
+   "ENI": 0.0,
+   "Ferrovie dello Stato": 0.0065,
+   "RAI": 0.0,
+   "Fincantieri": 0.0,
+   "CDP Venture": 0.0
+  },
+  "2020": {
+   "Diretta MEF/Tesoro": 0.0637,
+   "CDP Equity": 0.0129,
+   "CDP Reti": 0.0,
+   "Mista (MEF + CDP)": 0.0529,
+   "ENI": 0.0,
+   "Ferrovie dello Stato": 0.0021,
+   "RAI": 0.0,
+   "Fincantieri": 0.0,
+   "CDP Venture": 0.0
+  },
+  "2021": {
+   "Diretta MEF/Tesoro": 0.0783,
+   "CDP Equity": 1.3299,
+   "CDP Reti": 0.0,
+   "Mista (MEF + CDP)": 0.381,
+   "ENI": 0.0,
+   "Ferrovie dello Stato": 0.0091,
+   "RAI": 0.0,
+   "Fincantieri": 0.0168,
+   "CDP Venture": 0.0
+  },
+  "2022": {
+   "Diretta MEF/Tesoro": 0.24,
+   "CDP Equity": 1.8781,
+   "CDP Reti": 0.05,
+   "Mista (MEF + CDP)": 0.6881,
+   "ENI": 0.8516,
+   "Ferrovie dello Stato": 0.0127,
+   "RAI": 0.0089,
+   "Fincantieri": 0.0,
+   "CDP Venture": 0.0
+  },
+  "2023": {
+   "Diretta MEF/Tesoro": 12.1222,
+   "CDP Equity": 1.2717,
+   "CDP Reti": 0.0,
+   "Mista (MEF + CDP)": 0.013,
+   "ENI": 0.3874,
+   "Ferrovie dello Stato": 0.0056,
+   "RAI": 0.0195,
+   "Fincantieri": 0.0,
+   "CDP Venture": 0.0
+  },
+  "2024": {
+   "Diretta MEF/Tesoro": 0.1555,
+   "CDP Equity": 0.0363,
+   "CDP Reti": 1.8398,
+   "Mista (MEF + CDP)": 0.0343,
+   "ENI": 0.0002,
+   "Ferrovie dello Stato": 0.0065,
+   "RAI": 0.0026,
+   "Fincantieri": 0.0007,
+   "CDP Venture": 0.0001
+  },
+  "2025": {
+   "Diretta MEF/Tesoro": 0.0386,
+   "CDP Equity": 2.7026,
+   "CDP Reti": 0.0906,
+   "Mista (MEF + CDP)": 0.0184,
+   "ENI": 0.001,
+   "Ferrovie dello Stato": 0.0135,
+   "RAI": 0.0033,
+   "Fincantieri": 0.0,
+   "CDP Venture": 0.0002
+  },
+  "2026": {
+   "Diretta MEF/Tesoro": 0.0199,
+   "CDP Equity": 0.0036,
+   "CDP Reti": 0.0056,
+   "Mista (MEF + CDP)": 0.5266,
+   "ENI": 0.0006,
+   "Ferrovie dello Stato": 0.0,
+   "RAI": 0.0077,
+   "Fincantieri": 0.0,
+   "CDP Venture": 0.018
+  }
+ },
+ "n_by_year": {
+  "2016": {
+   "Diretta MEF/Tesoro": 6,
+   "CDP Equity": 5,
+   "CDP Reti": 0,
+   "Mista (MEF + CDP)": 0,
+   "ENI": 0,
+   "Ferrovie dello Stato": 0,
+   "RAI": 0,
+   "Fincantieri": 0,
+   "CDP Venture": 0
+  },
+  "2017": {
+   "Diretta MEF/Tesoro": 51,
+   "CDP Equity": 31,
+   "CDP Reti": 1,
+   "Mista (MEF + CDP)": 0,
+   "ENI": 0,
+   "Ferrovie dello Stato": 0,
+   "RAI": 0,
+   "Fincantieri": 0,
+   "CDP Venture": 0
+  },
+  "2018": {
+   "Diretta MEF/Tesoro": 189,
+   "CDP Equity": 30,
+   "CDP Reti": 0,
+   "Mista (MEF + CDP)": 4,
+   "ENI": 0,
+   "Ferrovie dello Stato": 4,
+   "RAI": 0,
+   "Fincantieri": 1,
+   "CDP Venture": 0
+  },
+  "2019": {
+   "Diretta MEF/Tesoro": 109,
+   "CDP Equity": 46,
+   "CDP Reti": 1,
+   "Mista (MEF + CDP)": 4,
+   "ENI": 0,
+   "Ferrovie dello Stato": 10,
+   "RAI": 0,
+   "Fincantieri": 0,
+   "CDP Venture": 0
+  },
+  "2020": {
+   "Diretta MEF/Tesoro": 94,
+   "CDP Equity": 13,
+   "CDP Reti": 0,
+   "Mista (MEF + CDP)": 6,
+   "ENI": 0,
+   "Ferrovie dello Stato": 15,
+   "RAI": 0,
+   "Fincantieri": 0,
+   "CDP Venture": 0
+  },
+  "2021": {
+   "Diretta MEF/Tesoro": 92,
+   "CDP Equity": 30,
+   "CDP Reti": 0,
+   "Mista (MEF + CDP)": 40,
+   "ENI": 0,
+   "Ferrovie dello Stato": 16,
+   "RAI": 0,
+   "Fincantieri": 3,
+   "CDP Venture": 0
+  },
+  "2022": {
+   "Diretta MEF/Tesoro": 109,
+   "CDP Equity": 54,
+   "CDP Reti": 4,
+   "Mista (MEF + CDP)": 77,
+   "ENI": 2,
+   "Ferrovie dello Stato": 20,
+   "RAI": 37,
+   "Fincantieri": 1,
+   "CDP Venture": 0
+  },
+  "2023": {
+   "Diretta MEF/Tesoro": 125,
+   "CDP Equity": 26,
+   "CDP Reti": 0,
+   "Mista (MEF + CDP)": 57,
+   "ENI": 1,
+   "Ferrovie dello Stato": 11,
+   "RAI": 74,
+   "Fincantieri": 2,
+   "CDP Venture": 2
+  },
+  "2024": {
+   "Diretta MEF/Tesoro": 141,
+   "CDP Equity": 33,
+   "CDP Reti": 6,
+   "Mista (MEF + CDP)": 82,
+   "ENI": 1,
+   "Ferrovie dello Stato": 10,
+   "RAI": 6,
+   "Fincantieri": 1,
+   "CDP Venture": 5
+  },
+  "2025": {
+   "Diretta MEF/Tesoro": 143,
+   "CDP Equity": 53,
+   "CDP Reti": 10,
+   "Mista (MEF + CDP)": 85,
+   "ENI": 2,
+   "Ferrovie dello Stato": 22,
+   "RAI": 16,
+   "Fincantieri": 0,
+   "CDP Venture": 3
+  },
+  "2026": {
+   "Diretta MEF/Tesoro": 44,
+   "CDP Equity": 16,
+   "CDP Reti": 7,
+   "Mista (MEF + CDP)": 85,
+   "ENI": 6,
+   "Ferrovie dello Stato": 0,
+   "RAI": 20,
+   "Fincantieri": 0,
+   "CDP Venture": 1
+  }
+ }
+}
