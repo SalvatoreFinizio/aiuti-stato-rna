@@ -195,7 +195,7 @@ const linkSel = g.append('g').attr('stroke-opacity',.5).selectAll('path')
   .attr('stroke-dasharray',l=>isMinority(l)?'3 3':null)
   .attr('marker-end',l=>`url(#arr-${l.control})`);
 const nodeSel = g.append('g').selectAll('g').data(DATA.nodes).join('g')
-  .attr('class',d=> 'node' + ((d.id==='STATO'||d.kind==='ministero'||d.level===1||d.esl>0.3)?' big':''));
+  .attr('class',d=> 'node' + ((d.id==='STATO'||d.kind==='ministero'||d.level===1||d.esl>1)?' big':''));
 nodeSel.append('circle').attr('r',radius)
   .attr('fill',colorOf).attr('fill-opacity',d=>d.esl>0||d.kind!=='societa'?.92:.5)
   .attr('stroke','#111110').attr('stroke-width',1.4);
@@ -203,14 +203,15 @@ nodeSel.append('text').attr('x',d=>radius(d)+3).attr('y',3)
   .text(d=>d.label.length>28?d.label.slice(0,26)+'…':d.label);
 
 // ---- forces ----
+const SPREAD = Math.min(W,H)*0.11;
 const sim = d3.forceSimulation(DATA.nodes)
   .force('link', d3.forceLink(DATA.links).id(d=>d.id)
-    .distance(l=>l.control==='governo'?70:l.level===1?64:l.level===2?42:34).strength(.55))
-  .force('charge', d3.forceManyBody().strength(d=>d.id==='STATO'?-900:d.kind==='ministero'?-420:-90))
-  .force('collide', d3.forceCollide().radius(d=>radius(d)+5).iterations(2))
-  .force('x', d3.forceX(d=> W/2 + (d.branch&&bAngle.has(d.branch)? Math.cos(bAngle.get(d.branch))*Math.min(W,H)*0.05*(d.level||1):0)).strength(.05))
-  .force('y', d3.forceY(d=> H/2 + (d.branch&&bAngle.has(d.branch)? Math.sin(bAngle.get(d.branch))*Math.min(W,H)*0.05*(d.level||1):0)).strength(.05))
-  .force('center', d3.forceCenter(W/2,H/2).strength(.04));
+    .distance(l=>l.control==='governo'?170:l.level===1?135:l.level===2?92:70).strength(.32))
+  .force('charge', d3.forceManyBody().strength(d=>d.id==='STATO'?-2600:d.kind==='ministero'?-1300:-440).distanceMax(1100))
+  .force('collide', d3.forceCollide().radius(d=>radius(d)+18).iterations(4))
+  .force('x', d3.forceX(d=> W/2 + (d.branch&&bAngle.has(d.branch)? Math.cos(bAngle.get(d.branch))*SPREAD*(d.level||1):0)).strength(.09))
+  .force('y', d3.forceY(d=> H/2 + (d.branch&&bAngle.has(d.branch)? Math.sin(bAngle.get(d.branch))*SPREAD*(d.level||1):0)).strength(.09))
+  .force('center', d3.forceCenter(W/2,H/2).strength(.015));
 
 const stato = byId.get('STATO'); if(stato){stato.fx=W/2;stato.fy=H/2;}
 
@@ -240,7 +241,7 @@ function fitView(dur){
   const tx=W/2-kk*(x0+x1)/2, ty=TOPINSET+(H-TOPINSET)/2-kk*(y0+y1)/2;
   svg.transition().duration(dur).call(zoom.transform, d3.zoomIdentity.translate(tx,ty).scale(kk));
 }
-setTimeout(()=>fitView(REDUCE?0:700), REDUCE?150:1400);
+setTimeout(()=>fitView(REDUCE?0:700), REDUCE?150:2200);
 
 // ---- drag ----
 nodeSel.call(d3.drag()
@@ -397,7 +398,7 @@ document.getElementById('btn-reset').onclick=()=>{
 };
 
 window.addEventListener('resize',()=>{W=window.innerWidth;H=window.innerHeight;
-  sim.force('center',d3.forceCenter(W/2,H/2).strength(.04));if(stato){stato.fx=W/2;stato.fy=H/2;}sim.alpha(.3).restart();});
+  sim.force('center',d3.forceCenter(W/2,H/2).strength(.015));if(stato){stato.fx=W/2;stato.fy=H/2;}sim.alpha(.3).restart();});
 </script>
 </body>
 </html>
