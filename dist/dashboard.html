@@ -570,6 +570,13 @@
     </div>
 
     <div class="card" style="margin-top:12px;">
+      <div class="card-title">Evoluzione e composizione · <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> annuale per catena di controllo</div>
+      <div class="card-sub">Una barra per anno · composizione interna per <i>tramite</i> (Diretta MEF · catene CDP · altre holding) · mld €</div>
+      <div class="chart-h" style="height:300px;"><canvas id="soeEvolChart"></canvas></div>
+      <p class="note" style="margin-top:12px;">Picco 2022–2023: <abbr title="Temporary Crisis and Transition Framework">TCTF</abbr> energia (ENEL, controllate energetiche). L'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> è ripartito per anno di concessione (<code>DATA_CONCESSIONE</code>).</p>
+    </div>
+
+    <div class="card" style="margin-top:12px;">
       <div class="card-title">Elenco completo · <span id="soe-count">—</span> partecipate identificate</div>
       <div class="card-sub">Beneficiari ordinati per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> · catena di controllo dedotta da <abbr title="Lista canonica MEF in partecipate_stato_lista.md">lista canonica</abbr> + Orbis (<abbr title="Global Ultimate Owner">GUO</abbr>/<abbr title="Domestic Ultimate Owner">DUO</abbr>/<abbr title="Controlling Shareholder">CSH</abbr>)</div>
       <div class="tbl-soe-wrap">
@@ -1570,6 +1577,48 @@ new Chart(document.getElementById('soeTramChart'), {
     scales: {
       x: { grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 }, callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#56524e', font: { size: 10 } } },
       y: { grid: { display: false }, ticks: { color: '#8a8580', font: { size: 11 } }, border: { display: false } }
+    }
+  }
+});
+
+// 19b-bis. Evoluzione e composizione — stacked bar per anno
+const D_SOE_YEAR = {"years":["2016","2017","2018","2019","2020","2021","2022","2023","2024","2025","2026"],"by_year":{"2016":{"Diretta MEF/Tesoro":0.001,"CDP Equity":0.004,"CDP Reti":0.0,"Mista (MEF + CDP)":0.0,"ENI":0.0,"Ferrovie dello Stato":0.0,"RAI":0.0,"Fincantieri":0.0,"CDP Venture":0.0},"2017":{"Diretta MEF/Tesoro":0.0109,"CDP Equity":1.4972,"CDP Reti":0.0001,"Mista (MEF + CDP)":0.0,"ENI":0.0,"Ferrovie dello Stato":0.0,"RAI":0.0,"Fincantieri":0.0,"CDP Venture":0.0},"2018":{"Diretta MEF/Tesoro":0.052,"CDP Equity":0.0604,"CDP Reti":0.0,"Mista (MEF + CDP)":0.0128,"ENI":0.0,"Ferrovie dello Stato":0.0026,"RAI":0.0,"Fincantieri":0.0011,"CDP Venture":0.0},"2019":{"Diretta MEF/Tesoro":0.0219,"CDP Equity":0.1244,"CDP Reti":0.0001,"Mista (MEF + CDP)":0.0009,"ENI":0.0,"Ferrovie dello Stato":0.0065,"RAI":0.0,"Fincantieri":0.0,"CDP Venture":0.0},"2020":{"Diretta MEF/Tesoro":0.0637,"CDP Equity":0.0129,"CDP Reti":0.0,"Mista (MEF + CDP)":0.0529,"ENI":0.0,"Ferrovie dello Stato":0.0021,"RAI":0.0,"Fincantieri":0.0,"CDP Venture":0.0},"2021":{"Diretta MEF/Tesoro":0.0783,"CDP Equity":1.3299,"CDP Reti":0.0,"Mista (MEF + CDP)":0.381,"ENI":0.0,"Ferrovie dello Stato":0.0091,"RAI":0.0,"Fincantieri":0.0168,"CDP Venture":0.0},"2022":{"Diretta MEF/Tesoro":0.24,"CDP Equity":1.8781,"CDP Reti":0.05,"Mista (MEF + CDP)":0.6881,"ENI":0.8516,"Ferrovie dello Stato":0.0127,"RAI":0.0089,"Fincantieri":0.0,"CDP Venture":0.0},"2023":{"Diretta MEF/Tesoro":12.1222,"CDP Equity":1.2717,"CDP Reti":0.0,"Mista (MEF + CDP)":0.013,"ENI":0.3874,"Ferrovie dello Stato":0.0056,"RAI":0.0195,"Fincantieri":0.0,"CDP Venture":0.0},"2024":{"Diretta MEF/Tesoro":0.1555,"CDP Equity":0.0363,"CDP Reti":1.8398,"Mista (MEF + CDP)":0.0343,"ENI":0.0002,"Ferrovie dello Stato":0.0065,"RAI":0.0026,"Fincantieri":0.0007,"CDP Venture":0.0001},"2025":{"Diretta MEF/Tesoro":0.0386,"CDP Equity":2.7026,"CDP Reti":0.0906,"Mista (MEF + CDP)":0.0184,"ENI":0.001,"Ferrovie dello Stato":0.0135,"RAI":0.0033,"Fincantieri":0.0,"CDP Venture":0.0002},"2026":{"Diretta MEF/Tesoro":0.0199,"CDP Equity":0.0036,"CDP Reti":0.0056,"Mista (MEF + CDP)":0.5266,"ENI":0.0006,"Ferrovie dello Stato":0.0,"RAI":0.0077,"Fincantieri":0.0,"CDP Venture":0.018}}};
+// consolidate the long tail (ENI/FS/RAI/Fincantieri/CDP Venture) into one segment for legibility
+const SOE_SEG = [
+  {label:'Diretta MEF / Tesoro', keys:['Diretta MEF/Tesoro'],                                  color:'rgba(200,150,46,.78)'},
+  {label:'via CDP Equity',       keys:['CDP Equity'],                                           color:'rgba(90,143,130,.80)'},
+  {label:'via CDP Reti',         keys:['CDP Reti'],                                             color:'rgba(122,170,156,.72)'},
+  {label:'Mista (MEF + CDP)',    keys:['Mista (MEF + CDP)'],                                    color:'rgba(64,112,100,.78)'},
+  {label:'Altre catene (ENI · FS · RAI · CDP Venture)', keys:['ENI','Ferrovie dello Stato','RAI','Fincantieri','CDP Venture'], color:'rgba(110,144,170,.70)'},
+];
+const SOE_Y = D_SOE_YEAR.years;
+new Chart(document.getElementById('soeEvolChart'), {
+  type: 'bar',
+  data: {
+    labels: SOE_Y.map(y => y === '2026' ? "'26*" : y),
+    datasets: SOE_SEG.map(seg => ({
+      label: seg.label,
+      data: SOE_Y.map(y => seg.keys.reduce((s,k) => s + (D_SOE_YEAR.by_year[y][k] || 0), 0)),
+      backgroundColor: seg.color,
+      borderRadius: 2,
+      stack: 'soe'
+    }))
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, animation: { duration: 600 },
+    plugins: {
+      legend: { labels: { color: '#8a8580', font: { size: 10 }, padding: 10, boxWidth: 10, boxHeight: 10 } },
+      tooltip: { callbacks: {
+        label: c => `${c.dataset.label}: € ${c.parsed.y.toFixed(2)} mld`,
+        footer: items => {
+          const tot = items.reduce((s,i) => s + i.parsed.y, 0);
+          return `Totale anno: € ${tot.toFixed(2)} mld`;
+        }
+      } }
+    },
+    scales: {
+      x: { stacked: true, grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
+      y: { stacked: true, grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#56524e', font: { size: 10 } } }
     }
   }
 });
