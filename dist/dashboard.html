@@ -199,6 +199,37 @@
     .note { font-size: 11px; color: var(--dim); border-left: 2px solid var(--border); padding-left: 10px; margin-top: 12px; line-height: 1.6; }
     code { font-family: var(--mono); font-size: 10px; background: var(--surface); padding: 1px 4px; border-radius: 2px; }
 
+    /* ── SOE table ───────────────────────────────── */
+    .tbl-soe { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+    .tbl-soe thead th {
+      text-align: left; font-weight: 500; color: var(--dim);
+      font-size: 10px; text-transform: uppercase; letter-spacing: .07em;
+      padding: 8px 8px 8px 0; border-bottom: 1px solid var(--border);
+    }
+    .tbl-soe tbody td {
+      padding: 8px 8px 8px 0; border-bottom: 1px solid var(--border); color: var(--muted);
+      vertical-align: top;
+    }
+    .tbl-soe tbody tr:hover td { color: var(--text); background: rgba(200,150,46,.03); }
+    .tbl-soe .num { font-family: var(--mono); font-size: 11px; color: var(--amber); text-align: right; white-space: nowrap; }
+    .tbl-soe .nm  { color: var(--text); font-weight: 500; }
+    .tbl-soe .tr-tag {
+      font-family: var(--mono); font-size: 10px; color: var(--steel);
+      border: 1px solid var(--border); border-radius: 3px;
+      padding: 1px 5px; white-space: nowrap;
+    }
+    .tbl-soe .tr-tag.diretta { color: var(--amber); border-color: rgba(200,150,46,.35); }
+    .tbl-soe .tr-tag.mista   { color: var(--teal); border-color: rgba(90,143,130,.4); }
+    .tbl-soe .tr-tag.indiretta { color: var(--steel); border-color: rgba(110,144,170,.4); }
+    .tbl-soe-wrap { overflow-x: auto; }
+    .conced-note {
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--teal);
+      padding: 12px 16px; border-radius: 4px; font-size: 11.5px; color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .conced-note strong { color: var(--text); font-family: var(--mono); font-size: 11px; }
+
     /* ── methodology ─────────────────────────────── */
     .method { border-top: 1px solid var(--border); padding: 32px 0 48px; }
     .method h3 { font-size: 10px; text-transform: uppercase; letter-spacing: .09em; color: var(--dim); margin-bottom: 12px; }
@@ -482,6 +513,85 @@
         <div class="card-sub">Top 10 divisioni · <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld €</div>
         <div class="chart-h" style="height:340px;"><canvas id="saceAtecoChart"></canvas></div>
       </div>
+    </div>
+  </section>
+
+  <!-- SOE — Partecipate statali -->
+  <section>
+    <div class="sec-hd">
+      <h2>Focus: Imprese a partecipazione statale</h2>
+      <span class="sec-note">Beneficiari riconducibili al perimetro pubblico centrale · <abbr title="Ministero dell'Economia e delle Finanze">MEF</abbr>, <abbr title="Cassa Depositi e Prestiti">CDP</abbr>, controllate dirette/indirette</span>
+    </div>
+
+    <p class="note" style="margin:0 0 18px 0; max-width:880px;">
+      Beneficiari del Registro Nazionale Aiuti riconducibili a capitale pubblico centrale (lista canonica <abbr title="Ministero dell'Economia e delle Finanze">MEF</abbr> incrociata con la catena di controllo Orbis: <abbr title="Global Ultimate Owner — proprietario ultimo">GUO</abbr> / <abbr title="Domestic Ultimate Owner">DUO</abbr> / <abbr title="Controlling Shareholder">CSH</abbr>).
+      Sono escluse partecipate da Comuni e Regioni. Si conferma quanto la letteratura sulle Stato-Imprese segnala da tempo: il vero punto di contatto fra Stato e mercato passa da <strong><abbr title="Cassa Depositi e Prestiti">CDP</abbr></strong>, non dal Tesoro.
+      <strong>ENEL</strong> da sola spiega quasi metà dell'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> diretto a partecipate (€ 12,0 mld nel <abbr title="Temporary Crisis and Transition Framework — regime UE per aiuti a imprese energivore">TCTF</abbr> energia 2022-23).
+    </p>
+
+    <div class="kpi-row" style="margin-bottom:24px;">
+      <div class="kpi">
+        <div class="kpi-label">Partecipate identificate</div>
+        <div class="kpi-val" id="soe-n">—</div>
+        <div class="kpi-sub" id="soe-n-sub">come beneficiari</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> ricevuto</div>
+        <div class="kpi-val" id="soe-esl">— mld</div>
+        <div class="kpi-sub" id="soe-pct"></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Concessioni</div>
+        <div class="kpi-val" id="soe-grants">—</div>
+        <div class="kpi-sub">atti di concessione</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Catena di controllo</div>
+        <div class="kpi-val" style="font-size:22px;color:var(--teal);">CDP</div>
+        <div class="kpi-sub" id="soe-cdp-sub">— mld via <abbr title="Cassa Depositi e Prestiti — controllata 82,77% MEF">CDP</abbr> Equity/Reti/Venture</div>
+      </div>
+    </div>
+
+    <div class="conced-note">
+      <strong>NB · Concedenti, non beneficiari.</strong> Le due principali partecipate <abbr title="Servizi Assicurativi del Commercio Estero">SACE</abbr> (€ 76,6 mld erogati in garanzia) e <abbr title="Gestore Servizi Energetici">GSE</abbr> (€ 17,1 mld in incentivi green) non compaiono qui: distribuiscono aiuti, non li ricevono. Vedi i focus rispettivi.
+    </div>
+
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Top 15 partecipate per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> ricevuto</div>
+        <div class="card-sub"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld € · barra orizzontale</div>
+        <div class="chart-h" style="height:420px;"><canvas id="soeBeneChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Catena di controllo (<i>tramite</i>)</div>
+        <div class="card-sub"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld € · come arriva lo Stato al beneficiario</div>
+        <div class="chart-h" style="height:420px;"><canvas id="soeTramChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px;">
+      <div class="card-title">Elenco completo · <span id="soe-count">—</span> partecipate identificate</div>
+      <div class="card-sub">Beneficiari ordinati per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> · catena di controllo dedotta da <abbr title="Lista canonica MEF in partecipate_stato_lista.md">lista canonica</abbr> + Orbis (<abbr title="Global Ultimate Owner">GUO</abbr>/<abbr title="Domestic Ultimate Owner">DUO</abbr>/<abbr title="Controlling Shareholder">CSH</abbr>)</div>
+      <div class="tbl-soe-wrap">
+        <table class="tbl-soe">
+          <thead>
+            <tr>
+              <th>Denominazione</th>
+              <th>Quota MEF</th>
+              <th>Tramite</th>
+              <th>Regione</th>
+              <th><abbr title="Classificazione delle Attività Economiche">ATECO</abbr></th>
+              <th style="text-align:right;">N. conc.</th>
+              <th style="text-align:right;"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld €</th>
+            </tr>
+          </thead>
+          <tbody id="soe-tbody"></tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:14px;">
+        Fonte: <code>partecipate_statali_full.csv</code> · 23 partecipate canonical MEF + 15 da catena Orbis (controllate di secondo/terzo livello).
+        Le 3 voci con <em>«Diretta (Tesoro/Repubblica)»</em> finale (Mecaer, C2MAC, IIT) corrispondono a casi in cui Orbis non espone intermediari riconoscibili nel passaggio fino a Repubblica Italiana.
+      </p>
     </div>
   </section>
 
@@ -1407,6 +1517,83 @@ horizBar('saceAtecoChart',
   sAt.map(a => a.esl_mld),
   CA,
   c => `€ ${c.parsed.x.toFixed(2)} mld · ${sAt[c.dataIndex].n.toLocaleString('it-IT')} concessioni`);
+
+/* ── 19. SOE — Imprese a partecipazione statale ───────────────── */
+const D_SOE = {"totals":{"n_soe":38,"n_canonical_beneficiari":23,"n_orbis_only":15,"n_concedenti_only":2,"esl_mld":26.815,"n_grants":2227,"pct_rna":5.26},"by_tramite":[{"tramite":"Diretta MEF/Tesoro","esl_mld":12.802,"n_firms":16,"n_grants":1121},{"tramite":"CDP Equity","esl_mld":8.921,"n_firms":8,"n_grants":342},{"tramite":"CDP Reti","esl_mld":1.986,"n_firms":4,"n_grants":30},{"tramite":"Mista (MEF + CDP)","esl_mld":1.728,"n_firms":2,"n_grants":440},{"tramite":"ENI","esl_mld":1.241,"n_firms":1,"n_grants":12},{"tramite":"Ferrovie dello Stato","esl_mld":0.058,"n_firms":4,"n_grants":110},{"tramite":"RAI","esl_mld":0.042,"n_firms":1,"n_grants":153},{"tramite":"Fincantieri","esl_mld":0.019,"n_firms":1,"n_grants":8},{"tramite":"CDP Venture","esl_mld":0.018,"n_firms":1,"n_grants":11}],"top_bene":[{"rank":"2","denom":"ENEL","denom_full":"ENEL SpA","esl_mld":12.001,"n":7,"regione":"Lazio","ateco":"D.35","quota":"23.6%","tramite":"Diretta","source":"Orbis+Canonical"},{"rank":"164","denom":"Open Fiber","denom_full":"Open Fiber SpA","esl_mld":3.984,"n":46,"regione":"Lombardia","ateco":"K.61","quota":"60%","tramite":"Indiretta via CDP Equity","source":"Orbis+Canonical"},{"rank":"7","denom":"STMicroelectronics","denom_full":"STMicroelectronics Srl","esl_mld":2.598,"n":124,"regione":"Lombardia","ateco":"C.26","quota":"~13.7%","tramite":"Indiretta via CDP Equity / ST Holding NV","source":"Orbis+Canonical"},{"rank":"13","denom":"Fincantieri","denom_full":"Fincantieri SpA","esl_mld":1.98,"n":50,"regione":"Friuli-Venezia Giulia","ateco":"N.72","quota":"71.3%","tramite":"Indiretta via CDP Equity","source":"Orbis+Canonical"},{"rank":"32","denom":"Snam","denom_full":"Snam SpA","esl_mld":1.811,"n":8,"regione":"Lombardia","ateco":"F.43","quota":"31.35%","tramite":"Indiretta via CDP Reti","source":"Orbis+Canonical"},{"rank":"7","denom":"SAIPEM","denom_full":"SAIPEM SPA","esl_mld":1.241,"n":12,"regione":"Lombardia","ateco":"H.50","quota":"","tramite":"Indiretta via ENI","source":"Orbis"},{"rank":"17","denom":"Poste Italiane","denom_full":"Poste Italiane SpA","esl_mld":0.996,"n":400,"regione":"Lazio","ateco":"D.35","quota":"~64%","tramite":"Mista (29.26% diretta + 35% via CDP)","source":"Orbis+Canonical"},{"rank":"1","denom":"ENI","denom_full":"ENI SpA","esl_mld":0.732,"n":40,"regione":"Lazio","ateco":"D.35","quota":"~30%","tramite":"Mista (4.3% diretta + 25.7% via CDP)","source":"Orbis+Canonical"},{"rank":"960","denom":"CONSIGLIO NAZIONALE DELLE RICERCHE","denom_full":"CONSIGLIO NAZIONALE DELLE RICERCHE","esl_mld":0.229,"n":533,"regione":"Lazio","ateco":"N.72","quota":"","tramite":"Diretta tramite Min. Istruzione","source":"Orbis"},{"rank":"4","denom":"Leonardo","denom_full":"Leonardo SpA","esl_mld":0.189,"n":116,"regione":"Lazio","ateco":"C.33","quota":"30.2%","tramite":"Diretta","source":"Orbis+Canonical"},{"rank":"105","denom":"ANSALDO ENERGIA","denom_full":"ANSALDO ENERGIA S.P.A.","esl_mld":0.186,"n":21,"regione":"Liguria","ateco":"C.28","quota":"","tramite":"Indiretta via CDP Equity","source":"Orbis"},{"rank":"764","denom":"BYS AMBIENTE IMPIANTI","denom_full":"BYS AMBIENTE IMPIANTI S.R.L.","esl_mld":0.17,"n":12,"regione":"Piemonte","ateco":"D.35","quota":"","tramite":"Indiretta via Snam (CDP Reti)","source":"Orbis"},{"rank":"71","denom":"GRANAROLO S.P.A.","denom_full":"GRANAROLO S.P.A. IN SIGLA G. SPA","esl_mld":0.152,"n":32,"regione":"Emilia-Romagna","ateco":"C.10","quota":"","tramite":"Diretta tramite CDP","source":"Orbis"},{"rank":"44","denom":"ITA Airways","denom_full":"ITA Airways SpA","esl_mld":0.091,"n":28,"regione":"Lazio","ateco":"H.51","quota":"59%","tramite":"Diretta","source":"Orbis+Canonical"},{"rank":"207","denom":"GPI","denom_full":"GPI S.P.A.","esl_mld":0.091,"n":40,"regione":"Provincia Autonoma di Trento","ateco":"O.82","quota":"","tramite":"Indiretta via CDP Equity","source":"Orbis"},{"rank":"379","denom":"MECAER AVIATION GROUP S.P.A.","denom_full":"MECAER AVIATION GROUP S.P.A. IN BREVE MAG S.P.A.","esl_mld":0.055,"n":70,"regione":"Piemonte","ateco":"C.30","quota":"","tramite":"Diretta (Tesoro/Repubblica)","source":"Orbis"},{"rank":"413","denom":"MERCITALIA INTERMODAL","denom_full":"MERCITALIA INTERMODAL S.P.A.","esl_mld":0.05,"n":76,"regione":"Lombardia","ateco":"H.49","quota":"","tramite":"Indiretta via Ferrovie dello Stato","source":"Orbis"},{"rank":"408","denom":"HOTELTURIST","denom_full":"HOTELTURIST S.P.A.","esl_mld":0.046,"n":25,"regione":"Veneto","ateco":"N.79","quota":"","tramite":"Indiretta via CDP Equity","source":"Orbis"},{"rank":"343","denom":"RAI CINEMA","denom_full":"RAI CINEMA S.P.A.","esl_mld":0.042,"n":153,"regione":"Lazio","ateco":"J.59","quota":"","tramite":"Indiretta via RAI","source":"Orbis"},{"rank":"389","denom":"VALVITALIA","denom_full":"VALVITALIA S.P.A.","esl_mld":0.031,"n":29,"regione":"Lombardia","ateco":"C.28","quota":"","tramite":"Indiretta via CDP Equity","source":"Orbis"},{"rank":"957","denom":"ISTITUTO ITALIANO DI TECNOLOGIA","denom_full":"ISTITUTO ITALIANO DI TECNOLOGIA","esl_mld":0.029,"n":54,"regione":"Liguria","ateco":"T.94","quota":"","tramite":"Diretta tramite MEF/Tesoro","source":"Orbis"},{"rank":"1284","denom":"C2MAC GROUP","denom_full":"C2MAC GROUP S.P.A.","esl_mld":0.025,"n":33,"regione":"Veneto","ateco":"C.24","quota":"","tramite":"Diretta (Tesoro/Repubblica)","source":"Orbis"},{"rank":"1004","denom":"Banca Monte dei Paschi di Siena","denom_full":"Banca Monte dei Paschi di Siena SpA","esl_mld":0.024,"n":173,"regione":"Toscana","ateco":"K.64","quota":"26.7%","tramite":"Diretta","source":"Orbis+Canonical"},{"rank":"1579","denom":"ISOTTA FRASCHINI MOTORI","denom_full":"ISOTTA FRASCHINI MOTORI S.P.A.","esl_mld":0.019,"n":8,"regione":"Puglia","ateco":"C.28","quota":"","tramite":"Indiretta via Fincantieri","source":"Orbis"},{"rank":"1933","denom":"A MERAS ANNOS","denom_full":"A MERAS ANNOS S.R.L.","esl_mld":0.018,"n":11,"regione":"Sardegna","ateco":"C.20","quota":"","tramite":"Indiretta via CDP Venture Capital","source":"Orbis"},{"rank":"13687","denom":"Terna","denom_full":"Terna SpA","esl_mld":0.005,"n":9,"regione":"Lazio","ateco":"A.01","quota":"29.85%","tramite":"Indiretta via CDP Reti","source":"Orbis+Canonical"},{"rank":"13782","denom":"Webuild","denom_full":"Webuild SpA","esl_mld":0.005,"n":7,"regione":"Lombardia","ateco":"F.42","quota":"16.5%","tramite":"Indiretta via CDP Equity","source":"Orbis+Canonical"},{"rank":"21676","denom":"Rete Ferroviaria Italiana SpA (RFI)","denom_full":"Rete Ferroviaria Italiana SpA (RFI)","esl_mld":0.003,"n":16,"regione":"Toscana","ateco":"H.49","quota":"100%","tramite":"Indiretta via Ferrovie dello Stato","source":"Orbis+Canonical"},{"rank":"22232","denom":"Invitalia - Agenzia Nazionale","denom_full":"Invitalia - Agenzia Nazionale SpA","esl_mld":0.003,"n":22,"regione":"Lazio","ateco":"O.82","quota":"100%","tramite":"Diretta","source":"Orbis+Canonical"},{"rank":"26053","denom":"Trenitalia","denom_full":"Trenitalia SpA","esl_mld":0.003,"n":8,"regione":"Lazio","ateco":"N.72","quota":"100%","tramite":"Indiretta via Ferrovie dello Stato","source":"Orbis+Canonical"},{"rank":"29972","denom":"ANAS","denom_full":"ANAS SpA","esl_mld":0.002,"n":10,"regione":"Lazio","ateco":"M.72","quota":"100%","tramite":"Indiretta via Ferrovie dello Stato","source":"Orbis+Canonical"},{"rank":"32271","denom":"Ferrovie dello Stato Italiane","denom_full":"Ferrovie dello Stato Italiane SpA","esl_mld":0.002,"n":2,"regione":"Lazio","ateco":"M.72","quota":"100%","tramite":"Diretta","source":"Orbis+Canonical"},{"rank":"64162","denom":"Cassa Depositi e Prestiti","denom_full":"Cassa Depositi e Prestiti SpA","esl_mld":0.001,"n":16,"regione":"Lazio","ateco":"L.64","quota":"82.77%","tramite":"Diretta","source":"Orbis+Canonical"},{"rank":"77603","denom":"Sport e Salute","denom_full":"Sport e Salute SpA","esl_mld":0.001,"n":23,"regione":"Lazio","ateco":"S.93","quota":"100%","tramite":"Diretta","source":"Orbis+Canonical"},{"rank":"187540","denom":"Sogei","denom_full":"Sogei SpA","esl_mld":0.0,"n":2,"regione":"Lazio","ateco":"M.72","quota":"100%","tramite":"Diretta","source":"Canonical"},{"rank":"209236","denom":"Consip","denom_full":"Consip SpA","esl_mld":0.0,"n":7,"regione":"Lazio","ateco":"K.62","quota":"100%","tramite":"Diretta","source":"Orbis+Canonical"},{"rank":"480941","denom":"RAI - Radiotelevisione Italiana","denom_full":"RAI - Radiotelevisione Italiana SpA","esl_mld":0.0,"n":3,"regione":"Lazio","ateco":"J.60","quota":"99.56%","tramite":"Diretta","source":"Orbis+Canonical"},{"rank":"1776943","denom":"Italgas","denom_full":"Italgas SpA","esl_mld":0.0,"n":1,"regione":"Lombardia","ateco":"M.70","quota":"26%","tramite":"Indiretta via CDP Reti","source":"Orbis+Canonical"}]};
+
+// KPI
+document.getElementById('soe-n').textContent      = D_SOE.totals.n_soe;
+document.getElementById('soe-n-sub').textContent  = `${D_SOE.totals.n_canonical_beneficiari} canonical · ${D_SOE.totals.n_orbis_only} da catena Orbis · esclusi ${D_SOE.totals.n_concedenti_only} concedenti`;
+document.getElementById('soe-esl').textContent    = `€ ${D_SOE.totals.esl_mld.toFixed(1)}`;
+document.getElementById('soe-pct').textContent    = `miliardi · ${D_SOE.totals.pct_rna.toFixed(2)} % del totale RNA`;
+document.getElementById('soe-grants').textContent = D_SOE.totals.n_grants.toLocaleString('it-IT');
+const cdpTot = D_SOE.by_tramite
+  .filter(t => /CDP/.test(t.tramite) || /Mista/.test(t.tramite))
+  .reduce((s,t) => s + t.esl_mld, 0);
+document.getElementById('soe-cdp-sub').textContent = `€ ${cdpTot.toFixed(1)} mld via catena CDP (Equity/Reti/Venture + quote miste)`;
+
+// 19a. Top 15
+const soeTop = D_SOE.top_bene.slice(0, 15);
+horizBar('soeBeneChart',
+  soeTop.map(b => b.denom),
+  soeTop.map(b => b.esl_mld),
+  CA,
+  c => {
+    const b = soeTop[c.dataIndex];
+    return `€ ${b.esl_mld.toFixed(3)} mld · ${b.regione} · ${b.tramite}`;
+  });
+
+// 19b. By tramite (catena di controllo)
+const tramData = D_SOE.by_tramite;
+const tramColor = t => {
+  if (/CDP|Mista/.test(t)) return 'rgba(90,143,130,0.78)';     // teal — via CDP
+  if (/Diretta/.test(t))   return 'rgba(200,150,46,0.78)';     // amber — diretta
+  return 'rgba(110,144,170,0.70)';                              // steel — altre catene
+};
+new Chart(document.getElementById('soeTramChart'), {
+  type: 'bar',
+  data: { labels: tramData.map(t => t.tramite), datasets: [{
+    data: tramData.map(t => t.esl_mld),
+    backgroundColor: tramData.map(t => tramColor(t.tramite)),
+    borderRadius: 3
+  }] },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false, animation: { duration: 600 },
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => {
+        const t = tramData[c.dataIndex];
+        return `€ ${t.esl_mld.toFixed(2)} mld · ${t.n_firms} imprese · ${t.n_grants.toLocaleString('it-IT')} concessioni`;
+      } } }
+    },
+    scales: {
+      x: { grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 }, callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#56524e', font: { size: 10 } } },
+      y: { grid: { display: false }, ticks: { color: '#8a8580', font: { size: 11 } }, border: { display: false } }
+    }
+  }
+});
+
+// 19c. Full table
+const tbody = document.getElementById('soe-tbody');
+document.getElementById('soe-count').textContent = D_SOE.top_bene.length;
+const tramClass = t => {
+  if (/Mista/i.test(t)) return 'mista';
+  if (/Indiretta/i.test(t)) return 'indiretta';
+  return 'diretta';
+};
+D_SOE.top_bene.forEach(r => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td class="nm" title="${r.denom_full.replace(/"/g,'&quot;')}">${r.denom_full}</td>
+    <td>${r.quota || '—'}</td>
+    <td><span class="tr-tag ${tramClass(r.tramite)}">${r.tramite || '—'}</span></td>
+    <td>${r.regione || '—'}</td>
+    <td>${r.ateco || '—'}</td>
+    <td class="num" style="color:var(--muted);">${r.n.toLocaleString('it-IT')}</td>
+    <td class="num">${r.esl_mld < 0.001 ? '<0,001' : r.esl_mld.toFixed(3)}</td>`;
+  tbody.appendChild(tr);
+});
 </script>
 </body>
 </html>

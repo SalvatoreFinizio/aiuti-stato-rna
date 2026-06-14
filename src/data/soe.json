@@ -1,0 +1,587 @@
+{
+ "totals": {
+  "n_soe": 38,
+  "n_canonical_beneficiari": 23,
+  "n_orbis_only": 15,
+  "n_concedenti_only": 2,
+  "esl_mld": 26.815,
+  "n_grants": 2227,
+  "pct_rna": 5.26
+ },
+ "by_tramite": [
+  {
+   "tramite": "Diretta MEF/Tesoro",
+   "esl_mld": 12.802,
+   "n_firms": 16,
+   "n_grants": 1121
+  },
+  {
+   "tramite": "CDP Equity",
+   "esl_mld": 8.921,
+   "n_firms": 8,
+   "n_grants": 342
+  },
+  {
+   "tramite": "CDP Reti",
+   "esl_mld": 1.986,
+   "n_firms": 4,
+   "n_grants": 30
+  },
+  {
+   "tramite": "Mista (MEF + CDP)",
+   "esl_mld": 1.728,
+   "n_firms": 2,
+   "n_grants": 440
+  },
+  {
+   "tramite": "ENI",
+   "esl_mld": 1.241,
+   "n_firms": 1,
+   "n_grants": 12
+  },
+  {
+   "tramite": "Ferrovie dello Stato",
+   "esl_mld": 0.058,
+   "n_firms": 4,
+   "n_grants": 110
+  },
+  {
+   "tramite": "RAI",
+   "esl_mld": 0.042,
+   "n_firms": 1,
+   "n_grants": 153
+  },
+  {
+   "tramite": "Fincantieri",
+   "esl_mld": 0.019,
+   "n_firms": 1,
+   "n_grants": 8
+  },
+  {
+   "tramite": "CDP Venture",
+   "esl_mld": 0.018,
+   "n_firms": 1,
+   "n_grants": 11
+  }
+ ],
+ "top_bene": [
+  {
+   "rank": "2",
+   "denom": "ENEL",
+   "denom_full": "ENEL SpA",
+   "esl_mld": 12.001,
+   "n": 7,
+   "regione": "Lazio",
+   "ateco": "D.35",
+   "quota": "23.6%",
+   "tramite": "Diretta",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "164",
+   "denom": "Open Fiber",
+   "denom_full": "Open Fiber SpA",
+   "esl_mld": 3.984,
+   "n": 46,
+   "regione": "Lombardia",
+   "ateco": "K.61",
+   "quota": "60%",
+   "tramite": "Indiretta via CDP Equity",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "7",
+   "denom": "STMicroelectronics",
+   "denom_full": "STMicroelectronics Srl",
+   "esl_mld": 2.598,
+   "n": 124,
+   "regione": "Lombardia",
+   "ateco": "C.26",
+   "quota": "~13.7%",
+   "tramite": "Indiretta via CDP Equity / ST Holding NV",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "13",
+   "denom": "Fincantieri",
+   "denom_full": "Fincantieri SpA",
+   "esl_mld": 1.98,
+   "n": 50,
+   "regione": "Friuli-Venezia Giulia",
+   "ateco": "N.72",
+   "quota": "71.3%",
+   "tramite": "Indiretta via CDP Equity",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "32",
+   "denom": "Snam",
+   "denom_full": "Snam SpA",
+   "esl_mld": 1.811,
+   "n": 8,
+   "regione": "Lombardia",
+   "ateco": "F.43",
+   "quota": "31.35%",
+   "tramite": "Indiretta via CDP Reti",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "7",
+   "denom": "SAIPEM",
+   "denom_full": "SAIPEM SPA",
+   "esl_mld": 1.241,
+   "n": 12,
+   "regione": "Lombardia",
+   "ateco": "H.50",
+   "quota": "",
+   "tramite": "Indiretta via ENI",
+   "source": "Orbis"
+  },
+  {
+   "rank": "17",
+   "denom": "Poste Italiane",
+   "denom_full": "Poste Italiane SpA",
+   "esl_mld": 0.996,
+   "n": 400,
+   "regione": "Lazio",
+   "ateco": "D.35",
+   "quota": "~64%",
+   "tramite": "Mista (29.26% diretta + 35% via CDP)",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "1",
+   "denom": "ENI",
+   "denom_full": "ENI SpA",
+   "esl_mld": 0.732,
+   "n": 40,
+   "regione": "Lazio",
+   "ateco": "D.35",
+   "quota": "~30%",
+   "tramite": "Mista (4.3% diretta + 25.7% via CDP)",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "960",
+   "denom": "CONSIGLIO NAZIONALE DELLE RICERCHE",
+   "denom_full": "CONSIGLIO NAZIONALE DELLE RICERCHE",
+   "esl_mld": 0.229,
+   "n": 533,
+   "regione": "Lazio",
+   "ateco": "N.72",
+   "quota": "",
+   "tramite": "Diretta tramite Min. Istruzione",
+   "source": "Orbis"
+  },
+  {
+   "rank": "4",
+   "denom": "Leonardo",
+   "denom_full": "Leonardo SpA",
+   "esl_mld": 0.189,
+   "n": 116,
+   "regione": "Lazio",
+   "ateco": "C.33",
+   "quota": "30.2%",
+   "tramite": "Diretta",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "105",
+   "denom": "ANSALDO ENERGIA",
+   "denom_full": "ANSALDO ENERGIA S.P.A.",
+   "esl_mld": 0.186,
+   "n": 21,
+   "regione": "Liguria",
+   "ateco": "C.28",
+   "quota": "",
+   "tramite": "Indiretta via CDP Equity",
+   "source": "Orbis"
+  },
+  {
+   "rank": "764",
+   "denom": "BYS AMBIENTE IMPIANTI",
+   "denom_full": "BYS AMBIENTE IMPIANTI S.R.L.",
+   "esl_mld": 0.17,
+   "n": 12,
+   "regione": "Piemonte",
+   "ateco": "D.35",
+   "quota": "",
+   "tramite": "Indiretta via Snam (CDP Reti)",
+   "source": "Orbis"
+  },
+  {
+   "rank": "71",
+   "denom": "GRANAROLO S.P.A.",
+   "denom_full": "GRANAROLO S.P.A. IN SIGLA G. SPA",
+   "esl_mld": 0.152,
+   "n": 32,
+   "regione": "Emilia-Romagna",
+   "ateco": "C.10",
+   "quota": "",
+   "tramite": "Diretta tramite CDP",
+   "source": "Orbis"
+  },
+  {
+   "rank": "44",
+   "denom": "ITA Airways",
+   "denom_full": "ITA Airways SpA",
+   "esl_mld": 0.091,
+   "n": 28,
+   "regione": "Lazio",
+   "ateco": "H.51",
+   "quota": "59%",
+   "tramite": "Diretta",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "207",
+   "denom": "GPI",
+   "denom_full": "GPI S.P.A.",
+   "esl_mld": 0.091,
+   "n": 40,
+   "regione": "Provincia Autonoma di Trento",
+   "ateco": "O.82",
+   "quota": "",
+   "tramite": "Indiretta via CDP Equity",
+   "source": "Orbis"
+  },
+  {
+   "rank": "379",
+   "denom": "MECAER AVIATION GROUP S.P.A.",
+   "denom_full": "MECAER AVIATION GROUP S.P.A. IN BREVE MAG S.P.A.",
+   "esl_mld": 0.055,
+   "n": 70,
+   "regione": "Piemonte",
+   "ateco": "C.30",
+   "quota": "",
+   "tramite": "Diretta (Tesoro/Repubblica)",
+   "source": "Orbis"
+  },
+  {
+   "rank": "413",
+   "denom": "MERCITALIA INTERMODAL",
+   "denom_full": "MERCITALIA INTERMODAL S.P.A.",
+   "esl_mld": 0.05,
+   "n": 76,
+   "regione": "Lombardia",
+   "ateco": "H.49",
+   "quota": "",
+   "tramite": "Indiretta via Ferrovie dello Stato",
+   "source": "Orbis"
+  },
+  {
+   "rank": "408",
+   "denom": "HOTELTURIST",
+   "denom_full": "HOTELTURIST S.P.A.",
+   "esl_mld": 0.046,
+   "n": 25,
+   "regione": "Veneto",
+   "ateco": "N.79",
+   "quota": "",
+   "tramite": "Indiretta via CDP Equity",
+   "source": "Orbis"
+  },
+  {
+   "rank": "343",
+   "denom": "RAI CINEMA",
+   "denom_full": "RAI CINEMA S.P.A.",
+   "esl_mld": 0.042,
+   "n": 153,
+   "regione": "Lazio",
+   "ateco": "J.59",
+   "quota": "",
+   "tramite": "Indiretta via RAI",
+   "source": "Orbis"
+  },
+  {
+   "rank": "389",
+   "denom": "VALVITALIA",
+   "denom_full": "VALVITALIA S.P.A.",
+   "esl_mld": 0.031,
+   "n": 29,
+   "regione": "Lombardia",
+   "ateco": "C.28",
+   "quota": "",
+   "tramite": "Indiretta via CDP Equity",
+   "source": "Orbis"
+  },
+  {
+   "rank": "957",
+   "denom": "ISTITUTO ITALIANO DI TECNOLOGIA",
+   "denom_full": "ISTITUTO ITALIANO DI TECNOLOGIA",
+   "esl_mld": 0.029,
+   "n": 54,
+   "regione": "Liguria",
+   "ateco": "T.94",
+   "quota": "",
+   "tramite": "Diretta tramite MEF/Tesoro",
+   "source": "Orbis"
+  },
+  {
+   "rank": "1284",
+   "denom": "C2MAC GROUP",
+   "denom_full": "C2MAC GROUP S.P.A.",
+   "esl_mld": 0.025,
+   "n": 33,
+   "regione": "Veneto",
+   "ateco": "C.24",
+   "quota": "",
+   "tramite": "Diretta (Tesoro/Repubblica)",
+   "source": "Orbis"
+  },
+  {
+   "rank": "1004",
+   "denom": "Banca Monte dei Paschi di Siena",
+   "denom_full": "Banca Monte dei Paschi di Siena SpA",
+   "esl_mld": 0.024,
+   "n": 173,
+   "regione": "Toscana",
+   "ateco": "K.64",
+   "quota": "26.7%",
+   "tramite": "Diretta",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "1579",
+   "denom": "ISOTTA FRASCHINI MOTORI",
+   "denom_full": "ISOTTA FRASCHINI MOTORI S.P.A.",
+   "esl_mld": 0.019,
+   "n": 8,
+   "regione": "Puglia",
+   "ateco": "C.28",
+   "quota": "",
+   "tramite": "Indiretta via Fincantieri",
+   "source": "Orbis"
+  },
+  {
+   "rank": "1933",
+   "denom": "A MERAS ANNOS",
+   "denom_full": "A MERAS ANNOS S.R.L.",
+   "esl_mld": 0.018,
+   "n": 11,
+   "regione": "Sardegna",
+   "ateco": "C.20",
+   "quota": "",
+   "tramite": "Indiretta via CDP Venture Capital",
+   "source": "Orbis"
+  },
+  {
+   "rank": "13687",
+   "denom": "Terna",
+   "denom_full": "Terna SpA",
+   "esl_mld": 0.005,
+   "n": 9,
+   "regione": "Lazio",
+   "ateco": "A.01",
+   "quota": "29.85%",
+   "tramite": "Indiretta via CDP Reti",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "13782",
+   "denom": "Webuild",
+   "denom_full": "Webuild SpA",
+   "esl_mld": 0.005,
+   "n": 7,
+   "regione": "Lombardia",
+   "ateco": "F.42",
+   "quota": "16.5%",
+   "tramite": "Indiretta via CDP Equity",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "21676",
+   "denom": "Rete Ferroviaria Italiana SpA (RFI)",
+   "denom_full": "Rete Ferroviaria Italiana SpA (RFI)",
+   "esl_mld": 0.003,
+   "n": 16,
+   "regione": "Toscana",
+   "ateco": "H.49",
+   "quota": "100%",
+   "tramite": "Indiretta via Ferrovie dello Stato",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "22232",
+   "denom": "Invitalia - Agenzia Nazionale",
+   "denom_full": "Invitalia - Agenzia Nazionale SpA",
+   "esl_mld": 0.003,
+   "n": 22,
+   "regione": "Lazio",
+   "ateco": "O.82",
+   "quota": "100%",
+   "tramite": "Diretta",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "26053",
+   "denom": "Trenitalia",
+   "denom_full": "Trenitalia SpA",
+   "esl_mld": 0.003,
+   "n": 8,
+   "regione": "Lazio",
+   "ateco": "N.72",
+   "quota": "100%",
+   "tramite": "Indiretta via Ferrovie dello Stato",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "29972",
+   "denom": "ANAS",
+   "denom_full": "ANAS SpA",
+   "esl_mld": 0.002,
+   "n": 10,
+   "regione": "Lazio",
+   "ateco": "M.72",
+   "quota": "100%",
+   "tramite": "Indiretta via Ferrovie dello Stato",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "32271",
+   "denom": "Ferrovie dello Stato Italiane",
+   "denom_full": "Ferrovie dello Stato Italiane SpA",
+   "esl_mld": 0.002,
+   "n": 2,
+   "regione": "Lazio",
+   "ateco": "M.72",
+   "quota": "100%",
+   "tramite": "Diretta",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "64162",
+   "denom": "Cassa Depositi e Prestiti",
+   "denom_full": "Cassa Depositi e Prestiti SpA",
+   "esl_mld": 0.001,
+   "n": 16,
+   "regione": "Lazio",
+   "ateco": "L.64",
+   "quota": "82.77%",
+   "tramite": "Diretta",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "77603",
+   "denom": "Sport e Salute",
+   "denom_full": "Sport e Salute SpA",
+   "esl_mld": 0.001,
+   "n": 23,
+   "regione": "Lazio",
+   "ateco": "S.93",
+   "quota": "100%",
+   "tramite": "Diretta",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "187540",
+   "denom": "Sogei",
+   "denom_full": "Sogei SpA",
+   "esl_mld": 0.0,
+   "n": 2,
+   "regione": "Lazio",
+   "ateco": "M.72",
+   "quota": "100%",
+   "tramite": "Diretta",
+   "source": "Canonical"
+  },
+  {
+   "rank": "209236",
+   "denom": "Consip",
+   "denom_full": "Consip SpA",
+   "esl_mld": 0.0,
+   "n": 7,
+   "regione": "Lazio",
+   "ateco": "K.62",
+   "quota": "100%",
+   "tramite": "Diretta",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "480941",
+   "denom": "RAI - Radiotelevisione Italiana",
+   "denom_full": "RAI - Radiotelevisione Italiana SpA",
+   "esl_mld": 0.0,
+   "n": 3,
+   "regione": "Lazio",
+   "ateco": "J.60",
+   "quota": "99.56%",
+   "tramite": "Diretta",
+   "source": "Orbis+Canonical"
+  },
+  {
+   "rank": "1776943",
+   "denom": "Italgas",
+   "denom_full": "Italgas SpA",
+   "esl_mld": 0.0,
+   "n": 1,
+   "regione": "Lombardia",
+   "ateco": "M.70",
+   "quota": "26%",
+   "tramite": "Indiretta via CDP Reti",
+   "source": "Orbis+Canonical"
+  }
+ ],
+ "by_regione": [
+  {
+   "regione": "Lazio",
+   "esl_mld": 14.297,
+   "n_firms": 17
+  },
+  {
+   "regione": "Lombardia",
+   "esl_mld": 9.72,
+   "n_firms": 8
+  },
+  {
+   "regione": "Friuli-Venezia Giulia",
+   "esl_mld": 1.98,
+   "n_firms": 1
+  },
+  {
+   "regione": "Piemonte",
+   "esl_mld": 0.225,
+   "n_firms": 2
+  },
+  {
+   "regione": "Liguria",
+   "esl_mld": 0.215,
+   "n_firms": 2
+  },
+  {
+   "regione": "Emilia-Romagna",
+   "esl_mld": 0.152,
+   "n_firms": 1
+  },
+  {
+   "regione": "Provincia Autonoma di Trento",
+   "esl_mld": 0.091,
+   "n_firms": 1
+  },
+  {
+   "regione": "Veneto",
+   "esl_mld": 0.071,
+   "n_firms": 2
+  },
+  {
+   "regione": "Toscana",
+   "esl_mld": 0.027,
+   "n_firms": 2
+  },
+  {
+   "regione": "Puglia",
+   "esl_mld": 0.019,
+   "n_firms": 1
+  }
+ ],
+ "concedenti": [
+  {
+   "denom": "GSE - Gestore Servizi Energetici SpA",
+   "note": "€ 17.1 mld ESL ERORATO (non ricevuto) — concedente"
+  },
+  {
+   "denom": "SACE SpA",
+   "note": "€ 76.6 mld ESL ERORATO (non ricevuto) — concedente"
+  }
+ ]
+}
