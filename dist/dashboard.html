@@ -601,6 +601,22 @@
       </div>
     </div>
 
+    <div class="g2" style="margin-top:12px;">
+      <div class="card">
+        <div class="card-title">Distribuzione geografica · <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> per regione</div>
+        <div class="card-sub">Sede legale del beneficiario · mld €</div>
+        <div class="chart-h" style="height:340px;"><canvas id="soeGeoChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Numero di partecipate per regione</div>
+        <div class="card-sub">Quante imprese del perimetro hanno sede in ciascuna regione</div>
+        <div class="chart-h" style="height:340px;"><canvas id="soeGeoNChart"></canvas></div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:10px; max-width:880px;">
+      <strong>Lazio (€ 14,2 mld) e Lombardia (€ 10,6 mld) concentrano il 91 % dell'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr></strong>: è l'effetto «sede legale» — le grandi partecipate hanno quartier generale a Roma (ENEL, ENI, Leonardo, Poste, FS) e Milano (Open Fiber, STMicroelectronics, Snam). La regione indica dove l'impresa è registrata, <em>non</em> dove l'aiuto è materialmente speso o investito.
+    </p>
+
     <div class="card" style="margin-top:12px;">
       <div class="card-title">Elenco completo · <span id="soe-count">—</span> partecipate beneficiarie</div>
       <div class="card-sub">Beneficiari del perimetro <abbr title="Ministero dell'Economia e delle Finanze">MEF</abbr> ordinati per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> · livello di partecipazione e capofila dal <abbr title="Quadro_Societa_Partecipate_Ministeri">quadro ufficiale</abbr></div>
@@ -1652,7 +1668,21 @@ const segInstr = [
 ];
 soeStack('soeInstrChart', IY.years, segInstr, (y,s) => IY.by_year[y][s.key] || 0, false);
 
-// 19h. Tabella completa
+// 19h. Distribuzione geografica
+const D_SOE_GEO = [{"regione":"Lazio","esl_mld":14.158,"n_firms":58,"n_grants":1164,"top":"Enel"},{"regione":"Lombardia","esl_mld":10.568,"n_firms":22,"n_grants":349,"top":"Open Fiber"},{"regione":"Friuli-Venezia Giulia","esl_mld":1.98,"n_firms":1,"n_grants":50,"top":"Fincantieri"},{"regione":"Liguria","esl_mld":0.186,"n_firms":3,"n_grants":33,"top":"Ansaldo Energia"},{"regione":"Veneto","esl_mld":0.065,"n_firms":8,"n_grants":104,"top":"Hotelturist"},{"regione":"Campania","esl_mld":0.048,"n_firms":6,"n_grants":143,"top":"Titagarh Firema"},{"regione":"Toscana","esl_mld":0.032,"n_firms":10,"n_grants":262,"top":"Banca MPS"},{"regione":"Marche","esl_mld":0.018,"n_firms":2,"n_grants":33,"top":"G.E.M. Elettronica"},{"regione":"Piemonte","esl_mld":0.016,"n_firms":4,"n_grants":24,"top":"BTX Italian Retail"},{"regione":"Sicilia","esl_mld":0.007,"n_firms":1,"n_grants":77,"top":"RAM"},{"regione":"Emilia-Romagna","esl_mld":0.002,"n_firms":3,"n_grants":58,"top":"Alfiere"},{"regione":"Puglia","esl_mld":0.002,"n_firms":4,"n_grants":20,"top":"Eni Rewind"},{"regione":"Abruzzo","esl_mld":0.001,"n_firms":1,"n_grants":33,"top":"Sita"},{"regione":"Sardegna","esl_mld":0.0,"n_firms":1,"n_grants":2,"top":"Leonardo CAE"}];
+horizBar('soeGeoChart',
+  D_SOE_GEO.map(r => r.regione),
+  D_SOE_GEO.map(r => r.esl_mld),
+  CA,
+  c => { const r = D_SOE_GEO[c.dataIndex]; return `€ ${r.esl_mld.toFixed(3)} mld · ${r.n_firms} imprese · top: ${r.top}`; });
+const geoN = D_SOE_GEO.slice().sort((a,b) => b.n_firms - a.n_firms);
+horizBar('soeGeoNChart',
+  geoN.map(r => r.regione),
+  geoN.map(r => r.n_firms),
+  (i,n) => `rgba(90,143,130,${Math.max(0.22, 0.82 - i*0.6/n)})`,
+  c => { const r = geoN[c.dataIndex]; return `${r.n_firms} imprese · € ${r.esl_mld.toFixed(2)} mld · ${r.n_grants.toLocaleString('it-IT')} concessioni`; });
+
+// 19i. Tabella completa
 const tbody = document.getElementById('soe-tbody');
 document.getElementById('soe-count').textContent = D_SOE.top_bene.length;
 const tramClass = t => /Mista/i.test(t) ? 'mista' : (/CDP|capofila|Ministeri/i.test(t) ? 'indiretta' : 'diretta');
