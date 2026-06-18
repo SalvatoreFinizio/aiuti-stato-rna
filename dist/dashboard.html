@@ -11,18 +11,19 @@
   <style>
     /* ── tokens ─────────────────────────────────── */
     :root {
-      --bg:      #111110;
-      --surface: #1c1b1a;
-      --card:    #201f1e;
-      --border:  #302e2c;
-      --text:    #e8e5e0;
-      --muted:   #8a8580;
-      --dim:     #56524e;
-      --amber:   #c8962e;
-      --amber2:  #e0b84a;
-      --teal:    #5a8f82;
-      --steel:   #6e90aa;
+      --bg:      #FBFAF6;
+      --surface: #F3EFE7;
+      --card:    #FFFFFF;
+      --border:  #E4E0D7;
+      --text:    #1A1A17;
+      --muted:   #56524C;
+      --dim:     #8C867B;
+      --amber:   #1F5673;
+      --amber2:  #1F5673;
+      --teal:    #4E8A6B;
+      --steel:   #7F97A6;
       --sans:    'DM Sans', system-ui, sans-serif;
+      --serif:   Georgia, 'Times New Roman', Times, serif;
       --mono:    'DM Mono', monospace;
     }
 
@@ -45,7 +46,7 @@
     .hdr { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
     .hdr-badge {
       font-family: var(--mono); font-size: 11px; font-weight: 400;
-      color: var(--amber); border: 1px solid rgba(200,150,46,.35);
+      color: var(--amber); border: 1px solid rgba(31,86,115,.35);
       padding: 3px 10px; border-radius: 3px; letter-spacing: .06em; flex-shrink: 0;
     }
     .hdr-title { font-size: 14px; font-weight: 500; }
@@ -53,7 +54,7 @@
     .hdr-tags  { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
     .hdr-explore {
       font-size: 12px; font-weight: 500; color: var(--amber);
-      border: 1px solid rgba(200,150,46,.4); border-radius: 4px;
+      border: 1px solid rgba(31,86,115,.4); border-radius: 4px;
       padding: 6px 12px; white-space: nowrap; transition: all .15s; flex-shrink: 0;
     }
     .hdr-explore:hover { color: var(--bg); background: var(--amber); border-color: var(--amber); }
@@ -65,7 +66,9 @@
 
     /* ── page intro ──────────────────────────────── */
     .intro { margin-bottom: 52px; }
+    
     .intro h1 {
+      font-family: var(--serif);
       font-size: 28px; font-weight: 300; letter-spacing: -.03em;
       color: var(--text); line-height: 1.2; max-width: 640px;
     }
@@ -112,7 +115,7 @@
       padding-bottom: 12px; border-bottom: 1px solid var(--border);
       margin-bottom: 22px;
     }
-    .sec-hd h2 { font-size: 13px; font-weight: 500; color: var(--text); }
+    .sec-hd h2 { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: -.01em; }
     .sec-note  { font-size: 11px; color: var(--dim); }
 
     /* ── chart card ──────────────────────────────── */
@@ -216,7 +219,7 @@
       padding: 8px 8px 8px 0; border-bottom: 1px solid var(--border); color: var(--muted);
       vertical-align: top;
     }
-    .tbl-soe tbody tr:hover td { color: var(--text); background: rgba(200,150,46,.03); }
+    .tbl-soe tbody tr:hover td { color: var(--text); background: rgba(31,86,115,.03); }
     .tbl-soe .num { font-family: var(--mono); font-size: 11px; color: var(--amber); text-align: right; white-space: nowrap; }
     .tbl-soe .nm  { color: var(--text); font-weight: 500; }
     .tbl-soe .tr-tag {
@@ -224,9 +227,9 @@
       border: 1px solid var(--border); border-radius: 3px;
       padding: 1px 5px; white-space: nowrap;
     }
-    .tbl-soe .tr-tag.diretta { color: var(--amber); border-color: rgba(200,150,46,.35); }
-    .tbl-soe .tr-tag.mista   { color: var(--teal); border-color: rgba(90,143,130,.4); }
-    .tbl-soe .tr-tag.indiretta { color: var(--steel); border-color: rgba(110,144,170,.4); }
+    .tbl-soe .tr-tag.diretta { color: var(--amber); border-color: rgba(31,86,115,.35); }
+    .tbl-soe .tr-tag.mista   { color: var(--teal); border-color: rgba(78,138,107,.4); }
+    .tbl-soe .tr-tag.indiretta { color: var(--steel); border-color: rgba(127,151,166,.4); }
     .tbl-soe-wrap { overflow-x: auto; }
     .conced-note {
       background: var(--surface); border: 1px solid var(--border);
@@ -237,11 +240,11 @@
     .conced-note strong { color: var(--text); font-family: var(--mono); font-size: 11px; }
     .soe-explore-cta {
       display: flex; align-items: center; gap: 16px; justify-content: space-between;
-      background: linear-gradient(100deg, rgba(200,150,46,.10), rgba(90,143,130,.06));
-      border: 1px solid rgba(200,150,46,.32); border-radius: 6px;
+      background: linear-gradient(100deg, rgba(31,86,115,.10), rgba(78,138,107,.06));
+      border: 1px solid rgba(31,86,115,.32); border-radius: 6px;
       padding: 16px 20px; margin-bottom: 20px; transition: all .18s;
     }
-    .soe-explore-cta:hover { border-color: var(--amber); background: linear-gradient(100deg, rgba(200,150,46,.16), rgba(90,143,130,.09)); }
+    .soe-explore-cta:hover { border-color: var(--amber); background: linear-gradient(100deg, rgba(31,86,115,.16), rgba(78,138,107,.09)); }
     .soe-explore-cta .cta-t { font-size: 13px; font-weight: 500; color: var(--amber2); margin-bottom: 3px; }
     .soe-explore-cta .cta-s { font-size: 11.5px; color: var(--muted); line-height: 1.5; max-width: 720px; }
     .soe-explore-cta .cta-arr { font-family: var(--mono); font-size: 22px; color: var(--amber); flex-shrink: 0; transition: transform .18s; }
@@ -267,14 +270,14 @@
       min-height: 30px;
     }
     .yr-btn:hover { color: var(--text); border-color: var(--dim); }
-    .yr-btn.yr-active { color: var(--amber); border-color: var(--amber); background: rgba(200,150,46,.08); }
+    .yr-btn.yr-active { color: var(--amber); border-color: var(--amber); background: rgba(31,86,115,.08); }
     .yr-play {
-      font-size: 12px; color: var(--amber); background: rgba(200,150,46,.1);
-      border: 1px solid rgba(200,150,46,.3); border-radius: 3px;
+      font-size: 12px; color: var(--amber); background: rgba(31,86,115,.1);
+      border: 1px solid rgba(31,86,115,.3); border-radius: 3px;
       padding: 5px 12px; cursor: pointer; margin-left: 4px;
       transition: all .15s; min-width: 44px; min-height: 30px;
     }
-    .yr-play:hover { background: rgba(200,150,46,.2); }
+    .yr-play:hover { background: rgba(31,86,115,.2); }
     .yr-kpi { font-size: 12px; color: var(--dim); margin-bottom: 16px; min-height: 18px; }
     .yr-kpi strong { font-family: var(--mono); color: var(--amber2); }
 
@@ -308,20 +311,20 @@
     /* ── sticky topbar (KPI + section nav on scroll) ─────────── */
     .topbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 60;
-      background: rgba(17,17,16,.94); backdrop-filter: blur(8px);
+      background: rgba(251,250,246,.92); backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
       transform: translateY(-100%); transition: transform .26s cubic-bezier(.16,1,.3,1);
     }
     .topbar.show { transform: translateY(0); }
     .topbar-in { max-width: 1240px; margin: 0 auto; padding: 8px 36px; display: flex; align-items: center; gap: 16px; }
-    .tb-badge { font-family: var(--mono); font-size: 10px; color: var(--amber); border: 1px solid rgba(200,150,46,.35); padding: 2px 7px; border-radius: 3px; flex-shrink: 0; }
+    .tb-badge { font-family: var(--mono); font-size: 10px; color: var(--amber); border: 1px solid rgba(31,86,115,.35); padding: 2px 7px; border-radius: 3px; flex-shrink: 0; }
     .tb-kpis { display: flex; gap: 14px; flex-shrink: 0; }
     .tb-kpi { font-size: 11px; color: var(--dim); white-space: nowrap; }
     .tb-kpi b { font-family: var(--mono); color: var(--amber2); font-weight: 400; }
     .tb-nav { margin-left: auto; display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
     .tb-nav::-webkit-scrollbar { display: none; }
     .tb-nav a { font-size: 11px; color: var(--muted); padding: 5px 9px; border-radius: 4px; white-space: nowrap; transition: color .15s, background .15s; }
-    .tb-nav a:hover { color: var(--text); background: rgba(255,255,255,.05); }
+    .tb-nav a:hover { color: var(--text); background: rgba(0,0,0,.05); }
     .tb-nav a.active { color: var(--amber); }
     h2[id], section[id] { scroll-margin-top: 58px; }
     @media (max-width: 760px) { .tb-kpis { display: none; } .topbar-in { padding: 8px 16px; } }
@@ -394,7 +397,7 @@
 <div class="wrap">
 
   <div class="intro">
-    <h1>Distribuzione degli <strong>aiuti di Stato</strong><br>in Italia, 2023–2026</h1>
+    <h1>Distribuzione degli <strong>aiuti di Stato</strong><br>in Italia, 2016–2026</h1>
     <p class="intro-meta">Elaborazione propria su dati <abbr title="Registro Nazionale Aiuti di Stato — banca dati pubblica gestita dall'AGCM che raccoglie tutte le misure di aiuto di Stato notificate e concesse in Italia">RNA</abbr> · rna.gov.it · <abbr title="Autorità Garante della Concorrenza e del Mercato">AGCM</abbr></p>
   </div>
 
@@ -1019,25 +1022,25 @@
 
 <script>
 /* ── Chart.js defaults ───────────────────────────── */
-Chart.defaults.color          = '#56524e';
+Chart.defaults.color          = '#9A938A';
 Chart.defaults.font.family    = "'DM Sans', system-ui, sans-serif";
 Chart.defaults.font.size      = 11;
-Chart.defaults.plugins.tooltip.backgroundColor = '#201f1e';
-Chart.defaults.plugins.tooltip.borderColor     = '#302e2c';
+Chart.defaults.plugins.tooltip.backgroundColor = '#FBFAF6';
+Chart.defaults.plugins.tooltip.borderColor     = '#E4E0D7';
 Chart.defaults.plugins.tooltip.borderWidth     = 1;
 Chart.defaults.plugins.tooltip.padding         = 10;
 Chart.defaults.plugins.tooltip.cornerRadius    = 4;
-Chart.defaults.plugins.tooltip.titleColor      = '#e8e5e0';
-Chart.defaults.plugins.tooltip.bodyColor       = '#8a8580';
+Chart.defaults.plugins.tooltip.titleColor      = '#1A1A17';
+Chart.defaults.plugins.tooltip.bodyColor       = '#56524C';
 
 /* ── color helpers ───────────────────────────────── */
-const GRID = 'rgba(48,46,44,.7)';
+const GRID = 'rgba(205,199,188,.7)';
 // Amber gradient: strong → faded (single hue for all bar charts)
-const CA = (i, n) => `rgba(200,150,46,${Math.max(0.18, 0.82 - i * 0.6/n)})`;
+const CA = (i, n) => `rgba(31,86,115,${Math.max(0.18, 0.82 - i * 0.6/n)})`;
 // Teal for green section
-const CT = (i, n) => `rgba(90,143,130,${Math.max(0.18, 0.82 - i * 0.6/n)})`;
+const CT = (i, n) => `rgba(78,138,107,${Math.max(0.18, 0.82 - i * 0.6/n)})`;
 // Steel for digital section
-const CS = (i, n) => `rgba(110,144,170,${Math.max(0.18, 0.82 - i * 0.6/n)})`;
+const CS = (i, n) => `rgba(127,151,166,${Math.max(0.18, 0.82 - i * 0.6/n)})`;
 
 /* ── DATA ────────────────────────────────────────── */
 const D_BENE = {
@@ -1219,7 +1222,7 @@ ITALY_REGIONS.forEach(reg => {
   lbl.setAttribute('y', cy.toFixed(1));
   lbl.setAttribute('text-anchor', 'middle');
   lbl.setAttribute('dominant-baseline', 'middle');
-  lbl.setAttribute('fill', 'rgba(232,229,224,.85)');
+  lbl.setAttribute('fill', 'rgba(26,26,23,.85)');
   lbl.setAttribute('font-size', '7.5');
   lbl.setAttribute('font-family', "'DM Sans', sans-serif");
   lbl.setAttribute('font-weight', '500');
@@ -1229,7 +1232,7 @@ ITALY_REGIONS.forEach(reg => {
 });
 
 /* ── DYNAMIC MAP UPDATE — quintile bins ─────────── */
-const QUINTILE_COLORS = ['#2d2620', '#5d4220', '#9b6e22', '#cf972c', '#f0c350'];
+const QUINTILE_COLORS = ['#DCE6EC', '#A9C2D2', '#6E9BB5', '#3A7593', '#1F5673'];
 let activeYear = 'all';
 
 function getYearVals(year) {
@@ -1272,7 +1275,7 @@ function updateMap(year) {
   // Update path fills
   Object.entries(pathEls).forEach(([id, p]) => {
     const v = vals[id] || 0;
-    p.setAttribute('fill', v > 0 ? QUINTILE_COLORS[binIdx(v, bins)] : '#1c1b1a');
+    p.setAttribute('fill', v > 0 ? QUINTILE_COLORS[binIdx(v, bins)] : '#EDE9E0');
   });
 
   // Legend swatches + thresholds
@@ -1375,8 +1378,8 @@ function horizBar(id, labels, vals, colorFn, fmtFn, onClick) {
         tooltip: { callbacks: { label: fmtFn || (c => `€ ${c.parsed.x.toFixed(2)} mld`) } }
       },
       scales: {
-        x: { grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `${v}` }, border: { display: false } },
-        y: { grid: { display: false }, ticks: { color: '#8a8580', font: { size: 10 } }, border: { display: false } }
+        x: { grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => `${v}` }, border: { display: false } },
+        y: { grid: { display: false }, ticks: { color: '#56524C', font: { size: 10 } }, border: { display: false } }
       }
     }
   });
@@ -1405,8 +1408,8 @@ function lineChart(id, labels, vals, color, fmtFn) {
       plugins: { legend: { display: false },
         tooltip: { callbacks: { label: fmtFn || (c => `€ ${c.parsed.y.toFixed(3)} mld`) } } },
       scales: {
-        x: { grid: { color: GRID }, ticks: { color: '#56524e', maxTicksLimit: 10, maxRotation: 35, font: { size: 10 } }, border: { display: false } },
-        y: { grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `${v}` }, border: { display: false } }
+        x: { grid: { color: GRID }, ticks: { color: '#9A938A', maxTicksLimit: 10, maxRotation: 35, font: { size: 10 } }, border: { display: false } },
+        y: { grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => `${v}` }, border: { display: false } }
       }
     }
   });
@@ -1422,13 +1425,13 @@ new Chart(document.getElementById('atecoChart'), {
   type: 'doughnut',
   data: { labels: D_ATECO.labels, datasets: [{
     data: D_ATECO.vals,
-    backgroundColor: ['#c8962e','#a07828','#7a5c1e','#564014','#382a0c','#23201c'],
-    borderColor: '#201f1e', borderWidth: 2, hoverOffset: 6
+    backgroundColor: ['#1F5673','#3A7593','#6E9BB5','#A9C2D2','#CFE0EA','#E4E0D7'],
+    borderColor: '#FBFAF6', borderWidth: 2, hoverOffset: 6
   }] },
   options: {
     responsive: true, maintainAspectRatio: false, cutout: '62%',
     plugins: {
-      legend: { position: 'bottom', labels: { color: '#8a8580', font: { size: 10 }, padding: 8, boxWidth: 8, boxHeight: 8 } },
+      legend: { position: 'bottom', labels: { color: '#56524C', font: { size: 10 }, padding: 8, boxWidth: 8, boxHeight: 8 } },
       tooltip: { callbacks: { label: c => `${c.label}: € ${c.raw.toFixed(2)} mld (${(c.raw/166.23*100).toFixed(1)} %)` } }
     }
   }
@@ -1439,7 +1442,7 @@ horizBar('regioniChart',    D_REG.labels, D_REG.vals, CA);
 horizBar('regioniPctChart', D_REG.labels, D_REG.pct,  CA, c => `${c.parsed.x.toFixed(2)} %`);
 
 // 5. Green time series — teal
-lineChart('energyTimeChart', D_TIME.labels, D_TIME.vals, [90,143,130]);
+lineChart('energyTimeChart', D_TIME.labels, D_TIME.vals, [78,138,107]);
 
 // 6. Green beneficiari — teal
 horizBar('greenBeneChart', D_GREEN_BENE.labels, D_GREEN_BENE.vals, CT, c => `€ ${c.parsed.x.toFixed(3)} mld`);
@@ -1451,7 +1454,7 @@ horizBar('concedentiChart', D_CONC.labels, D_CONC.vals, CT);
 horizBar('greenRegionChart', D_GREG.labels, D_GREG.vals, CT);
 
 // 9. Digital time series — steel blue
-lineChart('digitalTimeChart', D_DIGITAL_TIME.labels, D_DIGITAL_TIME.vals, [110,144,170]);
+lineChart('digitalTimeChart', D_DIGITAL_TIME.labels, D_DIGITAL_TIME.vals, [127,151,166]);
 
 // 10. Digital beneficiari — steel blue
 horizBar('digitalBeneChart', D_DIGITAL_BENE.labels, D_DIGITAL_BENE.vals, CS, c => `€ ${(c.parsed.x*1000).toFixed(0)} M`);
@@ -1462,33 +1465,33 @@ new Chart(document.getElementById('yoyChart'), {
   data: {
     labels: ["'16",'2017','2018','2019','2020','2021','2022','2023','2024','2025',"'26 Q1"],
     datasets: [
-      { label: 'ESL Totale', data: [0.2,4.6,8.7,7.5,106.4,123.4,80.0,83.2,45.1,43.0,7.6], backgroundColor: 'rgba(200,150,46,.78)', borderRadius: 3 },
-      { label: 'Green',      data: [0.0,0.6,1.9,1.6,8.4,20.0,12.1,7.5,5.7,7.6,2.5],        backgroundColor: 'rgba(90,143,130,.78)',  borderRadius: 3 },
-      { label: 'Digitale',   data: [0.0,0.3,1.1,0.8,3.4,3.4,11.2,4.0,3.1,2.5,0.9],         backgroundColor: 'rgba(110,144,170,.78)', borderRadius: 3 },
+      { label: 'ESL Totale', data: [0.2,4.6,8.7,7.5,106.4,123.4,80.0,83.2,45.1,43.0,7.6], backgroundColor: 'rgba(31,86,115,.78)', borderRadius: 3 },
+      { label: 'Green',      data: [0.0,0.6,1.9,1.6,8.4,20.0,12.1,7.5,5.7,7.6,2.5],        backgroundColor: 'rgba(78,138,107,.78)',  borderRadius: 3 },
+      { label: 'Digitale',   data: [0.0,0.3,1.1,0.8,3.4,3.4,11.2,4.0,3.1,2.5,0.9],         backgroundColor: 'rgba(127,151,166,.78)', borderRadius: 3 },
     ]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
     animation: { duration: 600 },
     plugins: {
-      legend: { labels: { color: '#8a8580', font: { size: 10 }, padding: 12, boxWidth: 10, boxHeight: 10 } },
+      legend: { labels: { color: '#56524C', font: { size: 10 }, padding: 12, boxWidth: 10, boxHeight: 10 } },
       tooltip: { callbacks: { label: c => `${c.dataset.label}: € ${c.parsed.y.toFixed(1)} mld` } }
     },
     scales: {
-      x: { grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
-      y: { grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#56524e', font: { size: 10 } } }
+      x: { grid: { color: GRID }, ticks: { color: '#9A938A', font: { size: 10 } }, border: { display: false } },
+      y: { grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#9A938A', font: { size: 10 } } }
     }
   }
 });
 
 /* ── 12. Legal base donut ───────────────────────── */
 const D_LEGAL = [
-  {bucket:'COVID_TF',       label:'Quadro Temporaneo COVID-19',                       esl:277.4, n:16856800, color:'rgba(200,150,46,.85)'},
-  {bucket:'UKRAINE_TF',     label:'Quadro Temporaneo di Crisi (Ucraina)',             esl:73.4,  n:1552648,  color:'rgba(167,121,38,.82)'},
-  {bucket:'OTHER_NOTIFIED', label:'Aiuti notificati (altri)',                         esl:67.5,  n:465506,   color:'rgba(134,97,30,.80)'},
-  {bucket:'GBER',           label:'Reg. 651/2014 — Esenzione per categoria (GBER)',   esl:54.7,  n:1596680,  color:'rgba(90,143,130,.78)'},
-  {bucket:'DE_MINIMIS',     label:'De minimis (Reg. 1407/2013, 2831/2023 e ss.)',     esl:33.8,  n:4718761,  color:'rgba(110,144,170,.78)'},
-  {bucket:'SIEG',           label:'Servizi d\'Interesse Economico Generale (SIEG)',   esl:2.9,   n:3022,     color:'rgba(86,82,78,.72)'},
+  {bucket:'COVID_TF',       label:'Quadro Temporaneo COVID-19',                       esl:277.4, n:16856800, color:'rgba(31,86,115,.85)'},
+  {bucket:'UKRAINE_TF',     label:'Quadro Temporaneo di Crisi (Ucraina)',             esl:73.4,  n:1552648,  color:'rgba(31,86,115,.82)'},
+  {bucket:'OTHER_NOTIFIED', label:'Aiuti notificati (altri)',                         esl:67.5,  n:465506,   color:'rgba(20,62,86,.80)'},
+  {bucket:'GBER',           label:'Reg. 651/2014 — Esenzione per categoria (GBER)',   esl:54.7,  n:1596680,  color:'rgba(78,138,107,.78)'},
+  {bucket:'DE_MINIMIS',     label:'De minimis (Reg. 1407/2013, 2831/2023 e ss.)',     esl:33.8,  n:4718761,  color:'rgba(127,151,166,.78)'},
+  {bucket:'SIEG',           label:'Servizi d\'Interesse Economico Generale (SIEG)',   esl:2.9,   n:3022,     color:'rgba(150,144,134,.72)'},
 ];
 const totLegal = D_LEGAL.reduce((s,x)=>s+x.esl, 0);
 new Chart(document.getElementById('legalChart'), {
@@ -1496,13 +1499,13 @@ new Chart(document.getElementById('legalChart'), {
   data: { labels: D_LEGAL.map(d=>d.label), datasets: [{
     data: D_LEGAL.map(d=>d.esl),
     backgroundColor: D_LEGAL.map(d=>d.color),
-    borderColor: '#201f1e', borderWidth: 2, hoverOffset: 8
+    borderColor: '#FBFAF6', borderWidth: 2, hoverOffset: 8
   }] },
   options: {
     responsive: true, maintainAspectRatio: false, cutout: '58%',
     animation: { duration: 700 },
     plugins: {
-      legend: { position: 'right', labels: { color: '#8a8580', font: { size: 10 }, padding: 8, boxWidth: 8, boxHeight: 8 } },
+      legend: { position: 'right', labels: { color: '#56524C', font: { size: 10 }, padding: 8, boxWidth: 8, boxHeight: 8 } },
       tooltip: { callbacks: { label: c => {
         const d = D_LEGAL[c.dataIndex];
         return `€ ${d.esl.toFixed(1)} mld (${(d.esl/totLegal*100).toFixed(1)} %) · ${d.n.toLocaleString('it-IT')} concessioni`;
@@ -1513,11 +1516,11 @@ new Chart(document.getElementById('legalChart'), {
 
 /* ── 13. Instrument donut ──────────────────────── */
 const D_INSTR = [
-  {bucket:'GUARANTEE',    label:'Garanzia pubblica',                 esl:294.0, n:4561681, color:'rgba(200,150,46,.85)'},
-  {bucket:'GRANT',        label:'Sovvenzione / contributo a fondo',  esl:128.2, n:9711777, color:'rgba(90,143,130,.78)'},
-  {bucket:'TAX_CREDIT',   label:"Agevolazione fiscale / credito d'imposta", esl:75.7, n:8477730, color:'rgba(110,144,170,.78)'},
-  {bucket:'RISK_FINANCE', label:'Finanziamento del rischio (equity)',esl:7.6,   n:2260586, color:'rgba(140,110,80,.72)'},
-  {bucket:'LOAN',         label:'Prestito / anticipo rimborsabile',  esl:4.2,   n:181643,  color:'rgba(86,82,78,.72)'},
+  {bucket:'GUARANTEE',    label:'Garanzia pubblica',                 esl:294.0, n:4561681, color:'rgba(31,86,115,.85)'},
+  {bucket:'GRANT',        label:'Sovvenzione / contributo a fondo',  esl:128.2, n:9711777, color:'rgba(78,138,107,.78)'},
+  {bucket:'TAX_CREDIT',   label:"Agevolazione fiscale / credito d'imposta", esl:75.7, n:8477730, color:'rgba(127,151,166,.78)'},
+  {bucket:'RISK_FINANCE', label:'Finanziamento del rischio (equity)',esl:7.6,   n:2260586, color:'rgba(192,98,46,.72)'},
+  {bucket:'LOAN',         label:'Prestito / anticipo rimborsabile',  esl:4.2,   n:181643,  color:'rgba(150,144,134,.72)'},
 ];
 const totInstr = D_INSTR.reduce((s,x)=>s+x.esl, 0);
 new Chart(document.getElementById('instrChart'), {
@@ -1525,13 +1528,13 @@ new Chart(document.getElementById('instrChart'), {
   data: { labels: D_INSTR.map(d=>d.label), datasets: [{
     data: D_INSTR.map(d=>d.esl),
     backgroundColor: D_INSTR.map(d=>d.color),
-    borderColor: '#201f1e', borderWidth: 2, hoverOffset: 8
+    borderColor: '#FBFAF6', borderWidth: 2, hoverOffset: 8
   }] },
   options: {
     responsive: true, maintainAspectRatio: false, cutout: '58%',
     animation: { duration: 700 },
     plugins: {
-      legend: { position: 'right', labels: { color: '#8a8580', font: { size: 10 }, padding: 8, boxWidth: 8, boxHeight: 8 } },
+      legend: { position: 'right', labels: { color: '#56524C', font: { size: 10 }, padding: 8, boxWidth: 8, boxHeight: 8 } },
       tooltip: { callbacks: { label: c => {
         const d = D_INSTR[c.dataIndex];
         return `€ ${d.esl.toFixed(1)} mld (${(d.esl/totInstr*100).toFixed(1)} %) · ${d.n.toLocaleString('it-IT')} concessioni`;
@@ -1544,11 +1547,11 @@ new Chart(document.getElementById('instrChart'), {
 const INSTR_YEAR = {"2017":{"GRANT":3.532,"RISK_FINANCE":0.094,"LOAN":0.045,"GUARANTEE":0.294,"TAX_CREDIT":0.622},"2018":{"LOAN":0.1,"GRANT":6.413,"GUARANTEE":1.005,"RISK_FINANCE":0.09,"TAX_CREDIT":1.118},"2019":{"LOAN":0.081,"GRANT":5.315,"GUARANTEE":0.982,"TAX_CREDIT":1.011,"RISK_FINANCE":0.113},"2020":{"GRANT":7.174,"LOAN":0.647,"GUARANTEE":94.145,"RISK_FINANCE":0.153,"TAX_CREDIT":4.291},"2021":{"GRANT":20.95,"LOAN":0.647,"GUARANTEE":95.688,"RISK_FINANCE":0.027,"TAX_CREDIT":6.059},"2022":{"LOAN":0.619,"GRANT":20.107,"TAX_CREDIT":12.494,"GUARANTEE":46.663,"RISK_FINANCE":0.151},"2023":{"GRANT":15.802,"TAX_CREDIT":13.368,"LOAN":0.513,"RISK_FINANCE":6.48,"GUARANTEE":47.002},"2024":{"GRANT":26.237,"RISK_FINANCE":0.237,"GUARANTEE":5.591,"LOAN":0.675,"TAX_CREDIT":12.364},"2025":{"LOAN":0.721,"GRANT":17.849,"GUARANTEE":2.104,"TAX_CREDIT":22.109,"RISK_FINANCE":0.253},"2026":{"GRANT":4.627,"LOAN":0.171,"GUARANTEE":0.517,"TAX_CREDIT":2.246,"RISK_FINANCE":0.008}};
 const INSTR_YEARS = Object.keys(INSTR_YEAR).sort();
 const INSTR_KEYS = [
-  {k:'GUARANTEE',    label:'Garanzia',           color:'rgba(200,150,46,.7)'},
-  {k:'GRANT',        label:'Sovvenzione',        color:'rgba(90,143,130,.7)'},
-  {k:'TAX_CREDIT',   label:'Credito d\'imposta', color:'rgba(110,144,170,.7)'},
-  {k:'RISK_FINANCE', label:'Finanz. rischio',    color:'rgba(140,110,80,.7)'},
-  {k:'LOAN',         label:'Prestito',           color:'rgba(86,82,78,.7)'},
+  {k:'GUARANTEE',    label:'Garanzia',           color:'rgba(31,86,115,.7)'},
+  {k:'GRANT',        label:'Sovvenzione',        color:'rgba(78,138,107,.7)'},
+  {k:'TAX_CREDIT',   label:'Credito d\'imposta', color:'rgba(127,151,166,.7)'},
+  {k:'RISK_FINANCE', label:'Finanz. rischio',    color:'rgba(192,98,46,.7)'},
+  {k:'LOAN',         label:'Prestito',           color:'rgba(150,144,134,.7)'},
 ];
 new Chart(document.getElementById('instrEvolChart'), {
   type: 'bar',
@@ -1566,12 +1569,12 @@ new Chart(document.getElementById('instrEvolChart'), {
     responsive: true, maintainAspectRatio: false,
     animation: { duration: 600 },
     plugins: {
-      legend: { labels: { color: '#8a8580', font: { size: 10 }, padding: 12, boxWidth: 10, boxHeight: 10 } },
+      legend: { labels: { color: '#56524C', font: { size: 10 }, padding: 12, boxWidth: 10, boxHeight: 10 } },
       tooltip: { callbacks: { label: c => `${c.dataset.label}: € ${c.parsed.y.toFixed(1)} mld` } }
     },
     scales: {
-      x: { stacked: true, grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
-      y: { stacked: true, grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#56524e', font: { size: 10 } } }
+      x: { stacked: true, grid: { color: GRID }, ticks: { color: '#9A938A', font: { size: 10 } }, border: { display: false } },
+      y: { stacked: true, grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#9A938A', font: { size: 10 } } }
     }
   }
 });
@@ -1608,7 +1611,7 @@ new Chart(document.getElementById('saceYearChart'), {
     backgroundColor: sYrs.map(y => {
       const v = D_SACE.by_year[y].esl_mld;
       const t = Math.min(v / 31, 1);
-      return `rgba(200,150,46,${0.35 + 0.55 * t})`;
+      return `rgba(31,86,115,${0.35 + 0.55 * t})`;
     }),
     borderRadius: 3
   }] },
@@ -1619,8 +1622,8 @@ new Chart(document.getElementById('saceYearChart'), {
       tooltip: { callbacks: { label: c => `€ ${c.parsed.y.toFixed(2)} mld · ${D_SACE.by_year[c.label].n.toLocaleString('it-IT')} concessioni` } }
     },
     scales: {
-      x: { grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
-      y: { grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#56524e', font: { size: 10 } } }
+      x: { grid: { color: GRID }, ticks: { color: '#9A938A', font: { size: 10 } }, border: { display: false } },
+      y: { grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#9A938A', font: { size: 10 } } }
     }
   }
 });
@@ -1675,13 +1678,13 @@ document.getElementById('soe-cdp-sub').textContent= `€ ${D_SOE.totals.cdp_esl.
 
 // palette per bucket
 const SOE_BUCKETS = [
-  {key:'Diretta MEF',              label:'Diretta MEF / Tesoro',          color:'rgba(200,150,46,.80)'},
-  {key:'Gruppo CDP',               label:'Gruppo CDP (Equity/Reti/Ind.)', color:'rgba(90,143,130,.82)'},
-  {key:'Mista (MEF + CDP)',        label:'Mista MEF + CDP (ENI/Poste)',   color:'rgba(64,112,100,.80)'},
-  {key:'Grandi gruppi (capofila)', label:'Controllate dei grandi gruppi', color:'rgba(110,144,170,.74)'},
-  {key:'Altri Ministeri',          label:'Altri Ministeri',               color:'rgba(140,110,80,.70)'},
+  {key:'Diretta MEF',              label:'Diretta MEF / Tesoro',          color:'rgba(31,86,115,.80)'},
+  {key:'Gruppo CDP',               label:'Gruppo CDP (Equity/Reti/Ind.)', color:'rgba(78,138,107,.82)'},
+  {key:'Mista (MEF + CDP)',        label:'Mista MEF + CDP (ENI/Poste)',   color:'rgba(46,100,78,.80)'},
+  {key:'Grandi gruppi (capofila)', label:'Controllate dei grandi gruppi', color:'rgba(127,151,166,.74)'},
+  {key:'Altri Ministeri',          label:'Altri Ministeri',               color:'rgba(192,98,46,.70)'},
 ];
-const SOE_COL = k => (SOE_BUCKETS.find(b=>b.key===k)||{}).color || 'rgba(86,82,78,.7)';
+const SOE_COL = k => (SOE_BUCKETS.find(b=>b.key===k)||{}).color || 'rgba(150,144,134,.7)';
 
 // 19a. Top 15 beneficiari
 const soeTop = D_SOE.top_bene.slice(0, 15);
@@ -1708,11 +1711,11 @@ function drillSOE(b) {
     if (window._drill) window._drill.destroy();
     window._drill = new Chart(document.getElementById('drillCanvas'), {
       type: 'bar',
-      data: { labels: ys.map(y => y === '2026' ? "'26*" : y), datasets: [{ data: ys.map(y => fy.by_year[y][key] || 0), backgroundColor: 'rgba(200,150,46,.78)', borderRadius: 3 }] },
+      data: { labels: ys.map(y => y === '2026' ? "'26*" : y), datasets: [{ data: ys.map(y => fy.by_year[y][key] || 0), backgroundColor: 'rgba(31,86,115,.78)', borderRadius: 3 }] },
       options: { responsive: true, maintainAspectRatio: false, animation: { duration: 450 },
         plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `€ ${c.parsed.y.toFixed(3)} mld` } } },
-        scales: { x: { grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
-          y: { grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `€${v}` }, border: { display: false } } } }
+        scales: { x: { grid: { color: GRID }, ticks: { color: '#9A938A', font: { size: 10 } }, border: { display: false } },
+          y: { grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => `€${v}` }, border: { display: false } } } }
     });
   }
   panel.classList.add('show');
@@ -1729,8 +1732,8 @@ new Chart(document.getElementById('soeTramChart'), {
   options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, animation: { duration: 600 },
     plugins: { legend: { display: false },
       tooltip: { callbacks: { label: c => { const t = tramData[c.dataIndex]; return `€ ${t.esl_mld.toFixed(2)} mld · ${t.n_firms} imprese · ${t.n_grants.toLocaleString('it-IT')} concessioni`; } } } },
-    scales: { x: { grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 }, callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#56524e', font: { size: 10 } } },
-              y: { grid: { display: false }, ticks: { color: '#8a8580', font: { size: 11 } }, border: { display: false } } } }
+    scales: { x: { grid: { color: GRID }, ticks: { color: '#9A938A', font: { size: 10 }, callback: v => `€${v}` }, border: { display: false }, title: { display: true, text: 'mld €', color: '#9A938A', font: { size: 10 } } },
+              y: { grid: { display: false }, ticks: { color: '#56524C', font: { size: 11 } }, border: { display: false } } } }
 });
 
 // shared stacked-bar builder over years
@@ -1740,11 +1743,11 @@ function soeStack(canvasId, years, segs, getVal, pct) {
     data: { labels: years.map(y => y === '2026' ? "'26*" : y),
       datasets: segs.map(s => ({ label: s.label, data: years.map(y => getVal(y, s)), backgroundColor: s.color, borderRadius: 2, stack: 's' })) },
     options: { responsive: true, maintainAspectRatio: false, animation: { duration: 600 },
-      plugins: { legend: { labels: { color: '#8a8580', font: { size: 10 }, padding: 9, boxWidth: 10, boxHeight: 10 } },
+      plugins: { legend: { labels: { color: '#56524C', font: { size: 10 }, padding: 9, boxWidth: 10, boxHeight: 10 } },
         tooltip: { callbacks: { label: c => `${c.dataset.label}: ${pct ? c.parsed.y.toFixed(1)+' %' : '€ '+c.parsed.y.toFixed(2)+' mld'}`,
           footer: pct ? undefined : items => `Totale: € ${items.reduce((s,i)=>s+i.parsed.y,0).toFixed(2)} mld` } } },
-      scales: { x: { stacked: true, grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
-        y: { stacked: true, max: pct ? 100 : undefined, grid: { color: GRID }, ticks: { color: '#56524e', callback: v => pct ? v+'%' : `€${v}` }, border: { display: false }, title: { display: !pct, text: 'mld €', color: '#56524e', font: { size: 10 } } } } }
+      scales: { x: { stacked: true, grid: { color: GRID }, ticks: { color: '#9A938A', font: { size: 10 } }, border: { display: false } },
+        y: { stacked: true, max: pct ? 100 : undefined, grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => pct ? v+'%' : `€${v}` }, border: { display: false }, title: { display: !pct, text: 'mld €', color: '#9A938A', font: { size: 10 } } } } }
   });
 }
 
@@ -1762,31 +1765,31 @@ soeStack('soeEvolPctChart', SOE_Y_PCT, segTram, (y,s) => {
 
 // 19e. Evoluzione per singola impresa (top 8 + Altre)
 const FY = D_SOE_DIMS.firm;
-const firmPal = ['rgba(200,150,46,.82)','rgba(90,143,130,.82)','rgba(110,144,170,.78)','rgba(224,184,74,.7)','rgba(122,170,156,.7)','rgba(140,110,80,.72)','rgba(150,130,170,.66)','rgba(180,90,70,.6)'];
+const firmPal = ['rgba(31,86,115,.82)','rgba(78,138,107,.82)','rgba(127,151,166,.78)','rgba(74,128,166,.7)','rgba(120,165,140,.7)','rgba(192,98,46,.72)','rgba(123,90,166,.66)','rgba(166,58,80,.6)'];
 const segFirm = FY.firms.map((f,i)=>({label:FY.firms_clean[i], color:firmPal[i%firmPal.length], key:f}))
-  .concat([{label:'Altre partecipate', color:'rgba(86,82,78,.6)', key:'__other__'}]);
+  .concat([{label:'Altre partecipate', color:'rgba(150,144,134,.6)', key:'__other__'}]);
 soeStack('soeFirmChart', FY.years, segFirm, (y,s) => s.key==='__other__' ? (FY.other_by_year[y]||0) : (FY.by_year[y][s.key]||0), false);
 
 // 19f. Evoluzione per base giuridica
 const LY = D_SOE_DIMS.legal;
 const segLegal = [
-  {label:'Quadro Ucraina (TCTF)', key:'UKRAINE_TF', color:'rgba(200,150,46,.80)'},
-  {label:'Quadro COVID-19',       key:'COVID_TF',   color:'rgba(224,184,74,.62)'},
-  {label:'GBER 651/2014',         key:'GBER',       color:'rgba(90,143,130,.78)'},
-  {label:'De minimis',            key:'DE_MINIMIS', color:'rgba(110,144,170,.72)'},
-  {label:'SIEG',                  key:'SIEG',       color:'rgba(140,110,80,.66)'},
-  {label:'Altri notificati',      key:'OTHER_NOTIFIED', color:'rgba(86,82,78,.6)'},
+  {label:'Quadro Ucraina (TCTF)', key:'UKRAINE_TF', color:'rgba(31,86,115,.80)'},
+  {label:'Quadro COVID-19',       key:'COVID_TF',   color:'rgba(74,128,166,.62)'},
+  {label:'GBER 651/2014',         key:'GBER',       color:'rgba(78,138,107,.78)'},
+  {label:'De minimis',            key:'DE_MINIMIS', color:'rgba(127,151,166,.72)'},
+  {label:'SIEG',                  key:'SIEG',       color:'rgba(192,98,46,.66)'},
+  {label:'Altri notificati',      key:'OTHER_NOTIFIED', color:'rgba(150,144,134,.6)'},
 ];
 soeStack('soeLegalChart', LY.years, segLegal, (y,s) => LY.by_year[y][s.key] || 0, false);
 
 // 19g. Evoluzione per strumento
 const IY = D_SOE_DIMS.instr;
 const segInstr = [
-  {label:'Garanzia',          key:'GUARANTEE',    color:'rgba(200,150,46,.80)'},
-  {label:'Sovvenzione',       key:'GRANT',        color:'rgba(90,143,130,.78)'},
-  {label:"Credito d'imposta", key:'TAX_CREDIT',   color:'rgba(110,144,170,.74)'},
-  {label:'Finanz. rischio',   key:'RISK_FINANCE', color:'rgba(140,110,80,.66)'},
-  {label:'Prestito',          key:'LOAN',         color:'rgba(86,82,78,.6)'},
+  {label:'Garanzia',          key:'GUARANTEE',    color:'rgba(31,86,115,.80)'},
+  {label:'Sovvenzione',       key:'GRANT',        color:'rgba(78,138,107,.78)'},
+  {label:"Credito d'imposta", key:'TAX_CREDIT',   color:'rgba(127,151,166,.74)'},
+  {label:'Finanz. rischio',   key:'RISK_FINANCE', color:'rgba(192,98,46,.66)'},
+  {label:'Prestito',          key:'LOAN',         color:'rgba(150,144,134,.6)'},
 ];
 soeStack('soeInstrChart', IY.years, segInstr, (y,s) => IY.by_year[y][s.key] || 0, false);
 
@@ -1801,7 +1804,7 @@ const geoN = D_SOE_GEO.slice().sort((a,b) => b.n_firms - a.n_firms);
 horizBar('soeGeoNChart',
   geoN.map(r => r.regione),
   geoN.map(r => r.n_firms),
-  (i,n) => `rgba(90,143,130,${Math.max(0.22, 0.82 - i*0.6/n)})`,
+  (i,n) => `rgba(78,138,107,${Math.max(0.22, 0.82 - i*0.6/n)})`,
   c => { const r = geoN[c.dataIndex]; return `${r.n_firms} imprese · € ${r.esl_mld.toFixed(2)} mld · ${r.n_grants.toLocaleString('it-IT')} concessioni`; });
 
 // 19i. Tabella completa
