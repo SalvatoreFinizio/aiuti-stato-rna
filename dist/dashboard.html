@@ -304,9 +304,71 @@
       .kpi + .kpi { border-top: 1px solid var(--border); }
       .kpi-val { font-size: 26px; }
     }
+
+    /* ── sticky topbar (KPI + section nav on scroll) ─────────── */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+      background: rgba(17,17,16,.94); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      transform: translateY(-100%); transition: transform .26s cubic-bezier(.16,1,.3,1);
+    }
+    .topbar.show { transform: translateY(0); }
+    .topbar-in { max-width: 1240px; margin: 0 auto; padding: 8px 36px; display: flex; align-items: center; gap: 16px; }
+    .tb-badge { font-family: var(--mono); font-size: 10px; color: var(--amber); border: 1px solid rgba(200,150,46,.35); padding: 2px 7px; border-radius: 3px; flex-shrink: 0; }
+    .tb-kpis { display: flex; gap: 14px; flex-shrink: 0; }
+    .tb-kpi { font-size: 11px; color: var(--dim); white-space: nowrap; }
+    .tb-kpi b { font-family: var(--mono); color: var(--amber2); font-weight: 400; }
+    .tb-nav { margin-left: auto; display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+    .tb-nav::-webkit-scrollbar { display: none; }
+    .tb-nav a { font-size: 11px; color: var(--muted); padding: 5px 9px; border-radius: 4px; white-space: nowrap; transition: color .15s, background .15s; }
+    .tb-nav a:hover { color: var(--text); background: rgba(255,255,255,.05); }
+    .tb-nav a.active { color: var(--amber); }
+    h2[id], section[id] { scroll-margin-top: 58px; }
+    @media (max-width: 760px) { .tb-kpis { display: none; } .topbar-in { padding: 8px 16px; } }
+
+    /* ── collapsible glossary ────────────────────────────────── */
+    details.glossary > summary {
+      cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px;
+    }
+    details.glossary > summary::-webkit-details-marker { display: none; }
+    details.glossary > summary::before { content: '▸'; color: var(--amber); font-size: 9px; transition: transform .15s; }
+    details.glossary[open] > summary::before { content: '▾'; }
+    details.glossary .glossary-title { margin-bottom: 0; }
+    details.glossary[open] .glossary-grid { margin-top: 14px; }
+    .gl-hint { color: var(--dim); font-size: 9px; text-transform: none; letter-spacing: 0; margin-left: 4px; }
+
+    /* ── SOE drill-down panel ────────────────────────────────── */
+    .soe-drill { display: none; margin-top: 12px; background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--amber); border-radius: 5px; padding: 14px 16px; }
+    .soe-drill.show { display: block; animation: drillin .2s ease; }
+    .drill-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .drill-head b { color: var(--text); }
+    .drill-head button { background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 4px; padding: 2px 9px; cursor: pointer; font-size: 13px; line-height: 1.2; flex-shrink: 0; }
+    .drill-head button:hover { color: var(--text); border-color: var(--dim); }
+    @keyframes drillin { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: none; } }
   </style>
 </head>
 <body>
+
+<div class="topbar" id="topbar">
+  <div class="topbar-in">
+    <span class="tb-badge">RNA</span>
+    <div class="tb-kpis">
+      <span class="tb-kpi"><b>€ 509,7 mld</b> ESL</span>
+      <span class="tb-kpi"><b>24,4 M</b> concessioni</span>
+      <span class="tb-kpi"><b>13 %</b> green</span>
+    </div>
+    <nav class="tb-nav" id="tb-nav">
+      <a href="#s-mappa">Mappa</a>
+      <a href="#s-tempo">Tempo</a>
+      <a href="#s-tipologie">Tipologie</a>
+      <a href="#s-sace">SACE</a>
+      <a href="#s-soe">Partecipate</a>
+      <a href="#s-regioni">Regioni</a>
+      <a href="#s-green">Green</a>
+      <a href="#s-digitale">Digitale</a>
+    </nav>
+  </div>
+</div>
 
 <header>
   <div class="wrap">
@@ -335,9 +397,9 @@
     <p class="intro-meta">Elaborazione propria su dati <abbr title="Registro Nazionale Aiuti di Stato — banca dati pubblica gestita dall'AGCM che raccoglie tutte le misure di aiuto di Stato notificate e concesse in Italia">RNA</abbr> · rna.gov.it · <abbr title="Autorità Garante della Concorrenza e del Mercato">AGCM</abbr></p>
   </div>
 
-  <!-- Glossario acronimi -->
-  <div class="glossary">
-    <div class="glossary-title">Glossario acronimi</div>
+  <!-- Glossario acronimi (collassabile) -->
+  <details class="glossary" id="glossary">
+    <summary class="glossary-title">Glossario acronimi<span class="gl-hint">clicca per espandere · 12 termini</span></summary>
     <div class="glossary-grid">
       <div class="gl-item"><strong>RNA</strong> — Registro Nazionale Aiuti di Stato: banca dati pubblica di tutte le misure di aiuto concesse in Italia</div>
       <div class="gl-item"><strong>ESL</strong> — Equivalente Sovvenzione Lorda: misura standardizzata UE del vantaggio economico netto per il beneficiario</div>
@@ -352,7 +414,7 @@
       <div class="gl-item"><strong>CUP</strong> — Codice Unico di Progetto: codice che identifica ogni progetto di investimento pubblico in Italia</div>
       <div class="gl-item"><strong>ZES</strong> — Zone Economiche Speciali: aree geografiche del Mezzogiorno con agevolazioni fiscali per attrarre investimenti</div>
     </div>
-  </div>
+  </details>
 
   <!-- KPI -->
   <div class="kpi-row">
@@ -381,7 +443,7 @@
   <!-- MAPPA -->
   <section>
     <div class="sec-hd">
-      <h2>Mappa coropletica regionale</h2>
+      <h2 id="s-mappa">Mappa coropletica regionale</h2>
       <span class="sec-note"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> per regione · hover/tap per dettaglio</span>
     </div>
     <div class="year-sel">
@@ -425,7 +487,7 @@
   <!-- ANNO SU ANNO -->
   <section>
     <div class="sec-hd">
-      <h2>Anno per anno</h2>
+      <h2 id="s-tempo">Anno per anno</h2>
       <span class="sec-note"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> totale · green · digitale · 2023 parziale (Apr–Dic) · 2026 parziale (Gen–Mar)</span>
     </div>
     <div class="card">
@@ -438,7 +500,7 @@
   <!-- TIPOLOGIA AIUTI: BASE GIURIDICA + STRUMENTO -->
   <section>
     <div class="sec-hd">
-      <h2>Tipologia degli aiuti</h2>
+      <h2 id="s-tipologie">Tipologia degli aiuti</h2>
       <span class="sec-note">Base giuridica UE · forma finanziaria · 2016–2026 · mld €</span>
     </div>
     <p class="note" style="margin:0 0 18px 0; max-width:780px;">
@@ -471,7 +533,7 @@
   <!-- SACE — Servizi Assicurativi del Commercio Estero -->
   <section>
     <div class="sec-hd">
-      <h2>Focus: <abbr title="Servizi Assicurativi del Commercio Estero — agenzia statale di garanzia, 100 % Ministero dell'Economia e delle Finanze">SACE</abbr> SpA</h2>
+      <h2 id="s-sace">Focus: <abbr title="Servizi Assicurativi del Commercio Estero — agenzia statale di garanzia, 100 % Ministero dell'Economia e delle Finanze">SACE</abbr> SpA</h2>
       <span class="sec-note">Concessioni dove SOGGETTO_CONCEDENTE contiene «SACE» · garanzie pubbliche su prestiti</span>
     </div>
 
@@ -537,7 +599,7 @@
   <!-- SOE — Partecipate statali -->
   <section>
     <div class="sec-hd">
-      <h2>Focus: Imprese a partecipazione statale</h2>
+      <h2 id="s-soe">Focus: Imprese a partecipazione statale</h2>
       <span class="sec-note">Perimetro ufficiale del Gruppo <abbr title="Ministero dell'Economia e delle Finanze">MEF</abbr> · partecipate di I, II e III livello incrociate con i beneficiari <abbr title="Registro Nazionale Aiuti">RNA</abbr></span>
     </div>
 
@@ -585,7 +647,7 @@
     <div class="g2">
       <div class="card">
         <div class="card-title">Top 15 partecipate per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> ricevuto</div>
-        <div class="card-sub"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld € · barra orizzontale</div>
+        <div class="card-sub"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld € · <span style="color:var(--amber);">clicca una barra per il dettaglio annuale ↓</span></div>
         <div class="chart-h" style="height:420px;"><canvas id="soeBeneChart"></canvas></div>
       </div>
       <div class="card">
@@ -594,6 +656,8 @@
         <div class="chart-h" style="height:420px;"><canvas id="soeTramChart"></canvas></div>
       </div>
     </div>
+
+    <div class="soe-drill" id="soe-drill"></div>
 
     <div class="card" style="margin-top:12px;">
       <div class="card-title">Evoluzione e composizione · <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> annuale per catena di controllo</div>
@@ -710,7 +774,7 @@
   <!-- REGIONI -->
   <section>
     <div class="sec-hd">
-      <h2>Distribuzione regionale</h2>
+      <h2 id="s-regioni">Distribuzione regionale</h2>
       <span class="sec-note">Top 15 regioni per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr></span>
     </div>
     <div class="g2">
@@ -730,7 +794,7 @@
   <!-- GREEN FOCUS -->
   <section>
     <div class="sec-hd">
-      <h2>Focus: Transizione energetica e green</h2>
+      <h2 id="s-green">Focus: Transizione energetica e green</h2>
       <span class="sec-note"><abbr title="Classificazione delle Attività Economiche">ATECO</abbr> D.35 ∪ obiettivo keyword ∪ <abbr title="Temporary Crisis and Transition Framework — regime UE per aiuti a imprese energivore 2022–2024">TCTF</abbr></span>
     </div>
 
@@ -791,7 +855,7 @@
   <!-- DIGITAL FOCUS -->
   <section>
     <div class="sec-hd">
-      <h2>Focus: Transizione digitale &amp; Industria 4.0</h2>
+      <h2 id="s-digitale">Focus: Transizione digitale &amp; Industria 4.0</h2>
       <span class="sec-note"><abbr title="Classificazione delle Attività Economiche">ATECO</abbr> J.58–63, M.72 ∪ keyword obiettivo</span>
     </div>
 
@@ -1294,7 +1358,7 @@ requestAnimationFrame(() => setTimeout(() =>
   document.querySelectorAll('.m-bar').forEach(b => b.style.width = b.dataset.w + '%'), 200));
 
 /* ── CHART HELPERS ────────────────────────────────── */
-function horizBar(id, labels, vals, colorFn, fmtFn) {
+function horizBar(id, labels, vals, colorFn, fmtFn, onClick) {
   return new Chart(document.getElementById(id), {
     type: 'bar',
     data: { labels, datasets: [{ data: vals,
@@ -1303,6 +1367,8 @@ function horizBar(id, labels, vals, colorFn, fmtFn) {
     options: {
       indexAxis: 'y', responsive: true, maintainAspectRatio: false,
       animation: { duration: 700 },
+      onClick: onClick ? (e, els) => { if (els && els.length) onClick(els[0].index); } : undefined,
+      onHover: onClick ? (e, els) => { e.native.target.style.cursor = els.length ? 'pointer' : 'default'; } : undefined,
       plugins: {
         legend: { display: false },
         tooltip: { callbacks: { label: fmtFn || (c => `€ ${c.parsed.x.toFixed(2)} mld`) } }
@@ -1622,7 +1688,36 @@ horizBar('soeBeneChart',
   soeTop.map(b => b.denom),
   soeTop.map(b => b.esl_mld),
   CA,
-  c => { const b = soeTop[c.dataIndex]; return `€ ${b.esl_mld.toFixed(3)} mld · ${b.regione} · ${b.via}`; });
+  c => { const b = soeTop[c.dataIndex]; return `€ ${b.esl_mld.toFixed(3)} mld · ${b.regione} · ${b.via}`; },
+  idx => drillSOE(soeTop[idx]));
+
+// SOE drill-down: click a top bar → year-by-year ESL for that firm (top-8 have year data)
+function drillSOE(b) {
+  const fy = D_SOE_DIMS.firm;
+  const norm = s => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const nb = norm(b.denom);
+  const j = fy.firms_clean.findIndex(fc => { const n = norm(fc); return n === nb || nb.includes(n) || n.includes(nb); });
+  const panel = document.getElementById('soe-drill');
+  const head = `<div class="drill-head"><span>Dettaglio · <b>${b.denom}</b> — € ${b.esl_mld.toFixed(3)} mld · ${b.via}${b.quota ? ' · '+b.quota : ''}</span><button id="drill-x" aria-label="Chiudi">✕</button></div>`;
+  if (j < 0) {
+    panel.innerHTML = head + `<p class="note" style="margin:2px 0 0;">Ripartizione annuale disponibile solo per le prime 8 partecipate per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr>. Questa impresa riceve € ${b.esl_mld.toFixed(3)} mld in ${b.n.toLocaleString('it-IT')} concessioni (regione: ${b.regione}, ATECO ${b.ateco}).</p>`;
+  } else {
+    const key = fy.firms[j], ys = fy.years;
+    panel.innerHTML = head + `<div class="card-sub" style="margin-bottom:8px;"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> per anno di concessione · mld €</div><div class="chart-h" style="height:200px;"><canvas id="drillCanvas"></canvas></div>`;
+    if (window._drill) window._drill.destroy();
+    window._drill = new Chart(document.getElementById('drillCanvas'), {
+      type: 'bar',
+      data: { labels: ys.map(y => y === '2026' ? "'26*" : y), datasets: [{ data: ys.map(y => fy.by_year[y][key] || 0), backgroundColor: 'rgba(200,150,46,.78)', borderRadius: 3 }] },
+      options: { responsive: true, maintainAspectRatio: false, animation: { duration: 450 },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `€ ${c.parsed.y.toFixed(3)} mld` } } },
+        scales: { x: { grid: { color: GRID }, ticks: { color: '#56524e', font: { size: 10 } }, border: { display: false } },
+          y: { grid: { color: GRID }, ticks: { color: '#56524e', callback: v => `€${v}` }, border: { display: false } } } }
+    });
+  }
+  panel.classList.add('show');
+  document.getElementById('drill-x').onclick = () => { panel.classList.remove('show'); if (window._drill) { window._drill.destroy(); window._drill = null; } };
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
 
 // 19b. Catena di controllo (bucket)
 const tramData = D_SOE.by_tramite.slice().sort((a,b)=>b.esl_mld-a.esl_mld);
@@ -1726,6 +1821,22 @@ D_SOE.top_bene.forEach(r => {
   tbody.appendChild(tr);
 });
 
+/* ── sticky topbar: show on scroll past hero + active-section highlight ── */
+(function () {
+  const tb = document.getElementById('topbar');
+  const hero = document.querySelector('.kpi-row');
+  if (tb && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => {
+      tb.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 0);
+    }, { threshold: 0 }).observe(hero);
+
+    const links = {};
+    tb.querySelectorAll('a').forEach(a => links[a.getAttribute('href').slice(1)] = a);
+    const setActive = id => { Object.values(links).forEach(a => a.classList.remove('active')); if (links[id]) links[id].classList.add('active'); };
+    const so = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) setActive(e.target.id); }); }, { rootMargin: '-56px 0px -72% 0px', threshold: 0 });
+    Object.keys(links).forEach(id => { const el = document.getElementById(id); if (el) so.observe(el); });
+  }
+})();
 </script>
 </body>
 </html>
