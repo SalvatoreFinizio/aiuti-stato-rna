@@ -270,6 +270,17 @@
       min-height: 30px;
     }
     .yr-btn:hover { color: var(--text); border-color: var(--dim); }
+    .metric-sel { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+    .metric-lab { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); margin-right: 2px; }
+    .mt-btn {
+      font-size: 12px; color: var(--muted); background: none;
+      border: 1px solid var(--border); border-radius: 4px; padding: 6px 13px;
+      cursor: pointer; transition: color .15s, border-color .15s, background .15s; min-height: 32px;
+    }
+    .mt-btn:hover { color: var(--text); border-color: var(--dim); }
+    .mt-btn.mt-active { color: #fff; background: var(--amber); border-color: var(--amber); }
+    .metric-hint { font-size: 11px; color: var(--dim); margin-left: 4px; }
+    .year-sel.disabled { opacity: .4; pointer-events: none; }
     .yr-btn.yr-active { color: var(--amber); border-color: var(--amber); background: rgba(31,86,115,.08); }
     .yr-play {
       font-size: 12px; color: var(--amber); background: rgba(31,86,115,.1);
@@ -450,6 +461,13 @@
       <h2 id="s-mappa">Mappa coropletica regionale</h2>
       <span class="sec-note"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> per regione · hover/tap per dettaglio</span>
     </div>
+    <div class="metric-sel">
+      <span class="metric-lab">Vista:</span>
+      <button class="mt-btn mt-active" data-metric="esl">€ totale</button>
+      <button class="mt-btn" data-metric="percap">€ pro capite</button>
+      <button class="mt-btn" data-metric="hhi">Concentrazione</button>
+      <span class="metric-hint" id="metric-hint"></span>
+    </div>
     <div class="year-sel">
       <button class="yr-btn yr-active" data-year="all">Tutto</button>
       <button class="yr-btn" data-year="2016">'16</button>
@@ -474,7 +492,7 @@
                preserveAspectRatio="xMidYMid meet"></svg>
         </div>
         <div style="margin-top:14px;">
-          <div style="font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;">
+          <div style="font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;" id="legend-title">
             Quintili <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> — 5 fasce per intensità
           </div>
           <div class="legend-bins" id="legend-bins"></div>
@@ -1183,35 +1201,19 @@ ITALY_REGIONS.forEach(reg => {
   path.setAttribute('data-rid', reg.id);
   pathEls[reg.id] = path;
 
-  const showTip = (esl, pct, rank, x, y) => {
+  const showTip = (x, y, dy) => {
+    const d = currentData();
+    const v = d.vals[reg.id] || 0;
+    const tot = Object.values(d.vals).reduce((s, z) => s + z, 0);
     mapTip.style.display = 'block';
-    mapTip.innerHTML = `<strong>${reg.name}</strong>
-      <div class="tt-esl">€ ${esl.toFixed(2)} mld</div>
-      <div class="tt-sub">${pct.toFixed(2)} % · Rank #${rank}</div>`;
-    mapTip.style.left = Math.min(x + 14, window.innerWidth - 190) + 'px';
-    mapTip.style.top  = Math.max(y - 8, 10) + 'px';
+    mapTip.innerHTML = METRICS[activeMetric].tip(reg, v, tot, d.ranks[reg.id] || '—');
+    mapTip.style.left = Math.min(x + 14, window.innerWidth - 210) + 'px';
+    mapTip.style.top  = Math.max(y - 8 + (dy || 0), 10) + 'px';
   };
-  path.addEventListener('mouseenter', e => {
-    const d = currentYearData();
-    const v = d.vals[reg.id] || 0;
-    const tot = Object.values(d.vals).reduce((s, x) => s + x, 0);
-    showTip(v, tot ? v / tot * 100 : 0, d.ranks[reg.id] || '—', e.clientX, e.clientY);
-  });
-  path.addEventListener('mousemove', e => {
-    const d = currentYearData();
-    const v = d.vals[reg.id] || 0;
-    const tot = Object.values(d.vals).reduce((s, x) => s + x, 0);
-    showTip(v, tot ? v / tot * 100 : 0, d.ranks[reg.id] || '—', e.clientX, e.clientY);
-  });
+  path.addEventListener('mouseenter', e => showTip(e.clientX, e.clientY));
+  path.addEventListener('mousemove', e => showTip(e.clientX, e.clientY));
   path.addEventListener('mouseleave', () => { mapTip.style.display = 'none'; });
-  path.addEventListener('touchstart', e => {
-    e.preventDefault();
-    const d = currentYearData();
-    const v = d.vals[reg.id] || 0;
-    const tot = Object.values(d.vals).reduce((s, x) => s + x, 0);
-    const t = e.touches[0];
-    showTip(v, tot ? v / tot * 100 : 0, d.ranks[reg.id] || '—', t.clientX, t.clientY - 60);
-  }, { passive: false });
+  path.addEventListener('touchstart', e => { e.preventDefault(); const t = e.touches[0]; showTip(t.clientX, t.clientY, -60); }, { passive: false });
   path.addEventListener('touchend', () => setTimeout(() => mapTip.style.display = 'none', 2000));
   mapSvg.appendChild(path);
 
@@ -1234,6 +1236,35 @@ ITALY_REGIONS.forEach(reg => {
 /* ── DYNAMIC MAP UPDATE — quintile bins ─────────── */
 const QUINTILE_COLORS = ['#DCE6EC', '#A9C2D2', '#6E9BB5', '#3A7593', '#1F5673'];
 let activeYear = 'all';
+let activeMetric = 'esl';
+
+// per-region concentration / relativization metrics (cumulative 2016–2026, by sede legale)
+const D_REG_CONC = {"LAZ":{"esl_mld":58.822,"n_firms":460039,"hhi":509.1,"top1":20.4,"percap":10302},"PIE":{"esl_mld":40.473,"n_firms":358349,"hhi":310.6,"top1":15.8,"percap":9523},"LOM":{"esl_mld":105.063,"n_firms":802211,"hhi":41,"top1":3.8,"percap":10559},"VEN":{"esl_mld":47.193,"n_firms":416744,"hhi":30.7,"top1":5.1,"percap":9730},"SIC":{"esl_mld":25.58,"n_firms":339777,"hhi":91,"top1":9.2,"percap":5329},"FVG":{"esl_mld":13.879,"n_firms":95489,"hhi":229.3,"top1":14.3,"percap":11663},"LIG":{"esl_mld":10.771,"n_firms":132013,"hhi":144.2,"top1":10.5,"percap":7133},"CAM":{"esl_mld":42.858,"n_firms":468152,"hhi":6,"top1":1.6,"percap":7626},"SAR":{"esl_mld":9.918,"n_firms":125620,"hhi":62.3,"top1":6.7,"percap":6277},"EMR":{"esl_mld":40.043,"n_firms":386494,"hhi":6.3,"top1":1.3,"percap":9060},"TAA":{"esl_mld":11.664,"n_firms":114664,"hhi":34,"top1":3.8,"percap":10901},"UMB":{"esl_mld":7.265,"n_firms":73736,"hhi":50.6,"top1":4.9,"percap":8547},"VDA":{"esl_mld":1.737,"n_firms":14317,"hhi":370.2,"top1":16.9,"percap":14475},"TOS":{"esl_mld":28.726,"n_firms":351011,"hhi":4.6,"top1":0.8,"percap":7849},"MAR":{"esl_mld":13.355,"n_firms":145000,"hhi":6.2,"top1":0.9,"percap":9024},"CAL":{"esl_mld":8.064,"n_firms":143526,"hhi":8.6,"top1":1.4,"percap":4383},"PUG":{"esl_mld":25.354,"n_firms":295699,"hhi":3.2,"top1":0.4,"percap":6484},"ABR":{"esl_mld":10.194,"n_firms":119287,"hhi":9.3,"top1":1,"percap":7964},"BAS":{"esl_mld":4.352,"n_firms":49983,"hhi":22.7,"top1":1.9,"percap":8059},"MOL":{"esl_mld":2.047,"n_firms":26691,"hhi":58.4,"top1":3.6,"percap":7058}};
+
+const PAL = {
+  esl:    ['#DCE6EC','#A9C2D2','#6E9BB5','#3A7593','#1F5673'],
+  percap: ['#E2EDE7','#B9D4C6','#86B49B','#54956F','#2E7D55'],
+  hhi:    ['#F6E7DB','#E6C2A2','#D2926A','#C0622E','#984B1C'],
+};
+const METRICS = {
+  esl: { byYear:true, legendTitle:'Quintili ESL — € mld per regione',
+    legFmt:v => v<1?`€${v.toFixed(2)}`:v<10?`€${v.toFixed(1)}`:`€${v.toFixed(0)}`,
+    listFmt:v => `€ ${v.toFixed(2)}`,
+    tip:(reg,v,tot,rank)=>`<strong>${reg.name}</strong><div class="tt-esl">€ ${v.toFixed(2)} mld</div><div class="tt-sub">${tot?(v/tot*100).toFixed(2):0} % del totale · Rank #${rank}</div>`,
+    hint:'' },
+  percap: { byYear:false, legendTitle:'Quintili ESL per residente (€, popolazione ISTAT)',
+    val:id => (D_REG_CONC[id]||{}).percap||0,
+    legFmt:v => `€${Math.round(v/1000)}k`,
+    listFmt:v => `€ ${Math.round(v).toLocaleString('it-IT')}`,
+    tip:(reg,v,tot,rank)=>`<strong>${reg.name}</strong><div class="tt-esl">€ ${Math.round(v).toLocaleString('it-IT')}</div><div class="tt-sub">ESL per abitante · Rank #${rank}</div>`,
+    hint:'ESL cumulato 2016–2026 ÷ popolazione · l\'anno non si applica' },
+  hhi: { byYear:false, legendTitle:'Concentrazione (indice HHI) — alto = una sola impresa domina',
+    val:id => (D_REG_CONC[id]||{}).hhi||0,
+    legFmt:v => `${Math.round(v)}`,
+    listFmt:v => `HHI ${Math.round(v)}`,
+    tip:(reg,v,tot,rank)=>{const c=D_REG_CONC[reg.id]||{};return `<strong>${reg.name}</strong><div class="tt-esl">HHI ${Math.round(v)}</div><div class="tt-sub">1ª impresa: ${c.top1||0} % · ${(c.n_firms||0).toLocaleString('it-IT')} imprese · Rank #${rank}</div>`;},
+    hint:'Indice di Herfindahl sulle quote ESL delle imprese · cumulato, l\'anno non si applica' },
+};
 
 function getYearVals(year) {
   if (year === 'all') return {...D_REG_ALL};
@@ -1247,8 +1278,11 @@ function getYearVals(year) {
   return out;
 }
 
-function currentYearData() {
-  const vals = getYearVals(activeYear);
+function currentData() {
+  const M = METRICS[activeMetric];
+  let vals;
+  if (M.byYear) { vals = getYearVals(activeYear); }
+  else { vals = {}; Object.keys(pathEls).forEach(id => { const v = M.val(id); if (v > 0) vals[id] = v; }); }
   const sorted = Object.entries(vals).sort((a, b) => b[1] - a[1]);
   const ranks = Object.fromEntries(sorted.map(([id], i) => [id, i + 1]));
   return { vals, ranks };
@@ -1267,54 +1301,57 @@ function binIdx(v, bins) {
 }
 
 function updateMap(year) {
-  activeYear = year;
-  const vals = getYearVals(year);
+  if (year !== undefined) activeYear = year;
+  const M = METRICS[activeMetric];
+  const pal = PAL[activeMetric];
+  const { vals } = currentData();
   const values = Object.values(vals).filter(v => v > 0);
   const bins = quintileBins(values);
 
   // Update path fills
   Object.entries(pathEls).forEach(([id, p]) => {
     const v = vals[id] || 0;
-    p.setAttribute('fill', v > 0 ? QUINTILE_COLORS[binIdx(v, bins)] : '#EDE9E0');
+    p.setAttribute('fill', v > 0 ? pal[binIdx(v, bins)] : '#EDE9E0');
   });
 
-  // Legend swatches + thresholds
+  // Legend title + swatches + thresholds
+  const lt = document.getElementById('legend-title'); if (lt) lt.textContent = M.legendTitle;
   document.getElementById('legend-bins').innerHTML =
-    QUINTILE_COLORS.map(c => `<div class="legend-bin" style="background:${c}"></div>`).join('');
-  const fmt = v => v < 1 ? `€${v.toFixed(2)}` : v < 10 ? `€${v.toFixed(1)}` : `€${v.toFixed(0)}`;
+    pal.map(c => `<div class="legend-bin" style="background:${c}"></div>`).join('');
   const maxV = Math.max(...values);
-  const labels = [
-    `≤${fmt(bins[0])}`,
-    `≤${fmt(bins[1])}`,
-    `≤${fmt(bins[2])}`,
-    `≤${fmt(bins[3])}`,
-    `≤${fmt(maxV)}`
-  ];
-  document.getElementById('legend-labels').innerHTML =
-    labels.map(l => `<span>${l}</span>`).join('');
+  const labels = [`≤${M.legFmt(bins[0])}`, `≤${M.legFmt(bins[1])}`, `≤${M.legFmt(bins[2])}`, `≤${M.legFmt(bins[3])}`, `≤${M.legFmt(maxV)}`];
+  document.getElementById('legend-labels').innerHTML = labels.map(l => `<span>${l}</span>`).join('');
 
   // Top-10 ranking
   const sorted = Object.entries(vals).sort((a, b) => b[1] - a[1]).slice(0, 10);
-  document.getElementById('map-top-list').innerHTML = sorted.map(([id, esl], i) =>
-    `<div class="map-row">
-      <span class="map-rank">${i + 1}</span>
-      <span class="map-name">${REGION_NAME[id] || id}</span>
-      <span class="map-val">€ ${esl.toFixed(2)}</span>
-    </div>`
+  document.getElementById('map-top-list').innerHTML = sorted.map(([id, v], i) =>
+    `<div class="map-row"><span class="map-rank">${i + 1}</span><span class="map-name">${REGION_NAME[id] || id}</span><span class="map-val">${M.listFmt(v)}</span></div>`
   ).join('');
 
-  // KPI strip
-  const m = YEAR_META[year];
-  document.getElementById('yr-kpi').innerHTML =
-    `<strong>€ ${m.esl.toFixed(1)} mld</strong> ESL &nbsp;·&nbsp; ` +
-    `<strong>${(m.n / 1e6).toFixed(1)} M</strong> concessioni &nbsp;·&nbsp; ` +
-    `<strong>€ ${m.green.toFixed(1)} mld</strong> green &nbsp;·&nbsp; ` +
-    `<strong>€ ${m.digital.toFixed(1)} mld</strong> digitale &nbsp;·&nbsp; ` +
-    `<span>${m.label}</span>`;
+  // KPI strip (year only meaningful for ESL view)
+  const yk = document.getElementById('yr-kpi');
+  if (M.byYear) {
+    const m = YEAR_META[activeYear];
+    yk.innerHTML = `<strong>€ ${m.esl.toFixed(1)} mld</strong> ESL &nbsp;·&nbsp; <strong>${(m.n / 1e6).toFixed(1)} M</strong> concessioni &nbsp;·&nbsp; <strong>€ ${m.green.toFixed(1)} mld</strong> green &nbsp;·&nbsp; <strong>€ ${m.digital.toFixed(1)} mld</strong> digitale &nbsp;·&nbsp; <span>${m.label}</span>`;
+  } else {
+    yk.innerHTML = `<span>${M.hint}</span>`;
+  }
 
-  document.querySelectorAll('.yr-btn').forEach(b =>
-    b.classList.toggle('yr-active', b.dataset.year === String(year)));
+  // year selector active/disabled state
+  const ys = document.querySelector('.year-sel'); if (ys) ys.classList.toggle('disabled', !M.byYear);
+  document.querySelectorAll('.yr-btn').forEach(b => b.classList.toggle('yr-active', M.byYear && b.dataset.year === String(activeYear)));
 }
+
+// Metric selector
+document.querySelectorAll('.mt-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    stopPlay();
+    activeMetric = btn.dataset.metric;
+    document.querySelectorAll('.mt-btn').forEach(b => b.classList.toggle('mt-active', b === btn));
+    const mh = document.getElementById('metric-hint'); if (mh) mh.textContent = '';
+    updateMap();
+  });
+});
 
 // Year selector events
 document.querySelectorAll('.yr-btn').forEach(btn => {
