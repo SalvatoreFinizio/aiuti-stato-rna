@@ -741,18 +741,18 @@
           <div class="chart-h" style="height:200px;"><canvas id="atecoChart"></canvas></div>
         </div>
         <div class="card">
-          <div class="card-title">Obiettivi di policy — escluse risposte alle crisi</div>
-          <div class="card-sub">Top obiettivi <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld € · COVID + Ucraina (€ 352 mld, 69 %) esclusi per leggibilità</div>
+          <div class="card-title">Obiettivi di policy — 7 macro-aree</div>
+          <div class="card-sub">I 16 obiettivi <abbr title="Registro Nazionale Aiuti">RNA</abbr> riorganizzati · <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld € · cumulato</div>
           <ul class="ob-list">
-            <li class="ob-item"><span class="ob-name">Ambiente · energia rinnovabile · efficienza</span><span class="ob-val">€ 34,6</span></li>
-            <li class="ob-item"><span class="ob-name">Aiuti regionali · sviluppo locale · <abbr title="Zone Economiche Speciali — aree del Mezzogiorno con agevolazioni fiscali">ZES</abbr></span><span class="ob-val">€ 23,2</span></li>
-            <li class="ob-item"><span class="ob-name"><abbr title="Piccole e Medie Imprese">PMI</abbr> · accesso ai finanziamenti</span><span class="ob-val">€ 21,6</span></li>
-            <li class="ob-item"><span class="ob-name">Ricerca, sviluppo e innovazione</span><span class="ob-val">€ 12,8</span></li>
-            <li class="ob-item"><span class="ob-name">Formazione</span><span class="ob-val">€ 9,3</span></li>
-            <li class="ob-item"><span class="ob-name">Banda larga (Open Fiber/TIM)</span><span class="ob-val">€ 7,2</span></li>
-            <li class="ob-item"><span class="ob-name">Occupazione · lavoratori svantaggiati</span><span class="ob-val">€ 7,2</span></li>
-            <li class="ob-item"><span class="ob-name">Cultura · audiovisivo · patrimonio</span><span class="ob-val">€ 6,0</span></li>
+            <li class="ob-item"><span class="ob-name">Risposta alle crisi <span style="color:var(--dim);font-size:10px;">COVID + Ucraina</span></span><span class="ob-val">€ 352,2 · 69%</span></li>
+            <li class="ob-item"><span class="ob-name">Ambiente ed energia <span style="color:var(--dim);font-size:10px;">incl. mercato capacità</span></span><span class="ob-val">€ 48,8</span></li>
+            <li class="ob-item"><span class="ob-name">Imprese, innovazione, digitale</span><span class="ob-val">€ 42,0</span></li>
+            <li class="ob-item"><span class="ob-name">Coesione territoriale e calamità</span><span class="ob-val">€ 26,7</span></li>
+            <li class="ob-item"><span class="ob-name">Lavoro e capitale umano</span><span class="ob-val">€ 16,5</span></li>
+            <li class="ob-item"><span class="ob-name">Settoriale e residuo</span><span class="ob-val">€ 12,0</span></li>
+            <li class="ob-item"><span class="ob-name">Cultura, sport e servizi (<abbr title="Servizi di Interesse Economico Generale">SIEG</abbr>)</span><span class="ob-val">€ 11,6</span></li>
           </ul>
+          <p class="note" style="margin-top:10px;">Il «mercato della capacità» (€ 14 mld) è classificato in <strong>Ambiente ed energia</strong> (sicurezza del sistema elettrico), non più come residuo. I veri <abbr title="Important Projects of Common European Interest">IPCEI</abbr> strategici confluiscono in Imprese/Ambiente.</p>
         </div>
       </div>
     </div>
@@ -1187,29 +1187,28 @@ let activeMetric = 'esl';
 const D_REG_CONC = {"LAZ":{"esl_mld":58.822,"n_firms":460039,"hhi":509.1,"top1":20.4,"percap":10302},"PIE":{"esl_mld":40.473,"n_firms":358349,"hhi":310.6,"top1":15.8,"percap":9523},"LOM":{"esl_mld":105.063,"n_firms":802211,"hhi":41,"top1":3.8,"percap":10559},"VEN":{"esl_mld":47.193,"n_firms":416744,"hhi":30.7,"top1":5.1,"percap":9730},"SIC":{"esl_mld":25.58,"n_firms":339777,"hhi":91,"top1":9.2,"percap":5329},"FVG":{"esl_mld":13.879,"n_firms":95489,"hhi":229.3,"top1":14.3,"percap":11663},"LIG":{"esl_mld":10.771,"n_firms":132013,"hhi":144.2,"top1":10.5,"percap":7133},"CAM":{"esl_mld":42.858,"n_firms":468152,"hhi":6,"top1":1.6,"percap":7626},"SAR":{"esl_mld":9.918,"n_firms":125620,"hhi":62.3,"top1":6.7,"percap":6277},"EMR":{"esl_mld":40.043,"n_firms":386494,"hhi":6.3,"top1":1.3,"percap":9060},"TAA":{"esl_mld":11.664,"n_firms":114664,"hhi":34,"top1":3.8,"percap":10901},"UMB":{"esl_mld":7.265,"n_firms":73736,"hhi":50.6,"top1":4.9,"percap":8547},"VDA":{"esl_mld":1.737,"n_firms":14317,"hhi":370.2,"top1":16.9,"percap":14475},"TOS":{"esl_mld":28.726,"n_firms":351011,"hhi":4.6,"top1":0.8,"percap":7849},"MAR":{"esl_mld":13.355,"n_firms":145000,"hhi":6.2,"top1":0.9,"percap":9024},"CAL":{"esl_mld":8.064,"n_firms":143526,"hhi":8.6,"top1":1.4,"percap":4383},"PUG":{"esl_mld":25.354,"n_firms":295699,"hhi":3.2,"top1":0.4,"percap":6484},"ABR":{"esl_mld":10.194,"n_firms":119287,"hhi":9.3,"top1":1,"percap":7964},"BAS":{"esl_mld":4.352,"n_firms":49983,"hhi":22.7,"top1":1.9,"percap":8059},"MOL":{"esl_mld":2.047,"n_firms":26691,"hhi":58.4,"top1":3.6,"percap":7058}};
 
 const POP = {PIE:4.25,LOM:9.95,LIG:1.51,VEN:4.85,FVG:1.19,EMR:4.42,TOS:3.66,MAR:1.48,UMB:0.85,LAZ:5.71,ABR:1.28,MOL:0.29,CAM:5.62,BAS:0.54,PUG:3.91,CAL:1.84,SIC:4.80,SAR:1.58,VDA:0.12,TAA:1.07};
+const D_REG_CONC_YEAR = {"all":{"SIC":{"hhi":96.8,"top1":9.1},"PUG":{"hhi":4.5,"top1":1.2},"EMR":{"hhi":7.8,"top1":1.3},"VEN":{"hhi":32.1,"top1":5.3},"PIE":{"hhi":332.4,"top1":16.3},"LOM":{"hhi":25.5,"top1":3.0},"TAA":{"hhi":38.0,"top1":3.7},"LAZ":{"hhi":519.7,"top1":21.0},"CAM":{"hhi":3.0,"top1":0.5},"MAR":{"hhi":6.5,"top1":0.9},"TOS":{"hhi":7.5,"top1":1.4},"SAR":{"hhi":70.5,"top1":6.6},"CAL":{"hhi":44.6,"top1":6.1},"BAS":{"hhi":28.4,"top1":2.8},"LIG":{"hhi":158.1,"top1":11.5},"ABR":{"hhi":8.7,"top1":1.0},"FVG":{"hhi":242.4,"top1":14.7},"UMB":{"hhi":50.7,"top1":4.8},"VDA":{"hhi":392.1,"top1":17.8},"MOL":{"hhi":43.0,"top1":2.8}},"by_year":{"2016":{"LOM":{"hhi":57.4,"top1":3.8},"UMB":{"hhi":919.7,"top1":13.1},"TOS":{"hhi":562.5,"top1":17.4},"SAR":{"hhi":550.0,"top1":13.8},"FVG":{"hhi":4865.3,"top1":69.5},"PUG":{"hhi":938.3,"top1":18.1},"PIE":{"hhi":5242.1,"top1":72.0},"VEN":{"hhi":813.3,"top1":24.9},"SIC":{"hhi":1659.6,"top1":26.5},"EMR":{"hhi":3140.5,"top1":53.4},"LIG":{"hhi":2781.2,"top1":42.3},"CAL":{"hhi":1482.4,"top1":21.9},"LAZ":{"hhi":3063.1,"top1":52.4},"CAM":{"hhi":3160.2,"top1":41.0},"TAA":{"hhi":4792.5,"top1":68.6},"ABR":{"hhi":9888.5,"top1":99.4},"MAR":{"hhi":8097.2,"top1":89.4},"BAS":{"hhi":10000.0,"top1":100.0},"VDA":{"hhi":7669.5,"top1":86.5}},"2017":{"PIE":{"hhi":102.7,"top1":6.0},"TOS":{"hhi":1163.6,"top1":26.9},"FVG":{"hhi":97.9,"top1":7.1},"LOM":{"hhi":1330.1,"top1":35.6},"PUG":{"hhi":98.3,"top1":4.6},"SIC":{"hhi":2816.8,"top1":52.9},"MAR":{"hhi":21.1,"top1":3.3},"LAZ":{"hhi":1505.5,"top1":38.3},"LIG":{"hhi":442.2,"top1":16.5},"CAL":{"hhi":105.8,"top1":9.1},"VEN":{"hhi":1380.9,"top1":36.5},"UMB":{"hhi":43.1,"top1":2.2},"TAA":{"hhi":190.2,"top1":10.8},"EMR":{"hhi":1274.4,"top1":35.5},"CAM":{"hhi":81.3,"top1":4.4},"VDA":{"hhi":1210.2,"top1":20.7},"MOL":{"hhi":163.2,"top1":5.4},"ABR":{"hhi":131.3,"top1":10.0},"SAR":{"hhi":145.5,"top1":6.6},"BAS":{"hhi":424.1,"top1":17.4}},"2018":{"SIC":{"hhi":56.8,"top1":5.7},"PUG":{"hhi":41.1,"top1":2.9},"TAA":{"hhi":52.9,"top1":3.6},"PIE":{"hhi":54.4,"top1":3.1},"SAR":{"hhi":83.7,"top1":8.4},"LOM":{"hhi":194.7,"top1":13.0},"LIG":{"hhi":74.0,"top1":5.5},"BAS":{"hhi":221.5,"top1":10.4},"TOS":{"hhi":512.8,"top1":22.3},"VEN":{"hhi":29.3,"top1":2.6},"CAM":{"hhi":23.2,"top1":1.8},"VDA":{"hhi":2114.4,"top1":43.7},"ABR":{"hhi":726.5,"top1":25.5},"MAR":{"hhi":28.8,"top1":3.1},"LAZ":{"hhi":41.5,"top1":3.4},"FVG":{"hhi":115.5,"top1":6.2},"EMR":{"hhi":45.2,"top1":5.3},"UMB":{"hhi":230.9,"top1":13.1},"MOL":{"hhi":103.7,"top1":8.0},"CAL":{"hhi":147.4,"top1":8.7}},"2019":{"SIC":{"hhi":48.3,"top1":3.3},"MAR":{"hhi":65.5,"top1":7.0},"BAS":{"hhi":350.0,"top1":14.2},"TOS":{"hhi":2011.4,"top1":44.6},"SAR":{"hhi":490.5,"top1":14.8},"PUG":{"hhi":69.0,"top1":5.7},"PIE":{"hhi":59.2,"top1":3.6},"TAA":{"hhi":44.1,"top1":2.5},"CAM":{"hhi":57.5,"top1":3.5},"EMR":{"hhi":115.2,"top1":9.6},"ABR":{"hhi":279.8,"top1":14.1},"CAL":{"hhi":355.6,"top1":17.9},"FVG":{"hhi":54.6,"top1":3.5},"LOM":{"hhi":25.4,"top1":2.4},"LIG":{"hhi":21.8,"top1":2.2},"LAZ":{"hhi":82.6,"top1":6.1},"UMB":{"hhi":123.5,"top1":9.8},"VEN":{"hhi":20.5,"top1":1.7},"MOL":{"hhi":57.1,"top1":3.0},"VDA":{"hhi":1698.1,"top1":39.6}},"2020":{"MAR":{"hhi":5.6,"top1":0.5},"SAR":{"hhi":7.1,"top1":0.5},"BAS":{"hhi":15.5,"top1":1.1},"PIE":{"hhi":3.1,"top1":0.4},"PUG":{"hhi":3.4,"top1":0.7},"FVG":{"hhi":19.8,"top1":2.7},"TAA":{"hhi":11.3,"top1":1.9},"CAL":{"hhi":7.8,"top1":1.9},"SIC":{"hhi":3.6,"top1":0.8},"LIG":{"hhi":13.9,"top1":1.8},"LOM":{"hhi":2.2,"top1":1.0},"TOS":{"hhi":2.3,"top1":0.4},"CAM":{"hhi":2.2,"top1":0.2},"VEN":{"hhi":2.0,"top1":0.4},"VDA":{"hhi":128.1,"top1":7.7},"UMB":{"hhi":19.8,"top1":2.8},"ABR":{"hhi":7.8,"top1":0.4},"LAZ":{"hhi":15.0,"top1":3.6},"EMR":{"hhi":3.2,"top1":0.9},"MOL":{"hhi":60.5,"top1":6.2}},"2021":{"TOS":{"hhi":14.9,"top1":2.6},"PIE":{"hhi":1650.5,"top1":36.5},"PUG":{"hhi":8.3,"top1":1.5},"SIC":{"hhi":39.6,"top1":4.4},"ABR":{"hhi":15.0,"top1":1.7},"LOM":{"hhi":61.2,"top1":6.7},"LAZ":{"hhi":403.0,"top1":17.6},"LIG":{"hhi":437.7,"top1":19.3},"CAM":{"hhi":7.7,"top1":1.0},"CAL":{"hhi":11.0,"top1":1.2},"SAR":{"hhi":386.6,"top1":19.5},"MAR":{"hhi":9.8,"top1":1.2},"TAA":{"hhi":37.4,"top1":3.1},"VDA":{"hhi":517.4,"top1":19.7},"EMR":{"hhi":16.8,"top1":1.8},"VEN":{"hhi":15.1,"top1":2.1},"UMB":{"hhi":50.0,"top1":4.1},"MOL":{"hhi":66.4,"top1":5.4},"FVG":{"hhi":1192.4,"top1":34.0},"BAS":{"hhi":336.3,"top1":18.0}},"2022":{"SIC":{"hhi":49.8,"top1":6.1},"PUG":{"hhi":55.2,"top1":6.9},"EMR":{"hhi":95.8,"top1":8.1},"VEN":{"hhi":9.7,"top1":1.0},"PIE":{"hhi":54.5,"top1":5.0},"LOM":{"hhi":199.1,"top1":11.1},"TAA":{"hhi":671.1,"top1":19.7},"LAZ":{"hhi":432.8,"top1":17.1},"CAM":{"hhi":24.5,"top1":2.9},"MAR":{"hhi":33.6,"top1":3.5},"TOS":{"hhi":82.2,"top1":6.1},"SAR":{"hhi":693.5,"top1":19.7},"CAL":{"hhi":1016.2,"top1":31.8},"BAS":{"hhi":207.6,"top1":12.6},"LIG":{"hhi":273.6,"top1":15.2},"ABR":{"hhi":46.7,"top1":5.6},"FVG":{"hhi":116.4,"top1":6.6},"UMB":{"hhi":308.9,"top1":17.0},"VDA":{"hhi":872.7,"top1":27.0},"MOL":{"hhi":85.8,"top1":4.4}},"2023":{"CAL":{"hhi":31.7,"top1":4.4},"SIC":{"hhi":75.2,"top1":7.8},"VEN":{"hhi":37.1,"top1":5.2},"LAZ":{"hhi":4318.3,"top1":65.7},"LOM":{"hhi":59.3,"top1":6.8},"CAM":{"hhi":7.8,"top1":1.5},"LIG":{"hhi":227.7,"top1":10.5},"PUG":{"hhi":14.0,"top1":1.8},"PIE":{"hhi":11.3,"top1":1.1},"SAR":{"hhi":20.8,"top1":1.8},"MAR":{"hhi":28.3,"top1":3.4},"ABR":{"hhi":36.5,"top1":3.8},"MOL":{"hhi":283.7,"top1":9.7},"UMB":{"hhi":47.4,"top1":4.3},"FVG":{"hhi":910.0,"top1":29.6},"VDA":{"hhi":1722.6,"top1":40.9},"TOS":{"hhi":22.4,"top1":3.0},"EMR":{"hhi":22.0,"top1":2.1},"TAA":{"hhi":35.1,"top1":3.4},"BAS":{"hhi":46.9,"top1":3.0}},"2024":{"VDA":{"hhi":396.6,"top1":10.6},"PIE":{"hhi":16.6,"top1":2.8},"LOM":{"hhi":466.2,"top1":21.4},"TOS":{"hhi":17.1,"top1":3.6},"SIC":{"hhi":119.3,"top1":10.0},"VEN":{"hhi":28.3,"top1":4.5},"MAR":{"hhi":48.4,"top1":6.2},"LAZ":{"hhi":15.7,"top1":2.4},"CAM":{"hhi":3.9,"top1":0.7},"PUG":{"hhi":5.8,"top1":0.9},"EMR":{"hhi":32.6,"top1":3.1},"ABR":{"hhi":14.1,"top1":2.5},"SAR":{"hhi":108.0,"top1":10.1},"UMB":{"hhi":90.1,"top1":9.1},"CAL":{"hhi":45.3,"top1":5.8},"FVG":{"hhi":93.3,"top1":6.7},"TAA":{"hhi":12.8,"top1":2.3},"LIG":{"hhi":63.6,"top1":4.9},"MOL":{"hhi":122.6,"top1":8.8},"BAS":{"hhi":36.9,"top1":3.3}},"2025":{"PUG":{"hhi":24.2,"top1":2.2},"LOM":{"hhi":62.1,"top1":5.1},"TOS":{"hhi":85.8,"top1":8.4},"SAR":{"hhi":80.6,"top1":7.7},"FVG":{"hhi":221.1,"top1":8.9},"CAM":{"hhi":14.0,"top1":1.9},"EMR":{"hhi":103.0,"top1":3.7},"VEN":{"hhi":2624.8,"top1":51.0},"PIE":{"hhi":117.1,"top1":5.2},"ABR":{"hhi":59.2,"top1":7.1},"CAL":{"hhi":88.9,"top1":8.4},"MAR":{"hhi":36.5,"top1":4.2},"LIG":{"hhi":519.6,"top1":19.0},"TAA":{"hhi":215.9,"top1":12.4},"MOL":{"hhi":152.3,"top1":8.9},"LAZ":{"hhi":38.1,"top1":3.0},"SIC":{"hhi":1303.4,"top1":35.5},"BAS":{"hhi":223.6,"top1":14.1},"UMB":{"hhi":1492.8,"top1":37.6},"VDA":{"hhi":957.4,"top1":20.7}},"2026":{"CAL":{"hhi":212.5,"top1":13.6},"CAM":{"hhi":43.1,"top1":1.9},"EMR":{"hhi":60.4,"top1":6.6},"LOM":{"hhi":465.3,"top1":15.2},"LIG":{"hhi":3128.8,"top1":55.3},"SIC":{"hhi":120.3,"top1":10.3},"MAR":{"hhi":361.0,"top1":13.7},"BAS":{"hhi":397.7,"top1":11.5},"FVG":{"hhi":32.8,"top1":1.9},"SAR":{"hhi":249.3,"top1":12.5},"VEN":{"hhi":35.8,"top1":3.5},"TOS":{"hhi":50.1,"top1":5.6},"ABR":{"hhi":60.9,"top1":4.5},"LAZ":{"hhi":1265.3,"top1":25.5},"PUG":{"hhi":80.6,"top1":6.2},"PIE":{"hhi":439.9,"top1":20.4},"UMB":{"hhi":66.1,"top1":6.3},"MOL":{"hhi":148.1,"top1":7.9},"TAA":{"hhi":460.7,"top1":15.6},"VDA":{"hhi":3246.0,"top1":55.8}}}};
 const PAL = {
   esl:    ['#DCE6EC','#A9C2D2','#6E9BB5','#3A7593','#1F5673'],
   percap: ['#E2EDE7','#B9D4C6','#86B49B','#54956F','#2E7D55'],
   hhi:    ['#F6E7DB','#E6C2A2','#D2926A','#C0622E','#984B1C'],
 };
 const METRICS = {
-  esl: { byYear:true, legendTitle:'Quintili ESL — € mld per regione',
+  esl: { legendTitle:'Quintili ESL — € mld per regione',
+    yearData: y => getYearVals(y),
     legFmt:v => v<1?`€${v.toFixed(2)}`:v<10?`€${v.toFixed(1)}`:`€${v.toFixed(0)}`,
     listFmt:v => `€ ${v.toFixed(2)}`,
-    tip:(reg,v,tot,rank)=>`<strong>${reg.name}</strong><div class="tt-esl">€ ${v.toFixed(2)} mld</div><div class="tt-sub">${tot?(v/tot*100).toFixed(2):0} % del totale · Rank #${rank}</div>`,
-    hint:'' },
-  percap: { byYear:true, legendTitle:'Quintili ESL per residente (€, popolazione ISTAT)',
-    transform: vals => { const o = {}; for (const id in vals) if (POP[id]) o[id] = vals[id] / POP[id] * 1000; return o; },
+    tip:(reg,v,tot,rank)=>`<strong>${reg.name}</strong><div class="tt-esl">€ ${v.toFixed(2)} mld</div><div class="tt-sub">${tot?(v/tot*100).toFixed(2):0} % del totale · Rank #${rank}</div>` },
+  percap: { legendTitle:'Quintili ESL per residente (€, popolazione ISTAT)',
+    yearData: y => { const v=getYearVals(y), o={}; for (const id in v) if (POP[id]) o[id]=v[id]/POP[id]*1000; return o; },
     legFmt:v => `€${Math.round(v/1000)}k`,
     listFmt:v => `€ ${Math.round(v).toLocaleString('it-IT')}`,
-    tip:(reg,v,tot,rank)=>`<strong>${reg.name}</strong><div class="tt-esl">€ ${Math.round(v).toLocaleString('it-IT')}</div><div class="tt-sub">ESL per abitante · Rank #${rank}</div>`,
-    hint:'' },
-  hhi: { byYear:false, legendTitle:'Concentrazione (indice HHI) — alto = una sola impresa domina',
-    val:id => (D_REG_CONC[id]||{}).hhi||0,
+    tip:(reg,v,tot,rank)=>`<strong>${reg.name}</strong><div class="tt-esl">€ ${Math.round(v).toLocaleString('it-IT')}</div><div class="tt-sub">ESL per abitante · Rank #${rank}</div>` },
+  hhi: { legendTitle:'Concentrazione (indice HHI) — alto = una sola impresa domina',
+    yearData: y => { const src=(y==='all')?D_REG_CONC_YEAR.all:(D_REG_CONC_YEAR.by_year[y]||{}), o={}; for (const id in src) o[id]=src[id].hhi; return o; },
     legFmt:v => `${Math.round(v)}`,
     listFmt:v => `HHI ${Math.round(v)}`,
-    tip:(reg,v,tot,rank)=>{const c=D_REG_CONC[reg.id]||{};return `<strong>${reg.name}</strong><div class="tt-esl">HHI ${Math.round(v)}</div><div class="tt-sub">1ª impresa: ${c.top1||0} % · ${(c.n_firms||0).toLocaleString('it-IT')} imprese · Rank #${rank}</div>`;},
-    hint:'Indice di Herfindahl sulle quote ESL delle imprese · cumulato, l\'anno non si applica' },
+    tip:(reg,v,tot,rank)=>{const src=(activeYear==='all')?D_REG_CONC_YEAR.all:(D_REG_CONC_YEAR.by_year[activeYear]||{}),c=src[reg.id]||{};return `<strong>${reg.name}</strong><div class="tt-esl">HHI ${Math.round(v)}</div><div class="tt-sub">1ª impresa: ${c.top1||0} % · Rank #${rank}</div>`;} },
 };
 
 function getYearVals(year) {
@@ -1225,10 +1224,7 @@ function getYearVals(year) {
 }
 
 function currentData() {
-  const M = METRICS[activeMetric];
-  let vals;
-  if (M.byYear) { vals = getYearVals(activeYear); if (M.transform) vals = M.transform(vals); }
-  else { vals = {}; Object.keys(pathEls).forEach(id => { const v = M.val(id); if (v > 0) vals[id] = v; }); }
+  const vals = METRICS[activeMetric].yearData(activeYear);
   const sorted = Object.entries(vals).sort((a, b) => b[1] - a[1]);
   const ranks = Object.fromEntries(sorted.map(([id], i) => [id, i + 1]));
   return { vals, ranks };
@@ -1274,18 +1270,11 @@ function updateMap(year) {
     `<div class="map-row"><span class="map-rank">${i + 1}</span><span class="map-name">${REGION_NAME[id] || id}</span><span class="map-val">${M.listFmt(v)}</span></div>`
   ).join('');
 
-  // KPI strip (year only meaningful for ESL view)
-  const yk = document.getElementById('yr-kpi');
-  if (M.byYear) {
-    const m = YEAR_META[activeYear];
-    yk.innerHTML = `<strong>€ ${m.esl.toFixed(1)} mld</strong> ESL &nbsp;·&nbsp; <strong>${(m.n / 1e6).toFixed(1)} M</strong> concessioni &nbsp;·&nbsp; <strong>€ ${m.green.toFixed(1)} mld</strong> green &nbsp;·&nbsp; <strong>€ ${m.digital.toFixed(1)} mld</strong> digitale &nbsp;·&nbsp; <span>${m.label}</span>`;
-  } else {
-    yk.innerHTML = `<span>${M.hint}</span>`;
-  }
-
-  // year selector active/disabled state
-  const ys = document.querySelector('.year-sel'); if (ys) ys.classList.toggle('disabled', !M.byYear);
-  document.querySelectorAll('.yr-btn').forEach(b => b.classList.toggle('yr-active', M.byYear && b.dataset.year === String(activeYear)));
+  // KPI strip + year selector (all metrics time-aware)
+  const m = YEAR_META[activeYear];
+  document.getElementById('yr-kpi').innerHTML = `<strong>€ ${m.esl.toFixed(1)} mld</strong> ESL &nbsp;·&nbsp; <strong>${(m.n / 1e6).toFixed(1)} M</strong> concessioni &nbsp;·&nbsp; <strong>€ ${m.green.toFixed(1)} mld</strong> green &nbsp;·&nbsp; <strong>€ ${m.digital.toFixed(1)} mld</strong> digitale &nbsp;·&nbsp; <span>${m.label}</span>`;
+  const ys = document.querySelector('.year-sel'); if (ys) ys.classList.remove('disabled');
+  document.querySelectorAll('.yr-btn').forEach(b => b.classList.toggle('yr-active', b.dataset.year === String(activeYear)));
 }
 
 // Metric selector

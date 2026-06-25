@@ -1,0 +1,136 @@
+{
+ "macro": {
+  "Risposta alle crisi": [
+   "CRISIS_RESPONSE",
+   "RESCUE"
+  ],
+  "Imprese, innovazione, digitale": [
+   "SME",
+   "R_D",
+   "RISK_FINANCE",
+   "BROADBAND"
+  ],
+  "Ambiente ed energia": [
+   "ENVIRONMENT"
+  ],
+  "Coesione territoriale e calamità": [
+   "REGIONAL",
+   "DISASTER"
+  ],
+  "Lavoro e capitale umano": [
+   "EMPLOYMENT",
+   "TRAINING"
+  ],
+  "Cultura, sport e servizi (SIEG)": [
+   "CULTURE",
+   "SPORT_LEISURE",
+   "SIEG"
+  ],
+  "Settoriale e residuo": [
+   "SECTORAL",
+   "OTHER"
+  ]
+ },
+ "tot": {
+  "Risposta alle crisi": 352.18,
+  "Imprese, innovazione, digitale": 42.01,
+  "Ambiente ed energia": 48.78,
+  "Coesione territoriale e calamità": 26.73,
+  "Lavoro e capitale umano": 16.46,
+  "Cultura, sport e servizi (SIEG)": 11.56,
+  "Settoriale e residuo": 12.0
+ },
+ "by_year": {
+  "Risposta alle crisi": {
+   "2016": 0,
+   "2017": 0.008,
+   "2018": 0.0,
+   "2019": 0.025,
+   "2020": 94.669,
+   "2021": 101.117,
+   "2022": 53.407,
+   "2023": 64.357,
+   "2024": 24.358,
+   "2025": 12.38,
+   "2026": 1.864
+  },
+  "Imprese, innovazione, digitale": {
+   "2016": 0.113,
+   "2017": 2.636,
+   "2018": 3.138,
+   "2019": 2.668,
+   "2020": 3.794,
+   "2021": 3.499,
+   "2022": 8.632,
+   "2023": 4.552,
+   "2024": 5.468,
+   "2025": 6.181,
+   "2026": 1.328
+  },
+  "Ambiente ed energia": {
+   "2016": 0.0,
+   "2017": 0.554,
+   "2018": 2.38,
+   "2019": 1.872,
+   "2020": 2.046,
+   "2021": 13.353,
+   "2022": 8.177,
+   "2023": 3.887,
+   "2024": 3.961,
+   "2025": 10.413,
+   "2026": 2.139
+  },
+  "Coesione territoriale e calamità": {
+   "2016": 0.045,
+   "2017": 0.462,
+   "2018": 0.929,
+   "2019": 1.053,
+   "2020": 3.525,
+   "2021": 2.708,
+   "2022": 3.542,
+   "2023": 3.422,
+   "2024": 4.894,
+   "2025": 5.547,
+   "2026": 0.603
+  },
+  "Lavoro e capitale umano": {
+   "2016": 0.017,
+   "2017": 0.566,
+   "2018": 1.605,
+   "2019": 1.22,
+   "2020": 0.912,
+   "2021": 1.296,
+   "2022": 2.062,
+   "2023": 2.494,
+   "2024": 3.085,
+   "2025": 2.711,
+   "2026": 0.49
+  },
+  "Cultura, sport e servizi (SIEG)": {
+   "2016": 0.034,
+   "2017": 0.204,
+   "2018": 0.399,
+   "2019": 0.35,
+   "2020": 0.669,
+   "2021": 0.607,
+   "2022": 3.002,
+   "2023": 2.411,
+   "2024": 1.677,
+   "2025": 1.384,
+   "2026": 0.824
+  },
+  "Settoriale e residuo": {
+   "2016": 0.015,
+   "2017": 0.158,
+   "2018": 0.274,
+   "2019": 0.312,
+   "2020": 0.795,
+   "2021": 0.791,
+   "2022": 1.214,
+   "2023": 2.041,
+   "2024": 1.66,
+   "2025": 4.419,
+   "2026": 0.321
+  }
+ }
+}
