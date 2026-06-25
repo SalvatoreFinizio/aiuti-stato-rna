@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12/dist/d3-sankey.min.js"></script>
   <style>
     /* ── tokens ─────────────────────────────────── */
     :root {
@@ -375,6 +377,7 @@
       <a href="#s-mappa">Mappa</a>
       <a href="#s-tempo">Tempo</a>
       <a href="#s-tipologie">Tipologie</a>
+      <a href="#s-settori">Settori</a>
       <a href="#s-sace">SACE</a>
       <a href="#s-soe">Partecipate</a>
       <a href="#s-regioni">Regioni</a>
@@ -549,6 +552,36 @@
       <div class="card-title">Evoluzione temporale per strumento</div>
       <div class="card-sub">Composizione annuale dell'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> · stack area</div>
       <div class="chart-h" style="height:260px;"><canvas id="instrEvolChart"></canvas></div>
+    </div>
+  </section>
+
+  <!-- SETTORI -->
+  <section>
+    <div class="sec-hd">
+      <h2 id="s-settori">Dove vanno gli aiuti: i settori</h2>
+      <span class="sec-note">Settore <abbr title="Classificazione delle Attività Economiche">ATECO</abbr> prevalente del beneficiario · <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> cumulato</span>
+    </div>
+    <p class="note" style="margin:0 0 18px 0; max-width:880px;">
+      La <strong>manifattura</strong> guida (€ 160 mld) ma quasi tutto è <strong>garanzia anticrisi</strong>: il grosso degli aiuti settoriali è la risposta a COVID e crisi energetica, non politica industriale ordinaria. L'unico grande settore prevalentemente <strong>strutturale</strong> è l'<strong>energia</strong> (<abbr title="Temporary Crisis and Transition Framework">TCTF</abbr> e incentivi). Il diagramma di flusso mostra come l'aiuto passa da <em>base giuridica</em> → <em>strumento</em> → <em>settore</em>.
+    </p>
+
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Macro-settori per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr></div>
+        <div class="card-sub">Scomposto tra <span style="color:#C0622E;">risposta alle crisi</span> e <span style="color:#1F5673;">aiuti strutturali</span> · mld €</div>
+        <div class="chart-h" style="height:380px;"><canvas id="settChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Settori <abbr title="Classificazione delle Attività Economiche">ATECO</abbr> di dettaglio (divisioni)</div>
+        <div class="card-sub">Prime 15 divisioni per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> · mld €</div>
+        <ul class="ob-list" id="ateco-list" style="margin-top:4px;"></ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px;">
+      <div class="card-title">Flusso degli aiuti · base giuridica → strumento → settore</div>
+      <div class="card-sub">Spessore = <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld € · <span style="color:var(--amber);">passa il mouse su un nodo o un flusso per evidenziarlo</span></div>
+      <div id="sankey-wrap" style="overflow-x:auto;"><svg id="sankey" width="1180" height="520" style="min-width:900px;"></svg></div>
     </div>
   </section>
 
@@ -1861,6 +1894,61 @@ D_SOE.top_bene.forEach(r => {
     <td class="num">${r.esl_mld < 0.001 ? '<0,001' : r.esl_mld.toFixed(3)}</td>`;
   tbody.appendChild(tr);
 });
+
+/* ── SETTORI: macro-sector chart + ATECO list + Sankey ─────────── */
+const D_SECT = {"sect":[{"name":"Manifattura","esl":159.72,"crisis":114.8,"struct":44.91},{"name":"Commercio","esl":80.08,"crisis":69.36,"struct":10.72},{"name":"Servizi","esl":64.05,"crisis":51.99,"struct":12.05},{"name":"Costruzioni","esl":43.18,"crisis":32.08,"struct":11.11},{"name":"Energia","esl":36.88,"crisis":5.08,"struct":31.79},{"name":"Turismo","esl":35.48,"crisis":26.81,"struct":8.66},{"name":"Trasporti","esl":27.16,"crisis":16.04,"struct":11.12},{"name":"ICT/Media","esl":23.96,"crisis":9.23,"struct":14.73},{"name":"Altri","esl":23.76,"crisis":15.75,"struct":8.01},{"name":"Sanità","esl":9.13,"crisis":6.43,"struct":2.7},{"name":"Agricoltura","esl":6.35,"crisis":3.15,"struct":3.2}],"ateco":[{"div":"G.46","name":"Commercio all'ingrosso","esl":41.53},{"div":"D.35","name":"Energia elettrica e gas","esl":36.88},{"div":"G.47","name":"Commercio al dettaglio","esl":28.06},{"div":"C.25","name":"Prodotti in metallo","esl":23.27},{"div":"M.70","name":"Holding e direzione aziendale","esl":22.43},{"div":"I.56","name":"Ristorazione","esl":20.88},{"div":"F.41","name":"Costruzione di edifici","esl":20.34},{"div":"C.10","name":"Industrie alimentari","esl":18.82},{"div":"F.43","name":"Costruzioni specializzate","esl":16.5},{"div":"C.28","name":"Macchinari e apparecchi","esl":15.33},{"div":"I.55","name":"Alberghi e alloggio","esl":14.6},{"div":"H.49","name":"Trasporto terrestre","esl":13.62},{"div":"C.24","name":"Metallurgia","esl":11.01},{"div":"G.45","name":"Commercio autoveicoli","esl":10.48},{"div":"L.68","name":"Attività immobiliari","esl":10.16}]};
+const D_SANKEY = {"nodes":[{"name":"De minimis","col":0},{"name":"Prestito","col":1},{"name":"GBER","col":0},{"name":"Sovvenzione","col":1},{"name":"Quadro COVID","col":0},{"name":"Credito d'imposta","col":1},{"name":"Garanzia","col":1},{"name":"Altri notificati","col":0},{"name":"SIEG","col":0},{"name":"Finanz. rischio","col":1},{"name":"Quadro Ucraina","col":0},{"name":"Turismo","col":2},{"name":"Manifattura","col":2},{"name":"Altri","col":2},{"name":"Commercio","col":2},{"name":"Trasporti","col":2},{"name":"Costruzioni","col":2},{"name":"Sanità","col":2},{"name":"Servizi","col":2},{"name":"ICT/Media","col":2},{"name":"Agricoltura","col":2},{"name":"Energia","col":2}],"links":[{"source":0,"target":1,"value":1.39},{"source":2,"target":3,"value":34.27},{"source":0,"target":3,"value":16.16},{"source":4,"target":5,"value":22.06},{"source":0,"target":6,"value":10.25},{"source":7,"target":3,"value":47.03},{"source":4,"target":3,"value":25.78},{"source":2,"target":1,"value":1.22},{"source":8,"target":3,"value":2.91},{"source":0,"target":5,"value":4.75},{"source":0,"target":9,"value":1.26},{"source":4,"target":6,"value":221.71},{"source":2,"target":6,"value":1.42},{"source":10,"target":6,"value":60.53},{"source":2,"target":5,"value":17.64},{"source":7,"target":5,"value":20.16},{"source":4,"target":9,"value":6.44},{"source":4,"target":1,"value":1.39},{"source":10,"target":5,"value":11.05},{"source":10,"target":3,"value":1.7},{"source":1,"target":11,"value":0.54},{"source":3,"target":12,"value":26.56},{"source":3,"target":13,"value":8.81},{"source":3,"target":14,"value":7.41},{"source":3,"target":15,"value":7.01},{"source":5,"target":12,"value":24.96},{"source":5,"target":13,"value":4.57},{"source":5,"target":11,"value":8.36},{"source":5,"target":16,"value":6.26},{"source":5,"target":14,"value":9.59},{"source":5,"target":17,"value":2.36},{"source":5,"target":18,"value":6.32},{"source":5,"target":15,"value":6.84},{"source":5,"target":19,"value":6.11},{"source":3,"target":18,"value":12.19},{"source":3,"target":11,"value":11.39},{"source":3,"target":20,"value":3.46},{"source":3,"target":16,"value":7.96},{"source":1,"target":12,"value":1.9},{"source":6,"target":12,"value":104.72},{"source":3,"target":19,"value":9.42},{"source":6,"target":19,"value":8.1},{"source":6,"target":15,"value":12.97},{"source":6,"target":14,"value":60.62},{"source":3,"target":17,"value":1.91},{"source":6,"target":16,"value":27.49},{"source":1,"target":14,"value":0.46},{"source":6,"target":13,"value":9.35},{"source":1,"target":16,"value":0.33},{"source":6,"target":20,"value":2.5},{"source":6,"target":18,"value":44.45},{"source":9,"target":11,"value":0.98},{"source":3,"target":21,"value":31.74},{"source":6,"target":17,"value":4.68},{"source":6,"target":11,"value":14.2},{"source":9,"target":18,"value":0.8},{"source":9,"target":16,"value":1.15},{"source":9,"target":14,"value":1.99},{"source":6,"target":21,"value":4.92},{"source":9,"target":12,"value":1.57},{"source":9,"target":13,"value":0.74}]};
+
+// macro-sector stacked bar
+(function(){
+  const S = D_SECT.sect;
+  new Chart(document.getElementById('settChart'), {
+    type: 'bar',
+    data: { labels: S.map(s=>s.name), datasets: [
+      { label:'Risposta alle crisi', data:S.map(s=>s.crisis), backgroundColor:'rgba(192,98,46,.85)', borderRadius:2, stack:'s' },
+      { label:'Aiuti strutturali', data:S.map(s=>s.struct), backgroundColor:'rgba(31,86,115,.85)', borderRadius:2, stack:'s' } ] },
+    options: { indexAxis:'y', responsive:true, maintainAspectRatio:false, animation:{duration:600},
+      plugins:{ legend:{display:false},
+        tooltip:{ callbacks:{ label:c=>`${c.dataset.label}: € ${c.parsed.x.toFixed(1)} mld`,
+          footer:items=>`Totale: € ${S[items[0].dataIndex].esl.toFixed(1)} mld` } } },
+      scales:{ x:{stacked:true,grid:{color:GRID},ticks:{color:'#9A938A',callback:v=>`€${v}`},border:{display:false}},
+        y:{stacked:true,grid:{display:false},ticks:{color:'#56524C',font:{size:11}},border:{display:false}} } }
+  });
+  // ATECO list
+  const max = D_SECT.ateco[0].esl;
+  document.getElementById('ateco-list').innerHTML = D_SECT.ateco.map(a=>
+    `<li class="ob-item"><span class="ob-name">${a.name} <span style="font-family:var(--mono);font-size:10px;color:var(--dim);">${a.div}</span></span><span class="ob-val">€ ${a.esl.toFixed(1)}</span></li>`).join('');
+})();
+
+// Sankey (d3-sankey)
+(function(){
+  const svg = d3.select('#sankey'); if (!svg.node() || !window.d3 || !d3.sankey) return;
+  const W = 1120, H = 520, COL=['#1F5673','#C0622E','#4E8A6B'];
+  svg.attr('width', W).attr('viewBox', `0 0 ${W} ${H}`);
+  const sankey = d3.sankey().nodeWidth(13).nodePadding(11).extent([[8,14],[W-8,H-8]]);
+  const graph = sankey({ nodes: D_SANKEY.nodes.map(d=>({...d})), links: D_SANKEY.links.map(d=>({...d})) });
+  const g = svg.append('g');
+  const link = g.append('g').attr('fill','none').selectAll('path').data(graph.links).join('path')
+    .attr('d', d3.sankeyLinkHorizontal())
+    .attr('stroke', d=>COL[d.source.col]).attr('stroke-opacity',.30)
+    .attr('stroke-width', d=>Math.max(1,d.width))
+    .style('transition','stroke-opacity .15s');
+  link.append('title').text(d=>`${d.source.name} → ${d.target.name}: € ${d.value.toFixed(1)} mld`);
+  const node = g.append('g').selectAll('g').data(graph.nodes).join('g');
+  node.append('rect').attr('x',d=>d.x0).attr('y',d=>d.y0).attr('height',d=>Math.max(1,d.y1-d.y0)).attr('width',d=>d.x1-d.x0)
+    .attr('fill',d=>COL[d.col]).attr('rx',2)
+    .append('title').text(d=>`${d.name}: € ${d.value.toFixed(1)} mld`);
+  node.append('text').attr('x',d=>d.col===2?d.x0-6:d.x1+6).attr('y',d=>(d.y0+d.y1)/2)
+    .attr('dy','0.35em').attr('text-anchor',d=>d.col===2?'end':'start')
+    .attr('font-size','11px').attr('fill','#1A1A17').attr('font-family',"'DM Sans',sans-serif")
+    .text(d=>d.name);
+  // hover highlight
+  node.on('mouseenter',(e,n)=>{
+    link.attr('stroke-opacity',l=>(l.source===n||l.target===n)?.6:.06);
+  }).on('mouseleave',()=>link.attr('stroke-opacity',.30));
+  link.on('mouseenter',function(){d3.select(this).attr('stroke-opacity',.65);})
+      .on('mouseleave',function(){d3.select(this).attr('stroke-opacity',.30);});
+})();
 
 /* ── sticky topbar: show on scroll past hero + active-section highlight ── */
 (function () {
