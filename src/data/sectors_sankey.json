@@ -1,0 +1,486 @@
+{
+ "sectors": {
+  "Turismo": {
+   "esl": 35.476,
+   "crisis": 26.811,
+   "structural": 8.665,
+   "n": 3646707
+  },
+  "Manifattura": {
+   "esl": 159.716,
+   "crisis": 114.804,
+   "structural": 44.913,
+   "n": 3259344
+  },
+  "Altri": {
+   "esl": 23.76,
+   "crisis": 15.751,
+   "structural": 8.009,
+   "n": 2696816
+  },
+  "Commercio": {
+   "esl": 80.075,
+   "crisis": 69.358,
+   "structural": 10.717,
+   "n": 5474300
+  },
+  "Trasporti": {
+   "esl": 27.164,
+   "crisis": 16.041,
+   "structural": 11.123,
+   "n": 1055541
+  },
+  "Costruzioni": {
+   "esl": 43.181,
+   "crisis": 32.076,
+   "structural": 11.105,
+   "n": 2578522
+  },
+  "Sanità": {
+   "esl": 9.126,
+   "crisis": 6.43,
+   "structural": 2.696,
+   "n": 889809
+  },
+  "Servizi": {
+   "esl": 64.045,
+   "crisis": 51.993,
+   "structural": 12.052,
+   "n": 3861351
+  },
+  "Agricoltura": {
+   "esl": 6.349,
+   "crisis": 3.153,
+   "structural": 3.196,
+   "n": 337000
+  },
+  "ICT/Media": {
+   "esl": 23.96,
+   "crisis": 9.226,
+   "structural": 14.735,
+   "n": 589288
+  },
+  "Energia": {
+   "esl": 36.876,
+   "crisis": 5.085,
+   "structural": 31.791,
+   "n": 53177
+  }
+ },
+ "ateco_div": {
+  "G.46": 41.5341,
+  "D.35": 36.8757,
+  "G.47": 28.0558,
+  "C.25": 23.2673,
+  "M.70": 22.4265,
+  "I.56": 20.8752,
+  "F.41": 20.3396,
+  "C.10": 18.8249,
+  "F.43": 16.5032,
+  "C.28": 15.3318,
+  "I.55": 14.6006,
+  "H.49": 13.6151,
+  "C.24": 11.0092,
+  "G.45": 10.4848,
+  "L.68": 10.1593,
+  "C.22": 9.6227,
+  "C.29": 9.302,
+  "J.61": 7.6458,
+  "C.23": 7.6352,
+  "H.52": 6.7241,
+  "J.62": 6.5326,
+  "J.59": 6.4857,
+  "F.42": 6.3385,
+  "C.26": 5.9809,
+  "Q.86": 5.9526,
+  "C.20": 5.9446,
+  "A.01": 5.9092,
+  "C.30": 4.8234,
+  "E.38": 4.7823,
+  "C.14": 4.7723
+ },
+ "sankey_li": {
+  "DE_MINIMIS|LOAN": 1.3949,
+  "GBER|GRANT": 34.2658,
+  "DE_MINIMIS|GRANT": 16.1576,
+  "COVID_TF|TAX_CREDIT": 22.0622,
+  "DE_MINIMIS|GUARANTEE": 10.2462,
+  "OTHER_NOTIFIED|GRANT": 47.0317,
+  "COVID_TF|GRANT": 25.7818,
+  "GBER|LOAN": 1.2204,
+  "SIEG|GRANT": 2.9123,
+  "DE_MINIMIS|TAX_CREDIT": 4.7516,
+  "DE_MINIMIS|RISK_FINANCE": 1.2622,
+  "COVID_TF|GUARANTEE": 221.7089,
+  "GBER|GUARANTEE": 1.4164,
+  "GBER|RISK_FINANCE": 0.199,
+  "UKRAINE_TF|GUARANTEE": 60.5266,
+  "GBER|TAX_CREDIT": 17.6424,
+  "OTHER_NOTIFIED|TAX_CREDIT": 20.1643,
+  "COVID_TF|RISK_FINANCE": 6.4355,
+  "COVID_TF|LOAN": 1.3858,
+  "SIEG|GUARANTEE": 0.0002,
+  "UKRAINE_TF|TAX_CREDIT": 11.0496,
+  "UKRAINE_TF|GRANT": 1.7025,
+  "SIEG|RISK_FINANCE": 0.0163,
+  "UKRAINE_TF|LOAN": 0.0748,
+  "OTHER_NOTIFIED|LOAN": 0.1596,
+  "OTHER_NOTIFIED|GUARANTEE": 0.0993,
+  "SIEG|TAX_CREDIT": 0.0161,
+  "OTHER_NOTIFIED|RISK_FINANCE": 0.0443,
+  "SIEG|LOAN": 0.0
+ },
+ "sankey_is": {
+  "LOAN|Turismo": 0.5443,
+  "GRANT|Manifattura": 26.5616,
+  "GRANT|Altri": 8.8054,
+  "GRANT|Commercio": 7.4148,
+  "GRANT|Trasporti": 7.0052,
+  "TAX_CREDIT|Manifattura": 24.9641,
+  "TAX_CREDIT|Altri": 4.5692,
+  "TAX_CREDIT|Turismo": 8.36,
+  "TAX_CREDIT|Costruzioni": 6.2577,
+  "TAX_CREDIT|Commercio": 9.5927,
+  "TAX_CREDIT|Sanità": 2.3624,
+  "TAX_CREDIT|Servizi": 6.322,
+  "TAX_CREDIT|Agricoltura": 0.1317,
+  "TAX_CREDIT|Trasporti": 6.8446,
+  "TAX_CREDIT|ICT/Media": 6.1068,
+  "GRANT|Servizi": 12.1885,
+  "GRANT|Turismo": 11.3867,
+  "GRANT|Agricoltura": 3.4637,
+  "GRANT|Costruzioni": 7.9606,
+  "LOAN|Servizi": 0.2849,
+  "LOAN|Manifattura": 1.9028,
+  "GUARANTEE|Manifattura": 104.7227,
+  "GRANT|ICT/Media": 9.4165,
+  "GUARANTEE|ICT/Media": 8.0967,
+  "GUARANTEE|Trasporti": 12.9745,
+  "GUARANTEE|Commercio": 60.6192,
+  "GRANT|Sanità": 1.9051,
+  "LOAN|ICT/Media": 0.1748,
+  "GUARANTEE|Costruzioni": 27.4855,
+  "LOAN|Commercio": 0.4623,
+  "LOAN|Energia": 0.0166,
+  "GUARANTEE|Altri": 9.3494,
+  "LOAN|Sanità": 0.0913,
+  "LOAN|Costruzioni": 0.3268,
+  "LOAN|Altri": 0.2989,
+  "LOAN|Agricoltura": 0.0399,
+  "GUARANTEE|Agricoltura": 2.5007,
+  "GUARANTEE|Servizi": 44.4456,
+  "RISK_FINANCE|Turismo": 0.9828,
+  "GRANT|Energia": 31.7437,
+  "GUARANTEE|Sanità": 4.6806,
+  "GUARANTEE|Turismo": 14.202,
+  "LOAN|Trasporti": 0.0928,
+  "RISK_FINANCE|Servizi": 0.8035,
+  "RISK_FINANCE|Costruzioni": 1.1507,
+  "RISK_FINANCE|Commercio": 1.9856,
+  "GUARANTEE|Energia": 4.9204,
+  "RISK_FINANCE|Manifattura": 1.5652,
+  "RISK_FINANCE|Sanità": 0.0866,
+  "RISK_FINANCE|Agricoltura": 0.2128,
+  "RISK_FINANCE|Trasporti": 0.2472,
+  "RISK_FINANCE|Altri": 0.7372,
+  "TAX_CREDIT|Energia": 0.175,
+  "RISK_FINANCE|ICT/Media": 0.1657,
+  "RISK_FINANCE|Energia": 0.0201
+ },
+ "ipcei": [
+  {
+   "dom": "Microelettronica",
+   "car": "32379",
+   "title": "STMicroelectronics – New Silicon Carbide (SiC) Campus with Vertically ",
+   "esl": 2.0632,
+   "n": 1
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "25916",
+   "title": "Regime di aiuti agli investimenti per la produzione di idrogeno rinnov",
+   "esl": 0.3587,
+   "n": 49
+  },
+  {
+   "dom": "Microelettronica",
+   "car": "25699",
+   "title": "STMicroelectronics – New Silicon Carbide Substrates Plant in Catania",
+   "esl": 0.2925,
+   "n": 1
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "29282",
+   "title": "Regime di aiuti agli investimenti per la produzione di idrogeno rinnov",
+   "esl": 0.1747,
+   "n": 27
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "31699",
+   "title": "Fondo per il sostegno alla transizione industriale (2025)",
+   "esl": 0.0629,
+   "n": 33
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "33320",
+   "title": "Regime di aiuti agli investimenti per la produzione di idrogeno rinnov",
+   "esl": 0.051,
+   "n": 4
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "30216",
+   "title": "Contratti di filiera",
+   "esl": 0.0455,
+   "n": 45
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "30273",
+   "title": "PR PUGLIA FESR 2021 2027 - Avviso \"Programmi Integrati di Agevolazione",
+   "esl": 0.0362,
+   "n": 6
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "27929",
+   "title": "Fondo per il sostegno alla transizione industriale",
+   "esl": 0.0242,
+   "n": 13
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "29153",
+   "title": "FVG – Incentivi all’insediamento – Regolamento attuativo articolo 6, c",
+   "esl": 0.0203,
+   "n": 21
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "22989",
+   "title": "Progetti di ricerca e sviluppo sull’idrogeno – Avviso B (PNRR-M2C2-Inv",
+   "esl": 0.0188,
+   "n": 26
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "32040",
+   "title": "Contratti di sviluppo di cui all'articolo 43 del decreto-legge 25 giug",
+   "esl": 0.017,
+   "n": 2
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "32857",
+   "title": "FVG – LR 13/2022 art. 2 commi da 22 a 26 - CONTRIBUTI PER LA REALIZZAZ",
+   "esl": 0.015,
+   "n": 2
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "32376",
+   "title": "Progetti di ricerca e sviluppo sull’idrogeno – Avviso C (PNRR-M2C2-Inv",
+   "esl": 0.0146,
+   "n": 23
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "28406",
+   "title": "Interventi di riqualificazione destinati alle grandi aree di crisi ind",
+   "esl": 0.0144,
+   "n": 8
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "30692",
+   "title": "Efficienza energetica e Rinnovabili per le imprese",
+   "esl": 0.0138,
+   "n": 40
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "32365",
+   "title": "Progetti di ricerca e sviluppo sull’idrogeno – Avviso B (PNRR-M2C2-Inv",
+   "esl": 0.011,
+   "n": 17
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "27208",
+   "title": "Regime di aiuti agli investimenti per la produzione di idrogeno rinnov",
+   "esl": 0.0101,
+   "n": 3
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "28940",
+   "title": "Regime di aiuti agli investimenti per la realizzazione di stabilimenti",
+   "esl": 0.0089,
+   "n": 4
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "28155",
+   "title": "Contratti di sviluppo di cui all'articolo 43 del decreto-legge 25 giug",
+   "esl": 0.0085,
+   "n": 1
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "32822",
+   "title": "Bando Efficienza energetica ed energie rinnovabili nelle imprese - sec",
+   "esl": 0.0059,
+   "n": 62
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "33174",
+   "title": "AVVISO pubblico per la presentazione di Progetti di ricerca, sviluppo ",
+   "esl": 0.0051,
+   "n": 10
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "32660",
+   "title": "Azione 1.1.1 Sub B - Rafforzare la ricerca e l’innovazione tra  impres",
+   "esl": 0.0048,
+   "n": 22
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "32364",
+   "title": "Progetti di ricerca e sviluppo sull’idrogeno – Avviso A (PNRR-M2C2-Inv",
+   "esl": 0.0046,
+   "n": 18
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "33176",
+   "title": "AVVISO pubblico per la presentazione di Progetti di ricerca, sviluppo ",
+   "esl": 0.0044,
+   "n": 8
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "29329",
+   "title": "Criteri per la concessione di contributi alle imprese per l'incentivaz",
+   "esl": 0.0035,
+   "n": 354
+  },
+  {
+   "dom": "Cloud/CIS",
+   "car": "1846",
+   "title": "Azione 3.5.2 “Supporto a soluzioni ICT nei processi produttivi delle P",
+   "esl": 0.0027,
+   "n": 54
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "28494",
+   "title": "RER - DD 26159/2023 - REGIME DI AIUTO, CARATTERISTICHE ATTUATIVE RELAT",
+   "esl": 0.002,
+   "n": 69
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "22988",
+   "title": "Progetti di ricerca e sviluppo sull’idrogeno – Avviso A (PNRR-M2C2-Inv",
+   "esl": 0.0014,
+   "n": 5
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "29770",
+   "title": "RER - DGR 805/2024 PR FESR 2021-2027 - AZIONE 2.2.3: BANDO PER IL SOST",
+   "esl": 0.0012,
+   "n": 27
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "29254",
+   "title": "Criteri, modalità e procedure per l’attuazione degli interventi finanz",
+   "esl": 0.001,
+   "n": 2
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "31995",
+   "title": "Selezione proposte da parte dei concessionari/terminalisti/soggetti au",
+   "esl": 0.0009,
+   "n": 20
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "31088",
+   "title": "AVVISO PUBBLICO FINALIZZATO ALLA SELEZIONE DI PROPOSTE DI INTERVENTO D",
+   "esl": 0.0007,
+   "n": 4
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "28468",
+   "title": "AVVISO PUBBLICO INTERVENTI DI RISPARMIO ENERGETICO DELLE IMPRESE",
+   "esl": 0.0005,
+   "n": 4
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "27820",
+   "title": "RER-DGR 1985/2023 PR FESR 2021-2027. ATTRAZIONE DEGLI INVESTIMENTI IN ",
+   "esl": 0.0005,
+   "n": 1
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "32531",
+   "title": "GREEN PORTS PROPOSTE DI INTERVENTO DA PARTE DEI CONCESSIONARI/TERMINAL",
+   "esl": 0.0003,
+   "n": 2
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "35395",
+   "title": "2a Selezione proposte da parte dei concessionari/terminalisti/soggetti",
+   "esl": 0.0003,
+   "n": 9
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "31004",
+   "title": "RER - DGR 661/2023 - Aiuto ad hoc -  Bando per l'ampliamento delle inf",
+   "esl": 0.0002,
+   "n": 1
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "28428",
+   "title": "PAT - Aiuti alle imprese L.P. n. 6/99 – ID Misura CE SA.40795",
+   "esl": 0.0001,
+   "n": 2
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "27977",
+   "title": "RER - DD 26159/2023 - REGIME DI AIUTO, CARATTERISTICHE ATTUATIVE RELAT",
+   "esl": 0.0001,
+   "n": 2
+  },
+  {
+   "dom": "Idrogeno",
+   "car": "29518",
+   "title": "PAT - Aiuti per investimenti aziendali per la TRANSIZIONE ENERGETICA, ",
+   "esl": 0.0001,
+   "n": 1
+  },
+  {
+   "dom": "Batterie",
+   "car": "8226",
+   "title": "Approvazione bando pubblico per l'ammissione agli aiuti. Fondo interve",
+   "esl": 0.0001,
+   "n": 5
+  }
+ ]
+}
