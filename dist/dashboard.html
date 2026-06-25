@@ -379,7 +379,6 @@
       <a href="#s-tipologie">Tipologie</a>
       <a href="#s-settori">Settori</a>
       <a href="#s-soe">Partecipate</a>
-      <a href="#s-regioni">Regioni</a>
       <a href="#s-green">Green</a>
       <a href="#s-digitale">Digitale</a>
       <a href="./esploratore.html" style="color:var(--amber);">Esploratore ↗</a>
@@ -755,26 +754,6 @@
             <li class="ob-item"><span class="ob-name">Cultura · audiovisivo · patrimonio</span><span class="ob-val">€ 6,0</span></li>
           </ul>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REGIONI -->
-  <section>
-    <div class="sec-hd">
-      <h2 id="s-regioni">Distribuzione regionale</h2>
-      <span class="sec-note">Top 15 regioni per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr></span>
-    </div>
-    <div class="g2">
-      <div class="card">
-        <div class="card-title"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> per regione</div>
-        <div class="card-sub">Mld €</div>
-        <div class="chart-h" style="height:380px;"><canvas id="regioniChart"></canvas></div>
-      </div>
-      <div class="card">
-        <div class="card-title">Quota % sul totale nazionale</div>
-        <div class="card-sub">Peso percentuale dell'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> regionale</div>
-        <div class="chart-h" style="height:380px;"><canvas id="regioniPctChart"></canvas></div>
       </div>
     </div>
   </section>
@@ -1207,6 +1186,7 @@ let activeMetric = 'esl';
 // per-region concentration / relativization metrics (cumulative 2016–2026, by sede legale)
 const D_REG_CONC = {"LAZ":{"esl_mld":58.822,"n_firms":460039,"hhi":509.1,"top1":20.4,"percap":10302},"PIE":{"esl_mld":40.473,"n_firms":358349,"hhi":310.6,"top1":15.8,"percap":9523},"LOM":{"esl_mld":105.063,"n_firms":802211,"hhi":41,"top1":3.8,"percap":10559},"VEN":{"esl_mld":47.193,"n_firms":416744,"hhi":30.7,"top1":5.1,"percap":9730},"SIC":{"esl_mld":25.58,"n_firms":339777,"hhi":91,"top1":9.2,"percap":5329},"FVG":{"esl_mld":13.879,"n_firms":95489,"hhi":229.3,"top1":14.3,"percap":11663},"LIG":{"esl_mld":10.771,"n_firms":132013,"hhi":144.2,"top1":10.5,"percap":7133},"CAM":{"esl_mld":42.858,"n_firms":468152,"hhi":6,"top1":1.6,"percap":7626},"SAR":{"esl_mld":9.918,"n_firms":125620,"hhi":62.3,"top1":6.7,"percap":6277},"EMR":{"esl_mld":40.043,"n_firms":386494,"hhi":6.3,"top1":1.3,"percap":9060},"TAA":{"esl_mld":11.664,"n_firms":114664,"hhi":34,"top1":3.8,"percap":10901},"UMB":{"esl_mld":7.265,"n_firms":73736,"hhi":50.6,"top1":4.9,"percap":8547},"VDA":{"esl_mld":1.737,"n_firms":14317,"hhi":370.2,"top1":16.9,"percap":14475},"TOS":{"esl_mld":28.726,"n_firms":351011,"hhi":4.6,"top1":0.8,"percap":7849},"MAR":{"esl_mld":13.355,"n_firms":145000,"hhi":6.2,"top1":0.9,"percap":9024},"CAL":{"esl_mld":8.064,"n_firms":143526,"hhi":8.6,"top1":1.4,"percap":4383},"PUG":{"esl_mld":25.354,"n_firms":295699,"hhi":3.2,"top1":0.4,"percap":6484},"ABR":{"esl_mld":10.194,"n_firms":119287,"hhi":9.3,"top1":1,"percap":7964},"BAS":{"esl_mld":4.352,"n_firms":49983,"hhi":22.7,"top1":1.9,"percap":8059},"MOL":{"esl_mld":2.047,"n_firms":26691,"hhi":58.4,"top1":3.6,"percap":7058}};
 
+const POP = {PIE:4.25,LOM:9.95,LIG:1.51,VEN:4.85,FVG:1.19,EMR:4.42,TOS:3.66,MAR:1.48,UMB:0.85,LAZ:5.71,ABR:1.28,MOL:0.29,CAM:5.62,BAS:0.54,PUG:3.91,CAL:1.84,SIC:4.80,SAR:1.58,VDA:0.12,TAA:1.07};
 const PAL = {
   esl:    ['#DCE6EC','#A9C2D2','#6E9BB5','#3A7593','#1F5673'],
   percap: ['#E2EDE7','#B9D4C6','#86B49B','#54956F','#2E7D55'],
@@ -1218,12 +1198,12 @@ const METRICS = {
     listFmt:v => `€ ${v.toFixed(2)}`,
     tip:(reg,v,tot,rank)=>`<strong>${reg.name}</strong><div class="tt-esl">€ ${v.toFixed(2)} mld</div><div class="tt-sub">${tot?(v/tot*100).toFixed(2):0} % del totale · Rank #${rank}</div>`,
     hint:'' },
-  percap: { byYear:false, legendTitle:'Quintili ESL per residente (€, popolazione ISTAT)',
-    val:id => (D_REG_CONC[id]||{}).percap||0,
+  percap: { byYear:true, legendTitle:'Quintili ESL per residente (€, popolazione ISTAT)',
+    transform: vals => { const o = {}; for (const id in vals) if (POP[id]) o[id] = vals[id] / POP[id] * 1000; return o; },
     legFmt:v => `€${Math.round(v/1000)}k`,
     listFmt:v => `€ ${Math.round(v).toLocaleString('it-IT')}`,
     tip:(reg,v,tot,rank)=>`<strong>${reg.name}</strong><div class="tt-esl">€ ${Math.round(v).toLocaleString('it-IT')}</div><div class="tt-sub">ESL per abitante · Rank #${rank}</div>`,
-    hint:'ESL cumulato 2016–2026 ÷ popolazione · l\'anno non si applica' },
+    hint:'' },
   hhi: { byYear:false, legendTitle:'Concentrazione (indice HHI) — alto = una sola impresa domina',
     val:id => (D_REG_CONC[id]||{}).hhi||0,
     legFmt:v => `${Math.round(v)}`,
@@ -1247,7 +1227,7 @@ function getYearVals(year) {
 function currentData() {
   const M = METRICS[activeMetric];
   let vals;
-  if (M.byYear) { vals = getYearVals(activeYear); }
+  if (M.byYear) { vals = getYearVals(activeYear); if (M.transform) vals = M.transform(vals); }
   else { vals = {}; Object.keys(pathEls).forEach(id => { const v = M.val(id); if (v > 0) vals[id] = v; }); }
   const sorted = Object.entries(vals).sort((a, b) => b[1] - a[1]);
   const ranks = Object.fromEntries(sorted.map(([id], i) => [id, i + 1]));
@@ -1439,10 +1419,6 @@ new Chart(document.getElementById('atecoChart'), {
     }
   }
 });
-
-// 3–4. Regioni — amber
-horizBar('regioniChart',    D_REG.labels, D_REG.vals, CA);
-horizBar('regioniPctChart', D_REG.labels, D_REG.pct,  CA, c => `${c.parsed.x.toFixed(2)} %`);
 
 // 5. Green time series — teal
 lineChart('energyTimeChart', D_TIME.labels, D_TIME.vals, [78,138,107]);
