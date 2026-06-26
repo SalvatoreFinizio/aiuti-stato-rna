@@ -89,7 +89,6 @@ TPL = r'''<!DOCTYPE html>
     </div>
     <div class="card">
       <div class="card-title">€ %%TOTESL%% mld di aiuto agganciato · dove va, per tipo di impresa</div>
-      <div class="card-sub">Le imprese che brevettano sono pochissime ma <span style="color:var(--teal);">assorbono una quota di aiuto sproporzionata</span></div>
       <div class="split-bar" style="margin-top:14px;">
         <div style="width:%%PCTESL%%%;background:var(--teal);" title="Imprese che brevettano">brevettano · € %%PATESL%% mld (%%PCTESL%%%)</div>
         <div style="flex:1;background:var(--steel);" title="Altre imprese">altre imprese · € %%RESTESL%% mld</div>
