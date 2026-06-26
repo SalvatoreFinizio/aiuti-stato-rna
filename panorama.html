@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aziende, settori e obiettivi — Aiuti di Stato · RNA</title>
+  <meta name="description" content="Chi riceve gli aiuti di Stato in Italia, in quali settori e per quali obiettivi: i tre sguardi sull'allocazione dei 509,7 miliardi del registro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/news.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12/dist/d3-sankey.min.js"></script>
+</head>
+<body>
+
+<div class="subnav-wrap">
+  <div class="wrap subnav">
+    <a class="page-back" href="./index.html">← Tutti i temi</a>
+    <nav class="subnav-links" aria-label="Navigazione temi">
+      <a href="./panorama.html" class="active" aria-current="page">Panorama</a>
+      <a href="./geografia.html">Geografia</a>
+      <a href="./controllate.html">Controllate di Stato</a>
+      <a href="./quadro-giuridico.html">Quadro giuridico</a>
+      <a href="./esploratore.html" style="color:var(--amber);">Esploratore ↗</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+<div class="wrap">
+
+  <div class="home-hero">
+    <div class="hdr-badge" style="display:inline-block;margin-bottom:14px;">PANORAMA</div>
+    <h1 class="page-lead" style="font-size:34px;font-weight:700;">Aziende, settori e obiettivi</h1>
+    <p class="page-deck">
+      Tre sguardi sulla stessa cifra — € 509,7 miliardi di aiuti dal 2016: <strong>chi</strong> li riceve,
+      in quali <strong>settori</strong> finiscono e per quali <strong>obiettivi</strong> di policy sono concessi.
+    </p>
+    <p class="src"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> cumulato 2016–2026 · miliardi di euro</p>
+    <nav class="subnav-links" style="margin-left:0;margin-top:18px;gap:6px;" aria-label="Sezioni della pagina">
+      <a href="#az">① Top aziende</a>
+      <a href="#set">② Settori</a>
+      <a href="#ob">③ Obiettivi</a>
+    </nav>
+  </div>
+
+  <!-- ① AZIENDE -->
+  <section id="az">
+    <div class="sec-hd">
+      <h2>① Chi riceve di più</h2>
+      <span class="sec-note">
+        <span style="display:inline-block;width:9px;height:9px;background:#1F5673;border-radius:2px;vertical-align:middle;"></span> controllo pubblico ·
+        <span style="display:inline-block;width:9px;height:9px;background:#B9B2A6;border-radius:2px;vertical-align:middle;"></span> privato
+      </span>
+    </div>
+
+    <div class="kpi-row" style="margin-bottom:22px;">
+      <div class="kpi">
+        <div class="kpi-label">Primo beneficiario</div>
+        <div class="kpi-val">€ 12,0</div>
+        <div class="kpi-sub">miliardi · Enel (gruppo)</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Primi 30 beneficiari</div>
+        <div class="kpi-val">12,1 %</div>
+        <div class="kpi-sub">del totale · ≈ 14,5 % escl. garanzie</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Quota pubblica · top 20</div>
+        <div class="kpi-val" id="kpi-pub">—</div>
+        <div class="kpi-sub">dell'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> va a società statali</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Statali nei primi 20</div>
+        <div class="kpi-val" id="kpi-cnt">—</div>
+        <div class="kpi-sub">imprese a controllo <abbr title="Ministero dell'Economia">MEF</abbr>/<abbr title="Cassa Depositi e Prestiti">CDP</abbr></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Top 20 beneficiari per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> · miliardi di euro</div>
+      <div class="card-sub">In blu le società a partecipazione statale diretta o tramite Cassa Depositi e Prestiti</div>
+      <div class="chart-h" style="height:560px;"><canvas id="beneficiariChart"></canvas></div>
+      <p class="note" style="margin-top:14px;">
+        * <abbr title="Probabile errore di inserimento del concedente">VERCELLI SRL</abbr> e
+        ** <abbr title="€ 2,41 mld sproporzionato per una società in nome collettivo; probabile errore">BAR.MA SNC</abbr>
+        sono importi anomali, verosimilmente errori di inserimento, riportati come da registro.
+        «Controllo pubblico» = quota diretta MEF o tramite CDP; esclusi enti municipali (A2A) e minoranze (TIM, FiberCop).
+      </p>
+    </div>
+
+    <a class="soe-explore-cta" href="./controllate.html" style="margin-top:12px;">
+      <div>
+        <div class="cta-t">Approfondisci: le controllate di Stato</div>
+        <div class="cta-s">Il perimetro completo delle società a partecipazione MEF e CDP beneficiarie di aiuti — elenco, strumenti e geografia.</div>
+      </div>
+      <span class="cta-arr">→</span>
+    </a>
+  </section>
+
+  <!-- ② SETTORI -->
+  <section id="set">
+    <div class="sec-hd">
+      <h2>② Dove vanno, settore per settore</h2>
+      <span class="sec-note">Settore <abbr title="Classificazione delle Attività Economiche">ATECO</abbr> prevalente del beneficiario</span>
+    </div>
+    <p class="note" style="margin:0 0 18px 0; max-width:880px;">
+      La <strong>manifattura</strong> guida (€ 160 mld) ma quasi tutto è <strong>garanzia anticrisi</strong>:
+      il grosso degli aiuti settoriali è la risposta a COVID e crisi energetica, non politica industriale
+      ordinaria. L'unico grande settore prevalentemente <strong>strutturale</strong> è l'<strong>energia</strong>.
+    </p>
+
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Macro-settori per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr></div>
+        <div class="card-sub">Scomposto tra <span style="color:#C0622E;">risposta alle crisi</span> e <span style="color:#1F5673;">aiuti strutturali</span> · mld €</div>
+        <div class="chart-h" style="height:380px;"><canvas id="settChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Settori <abbr title="Classificazione delle Attività Economiche">ATECO</abbr> di dettaglio (divisioni)</div>
+        <div class="card-sub">Prime 15 divisioni per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> · mld €</div>
+        <ul class="ob-list" id="ateco-list" style="margin-top:4px;"></ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px;">
+      <div class="card-title">Flusso degli aiuti · base giuridica → strumento → settore</div>
+      <div class="card-sub">Spessore = <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld € · <span style="color:var(--amber);">passa il mouse su un nodo o un flusso</span></div>
+      <div style="overflow-x:auto;"><svg id="sankey-sett" width="1180" height="520" style="min-width:900px;"></svg></div>
+    </div>
+  </section>
+
+  <!-- ③ OBIETTIVI -->
+  <section id="ob">
+    <div class="sec-hd">
+      <h2>③ A quali finalità</h2>
+      <span class="sec-note">I 16 obiettivi <abbr title="Registro Nazionale Aiuti">RNA</abbr> in 7 macro-aree</span>
+    </div>
+    <p class="note" style="margin:0 0 18px 0; max-width:880px;">
+      Il quadro è dominato da una sola voce: la <strong>risposta alle crisi</strong> (COVID e Ucraina) vale
+      € 352 miliardi, il <strong>69 %</strong> del totale. La politica industriale «ordinaria» è il resto.
+    </p>
+
+    <div class="g2" style="align-items:start;">
+      <div class="card">
+        <div class="card-title">Le 7 macro-finalità per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr></div>
+        <div class="card-sub">Miliardi di euro · quota sul totale</div>
+        <div class="chart-h" style="height:340px;"><canvas id="macroChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Evoluzione nel tempo</div>
+        <div class="card-sub">ESL per macro-finalità e anno · mld € · le crisi si vedono nei picchi 2020–2023</div>
+        <div class="chart-h" style="height:340px;"><canvas id="macroYearChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px;">
+      <div class="card-title">Flusso · base giuridica → obiettivo di policy</div>
+      <div class="card-sub">Spessore = <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> mld € · <span style="color:var(--amber);">passa il mouse su un nodo o un flusso</span></div>
+      <div style="overflow-x:auto;"><svg id="sankey-obj" width="1080" height="470" style="min-width:860px;"></svg></div>
+    </div>
+    <p class="note" style="max-width:900px;">
+      I due grandi quadri temporanei — <strong>COVID-19</strong> (€ 277 mld) e <strong>Ucraina/TCTF</strong>
+      (€ 73 mld) — alimentano quasi per intero la «risposta alle crisi». La politica strutturale passa da
+      GBER e de minimis, distribuiti tra imprese, coesione e lavoro.
+    </p>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span><abbr title="Registro Nazionale Aiuti di Stato">RNA</abbr> Aiuti di Stato · Mag 2016 – Mar 2026 · Elaborazione propria</span>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Tutto in una pagina</a>
+        <a href="esploratore.html">Esploratore</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── Chart.js defaults ───────────────────────────── */
+Chart.defaults.color          = '#9A938A';
+Chart.defaults.font.family    = "'DM Sans', system-ui, sans-serif";
+Chart.defaults.font.size      = 11;
+Chart.defaults.plugins.tooltip.backgroundColor = '#FBFAF6';
+Chart.defaults.plugins.tooltip.borderColor     = '#E4E0D7';
+Chart.defaults.plugins.tooltip.borderWidth     = 1;
+Chart.defaults.plugins.tooltip.padding         = 10;
+Chart.defaults.plugins.tooltip.cornerRadius    = 4;
+Chart.defaults.plugins.tooltip.titleColor      = '#1A1A17';
+Chart.defaults.plugins.tooltip.bodyColor       = '#56524C';
+const GRID = 'rgba(205,199,188,.7)';
+
+/* ════════ ① AZIENDE ════════ */
+const D_BENE = {
+  labels:['ENEL SPA','FCA ITALY (FIAT/STELLANTIS)','ENEL PRODUZIONE','OPEN FIBER SPA','EDISON SPA','VERCELLI SRL *','STMicroelectronics','BAR.MA SNC **','TIM SPA','FIBERCOP SPA','A2A SPA','FINCANTIERI SPA','SNAM SPA','SAIPEM SPA','COSTA CROCIERE','EPP 2 SRL','EP CENTRALE TAVAZZANO','POSTE ITALIANE','ACCIAIERIE D\'ITALIA','ENI SPA'],
+  vals: [12.001,6.378,4.559,3.984,3.064,3.049,2.598,2.408,2.370,2.355,2.095,1.980,1.811,1.241,1.129,1.035,0.999,0.997,0.831,0.732]
+};
+const PUBLIC_IDX = new Set([0,2,3,6,11,12,13,17,19]);
+(function(){
+  const tot = D_BENE.vals.reduce((a,b)=>a+b,0);
+  let pub = 0; PUBLIC_IDX.forEach(i => pub += D_BENE.vals[i]);
+  document.getElementById('kpi-pub').textContent = (pub/tot*100).toFixed(0) + ' %';
+  document.getElementById('kpi-cnt').textContent = PUBLIC_IDX.size + ' / 20';
+})();
+new Chart(document.getElementById('beneficiariChart'), {
+  type: 'bar',
+  data: { labels: D_BENE.labels, datasets: [{ data: D_BENE.vals,
+    backgroundColor: D_BENE.vals.map((_,i) => PUBLIC_IDX.has(i) ? 'rgba(31,86,115,.85)' : 'rgba(185,178,166,.85)'),
+    borderRadius: 2, borderSkipped: false }] },
+  options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, animation: { duration: 700 },
+    plugins: { legend: { display: false },
+      tooltip: { callbacks: {
+        label: c => `€ ${c.parsed.x.toFixed(3)} mld`,
+        afterLabel: c => PUBLIC_IDX.has(c.dataIndex) ? 'Società a controllo pubblico (MEF/CDP)' : 'Società privata' } } },
+    scales: {
+      x: { grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => `€${v}` }, border: { display: false } },
+      y: { grid: { display: false }, ticks: { color: '#56524C', font: { size: 10 } }, border: { display: false } } } }
+});
+
+/* ════════ ② SETTORI ════════ */
+const D_SECT = {"sect":[{"name":"Manifattura","esl":159.72,"crisis":114.8,"struct":44.91},{"name":"Commercio","esl":80.08,"crisis":69.36,"struct":10.72},{"name":"Servizi","esl":64.05,"crisis":51.99,"struct":12.05},{"name":"Costruzioni","esl":43.18,"crisis":32.08,"struct":11.11},{"name":"Energia","esl":36.88,"crisis":5.08,"struct":31.79},{"name":"Turismo","esl":35.48,"crisis":26.81,"struct":8.66},{"name":"Trasporti","esl":27.16,"crisis":16.04,"struct":11.12},{"name":"ICT/Media","esl":23.96,"crisis":9.23,"struct":14.73},{"name":"Altri","esl":23.76,"crisis":15.75,"struct":8.01},{"name":"Sanità","esl":9.13,"crisis":6.43,"struct":2.7},{"name":"Agricoltura","esl":6.35,"crisis":3.15,"struct":3.2}],"ateco":[{"div":"G.46","name":"Commercio all'ingrosso","esl":41.53},{"div":"D.35","name":"Energia elettrica e gas","esl":36.88},{"div":"G.47","name":"Commercio al dettaglio","esl":28.06},{"div":"C.25","name":"Prodotti in metallo","esl":23.27},{"div":"M.70","name":"Holding e direzione aziendale","esl":22.43},{"div":"I.56","name":"Ristorazione","esl":20.88},{"div":"F.41","name":"Costruzione di edifici","esl":20.34},{"div":"C.10","name":"Industrie alimentari","esl":18.82},{"div":"F.43","name":"Costruzioni specializzate","esl":16.5},{"div":"C.28","name":"Macchinari e apparecchi","esl":15.33},{"div":"I.55","name":"Alberghi e alloggio","esl":14.6},{"div":"H.49","name":"Trasporto terrestre","esl":13.62},{"div":"C.24","name":"Metallurgia","esl":11.01},{"div":"G.45","name":"Commercio autoveicoli","esl":10.48},{"div":"L.68","name":"Attività immobiliari","esl":10.16}]};
+const D_SANKEY = {"nodes":[{"name":"De minimis","col":0},{"name":"Prestito","col":1},{"name":"GBER","col":0},{"name":"Sovvenzione","col":1},{"name":"Quadro COVID","col":0},{"name":"Credito d'imposta","col":1},{"name":"Garanzia","col":1},{"name":"Altri notificati","col":0},{"name":"SIEG","col":0},{"name":"Finanz. rischio","col":1},{"name":"Quadro Ucraina","col":0},{"name":"Turismo","col":2},{"name":"Manifattura","col":2},{"name":"Altri","col":2},{"name":"Commercio","col":2},{"name":"Trasporti","col":2},{"name":"Costruzioni","col":2},{"name":"Sanità","col":2},{"name":"Servizi","col":2},{"name":"ICT/Media","col":2},{"name":"Agricoltura","col":2},{"name":"Energia","col":2}],"links":[{"source":0,"target":1,"value":1.39},{"source":2,"target":3,"value":34.27},{"source":0,"target":3,"value":16.16},{"source":4,"target":5,"value":22.06},{"source":0,"target":6,"value":10.25},{"source":7,"target":3,"value":47.03},{"source":4,"target":3,"value":25.78},{"source":2,"target":1,"value":1.22},{"source":8,"target":3,"value":2.91},{"source":0,"target":5,"value":4.75},{"source":0,"target":9,"value":1.26},{"source":4,"target":6,"value":221.71},{"source":2,"target":6,"value":1.42},{"source":10,"target":6,"value":60.53},{"source":2,"target":5,"value":17.64},{"source":7,"target":5,"value":20.16},{"source":4,"target":9,"value":6.44},{"source":4,"target":1,"value":1.39},{"source":10,"target":5,"value":11.05},{"source":10,"target":3,"value":1.7},{"source":1,"target":11,"value":0.54},{"source":3,"target":12,"value":26.56},{"source":3,"target":13,"value":8.81},{"source":3,"target":14,"value":7.41},{"source":3,"target":15,"value":7.01},{"source":5,"target":12,"value":24.96},{"source":5,"target":13,"value":4.57},{"source":5,"target":11,"value":8.36},{"source":5,"target":16,"value":6.26},{"source":5,"target":14,"value":9.59},{"source":5,"target":17,"value":2.36},{"source":5,"target":18,"value":6.32},{"source":5,"target":15,"value":6.84},{"source":5,"target":19,"value":6.11},{"source":3,"target":18,"value":12.19},{"source":3,"target":11,"value":11.39},{"source":3,"target":20,"value":3.46},{"source":3,"target":16,"value":7.96},{"source":1,"target":12,"value":1.9},{"source":6,"target":12,"value":104.72},{"source":3,"target":19,"value":9.42},{"source":6,"target":19,"value":8.1},{"source":6,"target":15,"value":12.97},{"source":6,"target":14,"value":60.62},{"source":3,"target":17,"value":1.91},{"source":6,"target":16,"value":27.49},{"source":1,"target":14,"value":0.46},{"source":6,"target":13,"value":9.35},{"source":1,"target":16,"value":0.33},{"source":6,"target":20,"value":2.5},{"source":6,"target":18,"value":44.45},{"source":9,"target":11,"value":0.98},{"source":3,"target":21,"value":31.74},{"source":6,"target":17,"value":4.68},{"source":6,"target":11,"value":14.2},{"source":9,"target":18,"value":0.8},{"source":9,"target":16,"value":1.15},{"source":9,"target":14,"value":1.99},{"source":6,"target":21,"value":4.92},{"source":9,"target":12,"value":1.57},{"source":9,"target":13,"value":0.74}]};
+(function(){
+  const S = D_SECT.sect;
+  new Chart(document.getElementById('settChart'), {
+    type: 'bar',
+    data: { labels: S.map(s=>s.name), datasets: [
+      { label:'Risposta alle crisi', data:S.map(s=>s.crisis), backgroundColor:'rgba(192,98,46,.85)', borderRadius:2, stack:'s' },
+      { label:'Aiuti strutturali', data:S.map(s=>s.struct), backgroundColor:'rgba(31,86,115,.85)', borderRadius:2, stack:'s' } ] },
+    options: { indexAxis:'y', responsive:true, maintainAspectRatio:false, animation:{duration:600},
+      plugins:{ legend:{display:false},
+        tooltip:{ callbacks:{ label:c=>`${c.dataset.label}: € ${c.parsed.x.toFixed(1)} mld`,
+          footer:items=>`Totale: € ${S[items[0].dataIndex].esl.toFixed(1)} mld` } } },
+      scales:{ x:{stacked:true,grid:{color:GRID},ticks:{color:'#9A938A',callback:v=>`€${v}`},border:{display:false}},
+        y:{stacked:true,grid:{display:false},ticks:{color:'#56524C',font:{size:11}},border:{display:false}} } }
+  });
+  document.getElementById('ateco-list').innerHTML = D_SECT.ateco.map(a=>
+    `<li class="ob-item"><span class="ob-name">${a.name} <span style="font-family:var(--mono);font-size:10px;color:var(--dim);">${a.div}</span></span><span class="ob-val">€ ${a.esl.toFixed(1)}</span></li>`).join('');
+})();
+(function(){
+  const svg = d3.select('#sankey-sett'); if (!svg.node() || !window.d3 || !d3.sankey) return;
+  const W = 1120, H = 520, COL=['#1F5673','#C0622E','#4E8A6B'];
+  svg.attr('width', W).attr('viewBox', `0 0 ${W} ${H}`);
+  const sankey = d3.sankey().nodeWidth(13).nodePadding(11).extent([[8,14],[W-8,H-8]]);
+  const graph = sankey({ nodes: D_SANKEY.nodes.map(d=>({...d})), links: D_SANKEY.links.map(d=>({...d})) });
+  const g = svg.append('g');
+  const link = g.append('g').attr('fill','none').selectAll('path').data(graph.links).join('path')
+    .attr('d', d3.sankeyLinkHorizontal())
+    .attr('stroke', d=>COL[d.source.col]).attr('stroke-opacity',.30)
+    .attr('stroke-width', d=>Math.max(1,d.width)).style('transition','stroke-opacity .15s');
+  link.append('title').text(d=>`${d.source.name} → ${d.target.name}: € ${d.value.toFixed(1)} mld`);
+  const node = g.append('g').selectAll('g').data(graph.nodes).join('g');
+  node.append('rect').attr('x',d=>d.x0).attr('y',d=>d.y0).attr('height',d=>Math.max(1,d.y1-d.y0)).attr('width',d=>d.x1-d.x0)
+    .attr('fill',d=>COL[d.col]).attr('rx',2).append('title').text(d=>`${d.name}: € ${d.value.toFixed(1)} mld`);
+  node.append('text').attr('x',d=>d.col===2?d.x0-6:d.x1+6).attr('y',d=>(d.y0+d.y1)/2)
+    .attr('dy','0.35em').attr('text-anchor',d=>d.col===2?'end':'start')
+    .attr('font-size','11px').attr('fill','#1A1A17').attr('font-family',"'DM Sans',sans-serif").text(d=>d.name);
+  node.on('mouseenter',(e,n)=>{ link.attr('stroke-opacity',l=>(l.source===n||l.target===n)?.6:.06); })
+      .on('mouseleave',()=>link.attr('stroke-opacity',.30));
+  link.on('mouseenter',function(){d3.select(this).attr('stroke-opacity',.65);})
+      .on('mouseleave',function(){d3.select(this).attr('stroke-opacity',.30);});
+})();
+
+/* ════════ ③ OBIETTIVI ════════ */
+const MACRO = {
+  "Risposta alle crisi":            {tot:352.18, col:'rgba(31,86,115,.85)'},
+  "Ambiente ed energia":            {tot:48.78,  col:'rgba(78,138,107,.82)'},
+  "Imprese, innovazione, digitale": {tot:42.01,  col:'rgba(127,151,166,.82)'},
+  "Coesione territoriale e calamità":{tot:26.73, col:'rgba(192,98,46,.78)'},
+  "Lavoro e capitale umano":        {tot:16.46,  col:'rgba(123,90,166,.70)'},
+  "Settoriale e residuo":           {tot:12.0,   col:'rgba(150,144,134,.62)'},
+  "Cultura, sport e servizi (SIEG)":{tot:11.56,  col:'rgba(166,58,80,.66)'}
+};
+const MACRO_YEAR = {
+ "Risposta alle crisi":{"2017":0.008,"2018":0.0,"2019":0.025,"2020":94.669,"2021":101.117,"2022":53.407,"2023":64.357,"2024":24.358,"2025":12.38,"2026":1.864},
+ "Ambiente ed energia":{"2017":0.554,"2018":2.38,"2019":1.872,"2020":2.046,"2021":13.353,"2022":8.177,"2023":3.887,"2024":3.961,"2025":10.413,"2026":2.139},
+ "Imprese, innovazione, digitale":{"2017":2.636,"2018":3.138,"2019":2.668,"2020":3.794,"2021":3.499,"2022":8.632,"2023":4.552,"2024":5.468,"2025":6.181,"2026":1.328},
+ "Coesione territoriale e calamità":{"2017":0.462,"2018":0.929,"2019":1.053,"2020":3.525,"2021":2.708,"2022":3.542,"2023":3.422,"2024":4.894,"2025":5.547,"2026":0.603},
+ "Lavoro e capitale umano":{"2017":0.566,"2018":1.605,"2019":1.22,"2020":0.912,"2021":1.296,"2022":2.062,"2023":2.494,"2024":3.085,"2025":2.711,"2026":0.49},
+ "Settoriale e residuo":{"2017":0.158,"2018":0.274,"2019":0.312,"2020":0.795,"2021":0.791,"2022":1.214,"2023":2.041,"2024":1.66,"2025":4.419,"2026":0.321},
+ "Cultura, sport e servizi (SIEG)":{"2017":0.204,"2018":0.399,"2019":0.35,"2020":0.669,"2021":0.607,"2022":3.002,"2023":2.411,"2024":1.677,"2025":1.384,"2026":0.824}
+};
+const YEARS = ['2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'];
+const D_LEGAL_OBJ = {"DE_MINIMIS|Imprese, innovazione, digitale":17.642,"GBER|Coesione territoriale e calamità":20.427,"GBER|Imprese, innovazione, digitale":20.995,"DE_MINIMIS|Coesione territoriale e calamità":4.07,"GBER|Lavoro e capitale umano":5.703,"DE_MINIMIS|Risposta alle crisi":0.964,"COVID_TF|Risposta alle crisi":277.374,"DE_MINIMIS|Settoriale e residuo":5.665,"OTHER_NOTIFIED|Imprese, innovazione, digitale":7.846,"SIEG|Cultura, sport e servizi (SIEG)":2.945,"DE_MINIMIS|Lavoro e capitale umano":4.435,"DE_MINIMIS|Cultura, sport e servizi (SIEG)":0.539,"GBER|Ambiente ed energia":3.636,"OTHER_NOTIFIED|Ambiente ed energia":44.671,"GBER|Settoriale e residuo":1.036,"DE_MINIMIS|Ambiente ed energia":0.499,"GBER|Cultura, sport e servizi (SIEG)":2.948,"UKRAINE_TF|Risposta alle crisi":73.353,"OTHER_NOTIFIED|Settoriale e residuo":6.632,"OTHER_NOTIFIED|Lavoro e capitale umano":1.846,"OTHER_NOTIFIED|Coesione territoriale e calamità":2.54,"OTHER_NOTIFIED|Cultura, sport e servizi (SIEG)":3.481,"OTHER_NOTIFIED|Risposta alle crisi":0.482};
+const LEGAL_LABELS = {DE_MINIMIS:'De minimis', GBER:'GBER', COVID_TF:'Quadro COVID', UKRAINE_TF:'Quadro Ucraina', OTHER_NOTIFIED:'Altri notificati', SIEG:'SIEG'};
+const LEGAL_COL = {COVID_TF:'#C0622E', UKRAINE_TF:'#1F5673', OTHER_NOTIFIED:'#4E8A6B', GBER:'#7F97A6', DE_MINIMIS:'#7B5AA6', SIEG:'#A63A50'};
+(function(){
+  const names = Object.keys(MACRO);
+  const tot = names.reduce((a,n)=>a+MACRO[n].tot,0);
+  new Chart(document.getElementById('macroChart'), {
+    type:'bar',
+    data:{ labels:names.map(n=>n.length>26?n.slice(0,25)+'…':n),
+      datasets:[{ data:names.map(n=>MACRO[n].tot), backgroundColor:names.map(n=>MACRO[n].col), borderRadius:2, borderSkipped:false }] },
+    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, animation:{duration:700},
+      plugins:{ legend:{display:false}, tooltip:{ callbacks:{
+        title:items=>names[items[0].dataIndex],
+        label:c=>`€ ${c.parsed.x.toFixed(1)} mld · ${(c.parsed.x/tot*100).toFixed(1)} %` } } },
+      scales:{ x:{grid:{color:GRID},ticks:{color:'#9A938A',callback:v=>`€${v}`},border:{display:false}},
+        y:{grid:{display:false},ticks:{color:'#56524C',font:{size:10.5}},border:{display:false}} } }
+  });
+})();
+(function(){
+  const names = Object.keys(MACRO);
+  new Chart(document.getElementById('macroYearChart'), {
+    type:'bar',
+    data:{ labels:YEARS, datasets:names.map(n=>({
+      label:n, data:YEARS.map(y=>MACRO_YEAR[n][y]||0), backgroundColor:MACRO[n].col, stack:'s', borderWidth:0 })) },
+    options:{ responsive:true, maintainAspectRatio:false, animation:{duration:700},
+      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label:c=>`${c.dataset.label}: € ${c.parsed.y.toFixed(1)} mld` } } },
+      scales:{ x:{stacked:true,grid:{display:false},ticks:{color:'#56524C',font:{size:10}},border:{display:false}},
+        y:{stacked:true,grid:{color:GRID},ticks:{color:'#9A938A',callback:v=>`€${v}`},border:{display:false}} } }
+  });
+})();
+(function(){
+  const svg = d3.select('#sankey-obj'); if (!svg.node() || !window.d3 || !d3.sankey) return;
+  const legTot={}, objTot={};
+  Object.entries(D_LEGAL_OBJ).forEach(([k,v])=>{ const i=k.indexOf('|'); const l=k.slice(0,i), o=k.slice(i+1); legTot[l]=(legTot[l]||0)+v; objTot[o]=(objTot[o]||0)+v; });
+  const legals = Object.keys(legTot).sort((a,b)=>legTot[b]-legTot[a]);
+  const objs   = Object.keys(objTot).sort((a,b)=>objTot[b]-objTot[a]);
+  const idxL={};
+  const nodes = [];
+  legals.forEach((l)=>{ idxL[l]=nodes.length; nodes.push({name:LEGAL_LABELS[l]||l, col:0, key:l}); });
+  const idxO={};
+  objs.forEach((o)=>{ idxO[o]=nodes.length; nodes.push({name:o, col:1, key:o}); });
+  const links = Object.entries(D_LEGAL_OBJ).map(([k,v])=>{ const i=k.indexOf('|'); const l=k.slice(0,i), o=k.slice(i+1); return {source:idxL[l], target:idxO[o], value:v, lkey:l}; });
+  const W=1080, H=470;
+  svg.attr('width', W).attr('viewBox', `0 0 ${W} ${H}`);
+  const sankey = d3.sankey().nodeWidth(14).nodePadding(13).nodeSort(null).extent([[150,12],[W-250,H-12]]);
+  const graph = sankey({ nodes: nodes.map(d=>({...d})), links: links.map(d=>({...d})) });
+  const g = svg.append('g');
+  const link = g.append('g').attr('fill','none').selectAll('path').data(graph.links).join('path')
+    .attr('d', d3.sankeyLinkHorizontal())
+    .attr('stroke', d=>LEGAL_COL[d.lkey]||'#7F97A6').attr('stroke-opacity',.34)
+    .attr('stroke-width', d=>Math.max(1,d.width)).style('transition','stroke-opacity .15s');
+  link.append('title').text(d=>`${d.source.name} → ${d.target.name}: € ${d.value.toFixed(1)} mld`);
+  const node = g.append('g').selectAll('g').data(graph.nodes).join('g');
+  node.append('rect').attr('x',d=>d.x0).attr('y',d=>d.y0).attr('height',d=>Math.max(1,d.y1-d.y0)).attr('width',d=>d.x1-d.x0)
+    .attr('fill',d=>d.col===0?(LEGAL_COL[d.key]||'#7F97A6'):'#3A4A55').attr('rx',2)
+    .append('title').text(d=>`${d.name}: € ${d.value.toFixed(1)} mld`);
+  node.append('text').attr('x',d=>d.col===0?d.x0-7:d.x1+7).attr('y',d=>(d.y0+d.y1)/2)
+    .attr('dy','0.35em').attr('text-anchor',d=>d.col===0?'end':'start')
+    .attr('font-size','11.5px').attr('fill','#1A1A17').attr('font-family',"'DM Sans',sans-serif").text(d=>d.name);
+  node.on('mouseenter',(e,n)=>{ link.attr('stroke-opacity',l=>(l.source===n||l.target===n)?.62:.06); })
+      .on('mouseleave',()=>link.attr('stroke-opacity',.34));
+  link.on('mouseenter',function(){d3.select(this).attr('stroke-opacity',.68);})
+      .on('mouseleave',function(){d3.select(this).attr('stroke-opacity',.34);});
+})();
+</script>
+</body>
+</html>
