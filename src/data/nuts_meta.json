@@ -1,0 +1,10 @@
+{
+  "firms_total": 4940843,
+  "firms_matched": 1575666,
+  "pct_firms_matched": 31.9,
+  "esl_total_mld": 509.728,
+  "esl_matched_mld": 452.518,
+  "pct_esl_matched": 88.8,
+  "match_key": "codice_fiscale (p.iva) <-> Orbis VAT/Tax number",
+  "source": "nuts_sectors/ (Orbis-style export: BvD ID, NUTS2/3, NACE Rev.2)"
+}

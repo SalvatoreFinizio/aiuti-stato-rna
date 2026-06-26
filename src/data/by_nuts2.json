@@ -1,0 +1,156 @@
+[
+  {
+    "nuts2": "ITC4 - Lombardia",
+    "esl_mld": 98.1126,
+    "pct": 21.681,
+    "n_firms": 291224,
+    "n_concessioni": 1982779
+  },
+  {
+    "nuts2": "ITI4 - Lazio",
+    "esl_mld": 46.9683,
+    "pct": 10.379,
+    "n_firms": 179156,
+    "n_concessioni": 984031
+  },
+  {
+    "nuts2": "ITH3 - Veneto",
+    "esl_mld": 43.1907,
+    "pct": 9.545,
+    "n_firms": 135580,
+    "n_concessioni": 1045880
+  },
+  {
+    "nuts2": "ITC1 - Piemonte",
+    "esl_mld": 38.3841,
+    "pct": 8.482,
+    "n_firms": 97273,
+    "n_concessioni": 704858
+  },
+  {
+    "nuts2": "ITH5 - Emilia-Romagna",
+    "esl_mld": 36.5564,
+    "pct": 8.078,
+    "n_firms": 126635,
+    "n_concessioni": 884921
+  },
+  {
+    "nuts2": "ITF3 - Campania",
+    "esl_mld": 35.5897,
+    "pct": 7.865,
+    "n_firms": 151712,
+    "n_concessioni": 1346913
+  },
+  {
+    "nuts2": "ITI1 - Toscana",
+    "esl_mld": 30.7823,
+    "pct": 6.802,
+    "n_firms": 108482,
+    "n_concessioni": 758089
+  },
+  {
+    "nuts2": "ITG1 - Sicilia",
+    "esl_mld": 22.0975,
+    "pct": 4.883,
+    "n_firms": 98467,
+    "n_concessioni": 921416
+  },
+  {
+    "nuts2": "ITF4 - Puglia",
+    "esl_mld": 20.5673,
+    "pct": 4.545,
+    "n_firms": 86653,
+    "n_concessioni": 780496
+  },
+  {
+    "nuts2": "ITH4 - Friuli-Venezia Giulia",
+    "esl_mld": 12.213,
+    "pct": 2.699,
+    "n_firms": 27250,
+    "n_concessioni": 278720
+  },
+  {
+    "nuts2": "ITI3 - Marche",
+    "esl_mld": 11.9639,
+    "pct": 2.644,
+    "n_firms": 42835,
+    "n_concessioni": 350575
+  },
+  {
+    "nuts2": "ITF1 - Abruzzo",
+    "esl_mld": 8.1318,
+    "pct": 1.797,
+    "n_firms": 34506,
+    "n_concessioni": 321282
+  },
+  {
+    "nuts2": "ITC3 - Liguria",
+    "esl_mld": 8.059,
+    "pct": 1.781,
+    "n_firms": 34380,
+    "n_concessioni": 223273
+  },
+  {
+    "nuts2": "ITF6 - Calabria",
+    "esl_mld": 7.9902,
+    "pct": 1.766,
+    "n_firms": 34234,
+    "n_concessioni": 295253
+  },
+  {
+    "nuts2": "ITG2 - Sardegna",
+    "esl_mld": 7.3912,
+    "pct": 1.633,
+    "n_firms": 35597,
+    "n_concessioni": 341500
+  },
+  {
+    "nuts2": "ITI2 - Umbria",
+    "esl_mld": 6.1958,
+    "pct": 1.369,
+    "n_firms": 22621,
+    "n_concessioni": 159594
+  },
+  {
+    "nuts2": "ITH2 - Provincia Autonoma di Trento",
+    "esl_mld": 4.5879,
+    "pct": 1.014,
+    "n_firms": 13829,
+    "n_concessioni": 124554
+  },
+  {
+    "nuts2": "ITH1 - Provincia Autonoma di Bolzano/Bozen",
+    "esl_mld": 4.0311,
+    "pct": 0.891,
+    "n_firms": 16031,
+    "n_concessioni": 124636
+  },
+  {
+    "nuts2": "ITF5 - Basilicata",
+    "esl_mld": 3.999,
+    "pct": 0.884,
+    "n_firms": 12815,
+    "n_concessioni": 127610
+  },
+  {
+    "nuts2": "N/D",
+    "esl_mld": 2.7877,
+    "pct": 0.616,
+    "n_firms": 15858,
+    "n_concessioni": 114726
+  },
+  {
+    "nuts2": "ITF2 - Molise",
+    "esl_mld": 1.4763,
+    "pct": 0.326,
+    "n_firms": 7345,
+    "n_concessioni": 65182
+  },
+  {
+    "nuts2": "ITC2 - Valle D'Aosta",
+    "esl_mld": 1.4418,
+    "pct": 0.319,
+    "n_firms": 3183,
+    "n_concessioni": 35812
+  }
+]
