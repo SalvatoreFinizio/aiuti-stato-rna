@@ -1,0 +1,751 @@
+[
+  {
+    "nuts3": "ITC4C - Milano",
+    "esl_mld": 44.5844,
+    "pct": 9.853,
+    "n_firms": 119809,
+    "n_concessioni": 717347
+  },
+  {
+    "nuts3": "ITI43 - Roma",
+    "esl_mld": 39.5485,
+    "pct": 8.74,
+    "n_firms": 141198,
+    "n_concessioni": 760809
+  },
+  {
+    "nuts3": "ITC11 - Torino",
+    "esl_mld": 22.3063,
+    "pct": 4.929,
+    "n_firms": 49583,
+    "n_concessioni": 352381
+  },
+  {
+    "nuts3": "ITF33 - Napoli",
+    "esl_mld": 18.2607,
+    "pct": 4.035,
+    "n_firms": 76482,
+    "n_concessioni": 684977
+  },
+  {
+    "nuts3": "ITC47 - Brescia",
+    "esl_mld": 13.1956,
+    "pct": 2.916,
+    "n_firms": 36062,
+    "n_concessioni": 289501
+  },
+  {
+    "nuts3": "ITI14 - Firenze",
+    "esl_mld": 11.5261,
+    "pct": 2.547,
+    "n_firms": 28468,
+    "n_concessioni": 206694
+  },
+  {
+    "nuts3": "N/D",
+    "esl_mld": 10.1564,
+    "pct": 2.244,
+    "n_firms": 88093,
+    "n_concessioni": 538848
+  },
+  {
+    "nuts3": "ITC46 - Bergamo",
+    "esl_mld": 9.1889,
+    "pct": 2.031,
+    "n_firms": 28235,
+    "n_concessioni": 229147
+  },
+  {
+    "nuts3": "ITF47 - Bari",
+    "esl_mld": 9.1697,
+    "pct": 2.026,
+    "n_firms": 33830,
+    "n_concessioni": 334382
+  },
+  {
+    "nuts3": "ITH35 - Venezia",
+    "esl_mld": 9.0293,
+    "pct": 1.995,
+    "n_firms": 21452,
+    "n_concessioni": 167904
+  },
+  {
+    "nuts3": "ITH55 - Bologna",
+    "esl_mld": 8.4237,
+    "pct": 1.862,
+    "n_firms": 29126,
+    "n_concessioni": 202077
+  },
+  {
+    "nuts3": "ITH36 - Padova",
+    "esl_mld": 8.3469,
+    "pct": 1.845,
+    "n_firms": 25952,
+    "n_concessioni": 200404
+  },
+  {
+    "nuts3": "ITH32 - Vicenza",
+    "esl_mld": 8.0847,
+    "pct": 1.787,
+    "n_firms": 23247,
+    "n_concessioni": 199097
+  },
+  {
+    "nuts3": "ITH31 - Verona",
+    "esl_mld": 7.7865,
+    "pct": 1.721,
+    "n_firms": 24511,
+    "n_concessioni": 184090
+  },
+  {
+    "nuts3": "ITF35 - Salerno",
+    "esl_mld": 7.6024,
+    "pct": 1.68,
+    "n_firms": 29321,
+    "n_concessioni": 277565
+  },
+  {
+    "nuts3": "ITC16 - Cuneo",
+    "esl_mld": 7.3328,
+    "pct": 1.62,
+    "n_firms": 12826,
+    "n_concessioni": 103130
+  },
+  {
+    "nuts3": "ITG17 - Catania",
+    "esl_mld": 7.2323,
+    "pct": 1.598,
+    "n_firms": 22509,
+    "n_concessioni": 210076
+  },
+  {
+    "nuts3": "ITC4D - Monza e della Brianza",
+    "esl_mld": 7.1623,
+    "pct": 1.583,
+    "n_firms": 21168,
+    "n_concessioni": 140956
+  },
+  {
+    "nuts3": "ITH34 - Treviso",
+    "esl_mld": 7.0021,
+    "pct": 1.547,
+    "n_firms": 22413,
+    "n_concessioni": 176100
+  },
+  {
+    "nuts3": "ITH54 - Modena",
+    "esl_mld": 6.1129,
+    "pct": 1.351,
+    "n_firms": 20862,
+    "n_concessioni": 145012
+  },
+  {
+    "nuts3": "ITC33 - Genova",
+    "esl_mld": 5.2919,
+    "pct": 1.169,
+    "n_firms": 17807,
+    "n_concessioni": 115249
+  },
+  {
+    "nuts3": "ITF31 - Caserta",
+    "esl_mld": 5.131,
+    "pct": 1.134,
+    "n_firms": 22699,
+    "n_concessioni": 190306
+  },
+  {
+    "nuts3": "ITH42 - Udine",
+    "esl_mld": 4.6434,
+    "pct": 1.026,
+    "n_firms": 11791,
+    "n_concessioni": 121925
+  },
+  {
+    "nuts3": "ITH20 - Trento",
+    "esl_mld": 4.5879,
+    "pct": 1.014,
+    "n_firms": 13829,
+    "n_concessioni": 124554
+  },
+  {
+    "nuts3": "ITG12 - Palermo",
+    "esl_mld": 4.5612,
+    "pct": 1.008,
+    "n_firms": 20710,
+    "n_concessioni": 199077
+  },
+  {
+    "nuts3": "ITC41 - Varese",
+    "esl_mld": 4.5575,
+    "pct": 1.007,
+    "n_firms": 19029,
+    "n_concessioni": 137087
+  },
+  {
+    "nuts3": "ITH52 - Parma",
+    "esl_mld": 4.5238,
+    "pct": 1.0,
+    "n_firms": 12277,
+    "n_concessioni": 86523
+  },
+  {
+    "nuts3": "ITC4B - Mantova",
+    "esl_mld": 4.3841,
+    "pct": 0.969,
+    "n_firms": 7821,
+    "n_concessioni": 61813
+  },
+  {
+    "nuts3": "ITI21 - Perugia",
+    "esl_mld": 4.2719,
+    "pct": 0.944,
+    "n_firms": 16085,
+    "n_concessioni": 117685
+  },
+  {
+    "nuts3": "ITH53 - Reggio nellâ€™Emilia",
+    "esl_mld": 4.0718,
+    "pct": 0.9,
+    "n_firms": 13140,
+    "n_concessioni": 94448
+  },
+  {
+    "nuts3": "ITH57 - Ravenna",
+    "esl_mld": 4.0648,
+    "pct": 0.898,
+    "n_firms": 9152,
+    "n_concessioni": 69128
+  },
+  {
+    "nuts3": "ITH10 - Bolzano-Bozen",
+    "esl_mld": 4.0311,
+    "pct": 0.891,
+    "n_firms": 16031,
+    "n_concessioni": 124636
+  },
+  {
+    "nuts3": "ITI32 - Ancona",
+    "esl_mld": 4.0102,
+    "pct": 0.886,
+    "n_firms": 10654,
+    "n_concessioni": 90441
+  },
+  {
+    "nuts3": "ITF45 - Lecce",
+    "esl_mld": 3.6088,
+    "pct": 0.797,
+    "n_firms": 17566,
+    "n_concessioni": 152658
+  },
+  {
+    "nuts3": "ITI17 - Pisa",
+    "esl_mld": 3.5137,
+    "pct": 0.776,
+    "n_firms": 11171,
+    "n_concessioni": 84778
+  },
+  {
+    "nuts3": "ITF63 - Catanzaro",
+    "esl_mld": 3.5032,
+    "pct": 0.774,
+    "n_firms": 6850,
+    "n_concessioni": 63613
+  },
+  {
+    "nuts3": "ITH44 - Trieste",
+    "esl_mld": 3.2642,
+    "pct": 0.721,
+    "n_firms": 4645,
+    "n_concessioni": 46432
+  },
+  {
+    "nuts3": "ITI12 - Lucca",
+    "esl_mld": 3.1983,
+    "pct": 0.707,
+    "n_firms": 10627,
+    "n_concessioni": 73623
+  },
+  {
+    "nuts3": "ITC42 - Como",
+    "esl_mld": 2.9762,
+    "pct": 0.658,
+    "n_firms": 13347,
+    "n_concessioni": 96405
+  },
+  {
+    "nuts3": "ITG2F - Cagliari",
+    "esl_mld": 2.9754,
+    "pct": 0.658,
+    "n_firms": 12691,
+    "n_concessioni": 123479
+  },
+  {
+    "nuts3": "ITH58 - ForlÃ¬-Cesena",
+    "esl_mld": 2.9237,
+    "pct": 0.646,
+    "n_firms": 9569,
+    "n_concessioni": 72619
+  },
+  {
+    "nuts3": "ITF46 - Foggia",
+    "esl_mld": 2.8132,
+    "pct": 0.622,
+    "n_firms": 12840,
+    "n_concessioni": 104250
+  },
+  {
+    "nuts3": "ITH41 - Pordenone",
+    "esl_mld": 2.771,
+    "pct": 0.612,
+    "n_firms": 6421,
+    "n_concessioni": 68622
+  },
+  {
+    "nuts3": "ITC18 - Alessandria",
+    "esl_mld": 2.6681,
+    "pct": 0.59,
+    "n_firms": 8570,
+    "n_concessioni": 61924
+  },
+  {
+    "nuts3": "ITF51 - Potenza",
+    "esl_mld": 2.6019,
+    "pct": 0.575,
+    "n_firms": 7912,
+    "n_concessioni": 76177
+  },
+  {
+    "nuts3": "ITI31 - Pesaro e Urbino",
+    "esl_mld": 2.5938,
+    "pct": 0.573,
+    "n_firms": 7798,
+    "n_concessioni": 66875
+  },
+  {
+    "nuts3": "ITI45 - Frosinone",
+    "esl_mld": 2.567,
+    "pct": 0.567,
+    "n_firms": 11475,
+    "n_concessioni": 72053
+  },
+  {
+    "nuts3": "ITF43 - Taranto",
+    "esl_mld": 2.5415,
+    "pct": 0.562,
+    "n_firms": 10875,
+    "n_concessioni": 93876
+  },
+  {
+    "nuts3": "ITF12 - Teramo",
+    "esl_mld": 2.537,
+    "pct": 0.561,
+    "n_firms": 9193,
+    "n_concessioni": 87941
+  },
+  {
+    "nuts3": "ITI33 - Macerata",
+    "esl_mld": 2.5197,
+    "pct": 0.557,
+    "n_firms": 9582,
+    "n_concessioni": 78578
+  },
+  {
+    "nuts3": "ITF34 - Avellino",
+    "esl_mld": 2.4921,
+    "pct": 0.551,
+    "n_firms": 10142,
+    "n_concessioni": 91650
+  },
+  {
+    "nuts3": "ITC49 - Lodi",
+    "esl_mld": 2.484,
+    "pct": 0.549,
+    "n_firms": 3783,
+    "n_concessioni": 25251
+  },
+  {
+    "nuts3": "ITG13 - Messina",
+    "esl_mld": 2.4483,
+    "pct": 0.541,
+    "n_firms": 12927,
+    "n_concessioni": 121471
+  },
+  {
+    "nuts3": "ITC48 - Pavia",
+    "esl_mld": 2.4371,
+    "pct": 0.539,
+    "n_firms": 9120,
+    "n_concessioni": 60963
+  },
+  {
+    "nuts3": "ITF14 - Chieti",
+    "esl_mld": 2.4016,
+    "pct": 0.531,
+    "n_firms": 9010,
+    "n_concessioni": 92996
+  },
+  {
+    "nuts3": "ITG2D - Sassari",
+    "esl_mld": 2.3618,
+    "pct": 0.522,
+    "n_firms": 12470,
+    "n_concessioni": 120165
+  },
+  {
+    "nuts3": "ITI16 - Livorno",
+    "esl_mld": 2.3304,
+    "pct": 0.515,
+    "n_firms": 7572,
+    "n_concessioni": 51768
+  },
+  {
+    "nuts3": "ITI44 - Latina",
+    "esl_mld": 2.2983,
+    "pct": 0.508,
+    "n_firms": 14261,
+    "n_concessioni": 85341
+  },
+  {
+    "nuts3": "ITI18 - Arezzo",
+    "esl_mld": 2.2915,
+    "pct": 0.506,
+    "n_firms": 9198,
+    "n_concessioni": 69438
+  },
+  {
+    "nuts3": "ITC4A - Cremona",
+    "esl_mld": 2.2571,
+    "pct": 0.499,
+    "n_firms": 6516,
+    "n_concessioni": 50817
+  },
+  {
+    "nuts3": "ITC43 - Lecco",
+    "esl_mld": 2.2563,
+    "pct": 0.499,
+    "n_firms": 7397,
+    "n_concessioni": 59546
+  },
+  {
+    "nuts3": "ITH51 - Piacenza",
+    "esl_mld": 2.2408,
+    "pct": 0.495,
+    "n_firms": 6662,
+    "n_concessioni": 47360
+  },
+  {
+    "nuts3": "ITI15 - Prato",
+    "esl_mld": 2.213,
+    "pct": 0.489,
+    "n_firms": 9364,
+    "n_concessioni": 60736
+  },
+  {
+    "nuts3": "ITF61 - Cosenza",
+    "esl_mld": 2.213,
+    "pct": 0.489,
+    "n_firms": 13551,
+    "n_concessioni": 115346
+  },
+  {
+    "nuts3": "ITC15 - Novara",
+    "esl_mld": 2.1607,
+    "pct": 0.477,
+    "n_firms": 7118,
+    "n_concessioni": 53189
+  },
+  {
+    "nuts3": "ITH59 - Rimini",
+    "esl_mld": 2.0588,
+    "pct": 0.455,
+    "n_firms": 10956,
+    "n_concessioni": 75692
+  },
+  {
+    "nuts3": "ITI22 - Terni",
+    "esl_mld": 1.8037,
+    "pct": 0.399,
+    "n_firms": 5215,
+    "n_concessioni": 33995
+  },
+  {
+    "nuts3": "ITG11 - Trapani",
+    "esl_mld": 1.801,
+    "pct": 0.398,
+    "n_firms": 8701,
+    "n_concessioni": 81584
+  },
+  {
+    "nuts3": "ITI19 - Siena",
+    "esl_mld": 1.6261,
+    "pct": 0.359,
+    "n_firms": 7296,
+    "n_concessioni": 54219
+  },
+  {
+    "nuts3": "ITG19 - Siracusa",
+    "esl_mld": 1.6174,
+    "pct": 0.357,
+    "n_firms": 8149,
+    "n_concessioni": 72514
+  },
+  {
+    "nuts3": "ITG18 - Ragusa",
+    "esl_mld": 1.6078,
+    "pct": 0.355,
+    "n_firms": 8388,
+    "n_concessioni": 83187
+  },
+  {
+    "nuts3": "ITI34 - Ascoli Piceno",
+    "esl_mld": 1.5876,
+    "pct": 0.351,
+    "n_firms": 6417,
+    "n_concessioni": 49359
+  },
+  {
+    "nuts3": "ITF11 - Lâ€™Aquila",
+    "esl_mld": 1.5735,
+    "pct": 0.348,
+    "n_firms": 7245,
+    "n_concessioni": 62708
+  },
+  {
+    "nuts3": "ITF13 - Pescara",
+    "esl_mld": 1.5651,
+    "pct": 0.346,
+    "n_firms": 9043,
+    "n_concessioni": 77412
+  },
+  {
+    "nuts3": "ITF32 - Benevento",
+    "esl_mld": 1.5063,
+    "pct": 0.333,
+    "n_firms": 8046,
+    "n_concessioni": 67256
+  },
+  {
+    "nuts3": "ITH56 - Ferrara",
+    "esl_mld": 1.4991,
+    "pct": 0.331,
+    "n_firms": 6711,
+    "n_concessioni": 46300
+  },
+  {
+    "nuts3": "ITF44 - Brindisi",
+    "esl_mld": 1.4543,
+    "pct": 0.321,
+    "n_firms": 7434,
+    "n_concessioni": 61889
+  },
+  {
+    "nuts3": "ITC20 - Valle D'Aosta",
+    "esl_mld": 1.4418,
+    "pct": 0.319,
+    "n_firms": 3183,
+    "n_concessioni": 35812
+  },
+  {
+    "nuts3": "ITI13 - Pistoia",
+    "esl_mld": 1.4266,
+    "pct": 0.315,
+    "n_firms": 7381,
+    "n_concessioni": 50239
+  },
+  {
+    "nuts3": "ITF52 - Matera",
+    "esl_mld": 1.3323,
+    "pct": 0.294,
+    "n_firms": 4230,
+    "n_concessioni": 46534
+  },
+  {
+    "nuts3": "ITG2E - Nuoro",
+    "esl_mld": 1.3189,
+    "pct": 0.291,
+    "n_firms": 6429,
+    "n_concessioni": 62613
+  },
+  {
+    "nuts3": "ITG14 - Agrigento",
+    "esl_mld": 1.2456,
+    "pct": 0.275,
+    "n_firms": 7061,
+    "n_concessioni": 65779
+  },
+  {
+    "nuts3": "ITH37 - Rovigo",
+    "esl_mld": 1.2109,
+    "pct": 0.268,
+    "n_firms": 4940,
+    "n_concessioni": 33935
+  },
+  {
+    "nuts3": "ITI11 - Massa-Carrara",
+    "esl_mld": 1.1763,
+    "pct": 0.26,
+    "n_firms": 5151,
+    "n_concessioni": 34531
+  },
+  {
+    "nuts3": "ITC44 - Sondrio",
+    "esl_mld": 1.1729,
+    "pct": 0.259,
+    "n_firms": 4062,
+    "n_concessioni": 36680
+  },
+  {
+    "nuts3": "ITF65 - Reggio Calabria",
+    "esl_mld": 1.1477,
+    "pct": 0.254,
+    "n_firms": 7358,
+    "n_concessioni": 61725
+  },
+  {
+    "nuts3": "ITH33 - Belluno",
+    "esl_mld": 1.112,
+    "pct": 0.246,
+    "n_firms": 3898,
+    "n_concessioni": 34725
+  },
+  {
+    "nuts3": "ITI1A - Grosseto",
+    "esl_mld": 1.0964,
+    "pct": 0.242,
+    "n_firms": 5535,
+    "n_concessioni": 34693
+  },
+  {
+    "nuts3": "ITC34 - La Spezia",
+    "esl_mld": 1.0692,
+    "pct": 0.236,
+    "n_firms": 5164,
+    "n_concessioni": 34043
+  },
+  {
+    "nuts3": "ITF22 - Campobasso",
+    "esl_mld": 1.051,
+    "pct": 0.232,
+    "n_firms": 4931,
+    "n_concessioni": 44500
+  },
+  {
+    "nuts3": "ITC17 - Asti",
+    "esl_mld": 1.0452,
+    "pct": 0.231,
+    "n_firms": 3784,
+    "n_concessioni": 27331
+  },
+  {
+    "nuts3": "ITC32 - Savona",
+    "esl_mld": 1.0352,
+    "pct": 0.229,
+    "n_firms": 5460,
+    "n_concessioni": 37131
+  },
+  {
+    "nuts3": "ITI35 - Fermo",
+    "esl_mld": 1.0088,
+    "pct": 0.223,
+    "n_firms": 4786,
+    "n_concessioni": 43348
+  },
+  {
+    "nuts3": "ITI41 - Viterbo",
+    "esl_mld": 0.9501,
+    "pct": 0.21,
+    "n_firms": 6660,
+    "n_concessioni": 38108
+  },
+  {
+    "nuts3": "ITH43 - Gorizia",
+    "esl_mld": 0.9477,
+    "pct": 0.209,
+    "n_firms": 2540,
+    "n_concessioni": 26084
+  },
+  {
+    "nuts3": "ITC13 - Biella",
+    "esl_mld": 0.9374,
+    "pct": 0.207,
+    "n_firms": 3309,
+    "n_concessioni": 26177
+  },
+  {
+    "nuts3": "ITG15 - Caltanissetta",
+    "esl_mld": 0.8907,
+    "pct": 0.197,
+    "n_firms": 4764,
+    "n_concessioni": 44197
+  },
+  {
+    "nuts3": "ITC14 - Verbano-Cusio-Ossola",
+    "esl_mld": 0.8298,
+    "pct": 0.183,
+    "n_firms": 2730,
+    "n_concessioni": 22405
+  },
+  {
+    "nuts3": "ITC12 - Vercelli",
+    "esl_mld": 0.6533,
+    "pct": 0.144,
+    "n_firms": 2649,
+    "n_concessioni": 19966
+  },
+  {
+    "nuts3": "ITF48 - Barletta-Andria-Trani",
+    "esl_mld": 0.6383,
+    "pct": 0.141,
+    "n_firms": 705,
+    "n_concessioni": 11035
+  },
+  {
+    "nuts3": "ITG2G - Oristano",
+    "esl_mld": 0.6124,
+    "pct": 0.135,
+    "n_firms": 2326,
+    "n_concessioni": 23273
+  },
+  {
+    "nuts3": "ITF62 - Crotone",
+    "esl_mld": 0.5765,
+    "pct": 0.127,
+    "n_firms": 2927,
+    "n_concessioni": 25608
+  },
+  {
+    "nuts3": "ITC31 - Imperia",
+    "esl_mld": 0.5325,
+    "pct": 0.118,
+    "n_firms": 3867,
+    "n_concessioni": 24334
+  },
+  {
+    "nuts3": "ITG16 - Enna",
+    "esl_mld": 0.4606,
+    "pct": 0.102,
+    "n_firms": 2164,
+    "n_concessioni": 20702
+  },
+  {
+    "nuts3": "ITI42 - Rieti",
+    "esl_mld": 0.4369,
+    "pct": 0.097,
+    "n_firms": 3175,
+    "n_concessioni": 17117
+  },
+  {
+    "nuts3": "ITF64 - Vibo Valentia",
+    "esl_mld": 0.4136,
+    "pct": 0.091,
+    "n_firms": 2358,
+    "n_concessioni": 21349
+  },
+  {
+    "nuts3": "ITF21 - Isernia",
+    "esl_mld": 0.4004,
+    "pct": 0.088,
+    "n_firms": 2143,
+    "n_concessioni": 18702
+  }
+]
