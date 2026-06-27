@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import json, pathlib
 ROOT = pathlib.Path("/Users/salvatorefinizio/Library/CloudStorage/OneDrive-LondonSchoolofEconomics/aiuti_stato")
-data = json.loads((ROOT/"data/innovation.json").read_text())
-geo  = json.loads((ROOT/"data/nuts3_paths.json").read_text())
+data = json.loads((ROOT/"data/generated/innovation.json").read_text())
+geo  = json.loads((ROOT/"data/generated/nuts3_paths.json").read_text())
 m = data["meta"]
 byyear = data.get("by_year")  # optional {year: n_families}
 

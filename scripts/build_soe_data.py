@@ -10,7 +10,7 @@ import json, csv, collections, pathlib
 ROOT = pathlib.Path("/Users/salvatorefinizio/Library/CloudStorage/OneDrive-LondonSchoolofEconomics/aiuti_stato")
 
 # 1. SOE bvdid -> (label, branch, esl) from the explorer graph × firms_bvdid
-g = json.loads((ROOT/"data/soe_graph.json").read_text())
+g = json.loads((ROOT/"data/generated/soe_graph.json").read_text())
 soe_cf = {str(n['cf']).strip(): (n.get('label') or n['id'], n.get('branch') or n['id'], n.get('esl') or 0.0)
           for n in g['nodes'] if n.get('cf')}
 csv.field_size_limit(10**7)
@@ -79,9 +79,9 @@ techs = [{"cpc": sc, "lab": LAB.get(sc, sc), "n": len(f)}
          for sc, f in sorted(sub.items(), key=lambda kv: -len(kv[1]))[:14]]
 
 # 5. write into the innovation datamart
-d = json.loads((ROOT/"data/innovation.json").read_text())
+d = json.loads((ROOT/"data/generated/innovation.json").read_text())
 d["soe"] = {"meta": {"n_entities": len(ent), "n_families": sum(e["fam"] for e in ent)},
             "entities": ent, "by_year": by_year, "techs": techs}
-(ROOT/"data/innovation.json").write_text(json.dumps(d, ensure_ascii=False, separators=(',', ':')))
+(ROOT/"data/generated/innovation.json").write_text(json.dumps(d, ensure_ascii=False, separators=(',', ':')))
 print(f"soe: {len(ent)} entities, {d['soe']['meta']['n_families']} families, "
       f"{len(by_year)} years, {len(techs)} tech classes")

@@ -6,8 +6,8 @@ ROOT = pathlib.Path("/Users/salvatorefinizio/Library/CloudStorage/OneDrive-Londo
 src = (ROOT / "site/dashboard.html").read_text(encoding="utf-8")
 
 # ── NUTS3 province map: geometry + data → injectable block ─────────────
-geo = json.loads((ROOT/"data/nuts3_paths.json").read_text())
-by3 = json.loads((ROOT/"data/by_nuts3.json").read_text())
+geo = json.loads((ROOT/"data/generated/nuts3_paths.json").read_text())
+by3 = json.loads((ROOT/"data/generated/by_nuts3.json").read_text())
 D_NUTS3 = {}
 for r in by3:
     code = r["nuts3"].split(" - ")[0].strip()
