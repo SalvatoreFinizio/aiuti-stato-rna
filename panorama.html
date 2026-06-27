@@ -72,7 +72,7 @@
       <div class="kpi">
         <div class="kpi-label">Quota pubblica · top 20</div>
         <div class="kpi-val" id="kpi-pub">—</div>
-        <div class="kpi-sub">dell'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> va a società statali</div>
+        <div class="kpi-sub">dell'<abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> totale va alle statali tra i primi 20</div>
       </div>
       <div class="kpi">
         <div class="kpi-label">Statali nei primi 20</div>
@@ -207,9 +207,9 @@ const D_BENE = {
 };
 const PUBLIC_IDX = new Set([0,2,3,6,11,12,13,17,19]);
 (function(){
-  const tot = D_BENE.vals.reduce((a,b)=>a+b,0);
+  const TOT_ESL = 509.728;   // ESL totale (mld €) — denominatore sul totale, non sul solo top 20
   let pub = 0; PUBLIC_IDX.forEach(i => pub += D_BENE.vals[i]);
-  document.getElementById('kpi-pub').textContent = (pub/tot*100).toFixed(0) + ' %';
+  document.getElementById('kpi-pub').textContent = (pub/TOT_ESL*100).toFixed(1).replace('.',',') + ' %';
   document.getElementById('kpi-cnt').textContent = PUBLIC_IDX.size + ' / 20';
 })();
 new Chart(document.getElementById('beneficiariChart'), {
