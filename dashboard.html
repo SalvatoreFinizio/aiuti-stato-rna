@@ -1585,6 +1585,7 @@ horizBar('soeBeneChart',
   c => { const b = soeTop[c.dataIndex]; return `€ ${b.esl_mld.toFixed(3)} mld · ${b.regione} · ${b.via}`; },
   idx => drillSOE(soeTop[idx]));
 
+const D_SOE_FIRM_INSTR = {"Open Fiber":{"2022":{"Sovvenzione":1.8285,"Credito d'imposta":0.0001},"2018":{"Garanzia":0.0},"2019":{"Sovvenzione":0.1032},"2017":{"Sovvenzione":1.4819},"2023":{"Credito d'imposta":0.0},"2024":{"Credito d'imposta":0.0001},"2025":{"Credito d'imposta":0.0004,"Sovvenzione":0.5692}},"Poste Italiane":{"2022":{"Credito d'imposta":0.0001,"Sovvenzione":0.5606},"2023":{"Credito d'imposta":0.0,"Sovvenzione":0.0038},"2021":{"Credito d'imposta":0.0001,"Sovvenzione":0.0239},"2020":{"Sovvenzione":0.0107},"2018":{"Sovvenzione":0.0115},"2019":{"Credito d'imposta":0.0,"Sovvenzione":0.0007,"Prestito":0.0},"2024":{"Credito d'imposta":0.0,"Sovvenzione":0.0294},"2025":{"Sovvenzione":0.0019,"Credito d'imposta":0.0004}},"Acciaierie d'Italia":{"2022":{"Sovvenzione":0.0163,"Credito d'imposta":0.0238,"Prestito":0.03,"Garanzia":0.25},"2023":{"Sovvenzione":0.0938,"Credito d'imposta":0.0152},"2021":{"Garanzia":0.3},"2024":{"Credito d'imposta":0.0004,"Sovvenzione":0.0006},"2025":{"Credito d'imposta":0.0539,"Sovvenzione":0.0471}},"STMicroelectronics":{"2022":{"Sovvenzione":0.0222,"Credito d'imposta":0.0161,"Prestito":0.0},"2021":{"Sovvenzione":0.0026,"Credito d'imposta":0.0191},"2020":{"Prestito":0.0,"Sovvenzione":0.0057,"Credito d'imposta":0.0038},"2019":{"Credito d'imposta":0.0017,"Sovvenzione":0.0109,"Prestito":0.0},"2018":{"Sovvenzione":0.0476,"Credito d'imposta":0.0038},"2017":{"Prestito":0.0002,"Sovvenzione":0.0083,"Credito d'imposta":0.0034},"2016":{"Sovvenzione":0.0001},"2023":{"Sovvenzione":0.296,"Credito d'imposta":0.0},"2024":{"Sovvenzione":0.0007,"Credito d'imposta":0.0262},"2025":{"Credito d'imposta":0.0574,"Sovvenzione":2.0705}},"Snam":{"2022":{"Sovvenzione":0.0013},"2017":{"Sovvenzione":0.0001},"2023":{"Sovvenzione":0.0},"2024":{"Garanzia":1.8,"Sovvenzione":0.01}},"Fincantieri":{"2022":{"Sovvenzione":0.0059,"Credito d'imposta":0.0001},"2023":{"Credito d'imposta":0.0001,"Garanzia":0.8},"2021":{"Credito d'imposta":0.0,"Garanzia":1.15,"Prestito":0.0,"Sovvenzione":0.003},"2019":{"Sovvenzione":0.0046,"Prestito":0.0},"2018":{"Sovvenzione":0.0041,"Prestito":0.0001},"2017":{"Sovvenzione":0.0004},"2016":{"Sovvenzione":0.0015,"Prestito":0.0005},"2024":{"Sovvenzione":0.0071,"Prestito":0.0004},"2025":{"Sovvenzione":0.0024}},"ENEL":{"2022":{"Credito d'imposta":0.0},"2023":{"Garanzia":12.0},"2025":{"Credito d'imposta":0.0004}},"Saipem":{"2022":{"Credito d'imposta":0.0,"Garanzia":0.8516},"2023":{"Garanzia":0.3874},"2024":{"Credito d'imposta":0.0002},"2025":{"Credito d'imposta":0.001}}};
 // SOE drill-down: click a top bar → year-by-year ESL for that firm (top-8 have year data)
 function drillSOE(b) {
   const fy = D_SOE_DIMS.firm;
@@ -1596,16 +1597,26 @@ function drillSOE(b) {
   if (j < 0) {
     panel.innerHTML = head + `<p class="note" style="margin:2px 0 0;">Ripartizione annuale disponibile solo per le prime 8 partecipate per <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr>. Questa impresa riceve € ${b.esl_mld.toFixed(3)} mld in ${b.n.toLocaleString('it-IT')} concessioni (regione: ${b.regione}, ATECO ${b.ateco}).</p>`;
   } else {
-    const key = fy.firms[j], ys = fy.years;
-    panel.innerHTML = head + `<div class="card-sub" style="margin-bottom:8px;"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> per anno di concessione · mld €</div><div class="chart-h" style="height:200px;"><canvas id="drillCanvas"></canvas></div>`;
+    const ys = fy.years, fi = (typeof D_SOE_FIRM_INSTR !== 'undefined' && D_SOE_FIRM_INSTR[fy.firms_clean[j]]) || {};
+    const FB = [
+      { label: 'Garanzia',          color: 'rgba(31,86,115,.82)' },
+      { label: 'Sovvenzione',       color: 'rgba(78,138,107,.80)' },
+      { label: "Credito d'imposta", color: 'rgba(127,151,166,.78)' },
+      { label: 'Finanz. rischio',   color: 'rgba(192,98,46,.72)' },
+      { label: 'Prestito',          color: 'rgba(150,144,134,.70)' }
+    ].filter(spec => ys.some(y => fi[y] && fi[y][spec.label]));
+    panel.innerHTML = head + `<div class="card-sub" style="margin-bottom:8px;"><abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> per anno e <strong>strumento</strong> · mld €</div><div class="chart-h" style="height:230px;"><canvas id="drillCanvas"></canvas></div>`;
     if (window._drill) window._drill.destroy();
     window._drill = new Chart(document.getElementById('drillCanvas'), {
       type: 'bar',
-      data: { labels: ys.map(y => y === '2026' ? "'26*" : y), datasets: [{ data: ys.map(y => fy.by_year[y][key] || 0), backgroundColor: 'rgba(31,86,115,.78)', borderRadius: 3 }] },
+      data: { labels: ys, datasets: FB.map(spec => ({
+        label: spec.label, data: ys.map(y => (fi[y] && fi[y][spec.label]) || 0),
+        backgroundColor: spec.color, borderRadius: 2, stack: 'fi' })) },
       options: { responsive: true, maintainAspectRatio: false, animation: { duration: 450 },
-        plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `€ ${c.parsed.y.toFixed(3)} mld` } } },
-        scales: { x: { grid: { color: GRID }, ticks: { color: '#9A938A', font: { size: 10 } }, border: { display: false } },
-          y: { grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => `€${v}` }, border: { display: false } } } }
+        plugins: { legend: { display: true, labels: { color: '#56524C', font: { size: 9 }, boxWidth: 9, boxHeight: 9, padding: 7 } },
+          tooltip: { callbacks: { label: c => `${c.dataset.label}: € ${c.parsed.y.toFixed(3)} mld` } } },
+        scales: { x: { stacked: true, grid: { color: GRID }, ticks: { color: '#9A938A', font: { size: 10 } }, border: { display: false } },
+          y: { stacked: true, grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => `€${v}` }, border: { display: false } } } }
     });
   }
   panel.classList.add('show');
