@@ -1,0 +1,17 @@
+# dependencies / OS
+node_modules/
+.observablehq/
+.DS_Store
+*.log
+
+# large data inputs & raw dumps (kept locally, not versioned)
+data/*.csv
+data/data_rna/
+data/nuts_sectors/
+data/*.geojson
+
+# legacy Observable build sources
+src/
+figs/
+observablehq.config.js
+package-lock.json
