@@ -24,6 +24,36 @@ if byyear:
     <p class="note" style="max-width:900px;">Il deposito dei brevetti precede in gran parte il periodo degli aiuti registrati nell'RNA: misura la <em>propensione a innovare</em> delle imprese aiutate, non un effetto causale dell'aiuto. <strong>Il calo dopo il 2021</strong> riflette il ritardo di pubblicazione dei brevetti (le domande più recenti non sono ancora tutte nei dati PATSTAT), non una flessione reale.</p>
   </section>'''
 
+# ── ⑥ Imprese di Stato (SOE patents) — rendered if data["soe"] present ──
+soe = data.get("soe")
+SOE_SECTION = ""; SOE_DATA = "null"; SOE_NAV = ""
+if soe:
+    SOE_DATA = json.dumps(soe, ensure_ascii=False, separators=(",", ":"))
+    SOE_NAV = '<a href="#iv-soe">⑥ Imprese di Stato</a>'
+    nf = f"{soe['meta']['n_families']:,}".replace(",", "."); ne = soe['meta']['n_entities']
+    trends_card = ('''
+    <div class="card" style="margin-top:12px;">
+      <div class="card-title">I brevetti delle imprese di Stato nel tempo</div>
+      <div class="card-sub">Famiglie brevettuali per anno di primo deposito · fonte PATSTAT TLS201</div>
+      <div class="chart-h" style="height:300px;"><canvas id="ivSoeTimeChart"></canvas></div>
+    </div>''' if soe.get("by_year") else "")
+    tech_card = ('''
+    <div class="card" style="margin-top:12px;">
+      <div class="card-title">Le tecnologie delle imprese di Stato</div>
+      <div class="card-sub">Sottoclassi tecnologiche (<abbr title="Cooperative Patent Classification">CPC</abbr>) più frequenti nei brevetti delle prime imprese di Stato · fonte PATSTAT TLS224</div>
+      <div class="chart-h" style="height:430px;"><canvas id="ivSoeTechChart"></canvas></div>
+    </div>''' if soe.get("techs") else "")
+    SOE_SECTION = ('''
+  <section id="iv-soe">
+    <div class="sec-hd"><h2>⑥ I brevetti delle imprese di Stato</h2><span class="sec-note">società a controllo pubblico · ''' + nf + ''' famiglie</span></div>
+    <p class="note" style="margin:0 0 16px;max-width:880px;">L'innovazione pubblica è <strong>concentratissima</strong>: tra i beneficiari a controllo statale solo <strong>''' + str(ne) + ''' imprese</strong> detengono brevetti, e una sola — <strong>STMicroelectronics</strong> (microelettronica, partecipata MEF) — vale circa l'80% delle famiglie. Seguono i campioni industriali strategici: Leonardo (difesa e spazio), Versalis/ENI (chimica), Ansaldo Energia (turbine), Enel, Fincantieri.</p>
+    <div class="card">
+      <div class="card-title">I maggiori detentori di brevetti tra le imprese di Stato</div>
+      <div class="card-sub">Famiglie brevettuali · imprese a controllo pubblico con almeno 2 brevetti</div>
+      <div class="chart-h" style="height:420px;"><canvas id="ivSoeFirmChart"></canvas></div>
+    </div>''' + trends_card + tech_card + '''
+  </section>''')
+
 TPL = r'''<!DOCTYPE html>
 <html lang="it">
 <head>
@@ -74,7 +104,7 @@ TPL = r'''<!DOCTYPE html>
     </p>
     <p class="src">~124.800 famiglie brevettuali collegate ai beneficiari <abbr title="Registro Nazionale Aiuti">RNA</abbr> · aiuto = <abbr title="Equivalente Sovvenzione Lorda">ESL</abbr> agganciato all'universo Orbis (88,8%)</p>
     <nav class="subnav-links" style="margin-left:0;margin-top:18px;gap:6px;" aria-label="Sezioni">
-      <a href="#iv-quanto">① Quanto</a><a href="#iv-chi">② Chi</a><a href="#iv-settori">③ Settori</a><a href="#iv-mappa">④ Dove</a>%%TIMENAV%%
+      <a href="#iv-quanto">① Quanto</a><a href="#iv-chi">② Chi</a><a href="#iv-settori">③ Settori</a><a href="#iv-mappa">④ Dove</a>%%TIMENAV%%%%SOENAV%%
     </nav>
   </div>
 
@@ -141,6 +171,7 @@ TPL = r'''<!DOCTYPE html>
     <div class="map-tooltip" id="iv-tip" role="tooltip" aria-live="polite"></div>
   </section>
 %%TIMESECTION%%
+%%SOESECTION%%
 </div>
 </main>
 
@@ -157,7 +188,7 @@ Chart.defaults.plugins.tooltip.backgroundColor='#FBFAF6'; Chart.defaults.plugins
 Chart.defaults.plugins.tooltip.borderWidth=1; Chart.defaults.plugins.tooltip.padding=10; Chart.defaults.plugins.tooltip.cornerRadius=4;
 Chart.defaults.plugins.tooltip.titleColor='#1A1A17'; Chart.defaults.plugins.tooltip.bodyColor='#56524C';
 var GRID='rgba(205,199,188,.7)';
-var TOP=%%TOPFIRMS%%, SECT=%%SECTORS%%, NUTS=%%NUTS%%, GEOM=%%GEOM%%, BYYEAR=%%TIMEDATA%%;
+var TOP=%%TOPFIRMS%%, SECT=%%SECTORS%%, NUTS=%%NUTS%%, GEOM=%%GEOM%%, BYYEAR=%%TIMEDATA%%, SOE=%%SOE%%;
 
 /* ② top firms */
 (function(){
@@ -247,6 +278,43 @@ if(BYYEAR){(function(){
       scales:{x:{grid:{display:false},ticks:{color:'#56524C',font:{size:9},maxRotation:0,autoSkip:true,maxTicksLimit:12},border:{display:false}},
         y:{grid:{color:GRID},ticks:{color:'#9A938A'},border:{display:false}}}}});
 })();}
+
+/* ⑥ imprese di Stato */
+if(SOE){
+  (function(){
+    var E=SOE.entities.filter(function(e){return e.fam>=2;});
+    new Chart(document.getElementById('ivSoeFirmChart'),{type:'bar',
+      data:{labels:E.map(function(e){return e.nm;}),datasets:[{data:E.map(function(e){return e.fam;}),
+        backgroundColor:E.map(function(e,i){return i===0?'rgba(31,86,115,.88)':'rgba(78,138,107,.82)';}),borderRadius:2,borderSkipped:false}]},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,animation:{duration:700},
+        plugins:{legend:{display:false},tooltip:{callbacks:{
+          label:function(c){return c.parsed.x.toLocaleString('it-IT')+' famiglie brevettuali';},
+          afterLabel:function(c){var e=E[c.dataIndex];return 'Gruppo: '+e.grp+' · aiuti € '+e.esl.toLocaleString('it-IT')+' mld';}}}},
+        scales:{x:{grid:{color:GRID},ticks:{color:'#9A938A'},border:{display:false}},
+          y:{grid:{display:false},ticks:{color:'#56524C',font:{size:10.5}},border:{display:false}}}}});
+  })();
+  if(SOE.by_year){(function(){
+    var el=document.getElementById('ivSoeTimeChart'); if(!el) return;
+    var ys=Object.keys(SOE.by_year).map(Number).filter(function(y){return y>=1990&&y<=2024;}).sort(function(a,b){return a-b;});
+    new Chart(el,{type:'bar',data:{labels:ys,datasets:[{data:ys.map(function(y){return SOE.by_year[y];}),backgroundColor:'rgba(31,86,115,.8)',borderRadius:1}]},
+      options:{responsive:true,maintainAspectRatio:false,animation:{duration:600},
+        plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.y.toLocaleString('it-IT')+' famiglie';}}}},
+        scales:{x:{grid:{display:false},ticks:{color:'#56524C',font:{size:9},maxRotation:0,autoSkip:true,maxTicksLimit:12},border:{display:false}},
+          y:{grid:{color:GRID},ticks:{color:'#9A938A'},border:{display:false}}}}});
+  })();}
+  if(SOE.techs){(function(){
+    var el=document.getElementById('ivSoeTechChart'); if(!el) return;
+    var T=SOE.techs;
+    new Chart(el,{type:'bar',data:{labels:T.map(function(t){return t.lab;}),datasets:[{data:T.map(function(t){return t.n;}),
+      backgroundColor:'rgba(127,151,166,.85)',borderRadius:2,borderSkipped:false}]},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,animation:{duration:700},
+        plugins:{legend:{display:false},tooltip:{callbacks:{
+          title:function(i){return T[i[0].dataIndex].lab;},
+          label:function(c){return c.parsed.x.toLocaleString('it-IT')+' famiglie · CPC '+T[c.dataIndex].cpc;}}}},
+        scales:{x:{grid:{color:GRID},ticks:{color:'#9A938A'},border:{display:false}},
+          y:{grid:{display:false},ticks:{color:'#56524C',font:{size:10}},border:{display:false}}}}});
+  })();}
+}
 </script>
 </body>
 </html>
@@ -265,7 +333,10 @@ sect_h = len(sel) * 26 + 120
 html = (TPL
   .replace("%%SECTH%%", str(sect_h))
   .replace("%%TIMESECTION%%", TIME_SECTION)
+  .replace("%%SOESECTION%%", SOE_SECTION)
   .replace("%%TIMENAV%%", '<a href="#iv-time">⑤ Tempo</a>' if byyear else "")
+  .replace("%%SOENAV%%", SOE_NAV)
+  .replace("%%SOE%%", SOE_DATA)
   .replace("%%TIMEDATA%%", TIME_DATA)
   .replace("%%PCTFIRMS%%", "1,6")
   .replace("%%NPAT%%", f"{m['n_pat_firms']:,}".replace(",", "."))
