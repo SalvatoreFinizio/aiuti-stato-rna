@@ -192,7 +192,7 @@ PAGES = [
              "(<abbr title=\"General Block Exemption Regulation\">GBER</abbr>), quadri temporanei di crisi, "
              "de minimis — ed erogato con uno strumento (garanzia, sovvenzione, credito d'imposta). "
              "Qui il peso di ciascun regime e strumento e come è cambiato nel tempo."),
-       src="<abbr title=\"Equivalente Sovvenzione Lorda\">ESL</abbr> per base giuridica e strumento · 2016–2026"),
+       src="<abbr title=\"Equivalente Sovvenzione Lorda\">ESL</abbr> per base giuridica e strumento · 2016–2025"),
   dict(file="green-digitale.html", active="green",
        show="main section:has(#s-green),main section:has(#s-digitale)",
        badge="GREEN &amp; DIGITALE",
@@ -200,7 +200,7 @@ PAGES = [
        deck=("Quanto degli aiuti di Stato sostiene la transizione ecologica "
              "(€ 67,8 mld, 13,3%) e quella digitale (€ 30,7 mld, 6,0%), chi ne beneficia "
              "e come si distribuisce nel tempo."),
-       src="Definizione larga green/energia e digitale · <abbr title=\"Equivalente Sovvenzione Lorda\">ESL</abbr> 2016–2026"),
+       src="Definizione larga green/energia e digitale · <abbr title=\"Equivalente Sovvenzione Lorda\">ESL</abbr> 2016–2025"),
 ]
 
 A_STYLE = "  <style>\n    /* ── tokens"
