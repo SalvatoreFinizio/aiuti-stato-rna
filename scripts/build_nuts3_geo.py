@@ -64,8 +64,8 @@ for f in feats:
     paths[code]=" ".join(d)
 
 out={"w":round(W),"h":round(H),"paths":paths}
-(SC/"nuts3_paths.json").write_text(json.dumps(out,separators=(",",":")))
-sz=(SC/"nuts3_paths.json").stat().st_size
+(SC/"generated"/"nuts3_paths.json").write_text(json.dumps(out,separators=(",",":")))
+sz=(SC/"generated"/"nuts3_paths.json").stat().st_size
 empties=[c for c,p in paths.items() if not p]
 print(f"provinces: {len(paths)}  points {nb} -> {na} ({na/nb*100:.0f}%)  file: {sz//1024} KB")
 print(f"viewBox: {round(W)} x {round(H)}   empty: {empties}")

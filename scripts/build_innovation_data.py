@@ -96,7 +96,7 @@ out={"meta":{"tot_esl_mld":round(tot_esl/1e9,1),"pat_esl_mld":round(pat_esl/1e9,
              "n_firms":len(F),"fam_links":fam_links},
      "top_firms":top_firms,"sectors":sectors,"nuts3":nuts3}
 # preserve a previously-merged filing-year series, if present
-prev = ROOT/'data/innovation.json'
+prev = ROOT/'data/generated/innovation.json'
 if prev.exists():
     old = json.loads(prev.read_text())
     if old.get("by_year"): out["by_year"] = old["by_year"]
