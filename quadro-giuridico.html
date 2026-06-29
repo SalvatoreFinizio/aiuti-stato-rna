@@ -1567,7 +1567,7 @@ const INSTR_KEYS = [
   {k:'RISK_FINANCE', label:'Finanz. rischio',    color:'rgba(192,98,46,.7)'},
   {k:'LOAN',         label:'Prestito',           color:'rgba(150,144,134,.7)'},
 ];
-const GDP = {"2017":1744.5,"2018":1777.7,"2019":1804.1,"2020":1670.0,"2021":1842.5,"2022":1998.1,"2023":2142.7,"2024":2202.0,"2025":2258.0};
+const GDP = {"2016":1704.9,"2017":1744.5,"2018":1777.7,"2019":1804.1,"2020":1670.0,"2021":1842.5,"2022":1998.1,"2023":2142.7,"2024":2202.0,"2025":2258.0};
 new Chart(document.getElementById('instrEvolChart'), {
   type: 'bar',
   data: {
@@ -1684,24 +1684,28 @@ new Chart(document.getElementById('soeTramChart'), {
 });
 
 // shared stacked-bar builder over years
-function soeStack(canvasId, years, segs, getVal, pct) {
+function soeStack(canvasId, years, segs, getVal, pct, gdpPct) {
   return new Chart(document.getElementById(canvasId), {
     type: 'bar',
     data: { labels: years.map(y => y === '2026' ? "'26*" : y),
-      datasets: segs.map(s => ({ label: s.label, data: years.map(y => getVal(y, s)), backgroundColor: s.color, borderRadius: 2, stack: 's' })) },
+      datasets: segs.map(s => ({ label: s.label, data: years.map(y => getVal(y, s)), backgroundColor: s.color, borderRadius: 2, stack: 's', yAxisID: 'y' }))
+        .concat(gdpPct ? [{ type: 'line', label: '% del PIL', yAxisID: 'y1', order: -1,
+          data: years.map(y => { const t = segs.reduce((a, s) => a + (getVal(y, s) || 0), 0); return GDP[y] ? +(t / GDP[y] * 100).toFixed(3) : null; }),
+          borderColor: '#1A1A17', borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#1A1A17', fill: false, tension: 0.25 }] : []) },
     options: { responsive: true, maintainAspectRatio: false, animation: { duration: 600 },
       plugins: { legend: { labels: { color: '#56524C', font: { size: 10 }, padding: 9, boxWidth: 10, boxHeight: 10 } },
-        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${pct ? c.parsed.y.toFixed(1)+' %' : '€ '+c.parsed.y.toFixed(2)+' mld'}`,
-          footer: pct ? undefined : items => `Totale: € ${items.reduce((s,i)=>s+i.parsed.y,0).toFixed(2)} mld` } } },
+        tooltip: { callbacks: { label: c => c.dataset.label === '% del PIL' ? `${c.dataset.label}: ${c.parsed.y.toFixed(2)} %` : `${c.dataset.label}: ${pct ? c.parsed.y.toFixed(1)+' %' : '€ '+c.parsed.y.toFixed(2)+' mld'}`,
+          footer: pct ? undefined : items => `Totale: € ${items.filter(i => i.dataset.label !== '% del PIL').reduce((s,i)=>s+i.parsed.y,0).toFixed(2)} mld` } } },
       scales: { x: { stacked: true, grid: { color: GRID }, ticks: { color: '#9A938A', font: { size: 10 } }, border: { display: false } },
-        y: { stacked: true, max: pct ? 100 : undefined, grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => pct ? v+'%' : `€${v}` }, border: { display: false }, title: { display: !pct, text: 'mld €', color: '#9A938A', font: { size: 10 } } } } }
+        y: { stacked: true, max: pct ? 100 : undefined, grid: { color: GRID }, ticks: { color: '#9A938A', callback: v => pct ? v+'%' : `€${v}` }, border: { display: false }, title: { display: !pct, text: 'mld €', color: '#9A938A', font: { size: 10 } } },
+        ...(gdpPct ? { y1: { position: 'right', grid: { display: false }, ticks: { color: '#4E8A6B', callback: v => v + '%' }, border: { display: false }, title: { display: true, text: '% del PIL', color: '#4E8A6B', font: { size: 10 } } } } : {}) } }
   });
 }
 
 // 19c. Evoluzione per catena di controllo (assoluto)
 const SOE_Y = D_SOE_YEAR.years;
 const segTram = SOE_BUCKETS.map(b => ({label:b.label, color:b.color, key:b.key}));
-soeStack('soeEvolChart', SOE_Y, segTram, (y,s) => D_SOE_YEAR.by_year[y][s.key] || 0, false);
+soeStack('soeEvolChart', SOE_Y, segTram, (y,s) => D_SOE_YEAR.by_year[y][s.key] || 0, false, true);
 
 // 19d. Composizione relativa (100%)
 const SOE_Y_PCT = SOE_Y.filter(y => SOE_BUCKETS.reduce((s,b)=>s+(D_SOE_YEAR.by_year[y][b.key]||0),0) >= 0.05);
