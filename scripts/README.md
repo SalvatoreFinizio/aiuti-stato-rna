@@ -84,6 +84,7 @@ python3 scripts/build_soe_data.py   # final: entities + by_year + top CPC techs
 ```bash
 python3 scripts/build_innovation_page.py   # data/generated/innovation.json + nuts3_paths.json → site/innovazione.html
 python3 scripts/gen_pages.py               # site/dashboard.html → site/{geografia,controllate,quadro,green}.html
+python3 scripts/add_glossaries.py          # inject per-page acronym glossary (run AFTER gen_pages)
 ```
 
 ### 5. Deploy (`site/` is the published tree)

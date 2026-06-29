@@ -159,7 +159,7 @@ def hero(badge, lead, deck, srcline):
 def override_css(show_rules):
     return ("<style>\n  /* focused-page overrides */\n"
         "  .topbar{display:none!important}\n"
-        "  .intro,.glossary,.kpi-row{display:none!important}\n"
+        "  .intro,#glossary,.kpi-row{display:none!important}\n"
         "  main section{display:none!important}\n"
         f"  {show_rules}{{display:block!important}}\n"
         "  .method{display:none!important}\n"
