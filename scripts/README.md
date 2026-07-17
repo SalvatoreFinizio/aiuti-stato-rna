@@ -86,6 +86,7 @@ python3 scripts/build_innovation_page.py   # data/generated/innovation.json + nu
 python3 scripts/gen_pages.py               # site/dashboard.html → site/{geografia,controllate,quadro,green}.html
 python3 scripts/add_glossaries.py          # inject per-page acronym glossary (run AFTER gen_pages)
 python3 scripts/add_i18n.py                # inject IT/EN toggle scripts (assets/i18n*.js)
+python3 scripts/add_downloads.py           # inject per-figure CSV download buttons (assets/download.js)
 ```
 
 ### 5. Deploy (`site/` is the published tree)
