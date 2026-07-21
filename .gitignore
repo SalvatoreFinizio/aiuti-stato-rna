@@ -18,6 +18,9 @@ corporate_structure_*
 **/bvdid_*
 **/*patstat*
 **/*orbis*
+# these two datamarts carry a raw `bvdid` field — strip it before publishing
+data/generated/beneficiari_top.json
+data/generated/region_top_firm.json
 
 # python
 __pycache__/

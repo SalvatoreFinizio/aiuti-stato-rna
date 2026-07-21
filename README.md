@@ -121,17 +121,24 @@ git subtree push --prefix site origin gh-pages
 
 ## Licenza e citazione
 
-Il repository non ha ancora un file di licenza. Nel frattempo:
+Il repository ha una **doppia licenza**, perché contiene due cose diverse:
 
-- **Codice** (`scripts/`, `site/assets/`): uso libero con attribuzione.
-- **Dati derivati** (`data/generated/`, grafici): riutilizzabili citando come fonte primaria
-  il Registro Nazionale Aiuti di Stato.
-- **Dati Orbis e PATSTAT**: non ridistribuiti, soggetti alle rispettive licenze.
+| Cosa | Licenza | File |
+|---|---|---|
+| **Codice** — `scripts/`, HTML/CSS/JS in `site/` | [MIT](LICENSE) | `LICENSE` |
+| **Dati e contenuti** — `data/generated/`, grafici, analisi | [CC BY 4.0](LICENSE-DATA) | `LICENSE-DATA` |
+
+Entrambe consentono il riuso, anche commerciale, con attribuzione.
+
+**Dati di terzi non coperti.** Le licenze qui sopra coprono solo gli aggregati e l'analisi
+prodotti da questo progetto: non concedono alcun diritto sulle fonti sottostanti. Orbis/BvD
+e PATSTAT sono proprietari, non ridistribuiti, e chi volesse rieseguire quelle sezioni deve
+procurarsi una licenza propria. Dettagli in [`LICENSE-DATA`](LICENSE-DATA).
 
 Citazione suggerita:
 
 > S. Finizio, *Aiuti di Stato in Italia 2016–2025 — elaborazione su dati RNA*,
-> https://salvatorefinizio.github.io/aiuti-stato-rna/
+> https://salvatorefinizio.github.io/aiuti-stato-rna/ — CC BY 4.0
 
 Elaborazione propria su dati RNA. Il progetto non è affiliato né approvato da alcuna
 amministrazione pubblica.

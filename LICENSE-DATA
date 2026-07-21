@@ -1,0 +1,67 @@
+# Data and content licence
+
+Copyright (c) 2026 Salvatore Finizio
+
+The **data and content** of this repository are licensed under the
+**Creative Commons Attribution 4.0 International licence (CC BY 4.0)**.
+
+To view a copy of this licence, visit
+<https://creativecommons.org/licenses/by/4.0/>
+or read the full legal code at
+<https://creativecommons.org/licenses/by/4.0/legalcode>.
+
+You are free to share and adapt this material, including commercially,
+provided you give appropriate credit, link to the licence, and indicate if
+changes were made.
+
+## What this covers
+
+- The derived datamarts under `data/generated/`
+- The charts, tables and maps published under `site/`
+- The written analysis, commentary and captions in the published pages
+
+The **code** (`scripts/`, and the HTML/CSS/JavaScript under `site/`) is
+licensed separately under the MIT License — see `LICENSE`.
+
+## Attribution
+
+> S. Finizio, *Aiuti di Stato in Italia 2016–2025 — elaborazione su dati RNA*,
+> https://salvatorefinizio.github.io/aiuti-stato-rna/ — CC BY 4.0
+
+## Third-party data — NOT covered by this licence
+
+This licence covers only the aggregates and analysis produced by this project.
+It grants **no rights whatsoever** in the underlying third-party sources, and
+it is not a representation that those sources are freely reusable.
+
+- **Registro Nazionale Aiuti di Stato (RNA)** — <https://www.rna.gov.it>.
+  Primary source, public open data. Anyone reusing the derived figures should
+  cite the RNA as the source of the underlying data and refer to the terms
+  published on rna.gov.it for the raw dumps themselves.
+
+- **Orbis / Bureau van Dijk (Moody's)** — proprietary, licensed. Used under
+  institutional subscription for the beneficiary matching and the corporate
+  control chains. **Not redistributed in this repository**: no raw extract, no
+  matching table, and no BvD identifiers are published here. Only aggregate
+  statistics derived from it (counts and sums by firm, sector, territory and
+  year) appear in `data/generated/` and in the published pages.
+
+- **PATSTAT (European Patent Office), Autumn 2025 edition** — licensed. Used
+  for patent-family counts and CPC classes. **Not redistributed**; only
+  aggregates appear here.
+
+- **Eurostat NUTS 2021 (1:3M)** — geometries used for the maps, reused under
+  the terms Eurostat publishes for its geographical data (attribution to
+  © EuroGeographics for the administrative boundaries).
+
+- **ISTAT** — national accounts and population figures used for the per-capita
+  and share-of-GDP ratios.
+
+Reusers who need the underlying Orbis or PATSTAT data must obtain their own
+licence from the respective providers.
+
+## No warranty
+
+This material is provided "as is", without warranty of any kind. It is an
+independent elaboration and is not affiliated with, endorsed by, or an official
+publication of any public administration.
