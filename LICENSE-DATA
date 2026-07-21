@@ -20,8 +20,13 @@ changes were made.
 - The charts, tables and maps published under `site/`
 - The written analysis, commentary and captions in the published pages
 
-The **code** (`scripts/`, and the HTML/CSS/JavaScript under `site/`) is
-licensed separately under the MIT License — see `LICENSE`.
+## What this does NOT cover
+
+The **code** is licensed separately under the MIT License — see `LICENSE`.
+That means the build and analysis code under `scripts/`, and the page code and
+assets under `site/` (HTML, CSS, JavaScript).
+
+Third-party data is not covered by either licence; see below.
 
 ## Attribution
 

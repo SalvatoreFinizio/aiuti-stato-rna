@@ -19,20 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-SCOPE
-
-This MIT License applies to the SOFTWARE in this repository: the build and
-analysis code under `scripts/`, and the page code and assets under `site/`
-(HTML, CSS, JavaScript).
-
-It does NOT apply to:
-
-  - The DATA and CONTENT — the derived datamarts under `data/generated/`, the
-    charts, and the written analysis and commentary in the published pages.
-    These are licensed under CC BY 4.0; see LICENSE-DATA.
-
-  - Third-party data described in LICENSE-DATA, which is not redistributed
-    here and remains subject to its own terms.
