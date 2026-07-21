@@ -116,8 +116,17 @@ git subtree push --prefix site origin gh-pages
   2026 (ancora incompleto), escluso dai totali pubblicati.
 - Il match RNA × Orbis avviene su **codice fiscale / partita IVA** e non è esaustivo: le
   sezioni su innovazione e partecipate coprono un sottoinsieme dei beneficiari, non il totale.
-- I totali possono differire leggermente tra pagine rigenerate in momenti diversi rispetto ai
-  dump RNA scaricati.
+- **Attenzione ai denominatori diversi.** Le analisi che passano dall'aggancio a Orbis —
+  pagina Innovazione e mappa NUTS3 in Geografia — hanno per base **452,5 mld**, cioè l'ESL
+  dei soli beneficiari abbinati a un identificativo d'impresa. Le percentuali di quelle
+  sezioni (es. «10,7 % dell'aiuto va a chi brevetta») sono calcolate su quella base, non sul
+  totale. La quota che resta fuori dalla mappa — **57,2 mld, 11,2 %** — è documentata nella
+  pagina stessa: persone fisiche (39,3 mld) e partite IVA pubbliche o non-market (17,8 mld).
+- **Le due basi hanno estremi temporali diversi.** I 452,5 mld agganciati a Orbis (e quindi
+  il 57,2 mld / 11,2 % non geolocalizzato) sono calcolati sull'universo completo fino a
+  **marzo 2026**, cioè su 509,7 mld; i KPI di testata si fermano a **dicembre 2025**, cioè a
+  502,1 mld. Le due cifre non vanno quindi rapportate direttamente l'una all'altra: lo scarto
+  è il primo trimestre 2026.
 
 ## Licenza e citazione
 
