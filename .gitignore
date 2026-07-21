@@ -10,6 +10,19 @@ data/data_rna/
 data/nuts_sectors/
 data/*.geojson
 
+# licensed data — Orbis / Bureau van Dijk, PATSTAT. NEVER commit: proprietary.
+*.xlsx
+*.xls
+corporate_structure_*
+**/firms_bvdid.csv
+**/bvdid_*
+**/*patstat*
+**/*orbis*
+
+# python
+__pycache__/
+*.pyc
+
 # legacy Observable build sources
 src/
 figs/
