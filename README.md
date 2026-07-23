@@ -151,3 +151,5 @@ Citazione suggerita:
 
 Elaborazione propria su dati RNA. Il progetto non è affiliato né approvato da alcuna
 amministrazione pubblica.
+
+Un ringraziamento particolare va a Donato Di Carlo, per il supporto, interesse, e dispobilità ricevuta
